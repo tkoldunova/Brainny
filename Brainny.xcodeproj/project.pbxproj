@@ -7,6 +7,19 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9F4D66762CC28A3A00C4E613 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F4D66732CC28A3A00C4E613 /* GameViewController.swift */; };
+		9F4D66772CC28A3A00C4E613 /* GameRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F4D666F2CC28A3A00C4E613 /* GameRouter.swift */; };
+		9F4D66782CC28A3A00C4E613 /* GamePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F4D666D2CC28A3A00C4E613 /* GamePresenter.swift */; };
+		9F4D66792CC28A3A00C4E613 /* AnagramsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F4D66712CC28A3A00C4E613 /* AnagramsCollectionViewCell.swift */; };
+		9F4D667A2CC28A3A00C4E613 /* GameInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F4D666B2CC28A3A00C4E613 /* GameInteractor.swift */; };
+		9F4D66842CC28A9C00C4E613 /* EmptyNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F4D667B2CC28A9C00C4E613 /* EmptyNode.swift */; };
+		9F4D66852CC28A9C00C4E613 /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F4D66812CC28A9C00C4E613 /* GameScene.swift */; };
+		9F4D66862CC28A9C00C4E613 /* WorldNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F4D667D2CC28A9C00C4E613 /* WorldNode.swift */; };
+		9F4D66872CC28A9C00C4E613 /* EnterButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F4D667C2CC28A9C00C4E613 /* EnterButton.swift */; };
+		9F4D66882CC28A9C00C4E613 /* Actions.sks in Resources */ = {isa = PBXBuildFile; fileRef = 9F4D667F2CC28A9C00C4E613 /* Actions.sks */; };
+		9F4D66892CC28A9C00C4E613 /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 9F4D66802CC28A9C00C4E613 /* GameScene.sks */; };
+		9F4D668B2CC28CC300C4E613 /* SKSpriteNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F4D668A2CC28CC300C4E613 /* SKSpriteNode.swift */; };
+		9F69B2EA2CCFFC6C00F89FDE /* Localize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F69B2E92CCFFC6C00F89FDE /* Localize.swift */; };
 		D1482C552CB5251A005AD918 /* NoAdsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1482C542CB5251A005AD918 /* NoAdsCollectionViewCell.swift */; };
 		D17884E22CAAEFD1005FF692 /* SecretWordsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D17884E12CAAEFD1005FF692 /* SecretWordsViewController.swift */; };
 		D17884E42CAAEFE9005FF692 /* SecretWordsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D17884E32CAAEFE9005FF692 /* SecretWordsPresenter.swift */; };
@@ -73,6 +86,19 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		9F4D666B2CC28A3A00C4E613 /* GameInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameInteractor.swift; sourceTree = "<group>"; };
+		9F4D666D2CC28A3A00C4E613 /* GamePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GamePresenter.swift; sourceTree = "<group>"; };
+		9F4D666F2CC28A3A00C4E613 /* GameRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameRouter.swift; sourceTree = "<group>"; };
+		9F4D66712CC28A3A00C4E613 /* AnagramsCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnagramsCollectionViewCell.swift; sourceTree = "<group>"; };
+		9F4D66732CC28A3A00C4E613 /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
+		9F4D667B2CC28A9C00C4E613 /* EmptyNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyNode.swift; sourceTree = "<group>"; };
+		9F4D667C2CC28A9C00C4E613 /* EnterButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnterButton.swift; sourceTree = "<group>"; };
+		9F4D667D2CC28A9C00C4E613 /* WorldNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorldNode.swift; sourceTree = "<group>"; };
+		9F4D667F2CC28A9C00C4E613 /* Actions.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Actions.sks; sourceTree = "<group>"; };
+		9F4D66802CC28A9C00C4E613 /* GameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScene.sks; sourceTree = "<group>"; };
+		9F4D66812CC28A9C00C4E613 /* GameScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameScene.swift; sourceTree = "<group>"; };
+		9F4D668A2CC28CC300C4E613 /* SKSpriteNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SKSpriteNode.swift; sourceTree = "<group>"; };
+		9F69B2E92CCFFC6C00F89FDE /* Localize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Localize.swift; sourceTree = "<group>"; };
 		D1482C542CB5251A005AD918 /* NoAdsCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoAdsCollectionViewCell.swift; sourceTree = "<group>"; };
 		D17884E12CAAEFD1005FF692 /* SecretWordsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecretWordsViewController.swift; sourceTree = "<group>"; };
 		D17884E32CAAEFE9005FF692 /* SecretWordsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecretWordsPresenter.swift; sourceTree = "<group>"; };
@@ -152,6 +178,87 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		9F4D666C2CC28A3A00C4E613 /* Interactor */ = {
+			isa = PBXGroup;
+			children = (
+				9F4D666B2CC28A3A00C4E613 /* GameInteractor.swift */,
+			);
+			path = Interactor;
+			sourceTree = "<group>";
+		};
+		9F4D666E2CC28A3A00C4E613 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				9F4D666D2CC28A3A00C4E613 /* GamePresenter.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		9F4D66702CC28A3A00C4E613 /* Router */ = {
+			isa = PBXGroup;
+			children = (
+				9F4D666F2CC28A3A00C4E613 /* GameRouter.swift */,
+			);
+			path = Router;
+			sourceTree = "<group>";
+		};
+		9F4D66722CC28A3A00C4E613 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				9F4D66712CC28A3A00C4E613 /* AnagramsCollectionViewCell.swift */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		9F4D66742CC28A3A00C4E613 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				9F4D66722CC28A3A00C4E613 /* Cells */,
+				9F4D66732CC28A3A00C4E613 /* GameViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		9F4D66752CC28A3A00C4E613 /* Game */ = {
+			isa = PBXGroup;
+			children = (
+				9F4D666C2CC28A3A00C4E613 /* Interactor */,
+				9F4D666E2CC28A3A00C4E613 /* Presenter */,
+				9F4D66702CC28A3A00C4E613 /* Router */,
+				9F4D66742CC28A3A00C4E613 /* View */,
+			);
+			path = Game;
+			sourceTree = "<group>";
+		};
+		9F4D667E2CC28A9C00C4E613 /* Node */ = {
+			isa = PBXGroup;
+			children = (
+				9F4D667B2CC28A9C00C4E613 /* EmptyNode.swift */,
+				9F4D667C2CC28A9C00C4E613 /* EnterButton.swift */,
+				9F4D667D2CC28A9C00C4E613 /* WorldNode.swift */,
+			);
+			path = Node;
+			sourceTree = "<group>";
+		};
+		9F4D66822CC28A9C00C4E613 /* Scene */ = {
+			isa = PBXGroup;
+			children = (
+				9F4D667F2CC28A9C00C4E613 /* Actions.sks */,
+				9F4D66802CC28A9C00C4E613 /* GameScene.sks */,
+				9F4D66812CC28A9C00C4E613 /* GameScene.swift */,
+			);
+			path = Scene;
+			sourceTree = "<group>";
+		};
+		9F4D66832CC28A9C00C4E613 /* Game */ = {
+			isa = PBXGroup;
+			children = (
+				9F4D667E2CC28A9C00C4E613 /* Node */,
+				9F4D66822CC28A9C00C4E613 /* Scene */,
+			);
+			path = Game;
+			sourceTree = "<group>";
+		};
 		D17884E02CAAEC34005FF692 /* SecretWords */ = {
 			isa = PBXGroup;
 			children = (
@@ -211,6 +318,7 @@
 				D19B74452CA0DB000008F38E /* AppDelegate.swift */,
 				D19B74472CA0DB000008F38E /* SceneDelegate.swift */,
 				D19B74492CA0DB000008F38E /* ViewController.swift */,
+				9F4D66832CC28A9C00C4E613 /* Game */,
 				D190A6052CACA1DB002B4625 /* StoreKit.storekit */,
 				D190A6002CACA142002B4625 /* Managers */,
 				D1EEF6F22CA1C5C500848B72 /* Infrastracture */,
@@ -273,6 +381,7 @@
 		D1EEF6E92CA1B98700848B72 /* Screens */ = {
 			isa = PBXGroup;
 			children = (
+				9F4D66752CC28A3A00C4E613 /* Game */,
 				D1E6E4322CB19474004BB47B /* Settings */,
 				D190A5F52CAC9B07002B4625 /* Shop */,
 				D17884E02CAAEC34005FF692 /* SecretWords */,
@@ -323,6 +432,7 @@
 				D1A00EA82CA35538000D0DEE /* UIViewController.swift */,
 				D18F4C7C2CA3696900DF7653 /* UIView.swift */,
 				D1ABC9F22CA75436009789DE /* UIImage.swift */,
+				9F4D668A2CC28CC300C4E613 /* SKSpriteNode.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -345,6 +455,7 @@
 			isa = PBXGroup;
 			children = (
 				D1EEF7022CA217B600848B72 /* Fonts */,
+				9F69B2E92CCFFC6C00F89FDE /* Localize.swift */,
 			);
 			path = Resourses;
 			sourceTree = "<group>";
@@ -423,6 +534,8 @@
 				D1EEF70A2CA217FD00848B72 /* OpenSans-SemiBold.ttf in Resources */,
 				D1EEF7092CA217FD00848B72 /* OpenSans-Bold.ttf in Resources */,
 				D1E1C74B2CA4A9AE00300345 /* TipView.xib in Resources */,
+				9F4D66882CC28A9C00C4E613 /* Actions.sks in Resources */,
+				9F4D66892CC28A9C00C4E613 /* GameScene.sks in Resources */,
 				D19B744F2CA0DB050008F38E /* Assets.xcassets in Resources */,
 				D19B74522CA0DB050008F38E /* Base in Resources */,
 				D19B744D2CA0DB000008F38E /* Base in Resources */,
@@ -460,12 +573,21 @@
 				D190A5FD2CAC9B4F002B4625 /* ShopRouter.swift in Sources */,
 				D190A6072CACA326002B4625 /* ShopCollectionViewCell.swift in Sources */,
 				D1E6E43E2CB194DE004BB47B /* SettingsRouter.swift in Sources */,
+				9F4D66842CC28A9C00C4E613 /* EmptyNode.swift in Sources */,
+				9F4D66852CC28A9C00C4E613 /* GameScene.swift in Sources */,
+				9F4D66862CC28A9C00C4E613 /* WorldNode.swift in Sources */,
+				9F4D66872CC28A9C00C4E613 /* EnterButton.swift in Sources */,
 				D1ABC9F92CA80B39009789DE /* MenuRouter.swift in Sources */,
 				D1E6E4432CB34385004BB47B /* ShopHeaderView.swift in Sources */,
 				D1ABC9F52CA80B29009789DE /* MenuPresenter.swift in Sources */,
 				D17884E62CAAEFF5005FF692 /* SecretWordsInteractor.swift in Sources */,
 				D1E1C74F2CA4BE6600300345 /* LetterView.swift in Sources */,
 				D190A5F92CAC9B28002B4625 /* ShopPresenter.swift in Sources */,
+				9F4D66762CC28A3A00C4E613 /* GameViewController.swift in Sources */,
+				9F4D66772CC28A3A00C4E613 /* GameRouter.swift in Sources */,
+				9F4D66782CC28A3A00C4E613 /* GamePresenter.swift in Sources */,
+				9F4D66792CC28A3A00C4E613 /* AnagramsCollectionViewCell.swift in Sources */,
+				9F4D667A2CC28A3A00C4E613 /* GameInteractor.swift in Sources */,
 				D190A6092CACA672002B4625 /* UserDefaultsValues.swift in Sources */,
 				D1EEF6FA2CA1C66B00848B72 /* RelatedWordsPresenter.swift in Sources */,
 				D1E6E4382CB194C2004BB47B /* SettingsTableViewCell.swift in Sources */,
@@ -481,12 +603,14 @@
 				D18F4C7D2CA3696900DF7653 /* UIView.swift in Sources */,
 				D19B74482CA0DB000008F38E /* SceneDelegate.swift in Sources */,
 				D1EEF6F42CA1C60500848B72 /* BaseViewController.swift in Sources */,
+				9F69B2EA2CCFFC6C00F89FDE /* Localize.swift in Sources */,
 				D17884E22CAAEFD1005FF692 /* SecretWordsViewController.swift in Sources */,
 				D18F4C7B2CA3607000DF7653 /* RelatedWordsTableViewCell.swift in Sources */,
 				D17884EA2CAAF00D005FF692 /* SecretWords.swift in Sources */,
 				D1ABCA022CA81E19009789DE /* LevelInteractor.swift in Sources */,
 				D1A00EA92CA35538000D0DEE /* UIViewController.swift in Sources */,
 				D1EEF6ED2CA1B9DB00848B72 /* BubleView.swift in Sources */,
+				9F4D668B2CC28CC300C4E613 /* SKSpriteNode.swift in Sources */,
 				D1ABCA042CA81E21009789DE /* LevelRouter.swift in Sources */,
 				D1EFF5A02CB52B04001ECD85 /* ProductSub.swift in Sources */,
 				D190A5FF2CAC9B56002B4625 /* ShopModel.swift in Sources */,

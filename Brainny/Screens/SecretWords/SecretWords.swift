@@ -127,6 +127,10 @@ enum SecretWords: CaseIterable, LevelProtocol {
             return RelatedWordModel(answer: "Pit", relatedWords: "pit", guessed: false)
         case .lv11:
             return RelatedWordModel(answer: "Chess", relatedWords: "pit", guessed: false)
+        case .lv12:
+            return RelatedWordModel(answer: "Chess", relatedWords: "pit", guessed: false)
+        case .lv13:
+            return RelatedWordModel(answer: "Chess", relatedWords: "pit", guessed: false)
         }
     }
 }

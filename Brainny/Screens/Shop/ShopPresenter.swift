@@ -41,32 +41,44 @@ final class ShopPresenter: NSObject, ShopPresenterProtocol {
     
 }
 
-extension ShopPresenter: ShopCellDelegate {
+extension ShopPresenter: ShopCellDelegate, NoAdsDelegate {
+    
+    
     
     func numberOfSections(in collectionView: UICollectionView) -> Int {
-        return 1
+        return 2
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return interactor.model.count + 1
+        return section == 0 ? interactor.model.count + 1 : interactor.subscription.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "shop", for: indexPath) as? ShopCollectionViewCell else {return UICollectionViewCell()}
-        if indexPath.row < interactor.model.count {
-            
-            cell.configure(product: interactor.model[indexPath.row])
+        if indexPath.section == 0 {
+            guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "shop", for: indexPath) as? ShopCollectionViewCell else {return UICollectionViewCell()}
+            if indexPath.row < interactor.model.count {
+                
+                cell.configure(product: interactor.model[indexPath.row])
+            } else {
+                cell.configure(model: .hap)
+            }
+            cell.delegate = self
+            return cell
         } else {
-            cell.configure(model: .hap)
+            guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "no ads", for: indexPath) as? NoAdsCollectionViewCell else {return UICollectionViewCell()}
+            let data = interactor.subscription[indexPath.row]
+            cell.delegate = self
+            cell.configure(model: data)
+            return cell
         }
-        cell.delegate = self
-        return cell
+        
     }
     
     func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
         if kind == UICollectionView.elementKindSectionHeader {
             let headerView = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: ShopCollectionHeaderView.reuseIdentifier, for: indexPath) as! ShopCollectionHeaderView
-            headerView.label.text = "Get Coins"
+            
+            headerView.label.text = indexPath.section == 0 ? "Get Coins" : "Subscription"
             return headerView
         }
         return UICollectionReusableView()
@@ -79,6 +91,14 @@ extension ShopPresenter: ShopCellDelegate {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
            return UIEdgeInsets(top: 10, left: 8, bottom: 10, right: 8)  // Adjust the top value for spacing
        }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        if indexPath.section == 1 {
+            return CGSize(width: 349, height: 80)
+        } else {
+            return CGSize(width: 180, height: 255)
+        }
+    }
 
     
     func buyProduct(product: CoinsProductSub) {
@@ -89,6 +109,11 @@ extension ShopPresenter: ShopCellDelegate {
     
     func watchAdAndGet(model: CoinsModel) {
         return
+    }
+    
+    func buyButtonPressed(_ cell: NoAdsCollectionViewCell) {
+        guard let product = cell.model else { return }
+        interactor.buySubscription(product: product)
     }
     
 }

@@ -8,7 +8,7 @@
 import UIKit
 import StoreKit
 
-public struct CoinsProductSub: Hashable {
+public struct CoinsProductSub: Hashable, ProductSubscription {
     let title: String
     var price: String?
     let locale: Locale

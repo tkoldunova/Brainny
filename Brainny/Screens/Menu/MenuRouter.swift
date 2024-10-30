@@ -62,6 +62,11 @@ final class MenuRouter: MenuRouterProtocol {
      
     }
     
+//    func goToAnagrams() {
+//        guard let navigationController = navigationController else {return}
+//        let vc = GameRouter.
+//    }
+    
     func dismiss() {
         self.navigationController?.popViewController(animated: true)
     }
