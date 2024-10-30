@@ -17,6 +17,11 @@ class SecretWordsViewController: BaseViewController<SecretWordsPresenterProtocol
         return button
     }()
     lazy var tipView = TipView(frame: self.view.bounds)
+    @IBOutlet weak var descriptionLabel: UILabel! {
+        didSet {
+            descriptionLabel.text = NSLocalizedString("secretWord.subtitle", comment: "")
+        }
+    }
     
     @IBOutlet weak var tableView: UITableView! {
         didSet {
@@ -49,7 +54,7 @@ class SecretWordsViewController: BaseViewController<SecretWordsPresenterProtocol
     override func viewDidLoad() {
         super.viewDidLoad()
         self.presenter.notifyWhenViewDidLoad()
-        // Do any additional setup after loading the view.
+        self.navigationItem.title = NSLocalizedString("secretWord.title", comment: "")
     }
     
     func shakeTextField() {

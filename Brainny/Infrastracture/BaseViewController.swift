@@ -12,16 +12,13 @@ class MainViewController:UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = ""
-      // setUpNavigationBar()
+        setUpNavigationBar()
     }
     
     func setUpNavigationBar() {
         self.title = ""
-        
         guard let navigationController = self.navigationController else {return}
-        
         let navBar = navigationController.navigationBar
-        
         let standardAppearance = UINavigationBarAppearance()
         standardAppearance.configureWithOpaqueBackground()
         standardAppearance.backgroundImage = nil
@@ -30,15 +27,12 @@ class MainViewController:UIViewController {
         standardAppearance.shadowImage = UIImage()
              standardAppearance.titleTextAttributes = [
             NSAttributedString.Key.foregroundColor: UIColor.white,
-            NSAttributedString.Key.font: UIFont(name: "LuckiestGuy-Regular", size: 24)!,
+            NSAttributedString.Key.font: UIFont(name: "OpenSans-SemiBold", size: 24)!,
         ]
         standardAppearance.largeTitleTextAttributes = [
             NSAttributedString.Key.foregroundColor: UIColor.white,
-            NSAttributedString.Key.font: UIFont(name: "LuckiestGuy-Regular", size: 24)!,
+            NSAttributedString.Key.font: UIFont(name: "OpenSans-SemiBold", size: 24)!,
         ]
-        let backImage = UIImage(named: "arrowLeft")!
-        standardAppearance.setBackIndicatorImage(backImage.withRenderingMode(.alwaysOriginal), transitionMaskImage: backImage.withRenderingMode(.alwaysOriginal))
-
         navBar.standardAppearance = standardAppearance
         navBar.scrollEdgeAppearance = standardAppearance
         navBar.compactAppearance = standardAppearance

@@ -15,9 +15,9 @@ enum SettingsModel: CaseIterable {
     var title: String {
         switch self {
         case .sound:
-            return "Sound"
+            return NSLocalizedString("settings.model.sound", comment: "")
         case .haptics:
-            return "Haptics"
+            return NSLocalizedString("settings.model.haptic", comment: "")
         }
     }
     
@@ -56,7 +56,7 @@ enum VolumeModel: CaseIterable {
     var title: String {
         switch self {
         case .music:
-            return "Volume"
+            return NSLocalizedString("settings.model.music", comment: "")
         }
     }
     

@@ -17,7 +17,11 @@ class RelatedWordsViewController: BaseViewController<RelatedWordsPresenterProtoc
         return button
     }()
     lazy var tipView = TipView(frame: self.view.bounds)
-    @IBOutlet weak var descriptionLabel: UILabel!
+    @IBOutlet weak var descriptionLabel: UILabel! {
+        didSet {
+            descriptionLabel.text =  NSLocalizedString("relatedWords.subtitle", comment: "")
+        }
+    }
     @IBOutlet weak var wordsCollectionView: UICollectionView! {
         didSet {
             wordsCollectionView.delegate = presenter
@@ -45,8 +49,12 @@ class RelatedWordsViewController: BaseViewController<RelatedWordsPresenterProtoc
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.navigationItem.title =  NSLocalizedString("relatedWords.title", comment: "")
     }
     
+    func setTextFieldEmpty() {
+        self.textField.text = nil
+    }
     
     func shakeTextField() {
         self.textField.shake(repeated: false)

@@ -545,6 +545,7 @@
                         <outlet property="answerLabel" destination="K5Q-1S-EMA" id="uBX-7C-8Ow"/>
                         <outlet property="answerStackView" destination="VrR-cz-AWc" id="Oia-tb-9wL"/>
                         <outlet property="answerView" destination="Zwj-t4-Xnd" id="4ux-1d-cyT"/>
+                        <outlet property="descriptionLabel" destination="Joq-FP-Gnf" id="EnB-EZ-gZ0"/>
                         <outlet property="tableView" destination="aov-4e-u2j" id="Vo5-fd-J1v"/>
                         <outlet property="textField" destination="2LY-iN-MeL" id="d27-AM-CeE"/>
                         <outlet property="timeLabel" destination="5O6-cc-fIT" id="P5N-iX-geK"/>
@@ -863,17 +864,6 @@
                                                         <constraint firstAttribute="width" constant="48" id="6kG-y8-anY"/>
                                                     </constraints>
                                                 </imageView>
-                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="C2K-yf-XGp">
-                                                    <rect key="frame" x="12" y="202" width="156" height="40"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <color key="backgroundColor" red="0.56499999759999997" green="0.48199999329999998" blue="0.81999999280000002" alpha="0.50685799539999998" colorSpace="custom" customColorSpace="sRGB"/>
-                                                    <fontDescription key="fontDescription" name="OpenSans-Medium" family="Open Sans" pointSize="20"/>
-                                                    <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                                    <state key="normal" title="Watch ad"/>
-                                                    <connections>
-                                                        <action selector="priceButtonTouched:" destination="blf-kO-1Py" eventType="touchUpInside" id="SLQ-OT-QgB"/>
-                                                    </connections>
-                                                </button>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="uYX-wF-G7o" firstAttribute="trailing" secondItem="wIn-7q-mll" secondAttribute="trailing" id="0cM-Dn-fnw"/>

@@ -59,7 +59,7 @@ class MenuViewController: BaseViewController<MenuPresenterProtocol>, MenuViewPro
             bubleView.titleLabel.text = m.title
             bubleView.translatesAutoresizingMaskIntoConstraints = false
             NSLayoutConstraint.activate([
-                bubleView.widthAnchor.constraint(equalToConstant: 280),
+                bubleView.widthAnchor.constraint(equalToConstant: 300),
                 bubleView.heightAnchor.constraint(equalToConstant: 110)
             ])
             bubleView.delegate = self

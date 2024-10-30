@@ -66,7 +66,7 @@ extension ShopPresenter: ShopCellDelegate {
     func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
         if kind == UICollectionView.elementKindSectionHeader {
             let headerView = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: ShopCollectionHeaderView.reuseIdentifier, for: indexPath) as! ShopCollectionHeaderView
-            headerView.label.text = "Get Coins"
+            headerView.label.text = NSLocalizedString("shop.coins.title", comment: "")
             return headerView
         }
         return UICollectionReusableView()

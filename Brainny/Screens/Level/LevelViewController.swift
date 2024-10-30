@@ -17,7 +17,7 @@ class LevelViewController: BaseViewController<LevelPresenterProtocol>, LevelView
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.title = "Level"
+        self.title = NSLocalizedString("level.title", comment: "")
     }
     
     func reloadData() {

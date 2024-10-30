@@ -15,11 +15,11 @@ enum Games: Int, CaseIterable {
     var title: String {
         switch self {
         case .relatedWords:
-            return "Related Words"
+            return NSLocalizedString("relatedWords.title", comment: "")
         case .annagrams:
-            return "Annagrams"
+            return "Annagrams"//NSLocalizedString("relatedWords.lv5.relatedWord1", comment: "")
         case .secretWords:
-            return "Secret Words"
+            return NSLocalizedString("secretWord.title", comment: "")
         }
     }
     
@@ -47,7 +47,28 @@ enum Games: Int, CaseIterable {
     
     func setDoneLevels(newValue: [LevelProtocol])  {
        setLevelValue(newValue: newValue, key: doneKey)
-       
+        if newValue.count%2==0 {
+            let endIndex = (availableLevels.count + 4 < model.count) ? availableLevels.count + 4 : model.count
+            let newAvailable = Array(model[availableLevels.count..<endIndex])
+            setAvailableLevels(newValue: newAvailable)
+        }
+    }
+    
+    func setDefaultData() {
+        switch self {
+        case .relatedWords:
+            let model = Array(RelatedWords.allCases.prefix(4))
+            if let data = try? JSONEncoder().encode(model) {
+                UserDefaults.standard.register(defaults: [availableKey : data])
+            }
+        case .annagrams:
+            return
+        case .secretWords:
+            let model = Array(SecretWords.allCases.prefix(4))
+            if let data = try? JSONEncoder().encode(model) {
+                UserDefaults.standard.register(defaults: [availableKey : data])
+            }
+        }
     }
     
     var model: [LevelProtocol] {
@@ -57,7 +78,7 @@ enum Games: Int, CaseIterable {
         case .annagrams:
             return [any LevelProtocol]()
         case .secretWords:
-            return [any LevelProtocol]()
+            return SecretWords.allCases
         }
     }
     
@@ -72,7 +93,9 @@ enum Games: Int, CaseIterable {
             case .annagrams:
                 return [any LevelProtocol]()
             case .secretWords:
-                return [any LevelProtocol]()
+                if let model = try? JSONDecoder().decode([SecretWords].self, from: data) {
+                    return model
+                }
             }
         }
         return [any LevelProtocol]()
@@ -88,7 +111,10 @@ enum Games: Int, CaseIterable {
         case .annagrams:
             return
         case .secretWords:
-            return
+            guard let newValue = newValue as? [SecretWords] else {return}
+            if let data = try? JSONEncoder().encode(newValue) {
+                UserDefaults.standard.set(newValue, forKey: key)
+            }
         }
     }
     
@@ -98,6 +124,7 @@ enum Games: Int, CaseIterable {
 
 protocol LevelProtocol: Codable {
     var index: Int {get}
+    
 }
 
 extension LevelProtocol {

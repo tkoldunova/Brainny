@@ -12,6 +12,7 @@ protocol RelatedWordsViewProtocol: AnyObject {
     func getCell(indexPath: IndexPath) -> UITableViewCell?
     func showTipView(type: TipType)
     func reloadWordsData()
+    func setTextFieldEmpty()
 }
 
 protocol RelatedWordsPresenterProtocol: UICollectionViewDelegate, UICollectionViewDataSource, UITableViewDelegate, UITableViewDataSource, UITextFieldDelegate, TipViewDelegate {
@@ -47,7 +48,9 @@ final class RelatedWordsPresenter: NSObject, RelatedWordsPresenterProtocol {
             var findedInd: Int?
             for i in 0 ..< interactor.answers.count {
                 let refacoredSuggestion = suggestion.lowercased().trimmingCharacters(in: .whitespacesAndNewlines)
-                if interactor.answers[i].relatedWords.contains(refacoredSuggestion) {
+                var relatedWordsArray = interactor.answers[i].relatedWords.components(separatedBy: ", ")
+                relatedWordsArray = relatedWordsArray.filter({$0.compareString(word: refacoredSuggestion)})
+                if !relatedWordsArray.isEmpty {
                     interactor.answers[i].setGuessed(true) //= interactor.answers[i].s answer
                     findedInd = i
                 }
@@ -58,6 +61,9 @@ final class RelatedWordsPresenter: NSObject, RelatedWordsPresenterProtocol {
             } else {
                 self.view?.shakeTextField()
             }
+            self.view?.setTextFieldEmpty()
+            self.interactor.suggestion = nil
+            
         }
     }
     
