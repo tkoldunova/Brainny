@@ -57,6 +57,7 @@ class MenuViewController: BaseViewController<MenuPresenterProtocol>, MenuViewPro
         for m in model {
             let bubleView = BubleView()
             bubleView.titleLabel.text = m.title
+            bubleView.game = m
             bubleView.translatesAutoresizingMaskIntoConstraints = false
             NSLayoutConstraint.activate([
                 bubleView.widthAnchor.constraint(equalToConstant: 300),
@@ -81,8 +82,9 @@ class MenuViewController: BaseViewController<MenuPresenterProtocol>, MenuViewPro
 
 extension MenuViewController: BubleViewDelegate {
     func touched(_ view: BubleView) {
-        if let ind = bubleViews.firstIndex(of: view) {
-            presenter.goToLevel()
+        if let game = view.game {
+            presenter.goToLevel(game: game)
         }
+  
     }
 }

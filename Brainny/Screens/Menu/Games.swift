@@ -17,7 +17,7 @@ enum Games: Int, CaseIterable {
         case .relatedWords:
             return NSLocalizedString("relatedWords.title", comment: "")
         case .annagrams:
-            return "Annagrams"//NSLocalizedString("relatedWords.lv5.relatedWord1", comment: "")
+            return NSLocalizedString("anagrams.title", comment: "")
         case .secretWords:
             return NSLocalizedString("secretWord.title", comment: "")
         }
@@ -62,7 +62,10 @@ enum Games: Int, CaseIterable {
                 UserDefaults.standard.register(defaults: [availableKey : data])
             }
         case .annagrams:
-            return
+            let model = Array(AnagramModel.allCases.prefix(4))
+            if let data = try? JSONEncoder().encode(model) {
+                UserDefaults.standard.register(defaults: [availableKey : data])
+            }
         case .secretWords:
             let model = Array(SecretWords.allCases.prefix(4))
             if let data = try? JSONEncoder().encode(model) {
@@ -76,7 +79,7 @@ enum Games: Int, CaseIterable {
         case .relatedWords:
             return RelatedWords.allCases
         case .annagrams:
-            return [any LevelProtocol]()
+            return AnagramModel.allCases
         case .secretWords:
             return SecretWords.allCases
         }
@@ -91,7 +94,9 @@ enum Games: Int, CaseIterable {
                     return model
                 }
             case .annagrams:
-                return [any LevelProtocol]()
+                if let model = try? JSONDecoder().decode([AnagramModel].self, from: data) {
+                    return model
+                }
             case .secretWords:
                 if let model = try? JSONDecoder().decode([SecretWords].self, from: data) {
                     return model
@@ -106,14 +111,17 @@ enum Games: Int, CaseIterable {
         case .relatedWords:
             guard let newValue = newValue as? [RelatedWords] else {return}
             if let data = try? JSONEncoder().encode(newValue) {
-                UserDefaults.standard.set(newValue, forKey: key)
+                UserDefaults.standard.set(data, forKey: key)
             }
         case .annagrams:
-            return
+            guard let newValue = newValue as? [AnagramModel] else {return}
+            if let data = try? JSONEncoder().encode(newValue) {
+                UserDefaults.standard.set(data, forKey: key)
+            }
         case .secretWords:
             guard let newValue = newValue as? [SecretWords] else {return}
             if let data = try? JSONEncoder().encode(newValue) {
-                UserDefaults.standard.set(newValue, forKey: key)
+                UserDefaults.standard.set(data, forKey: key)
             }
         }
     }

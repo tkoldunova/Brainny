@@ -48,6 +48,8 @@ extension LevelPresenter {
                 self.router.goToRelatedWords(model: m)
             } else if let m = m as? SecretWords {
                 self.router.goToSecretWords(model: m)
+            } else if let m = m as? AnagramModel {
+                self.router.goToAnagrams(model: m)
             }
         }
 

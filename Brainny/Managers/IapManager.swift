@@ -8,13 +8,13 @@
 import UIKit
 import StoreKit
 
-public typealias ProductsRequestCompletionHandler = (_ products: [CoinsProductSub]?) -> Void
+//public typealias ProductsRequestCompletionHandler =
 public typealias ProductPurchaseCompletionHandler = (_ success: Bool, _ productId : String?) -> Void
 
 class IAPManager: NSObject {
     
     //MARK: -Properties
-    private var productsRequestCompletionHandler: ProductsRequestCompletionHandler?
+    private var productsRequestCompletionHandler: ((_ products: [any ProductSubscription]?) -> Void)?
     private var productPurchaseCompletionHandler: ProductPurchaseCompletionHandler?
     private let coinsProductsID = Set(CoinsModel.allCases.map({$0.rawValue}))
     private let noAdsProductID = Set(["com.noAds.product"])
@@ -29,7 +29,7 @@ class IAPManager: NSObject {
     }
     
     //MARK: -RequestProduct
-    func requestProducts(_ complition: @escaping ProductsRequestCompletionHandler) {
+    func requestProducts(_ complition: @escaping ([any ProductSubscription]?) -> Void) {
         productsRequestCompletionHandler = complition
     //    let array = coinsProductsID + noAdsProductID
         var productsID = coinsProductsID.union(noAdsProductID)
@@ -38,6 +38,13 @@ class IAPManager: NSObject {
         request.start()
     }
     //MARK: -PurchaseProduct
+    
+    func buySubcription(_ id: SKProduct, _ complition: @escaping ProductPurchaseCompletionHandler) {
+        buyProduct(id) { success, productId in
+            complition(success, productId)
+        }
+    }
+    
     func buyProduct(_ id: SKProduct, _ complition: @escaping ProductPurchaseCompletionHandler) {
         guard SKPaymentQueue.canMakePayments() else { return }
         productPurchaseCompletionHandler = complition
@@ -61,7 +68,16 @@ class IAPManager: NSObject {
 //MARK: -SKProductsRequestDelegate
 extension IAPManager: SKProductsRequestDelegate {
     func productsRequest(_ request: SKProductsRequest, didReceive response: SKProductsResponse) {
-        productsRequestCompletionHandler?(response.products.map({CoinsProductSub($0)}))
+        
+        var poducts = [any ProductSubscription]()
+        for product in response.products {
+            if coinsProductsID.contains(product.productIdentifier) {
+                poducts.append(CoinsProductSub(product))
+            } else {
+                poducts.append(ProductSub(product))
+            }
+        }
+        productsRequestCompletionHandler?(poducts)
         clearRequestAndHandler()
     }
     

@@ -417,7 +417,7 @@
 "secretWord.lv6.relatedWord" = "экалатор, траволатор, подъемник";
 
 // lv7
-"secretWord.lv7.secret1" = "Вы можете это хранить, но не увидить.";;
+"secretWord.lv7.secret1" = "Вы можете это хранить, но не увидить.";
 "secretWord.lv7.secret2" = "Это сущетсвует пока об этом никто не знает .";
 "secretWord.lv7.secret3" = "Это живёт в словах, которые не произнесены.";
 "secretWord.lv7.answer" = "Тайна";
@@ -514,10 +514,38 @@
 "secretWord.lv20.answer" = "Зарплата";
 "secretWord.lv20.relatedWord" = "зарплата, оклад, оплата, заработок, доход, гонорар, жалованье, жалование, стипендия, выручка, заработная плата, оплата";
 
-
-
-
 // Mark: Annagrams
-"annagrams.title" = "Анаграммы";
-"annagrams.subtitle" = "Найдите слова в этом наборе";
+"anagrams.title" = "Анаграммы";
+"anagrams.subtitle" = "Найдите слова в этом наборе";
+
+"anagrams.lv1.world" = "картон";
+"anagrams.lv2.world" = "гврмония";
+"anagrams.lv3.world" = "ракета";
+"anagrams.lv4.world" = "красота";
+"anagrams.lv5.world" = "лимонад";
+"anagrams.lv6.world" = "черника";
+"anagrams.lv7.world" = "фонарик";
+"anagrams.lv8.world" = "зеркало";
+"anagrams.lv9.world" = "фисташка";
+"anagrams.lv10.world" = "дизайнер";
+"anagrams.lv11.world" = "русалка";
+"anagrams.lv12.world" = "давление";
+"anagrams.lv13.world" = "корабль";
+"anagrams.lv14.world" = "завтрак";
+"anagrams.lv15.world" = "котлета";
+"anagrams.lv16.world" = "формула";
+"anagrams.lv17.world" = "шкатулка";
+"anagrams.lv18.world" = "защитник";
+"anagrams.lv19.world" = "стрела";
+"anagrams.lv20.world" = "мелодия";
+"anagrams.lv21.world" = "сорока";
+"anagrams.lv22.world" = "ворона";
+"anagrams.lv23.world" = "молния";
+"anagrams.lv24.world" = "кабина";
+"anagrams.lv25.world" = "морковь";
+"anagrams.lv26.world" = "теннис";
+"anagrams.lv27.world" = "звезда";
+"anagrams.lv28.world" = "голова";
+"anagrams.lv29.world" = "железо";
+"anagrams.lv30.world" = "жираф";
 

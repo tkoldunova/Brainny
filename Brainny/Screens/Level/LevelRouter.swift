@@ -11,6 +11,7 @@ protocol LevelRouterProtocol {
     func present(model: Games)
     func goToRelatedWords(model: RelatedWords)
     func goToSecretWords(model: SecretWords)
+    func goToAnagrams(model: AnagramModel)
 }
 
 final class LevelRouter: LevelRouterProtocol {
@@ -42,6 +43,11 @@ final class LevelRouter: LevelRouterProtocol {
     
     func goToSecretWords(model: SecretWords) {
         let vc = SecretWordsRouter(navigationController: navigationController)
+        vc.present(model: model)
+    }
+    
+    func goToAnagrams(model: AnagramModel) {
+        let vc = AnagramsRouter(navigationController: navigationController)
         vc.present(model: model)
     }
     

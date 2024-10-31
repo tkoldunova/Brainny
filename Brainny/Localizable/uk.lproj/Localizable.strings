@@ -415,7 +415,7 @@
 "secretWord.lv6.relatedWord" = "ескалатор, траволатор, підйомник";
 
 // lv7
-"secretWord.lv7.secret1" = "Ви можете це зберігати, але не побачити.";;
+"secretWord.lv7.secret1" = "Ви можете це зберігати, але не побачити.";
 "secretWord.lv7.secret2" = "Це існує, поки про це ніхто не знає .";
 "secretWord.lv7.secret3" = "Це живе в словах, які не були сказані.";
 "secretWord.lv7.answer" = "Таємниця";
@@ -513,5 +513,36 @@
 "secretWord.lv20.relatedWord" = "зарплата, оклад, оплата, заробіток, дохід, гонорар, стипендія, виручка, заробітна плата, платня";
 
 // Mark: Annagrams
-"annagrams.title" = "Анаграмми";
-"annagrams.subtitle" = "Знайдіть слова в цьому наборі";
+"anagrams.title" = "Анаграмми";
+"anagrams.subtitle" = "Знайдіть слова в цьому наборі";
+
+"anagrams.lv1.world" = "заповідник";
+"anagrams.lv2.world" = "парадність";
+"anagrams.lv3.world" = "україночка";
+"anagrams.lv4.world" = "світанок";
+"anagrams.lv5.world" = "генератор";
+"anagrams.lv6.world" = "скаженість";
+"anagrams.lv7.world" = "акробат";
+"anagrams.lv8.world" = "серветка";
+"anagrams.lv9.world" = "обручка";
+"anagrams.lv10.world" = "методика";
+"anagrams.lv11.world" = "політик";
+"anagrams.lv12.world" = "правлячий";
+"anagrams.lv13.world" = "мигдалина";
+"anagrams.lv14.world" = "кропивв";
+"anagrams.lv15.world" = "донатор";
+"anagrams.lv16.world" = "доброхіть";
+"anagrams.lv17.world" = "сегрегація";
+"anagrams.lv18.world" = "креветка";
+"anagrams.lv19.world" = "перукар";
+"anagrams.lv20.world" = "дзвінка";
+"anagrams.lv21.world" = "альфонс";
+"anagrams.lv22.world" = "карниз";
+"anagrams.lv23.world" = "бройлер";
+"anagrams.lv24.world" = "десяток";
+"anagrams.lv25.world" = "взагалі";
+"anagrams.lv26.world" = "гетьман";
+"anagrams.lv27.world" = "студент";
+"anagrams.lv28.world" = "сипаний";
+"anagrams.lv29.world" = "зодіак";
+"anagrams.lv30.world" = "гіпноз";

@@ -12,6 +12,7 @@ protocol BubleViewDelegate {
 }
 
 class BubleView: UIView {
+    var game: Games?
     var delegate: BubleViewDelegate?
     var currentPath: UIBezierPath?
     var curvedLayer = CAShapeLayer()

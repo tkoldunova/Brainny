@@ -49,7 +49,7 @@ class RelatedWordsViewController: BaseViewController<RelatedWordsPresenterProtoc
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.navigationItem.title =  NSLocalizedString("relatedWords.title", comment: "")
+        self.title =  NSLocalizedString("relatedWords.title", comment: "")
     }
     
     func setTextFieldEmpty() {

@@ -514,6 +514,37 @@ chronograph, chronometer, hourglass, metronome";
 "secretWord.lv20.relatedWord" = "salary, wage, payment, earnings, income, fee, stipend, revenue, paycheck, remuneration, payroll, pay, compensation";
 
 // Mark: Annagrams
-"annagrams.title" = "Annagrams";
-"annagrams.subtitle" = "Find the words in this set";
+"anagrams.title" = "Annagrams";
+"anagrams.subtitle" = "Find the words in this set";
+
+"anagrams.lv1.world" = "grindas";
+"anagrams.lv2.world" = "fatalist";
+"anagrams.lv3.world" = "saltish";
+"anagrams.lv4.world" = "lodyrite";
+"anagrams.lv5.world" = "saggier";
+"anagrams.lv6.world" = "frizzles";
+"anagrams.lv7.world" = "scolion";
+"anagrams.lv8.world" = "beneath";
+"anagrams.lv9.world" = "letter";
+"anagrams.lv10.world" = "kitchen";
+"anagrams.lv11.world" = "regular";
+"anagrams.lv12.world" = "holiday";
+"anagrams.lv13.world" = "imagine";
+"anagrams.lv14.world" = "endless";
+"anagrams.lv15.world" = "algeos";
+"anagrams.lv16.world" = "knitted";
+"anagrams.lv17.world" = "minkes";
+"anagrams.lv18.world" = "lekvar";
+"anagrams.lv19.world" = "jorney";
+"anagrams.lv20.world" = "denying";
+"anagrams.lv21.world" = "belied";
+"anagrams.lv22.world" = "ragman";
+"anagrams.lv23.world" = "fuzztone";
+"anagrams.lv24.world" = "hylozoic";
+"anagrams.lv25.world" = "squized";
+"anagrams.lv26.world" = "achieve";
+"anagrams.lv27.world" = "grimmer";
+"anagrams.lv28.world" = "banings";
+"anagrams.lv29.world" = "obvious";
+"anagrams.lv30.world" = "quickly";
 

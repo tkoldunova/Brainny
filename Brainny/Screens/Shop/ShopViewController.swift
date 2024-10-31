@@ -16,6 +16,7 @@ class ShopViewController: BaseViewController<ShopPresenterProtocol>, ShopViewPro
           //  collectionView.collectionViewLayout.hef
        //     collectionView.layout.headerReferenceSize = CGSize(width: view.frame.width, height: 60)
             collectionView.register(ShopCollectionHeaderView.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: ShopCollectionHeaderView.reuseIdentifier)
+            
         }
     }
     

@@ -7,7 +7,7 @@
 import UIKit
 import StoreKit
 
-public struct ProductSub: Hashable {
+public struct ProductSub: Hashable, ProductSubscription {
     let title: String
     var price: String?
     let locale: Locale
@@ -31,4 +31,13 @@ public struct ProductSub: Hashable {
     }
     
     
+}
+
+
+
+protocol ProductSubscription: Hashable {
+    var title: String { get}
+    var price: String? { get set}
+    var locale: Locale { get}
+    var product: SKProduct { get}
 }

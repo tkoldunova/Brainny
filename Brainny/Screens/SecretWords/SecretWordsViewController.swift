@@ -8,6 +8,7 @@
 import UIKit
 
 class SecretWordsViewController: BaseViewController<SecretWordsPresenterProtocol>, SecretWordsViewProtocol {
+    lazy var tipView = TipView(frame: self.view.bounds)
     lazy var sendButton: UIButton = {
         let button = UIButton(type: .custom)
         button.setImage(UIImage(systemName: "arrow.right.circle.fill"), for: .normal)
@@ -54,7 +55,7 @@ class SecretWordsViewController: BaseViewController<SecretWordsPresenterProtocol
     override func viewDidLoad() {
         super.viewDidLoad()
         self.presenter.notifyWhenViewDidLoad()
-        self.navigationItem.title = NSLocalizedString("secretWord.title", comment: "")
+        self.title = NSLocalizedString("secretWord.title", comment: "")
     }
     
     func shakeTextField() {
