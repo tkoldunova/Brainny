@@ -42,9 +42,18 @@ extension LevelPresenter {
     }
         
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-//        if interactor.words[indexPath.row].locked {
-//            self.view?.showTipView(type: .word(TipWordModel(title: "Unlock word", price: 15, word: interactor.model.model[indexPath.row].title)))
-//        }
+        let m = interactor.model.model[indexPath.row]
+        if interactor.model.availableLevels.contains(where: {$0.areEqual(to: m)}) {
+            AudioManager.shared.playTouchedSound()
+            if let m = m as? RelatedWords {
+                self.router.goToRelatedWords(model: m)
+            } else if let m = m as? SecretWords {
+                self.router.goToSecretWords(model: m)
+            } else if let m = m as? AnagramModel {
+                self.router.goToAnagrams(model: m)
+            }
+        }
+
     }
     
 }

@@ -9,9 +9,13 @@ import UIKit
 import SpriteKit
 import GameplayKit
 
-class GameViewController: BaseViewController<GamePresenterProtocol> {
-
-    @IBOutlet weak var subtitleLabel: UILabel!
+class AnnagramsViewController: BaseViewController<AnagramsPresenterProtocol> {
+    lazy var tipView = TipView(frame: self.view.bounds)
+    @IBOutlet weak var subtitleLabel: UILabel! {
+        didSet {
+            subtitleLabel.text = NSLocalizedString("anagrams.subtitle", comment: "")
+        }
+    }
     @IBOutlet weak var gameView: SKView! {
         didSet {
            
@@ -24,13 +28,14 @@ class GameViewController: BaseViewController<GamePresenterProtocol> {
             
         }
     }
+ //   @IBOutlet weak var subtitleLabel: UILabel!
     @IBOutlet weak var timerLabel: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
         
 //        self.setUpNavigationController()
         
-        self.title = "Annagrams"
+        self.title = NSLocalizedString("anagrams.title", comment: "")
         
         
         if let scene = SKScene(fileNamed: "GameScene") {
@@ -47,25 +52,36 @@ class GameViewController: BaseViewController<GamePresenterProtocol> {
         
         gameView.ignoresSiblingOrder = true
         
-        gameView.showsFPS = true
-        gameView.showsNodeCount = true
+       // gameView.showsFPS = true
+        gameView.backgroundColor = .clear
+        //gameView.showsNodeCount = true
+       // gameView.isHidden = true
        
     }
 
-    override var supportedInterfaceOrientations: UIInterfaceOrientationMask {
-        if UIDevice.current.userInterfaceIdiom == .phone {
-            return .allButUpsideDown
-        } else {
-            return .all
+    func showTipView(type: TipType) {
+        tipView = TipView(frame: self.view.bounds)
+        tipView.configure(type: type)
+        tipView.alpha = 0
+        tipView.center = self.view.center
+        tipView.delegate = presenter
+        self.view.addSubview(tipView)
+        UIView.animate(withDuration: 0.75) {
+            self.tipView.alpha = 1
         }
     }
-
-    override var prefersStatusBarHidden: Bool {
-        return true
+    
+    func hideTipView() {
+        UIView.animate(withDuration: 0.5) {
+            self.tipView.alpha = 0
+        } completion: { _ in
+            self.tipView.removeFromSuperview()
+        }
     }
+    
 }
 
-extension GameViewController: GameView {
+extension AnnagramsViewController: AnagramsView {
     func reload() {
         DispatchQueue.main.async {
             self.collectionView.reloadData()
@@ -76,7 +92,7 @@ extension GameViewController: GameView {
 }
 
 
-extension GameViewController: GameSceneDelegate {
+extension AnnagramsViewController: GameSceneDelegate {
     func checkIfWordIsCorrect(world: String) -> Bool {
         presenter.checkIfWorldIsCorrect(word: world)
     }

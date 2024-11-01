@@ -27,7 +27,7 @@ class EnterButton: SKSpriteNode {
         node.fontName = "OpenSans-SemiBold"
         node.zPosition = 1
         node.fontSize = 32
-        node.text = "Enter"
+        node.text = NSLocalizedString("anagrams.button", comment: "")
         node.verticalAlignmentMode = .center
         return node
     }()
@@ -49,7 +49,8 @@ class EnterButton: SKSpriteNode {
     }
     
     override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
-        self.run(SKAction.group([SKAction.scale(to: 0.7, duration: 0.1), SKAction.fadeAlpha(to: 0.6, duration: 0.1)]))
+        self.run(SKAction.group([SKAction.scale(to: 0.9, duration: 0.1), SKAction.fadeAlpha(to: 0.9, duration: 0.1)]))
+        delegate?.touched(self)
        
     }
     

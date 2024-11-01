@@ -10,6 +10,7 @@ import UIKit
 
 protocol SecretWordsRouterProtocol {
     func present(model: SecretWords)
+    func dismiss()
 }
 
 final class SecretWordsRouter: SecretWordsRouterProtocol {

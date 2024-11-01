@@ -21,6 +21,13 @@ enum SecretWords: CaseIterable, LevelProtocol {
     case lv11
     case lv12
     case lv13
+    case lv14
+    case lv15
+    case lv16
+    case lv17
+    case lv18
+    case lv19
+    case lv20
     
     var index: Int {
         return (SecretWords.allCases.firstIndex(of: self) ?? 0)
@@ -56,31 +63,88 @@ enum SecretWords: CaseIterable, LevelProtocol {
     var defaultWords: [WordsModel] {
         switch self {
         case .lv1:
-            return [WordsModel(title: "It’s not a painting, but you can see yourself in it", locked: false), WordsModel(title: "It shows the truth, but sometimes you wish to see a lie.", locked: true), WordsModel(title: "You face it every day, looking at it head-on.", locked: true)]
+            return [WordsModel(title: NSLocalizedString("secretWord.lv1.secret1", comment: ""), locked: false),
+                    WordsModel(title: NSLocalizedString("secretWord.lv1.secret2", comment: ""), locked: true),
+                    WordsModel(title: NSLocalizedString("secretWord.lv1.secret3", comment: ""), locked: true)]
         case .lv2:
-            return [WordsModel(title: "It's a thing that comes but never goes away", locked: false), WordsModel(title: "They are constantly looking at this", locked: true), WordsModel(title: "It is related to time.", locked: true)]
+            return [WordsModel(title: NSLocalizedString("secretWord.lv2.secret1", comment: ""), locked: false),
+                    WordsModel(title: NSLocalizedString("secretWord.lv2.secret2", comment: ""), locked: true),
+                    WordsModel(title: NSLocalizedString("secretWord.lv2.secret3", comment: ""), locked: true)]
         case .lv3:
-            return [WordsModel(title: "This is not a person, but it is always there", locked: false), WordsModel(title: "It may disappear, but it always comes back", locked: true), WordsModel(title: "It has no color, but it follows you", locked: true)]
+            return [WordsModel(title: NSLocalizedString("secretWord.lv3.secret1", comment: ""), locked: false),
+                    WordsModel(title: NSLocalizedString("secretWord.lv3.secret2", comment: ""), locked: true),
+                    WordsModel(title: NSLocalizedString("secretWord.lv3.secret3", comment: ""), locked: true)]
         case .lv4:
-            return [WordsModel(title: "It knows all the roads, but she can't walk", locked: false), WordsModel(title: "It is opened when the way is not known", locked: true), WordsModel(title: "It shows you where you are even if you don't know it.", locked: true)]
+            return [WordsModel(title: NSLocalizedString("secretWord.lv4.secret1", comment: ""), locked: false),
+                    WordsModel(title: NSLocalizedString("secretWord.lv4.secret2", comment: ""), locked: true),
+                    WordsModel(title: NSLocalizedString("secretWord.lv4.secret3", comment: ""), locked: true)]
         case .lv5:
-            return [WordsModel(title: "This needs to be trampled to make it better", locked: false), WordsModel(title: "It leads somewhere, but does not move itself", locked: true), WordsModel(title: "It leads where cars don't go.", locked: true)]
+            return [WordsModel(title: NSLocalizedString("secretWord.lv5.secret1", comment: ""), locked: false),
+                    WordsModel(title: NSLocalizedString("secretWord.lv5.secret2", comment: ""), locked: true),
+                    WordsModel(title: NSLocalizedString("secretWord.lv5.secret3", comment: ""), locked: true)]
         case .lv6:
-            return [WordsModel(title: "What moves us, but itself remains in place", locked: false), WordsModel(title: "You see its steps, but they disappear and appear again.", locked: true), WordsModel(title: "It appears where there are many people.", locked: true)]
+            return [WordsModel(title: NSLocalizedString("secretWord.lv6.secret1", comment: ""), locked: false),
+                    WordsModel(title: NSLocalizedString("secretWord.lv6.secret2", comment: ""), locked: true),
+                    WordsModel(title: NSLocalizedString("secretWord.lv6.secret3", comment: ""), locked: true)]
         case .lv7:
-            return [WordsModel(title: "You can keep it, but you can't see it.", locked: false), WordsModel(title: "It exists, but no one knows about it.", locked: true), WordsModel(title: "It is marked on calendars, but it lives in you.", locked: true)]
+            return [WordsModel(title: NSLocalizedString("secretWord.lv7.secret1", comment: ""), locked: false),
+                    WordsModel(title: NSLocalizedString("secretWord.lv7.secret2", comment: ""), locked: true),
+                    WordsModel(title: NSLocalizedString("secretWord.lv7.secret3", comment: ""), locked: true)]
         case .lv8:
-            return [WordsModel(title: "It can only increase.", locked: false), WordsModel(title: "He brings wisdom, but also leaves traces.", locked: true), WordsModel(title: "He lives in words that are not spoken.", locked: true)]
+            return [WordsModel(title: NSLocalizedString("secretWord.lv8.secret1", comment: ""), locked: false),
+                    WordsModel(title: NSLocalizedString("secretWord.lv8.secret2", comment: ""), locked: true),
+                    WordsModel(title: NSLocalizedString("secretWord.lv8.secret3", comment: ""), locked: true)]
         case .lv9:
-            return [WordsModel(title: "It is invisible, but its presence can be felt when it is broken", locked: false), WordsModel(title: "It's always in the wires, but you can't hold it in your hands.", locked: true), WordsModel(title: "Without it, devices are silent and rooms become dark.", locked: true)]
+            return [WordsModel(title: NSLocalizedString("secretWord.lv9.secret1", comment: ""), locked: false),
+                    WordsModel(title: NSLocalizedString("secretWord.lv9.secret2", comment: ""), locked: true),
+                    WordsModel(title: NSLocalizedString("secretWord.lv9.secret3", comment: ""), locked: true)]
         case .lv10:
-            return [WordsModel(title: "It's as light as a feather, yet even the most trained person can't hold it for long", locked: false), WordsModel(title: "It's invisible, but without it, you can't live for even a minute.", locked: true), WordsModel(title: "It can be slow and calm or fast and heavy.", locked: true)]
+            return [WordsModel(title: NSLocalizedString("secretWord.lv10.secret1", comment: ""), locked: false),
+                    WordsModel(title: NSLocalizedString("secretWord.lv10.secret2", comment: ""), locked: true),
+                    WordsModel(title: NSLocalizedString("secretWord.lv10.secret3", comment: ""), locked: true)]
         case .lv11:
-            return [WordsModel(title: "The more you take from it, the bigger it becomes", locked: false), WordsModel(title: "It is empty, but it can become a trap.", locked: true), WordsModel(title: "You can fall into it if you don't notice.", locked: true)]
+            return [WordsModel(title: NSLocalizedString("secretWord.lv11.secret1", comment: ""), locked: false),
+                    WordsModel(title: NSLocalizedString("secretWord.lv11.secret2", comment: ""), locked: true),
+                    WordsModel(title: NSLocalizedString("secretWord.lv11.secret3", comment: ""), locked: true)]
         case .lv12:
-            return [WordsModel(title: "There you can lift and move a horse and an elephant", locked: false), WordsModel(title: "Here everyone is moving forward, but the way back is impossible for everyone except one.", locked: true), WordsModel(title: "It's a battlefield, but without blood..", locked: true)]
+            return [WordsModel(title: NSLocalizedString("secretWord.lv12.secret1", comment: ""), locked: false),
+                    WordsModel(title: NSLocalizedString("secretWord.lv12.secret2", comment: ""), locked: true),
+                    WordsModel(title: NSLocalizedString("secretWord.lv12.secret3", comment: ""), locked: true)]
         case .lv13:
-            return [WordsModel(title: "The first two times it is given to us for free. The third time we have to pay.", locked: false), WordsModel(title: "Here everyone is moving forward, but the way back is impossible for everyone except one.", locked: true), WordsModel(title: "Their loss in childhood causes joy, but in adulthood - anxiety.", locked: true)]
+            return [WordsModel(title: NSLocalizedString("secretWord.lv13.secret1", comment: ""), locked: false),
+                    WordsModel(title: NSLocalizedString("secretWord.lv13.secret2", comment: ""), locked: true),
+                    WordsModel(title: NSLocalizedString("secretWord.lv13.secret3", comment: ""), locked: true)]
+        case .lv14:
+            return [WordsModel(title: NSLocalizedString("secretWord.lv14.secret1", comment: ""), locked: false),
+                    WordsModel(title: NSLocalizedString("secretWord.lv14.secret2", comment: ""), locked: true),
+                    WordsModel(title: NSLocalizedString("secretWord.lv14.secret3", comment: ""), locked: true)]
+        case .lv15:
+            return [WordsModel(title: NSLocalizedString("secretWord.lv15.secret1", comment: ""), locked: false),
+                    WordsModel(title: NSLocalizedString("secretWord.lv15.secret2", comment: ""), locked: true),
+                    WordsModel(title: NSLocalizedString("secretWord.lv15.secret3", comment: ""), locked: true)]
+        case .lv16:
+            return [WordsModel(title: NSLocalizedString("secretWord.lv16.secret1", comment: ""), locked: false),
+                    WordsModel(title: NSLocalizedString("secretWord.lv16.secret2", comment: ""), locked: true),
+                    WordsModel(title: NSLocalizedString("secretWord.lv16.secret3", comment: ""), locked: true)]
+
+        case .lv17:
+            return [WordsModel(title: NSLocalizedString("secretWord.lv17.secret1", comment: ""), locked: false),
+                    WordsModel(title: NSLocalizedString("secretWord.lv17.secret2", comment: ""), locked: true),
+                    WordsModel(title: NSLocalizedString("secretWord.lv17.secret3", comment: ""), locked: true)]
+        case .lv18:
+            return [WordsModel(title: NSLocalizedString("secretWord.lv18.secret1", comment: ""), locked: false),
+                    WordsModel(title: NSLocalizedString("secretWord.lv18.secret2", comment: ""), locked: true),
+                    WordsModel(title: NSLocalizedString("secretWord.lv18.secret3", comment: ""), locked: true)]
+        case .lv19:
+            return [WordsModel(title: NSLocalizedString("secretWord.lv19.secret1", comment: ""), locked: false),
+                    WordsModel(title: NSLocalizedString("secretWord.lv19.secret2", comment: ""), locked: true),
+                    WordsModel(title: NSLocalizedString("secretWord.lv19.secret3", comment: ""), locked: true)]
+        case .lv20:
+            return [WordsModel(title: NSLocalizedString("secretWord.lv20.secret1", comment: ""), locked: false),
+                    WordsModel(title: NSLocalizedString("secretWord.lv20.secret2", comment: ""), locked: true),
+                    WordsModel(title: NSLocalizedString("secretWord.lv20.secret3", comment: ""), locked: true)]
+//        case .lv20:
+//            return 
         }
     }
     
@@ -104,33 +168,45 @@ enum SecretWords: CaseIterable, LevelProtocol {
     var defaultAnswer: RelatedWordModel {
         switch self {
         case .lv1:
-            return RelatedWordModel(answer: "Mirror", relatedWords: "mirror", guessed: false)
+            return RelatedWordModel(answer: NSLocalizedString("secretWord.lv1.answer", comment: ""), relatedWords: NSLocalizedString("secretWord.lv1.relatedWord", comment: ""), guessed: false)
         case .lv2:
-            return RelatedWordModel(answer: "Clock", relatedWords: "clock, time", guessed: false)
+            return RelatedWordModel(answer: NSLocalizedString("secretWord.lv2.answer", comment: ""), relatedWords: NSLocalizedString("secretWord.lv2.relatedWord", comment: ""), guessed: false)
         case .lv3:
-            return RelatedWordModel(answer: "Shadow", relatedWords: "shadow", guessed: false)
+            return RelatedWordModel(answer: NSLocalizedString("secretWord.lv3.answer", comment: ""), relatedWords: NSLocalizedString("secretWord.lv3.relatedWord", comment: ""), guessed: false)
         case .lv4:
-            return RelatedWordModel(answer: "Map", relatedWords: "map, navigator, navigation", guessed: false)
+            return RelatedWordModel(answer: NSLocalizedString("secretWord.lv4.answer", comment: ""), relatedWords: NSLocalizedString("secretWord.lv4.relatedWord", comment: ""), guessed: false)
         case .lv5:
-            return RelatedWordModel(answer: "Footpath", relatedWords: "path, footpath", guessed: false)
+            return RelatedWordModel(answer: NSLocalizedString("secretWord.lv5.answer", comment: ""), relatedWords: NSLocalizedString("secretWord.lv5.relatedWord", comment: ""), guessed: false)
         case .lv6:
-            return RelatedWordModel(answer: "Escalator", relatedWords: "escalator, elevator", guessed: false)
+            return RelatedWordModel(answer: NSLocalizedString("secretWord.lv6.answer", comment: ""), relatedWords: NSLocalizedString("secretWord.lv6.relatedWord", comment: ""), guessed: false)
         case .lv7:
-            return RelatedWordModel(answer: "Secret", relatedWords: "secret, mystery", guessed: false)
+            return RelatedWordModel(answer: NSLocalizedString("secretWord.lv7.answer", comment: ""), relatedWords: NSLocalizedString("secretWord.lv7.relatedWord", comment: ""), guessed: false)
         case .lv8:
-            return RelatedWordModel(answer: "Age", relatedWords: "age, years old", guessed: false)
+            return RelatedWordModel(answer: NSLocalizedString("secretWord.lv8.answer", comment: ""), relatedWords: NSLocalizedString("secretWord.lv8.relatedWord", comment: ""), guessed: false)
         case .lv9:
-            return RelatedWordModel(answer: "Electricity", relatedWords: "electricity, electric", guessed: false)
+            return RelatedWordModel(answer: NSLocalizedString("secretWord.lv9.answer", comment: ""), relatedWords: NSLocalizedString("secretWord.lv9.relatedWord", comment: ""), guessed: false)
         case .lv10:
-            return RelatedWordModel(answer: "Breath", relatedWords: "breath", guessed: false)
+            return RelatedWordModel(answer: NSLocalizedString("secretWord.lv10.answer", comment: ""), relatedWords: NSLocalizedString("secretWord.lv10.relatedWord", comment: ""), guessed: false)
         case .lv11:
-            return RelatedWordModel(answer: "Pit", relatedWords: "pit", guessed: false)
-        case .lv11:
-            return RelatedWordModel(answer: "Chess", relatedWords: "pit", guessed: false)
+            return RelatedWordModel(answer: NSLocalizedString("secretWord.lv11.answer", comment: ""), relatedWords: NSLocalizedString("secretWord.lv11.relatedWord", comment: ""), guessed: false)
         case .lv12:
-            return RelatedWordModel(answer: "Chess", relatedWords: "pit", guessed: false)
+            return RelatedWordModel(answer: NSLocalizedString("secretWord.lv12.answer", comment: ""), relatedWords: NSLocalizedString("secretWord.lv12.relatedWord", comment: ""), guessed: false)
         case .lv13:
-            return RelatedWordModel(answer: "Chess", relatedWords: "pit", guessed: false)
+            return RelatedWordModel(answer: NSLocalizedString("secretWord.lv13.answer", comment: ""), relatedWords: NSLocalizedString("secretWord.lv13.relatedWord", comment: ""), guessed: false)
+        case .lv14:
+            return RelatedWordModel(answer: NSLocalizedString("secretWord.lv14.answer", comment: ""), relatedWords: NSLocalizedString("secretWord.lv14.relatedWord", comment: ""), guessed: false)
+        case .lv15:
+            return RelatedWordModel(answer: NSLocalizedString("secretWord.lv15.answer", comment: ""), relatedWords: NSLocalizedString("secretWord.lv15.relatedWord", comment: ""), guessed: false)
+        case .lv16:
+            return RelatedWordModel(answer: NSLocalizedString("secretWord.lv16.answer", comment: ""), relatedWords: NSLocalizedString("secretWord.lv16.relatedWord", comment: ""), guessed: false)
+        case .lv17:
+            return RelatedWordModel(answer: NSLocalizedString("secretWord.lv17.answer", comment: ""), relatedWords: NSLocalizedString("secretWord.lv17.relatedWord", comment: ""), guessed: false)
+        case .lv18:
+            return RelatedWordModel(answer: NSLocalizedString("secretWord.lv18.answer", comment: ""), relatedWords: NSLocalizedString("secretWord.lv18.relatedWord", comment: ""), guessed: false)
+        case .lv19:
+            return RelatedWordModel(answer: NSLocalizedString("secretWord.lv19.answer", comment: ""), relatedWords: NSLocalizedString("secretWord.lv19.relatedWord", comment: ""), guessed: false)
+        case .lv20:
+            return RelatedWordModel(answer: NSLocalizedString("secretWord.lv20.answer", comment: ""), relatedWords: NSLocalizedString("secretWord.lv20.relatedWord", comment: ""), guessed: false)
         }
     }
 }

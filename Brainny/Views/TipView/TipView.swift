@@ -77,10 +77,15 @@ class TipView: UIView {
         }
     }
     @IBOutlet weak var unlockTipStackView: UIStackView!
-    @IBOutlet weak var unlockTipLabel: UILabel!
+    @IBOutlet weak var unlockTipLabel: UILabel! {
+        didSet {
+            unlockTipLabel.text = NSLocalizedString("tip.word.title", comment: "")
+        }
+    }
     @IBOutlet weak var unlockTipPriceLabel: UILabel!
     @IBOutlet weak var unlockTipPriceButton: UIButton! {
         didSet {
+            unlockTipPriceButton.setTitle(NSLocalizedString("tip.word.button", comment: ""), for: .normal)
             unlockTipPriceButton.layer.cornerRadius = 12
             unlockTipPriceButton.layer.borderWidth = 3
             unlockTipPriceButton.layer.borderColor = Colors.borderColor.cgColor
@@ -89,7 +94,11 @@ class TipView: UIView {
     }
     @IBOutlet weak var unlockWordsStackView: UIStackView!
     
-    @IBOutlet weak var unlockWordLabel: UILabel!
+    @IBOutlet weak var unlockWordLabel: UILabel! {
+        didSet {
+            unlockWordLabel.text = NSLocalizedString("tip.letter.title", comment: "")
+        }
+    }
     @IBOutlet weak var unlockWordPriceButton: UIButton! {
         didSet {
             unlockWordPriceButton.layer.cornerRadius = 12
@@ -143,7 +152,7 @@ class TipView: UIView {
             return
         case .letter(let tipLetterModel):
             clearLetterStack()
-
+            letterStackView.isHidden = false
             let empty = tipLetterModel.tip.allSatisfy({$0 == nil})
             for i in 0 ..< tipLetterModel.tip.count {
                 
@@ -190,11 +199,13 @@ class TipView: UIView {
     }
     
     @objc func hide() {
+        AudioManager.shared.playTouchedSound()
         self.hideTipView()
     }
     
     @IBAction func unlockButtonTouched(_ sender: Any) {
         if let type = type {
+            AudioManager.shared.playTouchedSound()
             switch type {
             case .word(let tipWordModel):
                 self.delegate?.unlockWord(word: tipWordModel.word)

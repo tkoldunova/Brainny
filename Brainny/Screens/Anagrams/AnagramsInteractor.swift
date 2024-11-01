@@ -8,29 +8,23 @@
 import UIKit
 
 
-protocol GameInteractorProtocol: AnyObject {
-    func getWorlds(completion: @escaping([WordsModel]) -> Void)
+protocol AnagramsInteractorProtocol: AnyObject {
+    var words: [RelatedWordModel]? { get set }
+    func getWorld() -> String
+    func getWorlds(completion: @escaping([RelatedWordModel]) -> Void)
     func checkIfWorldIsCorrent(word: String) -> Bool
     func checkifWorldidAvailable(world: String) -> Bool
-    var words: [WordsModel]? { get }
-    
-    func getWorld() -> String
+    func moveToTop(word: RelatedWordModel)
 }
 
 
-class GameInteractor: GameInteractorProtocol {
-   
-    
-    
-//    var words: [String]?
-    
-    
+class AnagramsInteractor: AnagramsInteractorProtocol {
     
     var anangram: AnagramModel
     
     var correctWords = [String]()
     
-    var words: [WordsModel]? {
+    var words: [RelatedWordModel]? {
         didSet {
             guard let words = words else { return }
             anangram.setWords(newValue: words)
@@ -45,13 +39,17 @@ class GameInteractor: GameInteractorProtocol {
     func checkIfWorldIsCorrent(word: String) -> Bool {
         guard words != nil else { return false }
         if isCorrect(word: word) {
-            self.words?.removeAll(where: {$0.title == word})
-            
-            self.words?.insert(WordsModel(title: word, locked: false), at: 0)
+            self.words?.removeAll(where: {$0.answer == word})
+            self.words?.insert(RelatedWordModel(answer: word, guessed: true), at: 0)
             return true
         } else {
             return false
         }
+    }
+    
+    func moveToTop(word: RelatedWordModel) {
+        self.words?.removeAll(where: {$0.answer == word.answer})
+        self.words?.insert(word, at: 0)
     }
     
     func checkifWorldidAvailable(world: String) -> Bool  {
@@ -63,7 +61,7 @@ class GameInteractor: GameInteractorProtocol {
         
     }
     
-    func getWorlds(completion: @escaping([WordsModel]) -> Void) {
+    func getWorlds(completion: @escaping([RelatedWordModel]) -> Void) {
         guard anangram.words.isEmpty else {
             words = anangram.words
             return
@@ -79,7 +77,7 @@ class GameInteractor: GameInteractorProtocol {
                     }
                 })
                 let sorter = arr.sorted(by: {$0.count <= $1.count})
-                self.words = sorter.map({WordsModel(title: $0, locked: true)})
+                self.words = sorter.map({RelatedWordModel(answer: $0, guessed: false)})
                 completion(self.words!)
             }
         }
@@ -143,100 +141,100 @@ class GameInteractor: GameInteractorProtocol {
 
 enum AnagramModel: CaseIterable, LevelProtocol {
     
-    case lvl1
-    case lvl2
-    case lvl3
-    case lvl4
-    case lvl5
-    case lvl6
-    case lvl7
-    case lvl8
-    case lvl9
-    case lvl10
-    case lvl11
-    case lvl12
-    case lvl13
-    case lvl14
-    case lvl15
-    case lvl16
-    case lvl17
-    case lvl18
-    case lvl19
-    case lvl20
-    case lvl21
-    case lvl22
-    case lvl23
-    case lvl24
-    case lvl25
-    case lvl26
-    case lvl27
-    case lvl28
-    case lvl29
-    case lvl30
+    case lv1
+    case lv2
+    case lv3
+    case lv4
+    case lv5
+    case lv6
+    case lv7
+    case lv8
+    case lv9
+    case lv10
+    case lv11
+    case lv12
+    case lv13
+    case lv14
+    case lv15
+    case lv16
+    case lv17
+    case lv18
+    case lv19
+    case lv20
+    case lv21
+    case lv22
+    case lv23
+    case lv24
+    case lv25
+    case lv26
+    case lv27
+    case lv28
+    case lv29
+    case lv30
     
     
     var world: String {
         switch self {
-        case .lvl1:
-           return "картон"
-        case .lvl2:
-            return "гврмония"
-        case .lvl3:
-            return "ракета"
-        case .lvl4:
-            return "красота"
-        case .lvl5:
-            return "лимонад"
-        case .lvl6:
-            return "черника"
-        case .lvl7:
-            return "фонарик"
-        case .lvl8:
-            return "зеркало"
-        case .lvl9:
-            return "фисташка"
-        case .lvl10:
-            return "дизайнер"
-        case .lvl11:
-            return "русалка"
-        case .lvl12:
-            return "давление"
-        case .lvl13:
-            return  "корабль"
-        case .lvl14:
-            return "завтрак"
-        case .lvl15:
-            return "котлета"
-        case .lvl16:
-            return "формула"
-        case .lvl17:
-            return "шкатулка"
-        case .lvl18:
-            return "защитник"
-        case .lvl19:
-            return "стрела"
-        case .lvl20:
-            return "мелодия"
-        case .lvl21:
-            return "сорока"
-        case .lvl22:
-            return "ворона"
-        case .lvl23:
-            return "молния"
-        case .lvl24:
-            return  "кабина"
-        case .lvl25:
-            return "морковь"
-        case .lvl26:
-            return "теннис"
-        case .lvl27:
-            return "звезда"
-        case .lvl28:
-            return "голова"
-        case .lvl29:
-            return "железо"
-        case .lvl30:
-            return "жираф"
+        case .lv1:
+           return NSLocalizedString("anagrams.lv1.world", comment: "")
+        case .lv2:
+            return NSLocalizedString("anagrams.lv2.world", comment: "")
+        case .lv3:
+            return NSLocalizedString("anagrams.lv3.world", comment: "")
+        case .lv4:
+            return NSLocalizedString("anagrams.lv4.world", comment: "")
+        case .lv5:
+            return NSLocalizedString("anagrams.lv5.world", comment: "")
+        case .lv6:
+            return NSLocalizedString("anagrams.lv6.world", comment: "")
+        case .lv7:
+            return NSLocalizedString("anagrams.lv7.world", comment: "")
+        case .lv8:
+            return NSLocalizedString("anagrams.lv8.world", comment: "")
+        case .lv9:
+            return NSLocalizedString("anagrams.lv9.world", comment: "")
+        case .lv10:
+            return NSLocalizedString("anagrams.lv10.world", comment: "")
+        case .lv11:
+            return NSLocalizedString("anagrams.lv11.world", comment: "")
+        case .lv12:
+            return NSLocalizedString("anagrams.lv12.world", comment: "")
+        case .lv13:
+            return NSLocalizedString("anagrams.lv13.world", comment: "")
+        case .lv14:
+            return NSLocalizedString("anagrams.lv14.world", comment: "")
+        case .lv15:
+            return NSLocalizedString("anagrams.lv15.world", comment: "")
+        case .lv16:
+            return NSLocalizedString("anagrams.lv16.world", comment: "")
+        case .lv17:
+            return NSLocalizedString("anagrams.lv17.world", comment: "")
+        case .lv18:
+            return NSLocalizedString("anagrams.lv18.world", comment: "")
+        case .lv19:
+            return NSLocalizedString("anagrams.lv19.world", comment: "")
+        case .lv20:
+            return NSLocalizedString("anagrams.lv20.world", comment: "")
+        case .lv21:
+            return NSLocalizedString("anagrams.lv21.world", comment: "")
+        case .lv22:
+            return NSLocalizedString("anagrams.lv22.world", comment: "")
+        case .lv23:
+            return NSLocalizedString("anagrams.lv23.world", comment: "")
+        case .lv24:
+            return NSLocalizedString("anagrams.lv24.world", comment: "")
+        case .lv25:
+            return NSLocalizedString("anagrams.lv25.world", comment: "")
+        case .lv26:
+            return NSLocalizedString("anagrams.lv26.world", comment: "")
+        case .lv27:
+            return NSLocalizedString("anagrams.lv27.world", comment: "")
+        case .lv28:
+            return NSLocalizedString("anagrams.lv28.world", comment: "")
+        case .lv29:
+            return NSLocalizedString("anagrams.lv29.world", comment: "")
+        case .lv30:
+            return NSLocalizedString("anagrams.lv30.world", comment: "")
         }
     }
     
@@ -249,9 +247,9 @@ enum AnagramModel: CaseIterable, LevelProtocol {
         }
     
     
-    var words: [WordsModel] {
+    var words: [RelatedWordModel] {
           if let data = UserDefaults.standard.data(forKey: wordsKey) {
-              if let model = try? JSONDecoder().decode([WordsModel].self, from: data) {
+              if let model = try? JSONDecoder().decode([RelatedWordModel].self, from: data) {
                   return model
               }
           }
@@ -259,7 +257,7 @@ enum AnagramModel: CaseIterable, LevelProtocol {
          
       }
       
-      func setWords(newValue: [WordsModel]) {
+      func setWords(newValue: [RelatedWordModel]) {
           if let data = try? JSONEncoder().encode(newValue) {
               UserDefaults.standard.set(data, forKey: wordsKey)
           }

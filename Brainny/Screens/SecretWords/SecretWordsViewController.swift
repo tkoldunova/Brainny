@@ -8,6 +8,8 @@
 import UIKit
 
 class SecretWordsViewController: BaseViewController<SecretWordsPresenterProtocol>, SecretWordsViewProtocol {
+    lazy var winView = WinView(frame: self.view.bounds)
+    lazy var tipView = TipView(frame: self.view.bounds)
     lazy var sendButton: UIButton = {
         let button = UIButton(type: .custom)
         button.setImage(UIImage(systemName: "arrow.right.circle.fill"), for: .normal)
@@ -16,7 +18,11 @@ class SecretWordsViewController: BaseViewController<SecretWordsPresenterProtocol
         button.addTarget(self, action: #selector(sendbuttonTouched(_:)), for: .touchUpInside)
         return button
     }()
-    lazy var tipView = TipView(frame: self.view.bounds)
+    @IBOutlet weak var descriptionLabel: UILabel! {
+        didSet {
+            descriptionLabel.text = NSLocalizedString("secretWord.subtitle", comment: "")
+        }
+    }
     
     @IBOutlet weak var tableView: UITableView! {
         didSet {
@@ -49,7 +55,7 @@ class SecretWordsViewController: BaseViewController<SecretWordsPresenterProtocol
     override func viewDidLoad() {
         super.viewDidLoad()
         self.presenter.notifyWhenViewDidLoad()
-        // Do any additional setup after loading the view.
+        self.title = NSLocalizedString("secretWord.title", comment: "")
     }
     
     func shakeTextField() {
@@ -86,6 +92,7 @@ class SecretWordsViewController: BaseViewController<SecretWordsPresenterProtocol
     }
     
     func showTipView(type: TipType) {
+        tipView = TipView(frame: self.view.bounds)
         tipView.configure(type: type)
         tipView.alpha = 0
         tipView.center = self.view.center
@@ -101,6 +108,17 @@ class SecretWordsViewController: BaseViewController<SecretWordsPresenterProtocol
             self.tipView.alpha = 0
         } completion: { _ in
             self.tipView.removeFromSuperview()
+        }
+    }
+    
+    func showWinView() {
+        winView.configure()
+        winView.alpha = 0
+        winView.center = self.view.center
+        winView.delegate = presenter
+        self.view.addSubview(winView)
+        UIView.animate(withDuration: 0.75) {
+            self.winView.alpha = 1
         }
     }
     
@@ -120,6 +138,7 @@ class SecretWordsViewController: BaseViewController<SecretWordsPresenterProtocol
             // Get the location of the touch in the main view's coordinate system
             let touchLocation = touch.location(in: self.view)
             if answerView.frame.contains(touchLocation) {
+                AudioManager.shared.playTouchedSound()
 //                UIView.animate(withDuration: 0.5, animations: {
 //
 //                })

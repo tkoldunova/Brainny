@@ -23,6 +23,7 @@ class ShopViewController: BaseViewController<ShopPresenterProtocol>, ShopViewPro
     override func viewDidLoad() {
         super.viewDidLoad()
         presenter.notifyWhenViewDidLoad()
+        self.navigationItem.title = NSLocalizedString("shop.title", comment: "")
         // Do any additional setup after loading the view.
     }
     func reloaData() {

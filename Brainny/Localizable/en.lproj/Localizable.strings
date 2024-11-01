@@ -1,0 +1,560 @@
+/* 
+  Localizable.strings
+  Brainny
+
+  Created by Tanya Koldunova on 19.10.2024.
+  
+*/
+
+// Mark: Menu
+"menu.games.relatedWords" = "Related Words";
+"menu.games.annagrams" = "Annagrams";
+"menu.games.secretWords" = "Secret Words";
+
+// Mark: Settings
+"settings.title" = "Settings";
+"settings.model.music" = "Music";
+"settings.model.sound" = "Sound";
+"settings.model.haptic" = "haptic";
+
+// Mark: Level
+"level.title" = "Levels";
+
+// Mark: Shop
+"shop.title" = "Shop";
+"shop.coins.title" = "GET COINS";
+"shop.coins.hap" = "Hap of coins";
+"shop.coins.bundles" = "Coin Bundles";
+"shop.coins.vault" = "Coin Vault";
+"shop.noAds.title" = "No Ads";
+
+// Mark: Win
+"win.title" = "Level Completed!";
+"win.subtitle" = "You earned:";
+
+// Mark: Tip
+"tip.word.title" = "Unlock tip for";
+"tip.word.button" = "Unlock";
+"tip.letter.title" = "Unlcok letter";
+
+// Mark: Related words
+"relatedWords.title" = "Related words";
+"relatedWords.subtitle" = "Below are words or concepts. Enter something in common between them. words";
+
+// lv1
+"relatedWords.lv1.word1" = "Pencil";
+"relatedWords.lv1.word2" = "Brush";
+"relatedWords.lv1.word3" = "Canvas";
+"relatedWords.lv1.word4" = "Gallery";
+"relatedWords.lv1.word5" = "Fashion";
+"relatedWords.lv1.answer1" = "Drawing";
+"relatedWords.lv1.relatedWord1" = "sketch, illustration, image, draft, painting, landscape, fine art, depiction, graphics, picture, composition, mural";
+"relatedWords.lv1.answer2" = "Artist";
+"relatedWords.lv1.relatedWord2" = "painter, artist, landscape artist, creator, avant-gardist, modernist, graphic artist, abstractionist, illustrator, dauber";
+"relatedWords.lv1.answer3" = "Art";
+"relatedWords.lv1.relatedWord3" = "art, craftsmanship, artistry, profession, craft, mastery";
+"relatedWords.lv1.answer4" = "Exhibition";
+"relatedWords.lv1.relatedWord4" = "exhibition, display, vernissage, presentation, exhibit, performance";
+"relatedWords.lv1.answer5" = "Design";
+"relatedWords.lv1.relatedWord4" = "design, interior decorator, architecture";
+
+// lv2
+"relatedWords.lv2.word1" = "Alcohol";
+"relatedWords.lv2.word2" = "Grapes";
+"relatedWords.lv2.word3" = "Chardonnay";
+"relatedWords.lv2.word4" = "Tasting";
+"relatedWords.lv2.word5" = "Hot drink";
+"relatedWords.lv2.answer1" = "Wine";
+"relatedWords.lv2.relatedWord1" = "wine";
+"relatedWords.lv2.answer2" = "Winery";
+"relatedWords.lv2.relatedWord2" = "winery, wine factory, winemaker, wine cellar";
+"relatedWords.lv2.answer3" = "Variety";
+"relatedWords.lv2.relatedWord3" = "variety, assortment, variation, collection";
+"relatedWords.lv2.answer4" = "Sommelier";
+"relatedWords.lv2.relatedWord4" = "sommelier";
+"relatedWords.lv2.answer5" = "Mulled Wine";
+"relatedWords.lv2.relatedWord5" = "mulled wine";
+
+// lv3
+"relatedWords.lv3.word1" = "Waves";
+"relatedWords.lv3.word2" = "Sand";
+"relatedWords.lv3.word3" = "Sun";
+"relatedWords.lv3.word4" = "Palm";
+"relatedWords.lv3.word5" = "Relaxation";
+"relatedWords.lv3.answer1" = "Vacation";
+"relatedWords.lv3.relatedWord1" = "vacation, holiday, time off, parental leave, trip, day off, break, resort, layoff, recess, respite, rest";
+"relatedWords.lv3.answer2" = "Beach";
+"relatedWords.lv3.relatedWord2" = "beach, shore, coastline, coast, waterfront";
+"relatedWords.lv3.answer3" = "Summer";
+"relatedWords.lv3.relatedWord3" = "summer";
+"relatedWords.lv3.answer4" = "Island";
+"relatedWords.lv3.relatedWord4" = "island, isle, islet, reef";
+"relatedWords.lv3.answer5" = "Surf";
+"relatedWords.lv3.relatedWord5" = "surf, swell";
+
+// lv4
+"relatedWords.lv4.word1" = "Warmth";
+"relatedWords.lv4.word2" = "Comfort";
+"relatedWords.lv4.word3" = "Atmosphere";
+"relatedWords.lv4.word4" = "Traditions";
+"relatedWords.lv4.word5" = "Care";
+"relatedWords.lv4.answer1" = "Cozy";
+"relatedWords.lv4.relatedWord1" = "hospitality, coziness, cushy, snug";
+"relatedWords.lv4.answer2" = "Home";
+"relatedWords.lv4.relatedWord2" = "home, building, dwelling, habitation, abode, apartment, villa, residence";
+"relatedWords.lv4.answer3" = "Holidays";
+"relatedWords.lv4.relatedWord3" = "holidays, traditions, party, celebration, festivity, feast, reception, anniversary";
+"relatedWords.lv4.answer4" = "Family";
+"relatedWords.lv4.relatedWord4" = "family, kin, relatives, loved ones, household";
+"relatedWords.lv4.answer5" = "Keeper of the Hearth";
+"relatedWords.lv4.relatedWord5" = "keeper of the hearth, homemaker, housekeeper, host, caretaker, housewife";
+
+// lv5
+"relatedWords.lv5.word1" = "Scales";
+"relatedWords.lv5.word2" = "Ascendant";
+"relatedWords.lv5.word3" = "Predictions";
+"relatedWords.lv5.word4" = "Houses";
+"relatedWords.lv5.word5" = "Spread";
+"relatedWords.lv5.answer1" = "Astrology";
+"relatedWords.lv5.relatedWord1" = "astrology";
+"relatedWords.lv5.answer2" = "Horoscope";
+"relatedWords.lv5.relatedWord2" = "horoscope";
+"relatedWords.lv5.answer3" = "Zodiac Sign";
+"relatedWords.lv5.relatedWord3" = "zodiac sign, zodiac symbol, horoscope sign, constellation of the zodiac, astro-symbol";
+"relatedWords.lv5.answer4" = "Natal Chart";
+"relatedWords.lv5.relatedWord4" = "natal chart, astral chart, star chart, sky chart, zodiac map, astrological chart, zodiac chart,";
+"relatedWords.lv5.answer5" = "Tarot Cards";
+"relatedWords.lv5.relatedWord5" = "tarot cards, tarot, fortune-telling cards, esoteric cards, mystical cards, oracle cards, divination cards, oracle cards, fortune cards";
+
+//lv6
+"relatedWords.lv6.word1" = "Technique";
+"relatedWords.lv6.word2" = "Exercises";
+"relatedWords.lv6.word3" = "Top rank";
+"relatedWords.lv6.word4" = "Cup";
+"relatedWords.lv6.word5" = "Olympic Games";
+"relatedWords.lv6.answer1" = "Sport";
+"relatedWords.lv6.relatedWord1" = "sport, physical culture, soccer, rowing, swimming, shooting, hockey, acrobatics, skiing, running, tennis, hockey, physical education, basketball, volleyball, baseball, rugby, snowboarding, cricket, water polo, figure skating, fitness";
+"relatedWords.lv6.answer2" = "Tournament";
+"relatedWords.lv6.relatedWord2" = "tournament, olympiad, competition, contest, championship, international games, match";
+"relatedWords.lv6.answer3" = "Record";
+"relatedWords.lv6.relatedWord3" = "record, result, achievement, milestone, benchmark";
+"relatedWords.lv6.answer4" = "League";
+"relatedWords.lv6.relatedWord4" = "league, organization, association, union, society";
+"relatedWords.lv6.answer5" = "Willpower";
+"relatedWords.lv6.relatedWord5" = "willpower, determination, character, courage, endurance, steadfastness, self-control, self-discipline, strength of spirit, fortitude, resilience, perseverance";
+
+//lv7
+"relatedWords.lv7.word1" = "Popularity";
+"relatedWords.lv7.word2" = "Script";
+"relatedWords.lv7.word3" = "Awards";
+"relatedWords.lv7.word4" = "Show";
+"relatedWords.lv7.word5" = "Paparazzi";
+"relatedWords.lv7.answer1" = "Hollywood";
+"relatedWords.lv7.relatedWord1" = "hollywood";
+"relatedWords.lv7.answer2" = "Cinematography";
+"relatedWords.lv7.relatedWord2" = "cinematography, cinema, film art, filmmaking, film industry, film production, film distribution, film craft, film technique, cinematics, cinematic arts";
+"relatedWords.lv7.answer3" = "Show Business";
+"relatedWords.lv7.relatedWord3" = "show business, showbiz, entertainment industry, performing arts, film industry, ";
+"relatedWords.lv7.answer4" = "Reality Show";
+"relatedWords.lv7.relatedWord4" = "reality show, reality program, TV project, TV show, talk show, television industry, reality television, lifestyle show, reality";
+"relatedWords.lv7.answer5" = "Award";
+"relatedWords.lv7.relatedWord5" = "award, prize, grant, certificate, trophy, accolade";
+
+//lv8
+"relatedWords.lv8.word1" = "Ingredients";
+"relatedWords.lv8.word2" = "Utensils";
+"relatedWords.lv8.word3" = "Gourmet";
+"relatedWords.lv8.word4" = "Michelin Star";
+"relatedWords.lv8.word5" = "Gastronomy";
+"relatedWords.lv8.answer1" = "Restaurant";
+"relatedWords.lv8.relatedWord1" = "restaurant, dining establishment, dining room";
+"relatedWords.lv8.answer2" = "Chef";
+"relatedWords.lv8.relatedWord2" = "chef, cook, master chef, cuisinier, head cook, baker";
+"relatedWords.lv8.answer3" = "Cuisine";
+"relatedWords.lv8.relatedWord3" = "cuisine, cooking, kitchen, gastronomy";
+"relatedWords.lv8.answer4" = "Critic";
+"relatedWords.lv8.relatedWord4" = "critic, inspector, expert, gourmet, expert, reviewer";
+"relatedWords.lv8.answer5" = "Molecular Cuisine";
+"relatedWords.lv8.relatedWord5" = "molecular cuisine, haute cuisine";
+
+//lv9
+"relatedWords.lv9.word1" = "Trend";
+"relatedWords.lv9.word2" = "Youth";
+"relatedWords.lv9.word3" = "Society";
+"relatedWords.lv9.word4" = "Social Media";
+"relatedWords.lv9.word5" = "Self-expression";
+"relatedWords.lv9.answer1" = "Subculture";
+"relatedWords.lv9.relatedWord1" = "subculture, counterculture, informal movement, youth movement, coterie, moiety, band, association";
+"relatedWords.lv9.answer2" = "Influencer";
+"relatedWords.lv9.relatedWord2" = "influencer, trendsetter, leader, blogger, bellwether";
+"relatedWords.lv9.answer3" = "Slang";
+"relatedWords.lv9.relatedWord3" = "slang, jargon, lingo, colloquial language, argot, patois, vernacular";
+"relatedWords.lv9.answer4" = "Generation Z";
+"relatedWords.lv9.relatedWord4" = "generation z, digital generation, post-millennials, centennials, internet generation, smartphone generation";
+"relatedWords.lv9.answer5" = "Pride";
+"relatedWords.lv9.relatedWord5" = "pride, activism, parade, movement, advocacy";
+
+//lv10
+"relatedWords.lv10.word1" = "Bag";
+"relatedWords.lv10.word2" = "Boots";
+"relatedWords.lv10.word3" = "Jacket";
+"relatedWords.lv10.word4" = "Tag";
+"relatedWords.lv10.word5" = "Logo";
+"relatedWords.lv10.answer1" = "Clothing";
+"relatedWords.lv10.relatedWord1" = "clothing, uniform, outfit, costume, clothes, wear, ";
+"relatedWords.lv10.answer2" = "Leather";
+"relatedWords.lv10.relatedWord2" = "leather, hide, skin";
+"relatedWords.lv10.answer3" = "Store";
+"relatedWords.lv10.relatedWord3" = "store, boutique, outlet, shop, stock";
+"relatedWords.lv10.answer4" = "Fashion";
+"relatedWords.lv10.relatedWord4" = "fashion, trend, style, couture, fad, look";
+"relatedWords.lv10.answer5" = "Brand";
+"relatedWords.lv10.relatedWord5" = "brand, label, status symbol";
+
+//lv11
+"relatedWords.lv11.word1" = "Station";
+"relatedWords.lv11.word2" = "Passengers";
+"relatedWords.lv11.word3" = "Ticket";
+"relatedWords.lv11.word4" = "Control";
+"relatedWords.lv11.word5" = "Border";
+"relatedWords.lv11.answer1" = "Public Transport";
+"relatedWords.lv11.relatedWord1" = "public transport, municipal transport, city transport, public transit, bus, tram, subway, minibus, trolleybus, city transit, public conveyance, commuter transport, mass transit, urban transit, transit system, public transportation";
+"relatedWords.lv11.answer2" = "Travel";
+"relatedWords.lv11.relatedWord2" = "travel, trip, tourism, excursion, expedition, adventure, tour, sightseeing, movement, 
+trek";
+"relatedWords.lv11.answer3" = "Route";
+"relatedWords.lv11.relatedWord3" = "route, path, course, direction, journey, way, trail, itinerary";
+"relatedWords.lv11.answer4" = "Fare Dodger";
+"relatedWords.lv11.relatedWord4" = "fare dodger, stowaway, freeloader, ticket evader, fare evader, free rider, icketless, gatecrasher, Stowaway";
+"relatedWords.lv11.answer5" = "Conductor";
+"relatedWords.lv11.relatedWord5" = "conductor, stewardess, attendant, ticket inspector, operator, guide, coordinator";
+
+//lv12
+"relatedWords.lv12.word1" = "Desert";
+"relatedWords.lv12.word2" = "Sands";
+"relatedWords.lv12.word3" = "Africa";
+"relatedWords.lv12.word4" = "Tomb";
+"relatedWords.lv12.word5" = "Sarcophagus";
+"relatedWords.lv12.answer1" = "Egypt";
+"relatedWords.lv12.relatedWord1" = "Egypt";
+"relatedWords.lv12.answer2" = "Pyramid";
+"relatedWords.lv12.relatedWord2" = "pyramid";
+"relatedWords.lv12.answer3" = "Mummy";
+"relatedWords.lv12.relatedWord3" = "mummy";
+"relatedWords.lv12.answer4" = "Sphinx";
+"relatedWords.lv12.relatedWord4" = "sphinx";
+"relatedWords.lv12.answer5" = "Sahara";
+"relatedWords.lv12.relatedWord5" = "Sahara";
+
+//lv13
+"relatedWords.lv13.word1" = "Dollar";
+"relatedWords.lv13.word2" = "Finance";
+"relatedWords.lv13.word3" = "Interest";
+"relatedWords.lv13.word4" = "Authority";
+"relatedWords.lv13.word5" = "Default";
+"relatedWords.lv13.answer1" = "Economics";
+"relatedWords.lv13.relatedWord1" = "economics, finance, business";
+"relatedWords.lv13.answer2" = "Currency";
+"relatedWords.lv13.relatedWord2" = "currency, money, funds, cash, bills, coins";
+"relatedWords.lv13.answer3" = "Inflation";
+"relatedWords.lv13.relatedWord3" = "inflation, currency devaluation, price increase, cost escalation, rising prices";
+"relatedWords.lv13.answer4" = "Credit";
+"relatedWords.lv13.relatedWord4" = "credit, loan, overdraft, mortgage, lending, debit";
+"relatedWords.lv13.answer5" = "Stock";
+"relatedWords.lv13.relatedWord5" = "shares, stock, special offer, discount, equities, holdings, shareholder, excise, assets, ownership";
+
+//lv14
+"relatedWords.lv14.word1" = "Authority";
+"relatedWords.lv14.word2" = "Law";
+"relatedWords.lv14.word3" = "Politics";
+"relatedWords.lv14.word4" = "Powers";
+"relatedWords.lv14.word5" = "Bribes";
+"relatedWords.lv14.answer1" = "President";
+"relatedWords.lv14.relatedWord1" = "president, ruler, leader, head, chief, sovereign, emperor, presidency, government, chairperson, commander, executive, premier";
+"relatedWords.lv14.answer2" = "Constitution";
+"relatedWords.lv14.relatedWord2" = "constitution, charter, legal system, governance, law, statute";
+"relatedWords.lv14.answer3" = "State";
+"relatedWords.lv14.relatedWord3" = "state, country, republic, principality, kingdom, empire, nation, sovereign state";
+"relatedWords.lv14.answer4" = "Mandate";
+"relatedWords.lv14.relatedWord4" = "mandate, representative rights, legitimacy";
+"relatedWords.lv14.answer5" = "Corruption";
+"relatedWords.lv14.relatedWord5" = "corruption, bribery, dishonesty, graft, corrupt practices, fraud, corruptness, ";
+
+//lv15
+"relatedWords.lv15.word1" = "Graphics";
+"relatedWords.lv15.word2" = "Level";
+"relatedWords.lv15.word3" = "Competition";
+"relatedWords.lv15.word4" = "Multiplayer";
+"relatedWords.lv15.word5" = "Joystick";
+"relatedWords.lv15.answer1" = "Video Games";
+"relatedWords.lv15.relatedWord1" = "video games, game, gaming, computer games, digital games, electronic games, e-games, online games, electronic games, interactive games, digital games";
+"relatedWords.lv15.answer2" = "Gameplay";
+"relatedWords.lv15.relatedWord2" = "gameplay, mechanics, interface, game control, game mechanics, game dynamics, play experience, game flow";
+"relatedWords.lv15.answer3" = "Esports";
+"relatedWords.lv15.relatedWord3" = "esports, e-sports, electronic sports, digital sports, esports player, pro gaming, digital sports, competitive gaming, cyber sports";
+"relatedWords.lv15.answer4" = "Virtual Reality";
+"relatedWords.lv15.relatedWord4" = "virtual reality, artificial reality, simulation, virtual world, digital space, vr, synthetic reality, digital reality, virtual environment";
+"relatedWords.lv15.answer5" = "Gamer";
+"relatedWords.lv15.relatedWord5" = "gamer, player, game enthusiast, video gamer, game lover, player, game master";
+
+//lv16
+"relatedWords.lv16.word1" = "Computer";
+"relatedWords.lv16.word2" = "System";
+"relatedWords.lv16.word3" = "Network";
+"relatedWords.lv16.word4" = "Code";
+"relatedWords.lv16.word5" = "Trojan Horse";
+"relatedWords.lv16.answer1" = "Operating System";
+"relatedWords.lv16.relatedWord1" = "operating system, software, platform, soft, app, os, system software, software environment, operating environment, kernel,";
+"relatedWords.lv16.answer2" = "Programming";
+"relatedWords.lv16.relatedWord2" = "programming, coding, programmer, development, coding, writing code, developer";
+"relatedWords.lv16.answer3" = "Server";
+"relatedWords.lv16.relatedWord3" = "server, cloud, router, host, provider";
+"relatedWords.lv16.answer4" = "Internet";
+"relatedWords.lv16.relatedWord4" = "internet, Net, digital space, information space, net, cyberspace";
+"relatedWords.lv16.answer5" = "Antivirus";
+"relatedWords.lv16.relatedWord5" = "antivirus, protection, security, security software, protective software, security program, anti-spyware, antimalware";
+
+//lv17
+"relatedWords.lv17.word1" = "Time";
+"relatedWords.lv17.word2" = "Technologies";
+"relatedWords.lv17.word3" = "Development";
+"relatedWords.lv17.word4" = "Robot";
+"relatedWords.lv17.word5" = "Projection";
+"relatedWords.lv17.answer1" = "Future";
+"relatedWords.lv17.relatedWord1" = "future, perspective";
+"relatedWords.lv17.answer2" = "Innovations";
+"relatedWords.lv17.relatedWord2" = "innovations, invention, innovation, modernization, breakthrough, novelty, new product, invention";
+"relatedWords.lv17.answer3" = "Artificial Intelligence";
+"relatedWords.lv17.relatedWord3" = "artificial intelligence, neural networks, digital mind, neural network, AI";
+"relatedWords.lv17.answer4" = "Cyborg";
+"relatedWords.lv17.relatedWord4" = "cyborg, terminator, cyber-organism, cyber-human";
+"relatedWords.lv17.answer5" = "Hologram";
+"relatedWords.lv17.relatedWord5" = "hologram, holographic image, holo-image, three-dimensional projection, light copy, holography";
+
+//lv18
+"relatedWords.lv18.word1" = "Proof";
+"relatedWords.lv18.word2" = "Formula";
+"relatedWords.lv18.word3" = "Equation";
+"relatedWords.lv18.word4" = "Dependency";
+"relatedWords.lv18.word5" = "Axis";
+"relatedWords.lv18.answer1" = "Theorem";
+"relatedWords.lv18.relatedWord1" = "theorem, axiom, hypothesis, postulate, lemma, breakthrough, thesis, principle";
+"relatedWords.lv18.answer2" = "Mathematics";
+"relatedWords.lv18.relatedWord2" = "mathematics, algebra, geometry, arithmetic, higher mathematics, trigonometry, quantum mathematics, plane geometry, solid geometry, discrete mathematics, numerical methods";
+"relatedWords.lv18.answer3" = "Function";
+"relatedWords.lv18.relatedWord3" = "function, equation, math problem, formula, equality, equivalence";
+"relatedWords.lv18.answer4" = "Plane";
+"relatedWords.lv18.relatedWord4" = "plane, surface, bisector";
+"relatedWords.lv18.answer5" = "Diagram";
+"relatedWords.lv18.relatedWord5" = "diagram, graph, histogram, graph, sine wave, chart, figure";
+
+//lv19
+"relatedWords.lv19.word1" = "Time";
+"relatedWords.lv19.word2" = "Technologies";
+"relatedWords.lv19.word3" = "Development";
+"relatedWords.lv19.word4" = "Robot";
+"relatedWords.lv19.word5" = "Projection";
+"relatedWords.lv19.answer1" = "Artificial Intelligence";
+"relatedWords.lv19.answer2" = "Innovations";
+"relatedWords.lv19.answer3" = "Future";
+"relatedWords.lv19.answer4" = "Cyborg";
+"relatedWords.lv19.answer5" = "Hologram";
+
+//lv20
+"relatedWords.lv20.word1" = "Basket";
+"relatedWords.lv20.word2" = "Terminal";
+"relatedWords.lv20.word3" = "Command";
+"relatedWords.lv20.word4" = "Archive";
+"relatedWords.lv20.word5" = "Folder";
+"relatedWords.lv20.answer1" = "Computer";
+"relatedWords.lv20.relatedWord1" = "computer, laptop, MacBook, netbook, Mac, portable, notebook, notebook, nettops, pc, device";
+"relatedWords.lv20.answer2" = "Software";
+"relatedWords.lv20.relatedWord2" = "software, program, soft, app, Mac, laptop, application, app";
+"relatedWords.lv20.answer3" = "Object Storage";
+"relatedWords.lv20.relatedWord3" = "object storage, cloud storage, data storage system, data storage, object storage";
+"relatedWords.lv20.answer4" = "File System";
+"relatedWords.lv20.relatedWord4" = "file system, file, file systems";
+"relatedWords.lv20.answer5" = "Backup";
+"relatedWords.lv20.relatedWord5" = "backup, data synchronization, copying";
+
+// Mark: Secret word
+"secretWord.title" = "Secret word";
+"secretWord.subtitle" = "Guess the word based on the following statements";
+
+// lv1
+"secretWord.lv1.secret1" = "It’s not a painting, but you can see yourself in it.";
+"secretWord.lv1.secret2" = "It shows the truth, but sometimes you want to see a lie.";
+"secretWord.lv1.secret3" = "You encounter it every day, looking it in the face.";
+"secretWord.lv1.answer" = "Mirror";
+"secretWord.lv1.relatedWord" = "mirror, reflection, small mirror, speculum, reflector";
+
+// lv2
+"secretWord.lv2.secret1" = "It’s something that comes but never goes.";
+"secretWord.lv2.secret2" = "It’s constantly being looked at.";
+"secretWord.lv2.secret3" = "It’s related to time.";
+"secretWord.lv2.answer" = "Clock";
+"secretWord.lv2.relatedWord" = "clock, time, timer, hour, dial, chimes, timepiece, alarm, watch, sundial,
+chronograph, chronometer, hourglass, metronome";
+
+// lv3
+"secretWord.lv3.secret1" = "It’s not a person, but it’s always nearby.";
+"secretWord.lv3.secret2" = "No matter how much you chase it, you can’t catch it.";
+"secretWord.lv3.secret3" = "It vanishes in complete darkness.";
+"secretWord.lv3.answer" = "Shadow";
+"secretWord.lv3.relatedWord" = "shadow, shade, gloom";
+
+// lv4
+"secretWord.lv4.secret1" = "It knows all the roads but can’t walk.";
+"secretWord.lv4.secret2" = "It’s opened when the way is unknown.";
+"secretWord.lv4.secret3" = "It shows you where you are, even if you don’t know it.";
+"secretWord.lv4.answer" = "Map";
+"secretWord.lv4.relatedWord" = "map, navigator, atlas, globus";
+
+// lv5
+"secretWord.lv5.secret1" = "The more they tread on it, the better it become.";
+"secretWord.lv5.secret2" = "It leads somewhere but doesn’t move itself.";
+"secretWord.lv5.secret3" = "Cars can’t go there.";
+"secretWord.lv5.answer" = "Path";
+"secretWord.lv5.relatedWord" = "path, trail, footpath, walkway, track, lane";
+
+// lv6
+"secretWord.lv6.secret1" = "It moves us, but it stays in place.";
+"secretWord.lv6.secret2" = "You see its steps, but they disappear and reappear.";
+"secretWord.lv6.secret3" = "It’s always nearby in shopping malls.";
+"secretWord.lv6.answer" = "Escalator";
+"secretWord.lv6.relatedWord" = "escalator, travelator, lift, elevator, moving staircase";
+
+// lv7
+"secretWord.lv7.secret1" = "You can keep it, but you can’t see it.";
+"secretWord.lv7.secret2" = "It exists as long as no one knows about it.";
+"secretWord.lv7.secret3" = "It lives in unspoken words.";
+"secretWord.lv7.answer" = "Secret";
+"secretWord.lv7.relatedWord" = "secret, mystery, mystique, riddle, trick, secretion, secrecy, confidential";
+
+// lv8
+"secretWord.lv8.secret1" = "It can only grow.";
+"secretWord.lv8.secret2" = "It brings wisdom but also leaves scars.";
+"secretWord.lv8.secret3" = "It increases every year.";
+"secretWord.lv8.answer" = "Age";
+"secretWord.lv8.relatedWord" = "age, years, year, anniversary, century, increase, lifetime, life span";
+
+// lv9
+"secretWord.lv9.secret1" = "It falls but never rises.";
+"secretWord.lv9.secret2" = "It most often comes when you wash the car.";
+"secretWord.lv9.secret3" = "It taps on windows and roofs, but you can’t let it into the house.";
+"secretWord.lv9.answer" = "Rain";
+"secretWord.lv9.relatedWord" = "rain, downpour, drizzle, raindrop, precipitation, shower, rainstorm, rainfall";
+
+// lv10
+"secretWord.lv10.secret1" = "It’s light as a feather, but even the most trained person can’t hold it for long.";
+"secretWord.lv10.secret2" = "It’s invisible, but without it, you can’t live a minute.";
+"secretWord.lv10.secret3" = "It can be slow and calm or fast and heavy.";
+"secretWord.lv10.answer" = "Breath";
+"secretWord.lv10.relatedWord" = "breath, inhalation, exhalation, gasp";
+
+// lv11
+"secretWord.lv11.secret1" = "The more you take from it, the more it becomes.";
+"secretWord.lv11.secret2" = "It’s empty, but it can become a trap.";
+"secretWord.lv11.secret3" = "You can fall into it if you’re not careful.";
+"secretWord.lv11.answer" = "Pit";
+"secretWord.lv11.relatedWord" = "pit, hollow, trench, hole, abyss, shaft";
+
+// lv12
+"secretWord.lv12.secret1" = "You can lift and move a knight and an elephant there.";
+"secretWord.lv12.secret2" = "Everything moves forward here, but the way back is impossible for everyone except one.";
+"secretWord.lv12.secret3" = "It’s a battlefield but without blood.";
+"secretWord.lv12.answer" = "Chess";
+"secretWord.lv12.relatedWord" = "chess";
+
+// lv13
+"secretWord.lv13.secret1" = "The first two times it's given for free. The third time we have to pay.";
+"secretWord.lv13.secret2" = "They can be wise, or maybe not.";
+"secretWord.lv13.secret3" = "Losing them in childhood brings joy, but in adulthood it brings anxiety.";
+"secretWord.lv13.answer" = "Teeth";
+"secretWord.lv13.relatedWord" = "teeth, tooth, fang, tusks";
+
+// lv14
+"secretWord.lv14.secret1" = "It belongs to you, but others use it more often than you.";
+"secretWord.lv14.secret2" = "It’s the first thing we learn about a person.";
+"secretWord.lv14.secret3" = "20-30% of people forget about it after the first meeting.";
+"secretWord.lv14.answer" = "Name";
+"secretWord.lv14.relatedWord" = "name, label, nickname, designation, rank, fame, alias, pseudonym, sobriquet, self-name, full name, patronymic, surname";
+
+// lv15
+"secretWord.lv15.secret1" = "Say its name and it will disappear.";
+"secretWord.lv15.secret2" = "It’s what people look for in chaos and scandals.";
+"secretWord.lv15.secret3" = "It’s between words, but none of them can describe it.";
+"secretWord.lv15.answer" = "Silence";
+"secretWord.lv15.relatedWord" = "silence, soundlessness, calm, quietness, stillness, hush, quiet, stillness, lull";
+
+// lv16
+"secretWord.lv16.secret1" = "It’s thrown away when it’s used and picked up when it’s not needed.";
+"secretWord.lv16.secret2" = "It’s present in the family and personal coats of arms of all countries and is a symbol of safety, stability, and hope for salvation.";
+"secretWord.lv16.secret3" = "Without it, movement on water would be uncontrolled.";
+"secretWord.lv16.answer" = "Anchor";
+"secretWord.lv16.relatedWord" = "anchor, mainstay, ballast";
+
+// lv17
+"secretWord.lv17.secret1" = "It has teeth in its stomach.";
+"secretWord.lv17.secret2" = "Its home is always with it.";
+"secretWord.lv17.secret3" = "For people, it’s a delicacy.";
+"secretWord.lv17.answer" = "Crab";
+"secretWord.lv17.relatedWord" = "crab, crustacean";
+
+// lv18
+"secretWord.lv18.secret1" = "It can be given without holding it in your hands, and can be broken without touching.";
+"secretWord.lv18.secret2" = "It can be given immediately, but its value is revealed only at the end.";
+"secretWord.lv18.secret3" = "It can connect people together, but if it’s broken, a crack remains.";
+"secretWord.lv18.answer" = "Promise";
+"secretWord.lv18.relatedWord" = "promise, assurance, oath, receipt, agreement, vow, pledge, consent";
+
+// lv19
+"secretWord.lv19.secret1" = "It can’t be enlarged with a magnifying glass in a polygon.";
+"secretWord.lv19.secret2" = "It can be acute or obtuse.";
+"secretWord.lv19.secret3" = "It is formed by two rays.";
+"secretWord.lv19.answer" = "Angle";
+"secretWord.lv19.relatedWord" = "angle, corner, anglelet, edge, slant, twist, intersection";
+
+// lv20
+"secretWord.lv20.secret1" = "It comes once a month but can disappear in a couple of days.";
+"secretWord.lv20.secret2" = "There’s never enough of it, no matter how much there is.";
+"secretWord.lv20.secret3" = "It’s a reward for efforts.";
+"secretWord.lv20.answer" = "Salary";
+"secretWord.lv20.relatedWord" = "salary, wage, payment, earnings, income, fee, stipend, revenue, paycheck, remuneration, payroll, pay, compensation";
+
+// Mark: Annagrams
+"anagrams.title" = "Annagrams";
+"anagrams.subtitle" = "Find the words in this set";
+"anagrams.button" = "Enter";
+
+"anagrams.lv1.world" = "grindas";
+"anagrams.lv2.world" = "fatalist";
+"anagrams.lv3.world" = "saltish";
+"anagrams.lv4.world" = "lodyrite";
+"anagrams.lv5.world" = "saggier";
+"anagrams.lv6.world" = "frizzles";
+"anagrams.lv7.world" = "scolion";
+"anagrams.lv8.world" = "beneath";
+"anagrams.lv9.world" = "letter";
+"anagrams.lv10.world" = "kitchen";
+"anagrams.lv11.world" = "regular";
+"anagrams.lv12.world" = "holiday";
+"anagrams.lv13.world" = "imagine";
+"anagrams.lv14.world" = "endless";
+"anagrams.lv15.world" = "algeos";
+"anagrams.lv16.world" = "knitted";
+"anagrams.lv17.world" = "minkes";
+"anagrams.lv18.world" = "lekvar";
+"anagrams.lv19.world" = "jorney";
+"anagrams.lv20.world" = "denying";
+"anagrams.lv21.world" = "belied";
+"anagrams.lv22.world" = "ragman";
+"anagrams.lv23.world" = "fuzztone";
+"anagrams.lv24.world" = "hylozoic";
+"anagrams.lv25.world" = "squized";
+"anagrams.lv26.world" = "achieve";
+"anagrams.lv27.world" = "grimmer";
+"anagrams.lv28.world" = "banings";
+"anagrams.lv29.world" = "obvious";
+"anagrams.lv30.world" = "quickly";
+

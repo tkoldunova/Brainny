@@ -36,6 +36,7 @@ final class ShopInteractor: ShopInteractorProtocol {
     func requestProducts(completion:@escaping()->Void) {
         purchaseManager.requestProducts { products in
             self.model = products?.filter({$0 is CoinsProductSub}) as! [CoinsProductSub]
+            self.model = self.model.sorted(by: {$0.model.index < $1.model.index})
             self.subscription = products?.filter({$0 is ProductSub}) as! [ProductSub]
             completion()
         }

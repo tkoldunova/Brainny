@@ -17,6 +17,9 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         window = UIWindow(windowScene: scene)
 //        UserDefaultsValues.setdefaultData()
 //        AudioManager.shared.playBackgroundMusic()
+        for game in Games.allCases {
+            game.setDefaultData()
+        }
         let rootNavVC = UINavigationController()
         let router = MenuRouter(navigationController: rootNavVC)// MenuRouter(navigationController: rootNavVC)
         router.present()

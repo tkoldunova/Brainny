@@ -15,12 +15,16 @@ enum CoinsModel: String, CaseIterable {
     var title: String {
         switch self {
         case .hap:
-            return "Hap of coins"
+            return NSLocalizedString("shop.coins.hap", comment: "")
         case .bundles:
-            return "Coin Bundles"
+            return NSLocalizedString("shop.coins.bundles", comment: "")
         case .vault:
-            return "Coin Vault"
+            return NSLocalizedString("shop.coins.vault", comment: "")
         }
+    }
+    
+    var index: Int {
+        return (CoinsModel.allCases.firstIndex(of: self) ?? 0)
     }
     
     var value: Int {

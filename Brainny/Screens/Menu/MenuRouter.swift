@@ -10,7 +10,7 @@ import UIKit
 
 protocol MenuRouterProtocol {
     func present()
-    func goToLevel()
+    func goToLevel(game: Games)
     func goToSettings()
     func goToShop()
 }
@@ -37,11 +37,11 @@ final class MenuRouter: MenuRouterProtocol {
         navigationController.pushViewController(vc, animated: true)
     }
     
-    func goToLevel() {
+    func goToLevel(game: Games) {
       
             guard let navigationController = navigationController else {return}
             let vc = LevelRouter(navigationController: navigationController)
-            vc.present(model: .relatedWords)
+            vc.present(model: game)
             return
      
     }

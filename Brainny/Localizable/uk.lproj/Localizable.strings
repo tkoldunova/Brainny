@@ -1,0 +1,558 @@
+/*
+  Localizable.strings
+  Brainny
+
+  Created by Tanya Koldunova on 19.10.2024.
+  
+*/
+
+// Mark: Menu
+"menu.games.relatedWords" = "Пов'язані слова";
+"menu.games.annagrams" = "Анаграми";
+"menu.games.secretWords" = "Секретне слово";
+
+// Mark: Settings
+"settings.title" = "Налаштування";
+"settings.model.music" = "Музика";
+"settings.model.sound" = "Звуки";
+"settings.model.haptic" = "Вібрація";
+
+// Mark: Level
+"level.title" = "Рівні";
+
+// Mark: Shop
+"shop.title" = "Магазин";
+"shop.coins.title" = "ОТРИМАТИ МОНЕТИ";
+"shop.coins.hap" = "Купа монет";
+"shop.coins.bundles" = "Пачки монет";
+"shop.coins.vault" = "Сховище монет";
+"shop.noAds.title" = "Без Реклами";
+
+// Mark: Win
+"win.title" = "Рівень пройдено!";
+"win.subtitle" = "Ви заробили:";
+
+// Mark: Tip
+"tip.word.title" = "Відкрити підказку за";
+"tip.word.button" = "Відкрити";
+"tip.letter.title" = "Відкрити літеру";
+
+// Mark: Related words
+"relatedWords.title" = "Пов'язані слова";
+"relatedWords.subtitle" = "Нижче наведені слова або поняття. Введіть щось спільне між ними";
+
+///Уровень 1
+"relatedWords.lv1.word1" = "Олівець";
+"relatedWords.lv1.word2" = "Пензлик";
+"relatedWords.lv1.word3" = "Полотно";
+"relatedWords.lv1.word4" = "Галерея";
+"relatedWords.lv1.word5" = "Мода";
+"relatedWords.lv1.answer1" = "Малювання";
+"relatedWords.lv1.relatedWord1" = "малюнок, ілюстрація, зображення, начерк, картина, пейзаж, живопис, образотворче мистецтво, вимальовувати, вирисовувати, замальовувати, змальовувати, фарбувати, офарбовувати, зафарбовувати ";
+"relatedWords.lv1.answer2" = "Художник";
+"relatedWords.lv1.relatedWord2" = "живописець, митець, пейзажист, творець, авангардист, модерніст, іконописець, абстракціоніст, ілюстратор, маляр, мистець, артист";
+"relatedWords.lv1.answer3" = "Мистецтво";
+"relatedWords.lv1.relatedWord3" = "мистецтво, майстерність, художність, образотворчість";
+"relatedWords.lv1.answer4" = "Виставка";
+"relatedWords.lv1.relatedWord4" = "виставка, показ, вернісаж, демонстрація, вистава, експозиція";
+"relatedWords.lv1.answer5" = "Дизайн";
+"relatedWords.lv1.relatedWord5" = "дизайн, оформлення";
+
+//lv2
+"relatedWords.lv2.word1" = "Алкоголь";
+"relatedWords.lv2.word2" = "Виноград";
+"relatedWords.lv2.word3" = "Шардоне";
+"relatedWords.lv2.word4" = "Дегустація";
+"relatedWords.lv2.word5" = "Гарячий напій";
+"relatedWords.lv2.answer1" = "Вино";
+"relatedWords.lv2.relatedWord1" = "вино";
+"relatedWords.lv2.answer2" = "Виноробня";
+"relatedWords.lv2.relatedWord2" = "виноробня, винзавод, винороб, винний цех, винарня";
+"relatedWords.lv2.answer3" = "Сорт";
+"relatedWords.lv2.relatedWord3" = "сорт, ступінь, гатунок";
+"relatedWords.lv2.answer4" = "Сомельє";
+"relatedWords.lv2.relatedWord4" = "сомельє";
+"relatedWords.lv2.answer5" = "Глінтвейн";
+"relatedWords.lv2.relatedWord5" = "глінтвейн";
+
+//lv3
+"relatedWords.lv3.word1" = "Хвилі";
+"relatedWords.lv3.word2" = "Пісок";
+"relatedWords.lv3.word3" = "Сонце";
+"relatedWords.lv3.word4" = "Пальма";
+"relatedWords.lv3.word5" = "Відпочинок";
+"relatedWords.lv3.answer1" = "Відпустка";
+"relatedWords.lv3.relatedWord1" = "відпустка, канікули, вихідний, декрет, подорож, відгул, перерва, курорт, вакації";
+"relatedWords.lv3.answer2" = "Пляж";
+"relatedWords.lv3.relatedWord2" = "пляж, берег, узбережжя";
+"relatedWords.lv3.answer3" = "Літо";
+"relatedWords.lv3.relatedWord3" = "літо";
+"relatedWords.lv3.answer4" = "Острів";
+"relatedWords.lv3.relatedWord4" = "острів, оаза, атол, острівець, остров’янин, островик";
+"relatedWords.lv3.answer5" = "Прибій";
+"relatedWords.lv3.relatedWord5" = "прибій, бурун, хвиля";
+
+//lv4
+"relatedWords.lv4.word1" = "Тепло";
+"relatedWords.lv4.word2" = "Комфорт";
+"relatedWords.lv4.word3" = "Атмосфера";
+"relatedWords.lv4.word4" = "Звичаї";
+"relatedWords.lv4.word5" = "Турбота";
+"relatedWords.lv4.answer1" = "Затишок";
+"relatedWords.lv4.relatedWord1" = "гостинність, затишок, спокій";
+"relatedWords.lv4.answer2" = "Дім";
+"relatedWords.lv4.relatedWord2" = "дім, будівля, житло, оселя, помешкання, квартира, вілла, резиденція, домівка, домівля, будинок, маєток, хата";
+"relatedWords.lv4.answer3" = "Свята";
+"relatedWords.lv4.relatedWord3" = "свята, традиції, вечірка, вшанування, урочистість, святкування, бенкет, прийом, празник, торжество";
+"relatedWords.lv4.answer4" = "Сім'я";
+"relatedWords.lv4.relatedWord4" = "сім'я, рідня, родичі, рідні, близькі, родина, посіме́йство";
+"relatedWords.lv4.answer5" = "Хранитель домашнього вогнища";
+"relatedWords.lv4.relatedWord5" = "охоронець вогнища, домогосподарка, домогосподар, господиня, вогнище, зберігач сімейного затишку, домашній оберіг, берегиня дому, Домашній дух";
+
+//lv5
+"relatedWords.lv5.word1" = "Терези";
+"relatedWords.lv5.word2" = "Асцендент";
+"relatedWords.lv5.word3" = "Передбачення";
+"relatedWords.lv5.word4" = "Домівки";
+"relatedWords.lv5.word5" = "Розклад";
+"relatedWords.lv5.answer1" = "Астрологія";
+"relatedWords.lv5.relatedWord1" = "астрологія";
+"relatedWords.lv5.answer2" = "Гороскоп";
+"relatedWords.lv5.relatedWord2" = "гороскоп";
+"relatedWords.lv5.answer3" = "Знак зодіаку";
+"relatedWords.lv5.relatedWord3" = "знак зодіаку, зодіакальний символ, гороскопний знак, знак гороскопа, сузір'я зодіаку, астросимвол, зодіак, символ зодіаку, знак гороскопу";
+"relatedWords.lv5.answer4" = "Натальна карта";
+"relatedWords.lv5.relatedWord4" = "натальна карта, астральна карта, зоряна карта, небесна карта, сузір'я зодіаку, зодіакальна карта";
+"relatedWords.lv5.answer5" = "Карти таро";
+"relatedWords.lv5.relatedWord5" = "карти таро, таро, гадальні карти, езотеричні карти, містичні карти, оракульські карти, карти передбачення";
+
+//lv6
+"relatedWords.lv6.word1" = "Техніка";
+"relatedWords.lv6.word2" = "Вправи";
+"relatedWords.lv6.word3" = "Першість";
+"relatedWords.lv6.word4" = "Кубок";
+"relatedWords.lv6.word5" = "Олімпійські ігри";
+"relatedWords.lv6.answer1" = "Спорт";
+"relatedWords.lv6.relatedWord1" = "спорт, фізична культура, футбол, веслування, плавання, стрільба, хокей, акробатика, лижі, біг, теніс, хокей, фізкультура, баскетбол, волейбол, бейсбол, регбол, сноубординг, крикет, ватерполо, фігурне катання, фітнес, руханка";
+"relatedWords.lv6.answer2" = "Турнір";
+"relatedWords.lv6.relatedWord2" = "турнір, олімпіада, змагання, змагання, чемпіонат, міжнародні ігри, матч";
+"relatedWords.lv6.answer3" = "Рекорд";
+"relatedWords.lv6.relatedWord3" = "рекорд, результат, досягнення, перемога, тріумф";
+"relatedWords.lv6.answer4" = "Ліга";
+"relatedWords.lv6.relatedWord4" = "ліга, організація, союз, об'єднання, асоціація, коаліція, спілка";
+"relatedWords.lv6.answer5" = "Сила духу";
+"relatedWords.lv6.relatedWord5" = "сила духу, воля, сила волі, характер, відвага, витримка, стійкість, непохитність, рішучість, мужність, хоробрість, духовна міць";
+
+//lv7
+"relatedWords.lv7.word1" = "Популярність";
+"relatedWords.lv7.word2" = "Сценарій";
+"relatedWords.lv7.word3" = "Нагороди";
+"relatedWords.lv7.word4" = "Шоу";
+"relatedWords.lv7.word5" = "Папараці";
+"relatedWords.lv7.answer1" = "Голлівуд";
+"relatedWords.lv7.relatedWord1" = "голлівуд";
+"relatedWords.lv7.answer2" = "Кінематограф";
+"relatedWords.lv7.relatedWord2" = "кінематограф, кіно, мистецтво кіно, кіноіндустрія, кіновиробництво, кінопрокат, фільмова індустрія, синематограф, кіномистецтво";
+"relatedWords.lv7.answer3" = "Шоу-бізнес";
+"relatedWords.lv7.relatedWord3" = "Шоу-бізнес, шоуіндустрія, шоу-індустрія, естрада";
+"relatedWords.lv7.answer4" = "Реаліті шоу";
+"relatedWords.lv7.relatedWord4" = "реаліті-програма, реаліті шоу, реаліті-шоу, реаліті програма, телепроєкт, телепередача, ток-шоу";
+"relatedWords.lv7.answer5" = "Премія";
+"relatedWords.lv7.relatedWord5" = "премія, нагорода, грант, грамота, винагорода, відзнака";
+
+//lv8
+"relatedWords.lv8.word1" = "Інгредієнти";
+"relatedWords.lv8.word2" = "Прибори";
+"relatedWords.lv8.word3" = "Гурман";
+"relatedWords.lv8.word4" = "Зірка Мішлен";
+"relatedWords.lv8.word5" = "Трофологія";
+"relatedWords.lv8.answer1" = "Ресторан";
+"relatedWords.lv8.relatedWord1" = "ресторан";
+"relatedWords.lv8.answer2" = "Шеф-кухар";
+"relatedWords.lv8.relatedWord2" = "шеф-кухар, кухар, головний кухар, кухар-майстер, мастер-кухар, мастер шеф,";
+"relatedWords.lv8.answer3" = "Кухня";
+"relatedWords.lv8.relatedWord3" = "кухня, кулінарія, приготування, жаровня, кухонне мистецтво, куховарство";
+"relatedWords.lv8.answer4" = "Критик";
+"relatedWords.lv8.relatedWord4" = "критик, інспектор, експерт, цінитель, ревізор";
+"relatedWords.lv8.answer5" = "Молекулярна кухня";
+"relatedWords.lv8.relatedWord5" = "молекулярна кухня, вишукана кухня";
+
+//lv9
+"relatedWords.lv9.word1" = "Тренд";
+"relatedWords.lv9.word2" = "Молодь";
+"relatedWords.lv9.word3" = "Суспільство";
+"relatedWords.lv9.word4" = "Соціальні мережі";
+"relatedWords.lv9.word5" = "Самовираження";
+"relatedWords.lv9.answer1" = "Субкультура";
+"relatedWords.lv9.relatedWord1" = "субкультура, підкультура, неформал, пацифіст, контркультура, транс-культура, мікрокультура, молодіжний рух";
+"relatedWords.lv9.answer2" = "Інфлюенсер";
+"relatedWords.lv9.relatedWord2" = "інфлюенсер, трендсеттер, лідер, блогер, впливовець, лідер думок";
+"relatedWords.lv9.answer3" = "Сленг";
+"relatedWords.lv9.relatedWord3" = "сленг, жаргон, говір, говірка, арґо, суржик";
+"relatedWords.lv9.answer4" = "Покоління Z";
+"relatedWords.lv9.relatedWord4" = "покоління Z, цифрове покоління, постмілленіали, ера Z, центеніали, покоління інтернету, покоління смартфонів";
+"relatedWords.lv9.answer5" = "Прайд";
+"relatedWords.lv9.relatedWord5" = "прайд, активізм, парад, рух, проактивність";
+
+//lv10
+"relatedWords.lv10.word1" = "Сумка";
+"relatedWords.lv10.word2" = "Черевики";
+"relatedWords.lv10.word3" = "Куртка";
+"relatedWords.lv10.word4" = "Етикетка";
+"relatedWords.lv10.word5" = "Логотип";
+"relatedWords.lv10.answer1" = "Одяг";
+"relatedWords.lv10.relatedWord1" = "одяг, уніформа, костюм, вбрання, ";
+"relatedWords.lv10.answer2" = "Шкіра";
+"relatedWords.lv10.relatedWord2" = "шкіра, шкірка, шкура, скіра";
+"relatedWords.lv10.answer3" = "Магазин";
+"relatedWords.lv10.relatedWord3" = "магазин, бутік, аутлет";
+"relatedWords.lv10.answer4" = "Мода";
+"relatedWords.lv10.relatedWord4" = "мода, тренд, стиль, фешн, кутюр, манера, тенденція, популярність, хіт, витончений смак";
+"relatedWords.lv10.answer5" = "Бренд";
+"relatedWords.lv10.relatedWord5" = "бренд, марка, статус, лейбл, фірма, імідж, товарний знак, торгова марка";
+
+//lv11
+"relatedWords.lv11.word1" = "Станція";
+"relatedWords.lv11.word2" = "Пасажири";
+"relatedWords.lv11.word3" = "Квиток";
+"relatedWords.lv11.word4" = "Контроль";
+"relatedWords.lv11.word5" = "Кордон";
+"relatedWords.lv11.answer1" = "Громадський транспорт";
+"relatedWords.lv11.relatedWord1" = "громадський транспорт, муніципальний транспорт, міський транспорт, публічний транспорт, комунальний транспорт, маршрутне таксі, автобус, трамвай, метро, маршрутка, тролейбус";
+"relatedWords.lv11.answer2" = "Подорож";
+"relatedWords.lv11.relatedWord2" = "подорож, поїздка, туризм, екскурсія, експедиція, пригода, турне, тур, мандрівка, вандрівка";
+"relatedWords.lv11.answer3" = "Маршрут";
+"relatedWords.lv11.relatedWord3" = "маршрут, шлях, курс, путь";
+"relatedWords.lv11.answer4" = "Безбілетник";
+"relatedWords.lv11.relatedWord4" = "безбілетник, заєць, халявник, порушник, безквитковий пасажир, безоплатний пасажир";
+"relatedWords.lv11.answer5" = "Провідник";
+"relatedWords.lv11.relatedWord5" = "провідник, стюардеса, супроводжуючий, кондуктор, супровідний, стюард, супровідник";
+
+//lv12
+"relatedWords.lv12.word1" = "Пустеля";
+"relatedWords.lv12.word2" = "Піски";
+"relatedWords.lv12.word3" = "Африка";
+"relatedWords.lv12.word4" = "Гробниця";
+"relatedWords.lv12.word5" = "Саркофаг";
+"relatedWords.lv12.answer1" = "Єгипет";
+"relatedWords.lv12.relatedWord1" = "Єгипет";
+"relatedWords.lv12.answer2" = "Піраміда";
+"relatedWords.lv12.relatedWord2" = "піраміда";
+"relatedWords.lv12.answer3" = "Мумія";
+"relatedWords.lv12.relatedWord3" = "мумія";
+"relatedWords.lv12.answer4" = "Сфінкс";
+"relatedWords.lv12.relatedWord4" = "сфінкс";
+"relatedWords.lv12.answer5" = "Сахара";
+"relatedWords.lv12.relatedWord5" = "Сахара";
+
+//lv13
+"relatedWords.lv13.word1" = "Долар";
+"relatedWords.lv13.word2" = "Фінанси";
+"relatedWords.lv13.word3" = "Відсотки";
+"relatedWords.lv13.word4" = "Повноваження";
+"relatedWords.lv13.word5" = "Дефолт";
+"relatedWords.lv13.answer1" = "Економіка";
+"relatedWords.lv13.relatedWord1" = "економіка, фінанси, система ресурсів";
+"relatedWords.lv13.answer2" = "Валюта";
+"relatedWords.lv13.relatedWord2" = "валюта, гроші, засоби, готівка, кошти, кошт";
+"relatedWords.lv13.answer3" = "Інфляція";
+"relatedWords.lv13.relatedWord3" = "інфляція, знецінення грошей, підвищення цін";
+"relatedWords.lv13.answer4" = "Кредит";
+"relatedWords.lv13.relatedWord4" = "кредит, позика, овердрафт, іпотека, кредитування, дебет, займ";
+"relatedWords.lv13.answer5" = "Акції";
+"relatedWords.lv13.relatedWord5" = "акції, акціонер, активи, знижка";
+
+//lv14
+"relatedWords.lv14.word1" = "Влада";
+"relatedWords.lv14.word2" = "Закон";
+"relatedWords.lv14.word3" = "Політика";
+"relatedWords.lv14.word4" = "Повноваження";
+"relatedWords.lv14.word5" = "Хабарі";
+"relatedWords.lv14.answer1" = "Президент";
+"relatedWords.lv14.relatedWord1" = "президент, правитель, голова, керівник, лідер, князь, імператор, глава держави";
+"relatedWords.lv14.answer2" = "Конституція";
+"relatedWords.lv14.relatedWord2" = "конституція, статут, правова система, регламент";
+"relatedWords.lv14.answer3" = "Держава";
+"relatedWords.lv14.relatedWord3" = "держава, країна, республіка, князівство, королівство, імперія, нація";
+"relatedWords.lv14.answer4" = "Мандат";
+"relatedWords.lv14.relatedWord4" = "мандат, представницькі права, легітимація, повноваження";
+"relatedWords.lv14.answer5" = "Корупція";
+"relatedWords.lv14.relatedWord5" = "корупція, підкуп, хабарництво, корумпованість";
+
+//lv15
+"relatedWords.lv15.word1" = "Графіка";
+"relatedWords.lv15.word2" = "Рівень";
+"relatedWords.lv15.word3" = "Змагання";
+"relatedWords.lv15.word4" = "Мультиплеєр";
+"relatedWords.lv15.word5" = "Ігровий процес";
+"relatedWords.lv15.answer1" = "Комп'ютерні ігри";
+"relatedWords.lv15.relatedWord1" = "комп'ютерні ігри, гра, відеогра, відеоігри, геймінг";
+"relatedWords.lv15.answer2" = "Геймплей";
+"relatedWords.lv15.relatedWord2" = "геймплей, механіка, ігровий процес, інтерфейс, управління";
+"relatedWords.lv15.answer3" = "Кіберспорт";
+"relatedWords.lv15.relatedWord3" = "кіберспорт, електронний спорт, цифровий спорт, комп'ютерний спорт, еспортив";
+"relatedWords.lv15.answer4" = "Віртуальна реальність";
+"relatedWords.lv15.relatedWord4" = "віртуальна реальність, штучна реальність, симуляція, віртуальне середовище, віртуальний світ";
+"relatedWords.lv15.answer5" = "Геймер";
+"relatedWords.lv15.relatedWord5" = "геймер, гравець, відеоігрок, ігроман";
+
+//lv16
+"relatedWords.lv16.word1" = "Комп'ютер";
+"relatedWords.lv16.word2" = "Система";
+"relatedWords.lv16.word3" = "Мережа";
+"relatedWords.lv16.word4" = "Код";
+"relatedWords.lv16.word5" = "Троянський кінь";
+"relatedWords.lv16.answer1" = "Операційна система";
+"relatedWords.lv16.relatedWord1" = "операційна система, програмне забезпечення, платформа, софт, пз, ос, система управління";
+"relatedWords.lv16.answer2" = "Програмування";
+"relatedWords.lv16.relatedWord2" = "програмування, кодування, програміст, розробка, написання коду, кодинг";
+"relatedWords.lv16.answer3" = "Сервер";
+"relatedWords.lv16.relatedWord3" = "сервер, хмара, маршрутизатор, хост";
+"relatedWords.lv16.answer4" = "Інтернет";
+"relatedWords.lv16.relatedWord4" = "інтернет, Інтернет, цифровий простір, інформаційний простір, веб";
+"relatedWords.lv16.answer5" = "Антивірус";
+"relatedWords.lv16.relatedWord5" = "антивірус, захист, безпека, захисне ПЗ, програма безпеки, програма захисту";
+
+//lv17
+"relatedWords.lv17.word1" = "Час";
+"relatedWords.lv17.word2" = "Технології";
+"relatedWords.lv17.word3" = "Розвиток";
+"relatedWords.lv17.word4" = "Робот";
+"relatedWords.lv17.word5" = "Проєкція";
+"relatedWords.lv17.answer1" = "Майбутнє";
+"relatedWords.lv17.relatedWord1" = "майбутнє, перспектива";
+"relatedWords.lv17.answer2" = "Інновації";
+"relatedWords.lv17.relatedWord2" = "інновації, винахід, інновація, модернізація, новаторство, прорив, новинка, нововведення, новації";
+"relatedWords.lv17.answer3" = "Штучний інтелект";
+"relatedWords.lv17.relatedWord3" = "штучний інтелект, нейронні мережі, цифровий розум, нейромережа, AI";
+"relatedWords.lv17.answer4" = "Кіборг";
+"relatedWords.lv17.relatedWord4" = "кіборг, термінатор, кіберорганізм, кіберлюдина, кібервихованець";
+"relatedWords.lv17.answer5" = "Голограма";
+"relatedWords.lv17.relatedWord5" = "голограма, голографічне зображення, тривимірна проєкція, світлокопія, голографія, світлова проекція";
+
+//lv18
+"relatedWords.lv18.word1" = "Доказ";
+"relatedWords.lv18.word2" = "Формула";
+"relatedWords.lv18.word3" = "Рівняння";
+"relatedWords.lv18.word4" = "Залежність";
+"relatedWords.lv18.word5" = "Вісь";
+"relatedWords.lv18.answer1" = "Теорема";
+"relatedWords.lv18.relatedWord1" = "теорема, аксіома, гіпотеза, постулат, лема, теза";
+"relatedWords.lv18.answer2" = "Математика";
+"relatedWords.lv18.relatedWord2" = "математика, алгебра, геометрія, арифметика, вища математика, тригонометрія, квантова математика, планіметрія, стереометрія, дискретна математика";
+"relatedWords.lv18.answer3" = "Функція";
+"relatedWords.lv18.relatedWord3" = "функція, рівняння, задача, формула, рівність, еквівалентність";
+"relatedWords.lv18.answer4" = "Площина";
+"relatedWords.lv18.relatedWord4" = "площина, поверхня, бісектор, плоскість";
+"relatedWords.lv18.answer5" = "Діаграма";
+"relatedWords.lv18.relatedWord5" = "діаграма, графік, гістограма, граф, синусоїда";
+
+//lv19
+"relatedWords.lv19.word1" = "Час";
+"relatedWords.lv19.word2" = "Технології";
+"relatedWords.lv19.word3" = "Розвиток";
+"relatedWords.lv19.word4" = "Робот";
+"relatedWords.lv19.word5" = "Проєкція";
+"relatedWords.lv19.answer1" = "Штучний інтелект";
+"relatedWords.lv19.answer2" = "Інновації";
+"relatedWords.lv19.answer3" = "Майбутнє";
+"relatedWords.lv19.answer4" = "Кіборг";
+"relatedWords.lv19.answer5" = "Голограма";
+
+//lv20
+"relatedWords.lv20.word1" = "Кошик";
+"relatedWords.lv20.word2" = "Термінал";
+"relatedWords.lv20.word3" = "Команда";
+"relatedWords.lv20.word4" = "Архів";
+"relatedWords.lv20.word5" = "Тека";
+"relatedWords.lv20.answer1" = "Комп'ютер";
+"relatedWords.lv20.relatedWord1" = "комп'ютер, лептоп, макбук, нетбук, ноутбук, пк";
+"relatedWords.lv20.answer2" = "Програмне забезпечення";
+"relatedWords.lv20.relatedWord2" = "програмне забезпечення, програма, софт, ПЗ, застосунок, додаток";
+"relatedWords.lv20.answer3" = "Об'єктне сховище";
+"relatedWords.lv20.relatedWord3" = "об'єктне сховище, хмарне сховище, система зберігання даних, хранилище, ";
+"relatedWords.lv20.answer4" = "Файлова система";
+"relatedWords.lv20.relatedWord4" = "файлова система, файл, система файлів, Файлове зберігання";
+"relatedWords.lv20.answer5" = "Резервне копіювання";
+"relatedWords.lv20.relatedWord5" = "резервне копіювання, синхронізація даних, бекап, копіювання";
+
+
+// Mark: Secret word
+"secretWord.title" = "Секретне слово";
+"secretWord.subtitle" = "Вгадайте слово, спираючись на наступні твердження";
+
+// lv1
+"secretWord.lv1.secret1" = "Це не картина, але ви можете побачити в ній себе.";
+"secretWord.lv1.secret2" = "Воно показує правду, але інколи хочеться побачити брехню.";
+"secretWord.lv1.secret3" = "Ви стикаєтеся з цим щодня, дивлячись йому в обличчя";
+"secretWord.lv1.answer" = "Дзеркало";
+"secretWord.lv1.relatedWord" = "дзеркало, відображення, дзеркальце, верцадло, свічадо, віддзеркалення, люстро, люстеречко, люстерко, трюмо, плесо";
+
+// lv2
+"secretWord.lv2.secret1" = "Це те, що приходить, але ніколи не йде.";
+"secretWord.lv2.secret2" = "На це постійно дивляться.";
+"secretWord.lv2.secret3" = "Воно пов’язане з часом.";
+"secretWord.lv2.answer" = "Годинник";
+"secretWord.lv2.relatedWord" = "годинник, час, таймер, година, циферблат, куранти, годинничок, дзиґар, дзиґарі, часомір, ходики";
+
+// lv3
+"secretWord.lv3.secret1" = "Це не людина, але завжди поруч.";
+"secretWord.lv3.secret2" = "Скільки б за цим не гналися, його не зловиш.";
+"secretWord.lv3.secret3" = "Це зникає при повній темряві";
+"secretWord.lv3.answer" = "Тінь";
+"secretWord.lv3.relatedWord" = "тінь, відби́ток, діди, отінення, тінява";
+
+// lv4
+"secretWord.lv4.secret1" = "Воно знає всі дороги, але не вміє ходити";
+"secretWord.lv4.secret2" = "Це відкривають, коли шлях невідомий.";
+"secretWord.lv4.secret3" = "Це показує вам, де ви знаходитесь, навіть якщо ви цього не знаєте.";
+"secretWord.lv4.answer" = "Мапа";
+"secretWord.lv4.relatedWord" = "карта, навігатор, мапа";
+
+// lv5
+"secretWord.lv5.secret1" = "Це топчуть, щоб стало краще.";
+"secretWord.lv5.secret2" = "Це веде кудись, але само не рухається.";
+"secretWord.lv5.secret3" = "Автомобілям туди не проїхати.";
+"secretWord.lv5.answer" = "Стежка";
+"secretWord.lv5.relatedWord" = "стежка, тропа, доріжка, пішник, плай, лаз, тасьма";
+
+// lv6
+"secretWord.lv6.secret1" = "Це рухає нас, але само залишається на місці.";
+"secretWord.lv6.secret2" = "Ти бачиш його сходи, але вони зникають і з'являються.";
+"secretWord.lv6.secret3" = "Це завжди поруч у торгових центрах.";
+"secretWord.lv6.answer" = "Ескалатор";
+"secretWord.lv6.relatedWord" = "ескалатор, траволатор, підйомник";
+
+// lv7
+"secretWord.lv7.secret1" = "Ви можете це зберігати, але не побачити.";
+"secretWord.lv7.secret2" = "Це існує, поки про це ніхто не знає .";
+"secretWord.lv7.secret3" = "Це живе в словах, які не були сказані.";
+"secretWord.lv7.answer" = "Таємниця";
+"secretWord.lv7.relatedWord" = "таємниця, секрет, містика, загадка, таїна ";
+
+// lv8
+"secretWord.lv8.secret1" = "Це може тільки рости.";
+"secretWord.lv8.secret2" = "Це приносить мудрість, але залишає сліди.";
+"secretWord.lv8.secret3" = "Це збільшується щороку.";
+"secretWord.lv8.answer" = "Вік";
+"secretWord.lv8.relatedWord" = "вік, роки, рік, сторіччя, зростання, возрост";
+
+// lv9
+"secretWord.lv9.secret1" = "Це падає, але ніколи не піднімається ";
+"secretWord.lv9.secret2" = "Це частіше з’являється, коли ти помив автомобіль.";
+"secretWord.lv9.secret3" = "Воно стукає по вікнах та дахах, але його не можна впустити в дім.";
+"secretWord.lv9.answer" = "Дощ";
+"secretWord.lv9.relatedWord" = "дощ, злива, мжичка, дощик, опади, проливний дощ, ливень, хлющ, залива";
+
+// lv10
+"secretWord.lv10.secret1" = "Це легке, як пір’їнка, але навіть найтренованіша людина не зможе довго це тримати.";
+"secretWord.lv10.secret2" = "Це невидиме, але без нього ти не зможеш прожити і хвилини";
+"secretWord.lv10.secret3" = "Це може бути повільним і спокійним або швидким і важким.";
+"secretWord.lv10.answer" = "Дихання";
+"secretWord.lv10.relatedWord" = "дихання, вдих, подих, видих";
+
+// lv11
+"secretWord.lv11.secret1" = "Чим більше з цього береш, тим більше вона стає.";
+"secretWord.lv11.secret2" = "Вона порожня, але може стати пасткою";
+"secretWord.lv11.secret3" = "В це можна впасти, якщо не помітити.";
+"secretWord.lv11.answer" = "Яма";
+"secretWord.lv11.relatedWord" = "яма, вирва, рів, ямка, вибій, вибоїна";
+
+// lv12
+"secretWord.lv12.secret1" = "Там можна пересувати коня і слона.";
+"secretWord.lv12.secret2" = "Тут всі рухаються вперед, але шлях назад неможливий для всіх, окрім одного.";
+"secretWord.lv12.secret3" = "Це поле битви, але без крові.";
+"secretWord.lv12.answer" = "Шахи";
+"secretWord.lv12.relatedWord" = "Шахи";
+
+// lv13
+"secretWord.lv13.secret1" = "Перші два рази це дають безкоштовно. Третій раз доведеться заплатити.";
+"secretWord.lv13.secret2" = "Вони можуть бути мудрими, а можуть і ні";
+"secretWord.lv13.secret3" = "Їх втрата в дитинстві викликає радість, а в дорослому віці — тривогу.";
+"secretWord.lv13.answer" = "Зуби";
+"secretWord.lv13.relatedWord" = "зуби, зуб, ікло, зубки, зубець, зубчик";
+
+// lv14
+"secretWord.lv14.secret1" = "Воно належить вам, але інші використовують його частіше за вас.";
+"secretWord.lv14.secret2" = "Це перше, що ми дізнаємося про людину";
+"secretWord.lv14.secret3" = "20-30% людей забувають про це після першої зустрічі.";
+"secretWord.lv14.answer" = "Ім'я";
+"secretWord.lv14.relatedWord" = "ім'я, назва, прізвисько, іменування, звання, відомість, псевдонім, кличка, прозвання, самоназва, імечко, визнання, фіо, по батькові, назвисько, найменува́ння, порекло, наймення";
+
+// lv15
+"secretWord.lv15.secret1" = "Назви це по імені, і воно зникне.";
+"secretWord.lv15.secret2" = "Це те, що люди шукають у хаосі та скандалах.";
+"secretWord.lv15.secret3" = "Це між словами, але жодне з них не може це описати.";
+"secretWord.lv15.answer" = "Тиша";
+"secretWord.lv15.relatedWord" = "тиша, беззвучність, затишок, спокій, глушина, мовчання, бе́згомі́нь, безголо́сся, безгомі́ння, безмо́вність";
+
+// lv16
+"secretWord.lv16.secret1" = "Його викидають, коли він використовується, і підбирають, коли він не потрібен.";
+"secretWord.lv16.secret2" = "Він є в сімейних та особистих гербах усіх країн і є символом безпеки, стабільності та надії на порятунок.";
+"secretWord.lv16.secret3" = "Без нього рух по воді був би неконтрольованим.";
+"secretWord.lv16.answer" = "Якір";
+"secretWord.lv16.relatedWord" = "якір, кітва, кітвиця, якорець";
+
+// lv17
+"secretWord.lv17.secret1" = "У нього є зуби в шлунку.";
+"secretWord.lv17.secret2" = "Його дім завжди з ним.";
+"secretWord.lv17.secret3" = "Для людей це делікатес.";
+"secretWord.lv17.answer" = "Краб";
+"secretWord.lv17.relatedWord" = "краб, рак, крабик, омар, ";
+
+// lv18
+"secretWord.lv18.secret1" = "Його можна дати, не тримаючи в руках, і зламати, не торкаючись.";
+"secretWord.lv18.secret2" = "Його можна дати відразу, але цінність розкривається лише в кінці.";
+"secretWord.lv18.secret3" = "Він може зв’язати людей разом, але якщо його зламати, залишиться тріщина.";
+"secretWord.lv18.answer" = "Обіцянка";
+"secretWord.lv18.relatedWord" = "обіцянка, запевнення, клятва, розписка, зарік, обітниця";
+
+// lv19
+"secretWord.lv19.secret1" = "Цього не збільшиш за допомогою лупи в багатокутнику.";
+"secretWord.lv19.secret2" = "Це може бути гострим або тупим..";
+"secretWord.lv19.secret3" = "Це утворено двома променями.";
+"secretWord.lv19.answer" = "Кут";
+"secretWord.lv19.relatedWord" = "кут, куточок, вугол, кутик";
+
+// lv20
+"secretWord.lv20.secret1" = "Це приходить раз на місяць, а зникнути може за кілька днів.";
+"secretWord.lv20.secret2" = "Цього завжди недостатньо, скільки б не було.";
+"secretWord.lv20.secret3" = "Це винагорода за зусилля.";
+"secretWord.lv20.answer" = "Зарплата";
+"secretWord.lv20.relatedWord" = "зарплата, оклад, оплата, заробіток, дохід, гонорар, стипендія, виручка, заробітна плата, платня";
+
+// Mark: Annagrams
+"anagrams.title" = "Анаграмми";
+"anagrams.subtitle" = "Знайдіть слова в цьому наборі";
+"anagrams.button" = "Готово";
+
+"anagrams.lv1.world" = "заповідник";
+"anagrams.lv2.world" = "парадність";
+"anagrams.lv3.world" = "україночка";
+"anagrams.lv4.world" = "світанок";
+"anagrams.lv5.world" = "генератор";
+"anagrams.lv6.world" = "скаженість";
+"anagrams.lv7.world" = "акробат";
+"anagrams.lv8.world" = "серветка";
+"anagrams.lv9.world" = "обручка";
+"anagrams.lv10.world" = "методика";
+"anagrams.lv11.world" = "політик";
+"anagrams.lv12.world" = "правлячий";
+"anagrams.lv13.world" = "мигдалина";
+"anagrams.lv14.world" = "кропивв";
+"anagrams.lv15.world" = "донатор";
+"anagrams.lv16.world" = "доброхіть";
+"anagrams.lv17.world" = "сегрегація";
+"anagrams.lv18.world" = "креветка";
+"anagrams.lv19.world" = "перукар";
+"anagrams.lv20.world" = "дзвінка";
+"anagrams.lv21.world" = "альфонс";
+"anagrams.lv22.world" = "карниз";
+"anagrams.lv23.world" = "бройлер";
+"anagrams.lv24.world" = "десяток";
+"anagrams.lv25.world" = "взагалі";
+"anagrams.lv26.world" = "гетьман";
+"anagrams.lv27.world" = "студент";
+"anagrams.lv28.world" = "сипаний";
+"anagrams.lv29.world" = "зодіак";
+"anagrams.lv30.world" = "гіпноз";

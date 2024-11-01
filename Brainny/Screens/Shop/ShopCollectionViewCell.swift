@@ -72,8 +72,10 @@ class ShopCollectionViewCell: UICollectionViewCell {
     
     @IBAction func priceButtonTouched(_ sender: Any) {
         if let product = product {
+            AudioManager.shared.playTouchedSound()
             self.delegate?.buyProduct(product: product)
         } else if let model = model {
+            AudioManager.shared.playTouchedSound()
             self.delegate?.watchAdAndGet(model: model)
         }
     }

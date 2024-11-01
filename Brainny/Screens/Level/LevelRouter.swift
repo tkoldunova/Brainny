@@ -9,6 +9,9 @@ import UIKit
 
 protocol LevelRouterProtocol {
     func present(model: Games)
+    func goToRelatedWords(model: RelatedWords)
+    func goToSecretWords(model: SecretWords)
+    func goToAnagrams(model: AnagramModel)
 }
 
 final class LevelRouter: LevelRouterProtocol {
@@ -32,6 +35,23 @@ final class LevelRouter: LevelRouterProtocol {
         let vc = createInstance(model: model)
         navigationController.pushViewController(vc, animated: true)
     }
+    
+    func goToRelatedWords(model: RelatedWords) {
+        let vc = RelatedWordsRouter(navigationController: navigationController)
+        vc.present(model: model)
+    }
+    
+    func goToSecretWords(model: SecretWords) {
+        let vc = SecretWordsRouter(navigationController: navigationController)
+        vc.present(model: model)
+    }
+    
+    func goToAnagrams(model: AnagramModel) {
+        let vc = AnagramsRouter(navigationController: navigationController)
+        vc.present(model: model)
+    }
+    
+    
     
     func dismiss() {
         self.navigationController?.popViewController(animated: true)
