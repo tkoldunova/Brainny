@@ -27,7 +27,7 @@ class EnterButton: SKSpriteNode {
         node.fontName = "OpenSans-SemiBold"
         node.zPosition = 1
         node.fontSize = 32
-        node.text = "Enter"
+        node.text = NSLocalizedString("anagrams.button", comment: "")
         node.verticalAlignmentMode = .center
         return node
     }()

@@ -44,6 +44,7 @@ extension LevelPresenter {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let m = interactor.model.model[indexPath.row]
         if interactor.model.availableLevels.contains(where: {$0.areEqual(to: m)}) {
+            AudioManager.shared.playTouchedSound()
             if let m = m as? RelatedWords {
                 self.router.goToRelatedWords(model: m)
             } else if let m = m as? SecretWords {

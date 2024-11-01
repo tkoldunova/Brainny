@@ -21,16 +21,16 @@ class AnagramsCollectionViewCell: UICollectionViewCell {
 //    }
     
     
-    func configure(model: WordsModel) {
+    func configure(model: RelatedWordModel) {
         self.layer.cornerRadius = 12.0
         self.layer.borderColor = Colors.borderColor.cgColor
         self.layer.borderWidth = 2.0
-        worldLabel.text = model.title
-        questionStackView.isHidden = !model.locked
+        worldLabel.text = model.answer
+        questionStackView.isHidden = model.guessed
         questionImageViews.forEach { imgView in
-            imgView.isHidden = !model.locked
+            imgView.isHidden = model.guessed
         }
-        worldLabel.isHidden = model.locked
+        worldLabel.isHidden = !model.guessed
         
     }
     

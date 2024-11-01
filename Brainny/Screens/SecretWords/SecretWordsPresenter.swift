@@ -11,10 +11,11 @@ protocol SecretWordsViewProtocol: AnyObject {
     func setAnswerView(answer: RelatedWordModel)
     func setAnswerQuessed(answer: RelatedWordModel)
     func showTipView(type: TipType)
+    func showWinView()
     func reloadWordsData()
 }
 
-protocol SecretWordsPresenterProtocol: UITableViewDelegate, UITableViewDataSource, UITextFieldDelegate, TipViewDelegate {
+protocol SecretWordsPresenterProtocol: UITableViewDelegate, UITableViewDataSource, UITextFieldDelegate, TipViewDelegate, WinViewDelegate {
     init(view: SecretWordsViewProtocol, interactor: SecretWordsInteractorProtocol, router: SecretWordsRouterProtocol)
     func notifyWhenViewDidLoad()
     func openTipForAnswer()
@@ -58,9 +59,12 @@ final class SecretWordsPresenter: NSObject, SecretWordsPresenterProtocol {
         if let suggestion = interactor.suggestion {
             let refacoredSuggestion = suggestion.lowercased().trimmingCharacters(in: .whitespacesAndNewlines)
             if interactor.answer.relatedWords.contains(refacoredSuggestion) {
+                AudioManager.shared.playCorrectSound()
                 interactor.answer.setGuessed(true) //= interactor.answers[i].s answer
                 self.view?.setAnswerQuessed(answer: interactor.answer)
+                self.checkQuessedCount()
             } else {
+                AudioManager.shared.playWrongSound()
                 self.view?.shakeTextField()
             }
         }
@@ -81,9 +85,26 @@ final class SecretWordsPresenter: NSObject, SecretWordsPresenterProtocol {
     
     func openWord(answer: String) {
         if self.interactor.answer.answer == answer {
+            AudioManager.shared.playCorrectSound()
             interactor.answer.setGuessed(true)
+            self.checkQuessedCount()
             self.view?.setAnswerQuessed(answer: interactor.answer)
         }
+    }
+    
+    func checkQuessedCount() {
+        if interactor.answer.guessed {
+            self.view?.showWinView()
+            var doneLevels = Games.secretWords.doneLevels
+            if !doneLevels.contains(where: {$0.areEqual(to: interactor.model)}) {
+                doneLevels.append(interactor.model)
+                Games.secretWords.setDoneLevels(newValue: doneLevels)
+            }
+        }
+    }
+    
+    func dismiss() {
+        self.router.dismiss()
     }
     
 }

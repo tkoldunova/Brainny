@@ -50,7 +50,9 @@ enum Games: Int, CaseIterable {
         if newValue.count%2==0 {
             let endIndex = (availableLevels.count + 4 < model.count) ? availableLevels.count + 4 : model.count
             let newAvailable = Array(model[availableLevels.count..<endIndex])
-            setAvailableLevels(newValue: newAvailable)
+            var available = availableLevels
+            available.append(contentsOf: newAvailable)
+            setAvailableLevels(newValue: available)
         }
     }
     

@@ -9,6 +9,7 @@ import UIKit
 
 protocol RelatedWordsRouterProtocol {
     func present(model: RelatedWords) 
+    func dismiss()
 }
 
 final class RelatedWordsRouter: RelatedWordsRouterProtocol {

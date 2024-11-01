@@ -23,6 +23,10 @@ enum CoinsModel: String, CaseIterable {
         }
     }
     
+    var index: Int {
+        return (CoinsModel.allCases.firstIndex(of: self) ?? 0)
+    }
+    
     var value: Int {
         switch self {
         case .hap:

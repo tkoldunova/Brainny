@@ -13,9 +13,10 @@ protocol RelatedWordsViewProtocol: AnyObject {
     func showTipView(type: TipType)
     func reloadWordsData()
     func setTextFieldEmpty()
+    func showWinView()
 }
 
-protocol RelatedWordsPresenterProtocol: UICollectionViewDelegate, UICollectionViewDataSource, UITableViewDelegate, UITableViewDataSource, UITextFieldDelegate, TipViewDelegate {
+protocol RelatedWordsPresenterProtocol: UICollectionViewDelegate, UICollectionViewDataSource, UITableViewDelegate, UITableViewDataSource, UITextFieldDelegate, TipViewDelegate, WinViewDelegate {
     init(view: RelatedWordsViewProtocol, interactor: RelatedWordsInteractorProtocol, router: RelatedWordsRouterProtocol)
     func checkValue() 
 }
@@ -56,13 +57,16 @@ final class RelatedWordsPresenter: NSObject, RelatedWordsPresenterProtocol {
                 }
             }
             if let findedInd = findedInd {
+                AudioManager.shared.playCorrectSound()
                 guard let cell = view?.getCell(indexPath: IndexPath(row: findedInd, section: 0)) as? RelatedWordsTableViewCell else {return}
                 cell.guessed(model: interactor.answers[findedInd])
             } else {
+                AudioManager.shared.playWrongSound()
                 self.view?.shakeTextField()
             }
             self.view?.setTextFieldEmpty()
             self.interactor.suggestion = nil
+            self.checkQuessedCount()
             
         }
     }
@@ -82,10 +86,28 @@ final class RelatedWordsPresenter: NSObject, RelatedWordsPresenterProtocol {
     
     func openWord(answer: String) {
         if let ind = self.interactor.answers.firstIndex(where: {$0.answer == answer}) {
+            AudioManager.shared.playCorrectSound()
             interactor.answers[ind].setGuessed(true)
+            checkQuessedCount()
             guard let cell = view?.getCell(indexPath: IndexPath(row: ind, section: 0)) as? RelatedWordsTableViewCell else {return}
             cell.guessed(model: interactor.answers[ind])
         }
+    }
+    
+    func checkQuessedCount() {
+        let allGuessed = interactor.answers.allSatisfy({$0.guessed == true})
+        if allGuessed {
+            self.view?.showWinView()
+            var doneLevels = Games.relatedWords.doneLevels
+            if !doneLevels.contains(where: {$0.areEqual(to: interactor.model)}) {
+                doneLevels.append(interactor.model)
+                Games.relatedWords.setDoneLevels(newValue: doneLevels)
+            }
+        }
+    }
+    
+    func dismiss() {
+        self.router.dismiss()
     }
     
 }
@@ -103,6 +125,7 @@ extension RelatedWordsPresenter {
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         if interactor.words[indexPath.row].locked {
+            AudioManager.shared.playTouchedSound()
             self.view?.showTipView(type: .word(TipWordModel(title: "Unlock word", price: 15, word: interactor.words[indexPath.row].title)))
         }
     }
@@ -123,6 +146,7 @@ extension RelatedWordsPresenter {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if !interactor.answers[indexPath.row].guessed {
+            AudioManager.shared.playTouchedSound()
             self.view?.showTipView(type: .letter(TipLetterModel(tip: interactor.answers[indexPath.row].tip, answer: interactor.answers[indexPath.row].answer, price: 10)))
         }
     }

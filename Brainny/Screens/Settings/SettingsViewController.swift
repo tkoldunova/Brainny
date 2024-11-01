@@ -9,6 +9,11 @@ import UIKit
 
 class SettingsViewController: BaseViewController<SettingsPresenterProtocol>, SettingsViewProtocol {
     lazy var tapGestureRcognizer = UITapGestureRecognizer(target: self, action: #selector(hide))
+    @IBOutlet weak var titleLabel: UILabel! {
+        didSet {
+            titleLabel.text = NSLocalizedString("settings.title", comment: "")
+        }
+    }
     @IBOutlet weak var contentView: UIView! {
         didSet {
             contentView.layer.cornerRadius = 12.0
@@ -41,6 +46,7 @@ class SettingsViewController: BaseViewController<SettingsPresenterProtocol>, Set
     }
  
     @objc func hide() {
+        AudioManager.shared.playTouchedSound()
         self.presenter.dismiss()
     }
 

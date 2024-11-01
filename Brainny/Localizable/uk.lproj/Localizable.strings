@@ -28,6 +28,15 @@
 "shop.coins.vault" = "Сховище монет";
 "shop.noAds.title" = "Без Реклами";
 
+// Mark: Win
+"win.title" = "Рівень пройдено!";
+"win.subtitle" = "Ви заробили:";
+
+// Mark: Tip
+"tip.word.title" = "Відкрити підказку за";
+"tip.word.button" = "Відкрити";
+"tip.letter.title" = "Відкрити літеру";
+
 // Mark: Related words
 "relatedWords.title" = "Пов'язані слова";
 "relatedWords.subtitle" = "Нижче наведені слова або поняття. Введіть щось спільне між ними";
@@ -515,6 +524,7 @@
 // Mark: Annagrams
 "anagrams.title" = "Анаграмми";
 "anagrams.subtitle" = "Знайдіть слова в цьому наборі";
+"anagrams.button" = "Готово";
 
 "anagrams.lv1.world" = "заповідник";
 "anagrams.lv2.world" = "парадність";

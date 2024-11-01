@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="32700.99.1234" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="jKF-P1-K4P">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22685"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -694,6 +695,7 @@
                     <connections>
                         <outlet property="contentView" destination="OrS-EE-Kim" id="x11-VM-4v7"/>
                         <outlet property="tableView" destination="zfn-eM-fHO" id="nzt-QG-be0"/>
+                        <outlet property="titleLabel" destination="iz8-4D-HiS" id="vNU-h1-58g"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cqb-zh-qeh" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -820,7 +822,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="180" height="254"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hap of coins" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="96P-Fz-Pmn">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hap of coins" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="96P-Fz-Pmn">
                                                     <rect key="frame" x="28.666666666666664" y="11.999999999999998" width="122.66666666666669" height="27.333333333333329"/>
                                                     <fontDescription key="fontDescription" name="OpenSans-Bold" family="Open Sans" pointSize="20"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -868,6 +870,7 @@
                                             <constraints>
                                                 <constraint firstItem="uYX-wF-G7o" firstAttribute="trailing" secondItem="wIn-7q-mll" secondAttribute="trailing" id="0cM-Dn-fnw"/>
                                                 <constraint firstItem="wIn-7q-mll" firstAttribute="top" secondItem="7fO-jP-cUD" secondAttribute="bottom" constant="10" id="IWQ-q9-gpx"/>
+                                                <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="96P-Fz-Pmn" secondAttribute="trailing" constant="12" id="Ji7-sh-WSQ"/>
                                                 <constraint firstItem="1uL-NL-eT5" firstAttribute="top" secondItem="wIn-7q-mll" secondAttribute="bottom" constant="10" id="Sh2-nX-zCG"/>
                                                 <constraint firstItem="7fO-jP-cUD" firstAttribute="centerX" secondItem="J8q-Ft-lu1" secondAttribute="centerX" id="TKA-sl-owt"/>
                                                 <constraint firstAttribute="bottom" secondItem="1uL-NL-eT5" secondAttribute="bottom" constant="12" id="Yhn-Ah-DQe"/>
@@ -879,6 +882,7 @@
                                                 <constraint firstItem="wIn-7q-mll" firstAttribute="leading" secondItem="J8q-Ft-lu1" secondAttribute="leading" constant="8" id="p3F-oG-aDq"/>
                                                 <constraint firstAttribute="trailing" secondItem="1uL-NL-eT5" secondAttribute="trailing" constant="12" id="t5H-Yn-Ogh"/>
                                                 <constraint firstItem="96P-Fz-Pmn" firstAttribute="centerX" secondItem="J8q-Ft-lu1" secondAttribute="centerX" id="xv5-PZ-Lqs"/>
+                                                <constraint firstItem="96P-Fz-Pmn" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="J8q-Ft-lu1" secondAttribute="leading" constant="12" id="z0m-Zh-BvG"/>
                                             </constraints>
                                         </collectionViewCellContentView>
                                         <connections>
@@ -903,18 +907,18 @@
                                                         <constraint firstAttribute="width" constant="50" id="fMS-Tc-v63"/>
                                                     </constraints>
                                                 </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No Ads" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vIK-CU-FKh">
-                                                    <rect key="frame" x="66" y="23.666666666666671" width="84.333333333333314" height="33"/>
-                                                    <fontDescription key="fontDescription" name="OpenSans-Bold" family="Open Sans" pointSize="24"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No Ads" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vIK-CU-FKh">
+                                                    <rect key="frame" x="66" y="26.333333333333336" width="70.333333333333314" height="27.333333333333336"/>
+                                                    <fontDescription key="fontDescription" name="OpenSans-Bold" family="Open Sans" pointSize="20"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rLi-VB-clL">
-                                                    <rect key="frame" x="201" y="20" width="140" height="40"/>
+                                                    <rect key="frame" x="241" y="20" width="100" height="40"/>
                                                     <color key="backgroundColor" red="0.56499999759999997" green="0.48199999329999998" blue="0.81999999280000002" alpha="0.50685799539999998" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="40" id="5xu-Eb-HNv"/>
-                                                        <constraint firstAttribute="width" constant="140" id="GYQ-zG-jGb"/>
+                                                        <constraint firstAttribute="width" constant="100" id="GYQ-zG-jGb"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" name="OpenSans-Medium" family="Open Sans" pointSize="20"/>
                                                     <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
@@ -988,7 +992,7 @@
                                 <color key="textColor" red="1" green="1" blue="1" alpha="0.80000000000000004" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1:00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="onM-qm-5Pt">
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1:00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="onM-qm-5Pt">
                                 <rect key="frame" x="172.66666666666666" y="387" width="48" height="33"/>
                                 <fontDescription key="fontDescription" name="OpenSans-SemiBold" family="Open Sans" pointSize="24"/>
                                 <nil key="textColor"/>
@@ -1096,7 +1100,7 @@
                     <connections>
                         <outlet property="collectionView" destination="v0W-Es-B2H" id="tfK-EM-l52"/>
                         <outlet property="gameView" destination="dPR-lq-BLB" id="hye-yg-McY"/>
-                        <outlet property="subtitleLabel" destination="mrD-Lf-buf" id="KUy-YD-Knb"/>
+                        <outlet property="subtitleLabel" destination="mrD-Lf-buf" id="gN0-Y8-Gyl"/>
                         <outlet property="timerLabel" destination="onM-qm-5Pt" id="qFc-yl-8Me"/>
                     </connections>
                 </viewController>

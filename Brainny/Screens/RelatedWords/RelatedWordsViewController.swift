@@ -17,6 +17,7 @@ class RelatedWordsViewController: BaseViewController<RelatedWordsPresenterProtoc
         return button
     }()
     lazy var tipView = TipView(frame: self.view.bounds)
+    lazy var winView = WinView(frame: self.view.bounds)
     @IBOutlet weak var descriptionLabel: UILabel! {
         didSet {
             descriptionLabel.text =  NSLocalizedString("relatedWords.subtitle", comment: "")
@@ -66,6 +67,7 @@ class RelatedWordsViewController: BaseViewController<RelatedWordsPresenterProtoc
     }
     
     func showTipView(type: TipType) {
+        tipView = TipView(frame: self.view.bounds)
         tipView.configure(type: type)
         tipView.alpha = 0
         tipView.center = self.view.center
@@ -81,6 +83,17 @@ class RelatedWordsViewController: BaseViewController<RelatedWordsPresenterProtoc
             self.tipView.alpha = 0
         } completion: { _ in
             self.tipView.removeFromSuperview()
+        }
+    }
+    
+    func showWinView() {
+        winView.configure()
+        winView.alpha = 0
+        winView.center = self.view.center
+        winView.delegate = presenter
+        self.view.addSubview(winView)
+        UIView.animate(withDuration: 0.75) {
+            self.winView.alpha = 1
         }
     }
     

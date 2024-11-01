@@ -20,6 +20,11 @@ class LevelViewController: BaseViewController<LevelPresenterProtocol>, LevelView
         self.title = NSLocalizedString("level.title", comment: "")
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        reloadData()
+    }
+    
     func reloadData() {
         self.collectionView.reloadData()
     }

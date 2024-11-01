@@ -16,7 +16,7 @@ protocol AnagramsView: AnyObject {
 }
 
 
-protocol AnagramsPresenterProtocol: UICollectionViewDelegate, UICollectionViewDataSource {
+protocol AnagramsPresenterProtocol: UICollectionViewDelegate, UICollectionViewDataSource, TipViewDelegate {
     init(view: AnagramsView, router: AnagramsRouterProtocol, interactor: AnagramsInteractorProtocol)
     
     func getWold() -> String
@@ -44,11 +44,39 @@ class AnagramsPresenter: NSObject, AnagramsPresenterProtocol {
     func checkIfWorldIsCorrect(word: String) -> Bool {
         let bool = interactor.checkIfWorldIsCorrent(word: word)
         view?.reload()
+        if bool {
+            AudioManager.shared.playCorrectSound()
+        } else {
+            AudioManager.shared.playWrongSound()
+        }
         return bool
     }
     
     func getWold() -> String {
         return interactor.getWorld()
+    }
+    
+    func tipHasChanged(_ tip: [String?], answer: String) {
+        if let ind = self.interactor.words?.firstIndex(where: {$0.answer == answer}) {
+            self.interactor.words?[ind].setTip(tip)
+        }
+    }
+    
+    func unlockWord(word: String) {}
+    
+    func openWord(answer: String) {
+        if let ind = self.interactor.words?.firstIndex(where: {$0.answer == answer}) {
+            AudioManager.shared.playCorrectSound()
+            self.interactor.words?[ind].setGuessed(true)
+            if let m = interactor.words?[ind] {
+                self.interactor.moveToTop(word: m)
+            }
+            view?.reload()
+        }
+    }
+    
+    func dismiss() {
+        self.router.dismiss()
     }
 }
 
@@ -66,14 +94,12 @@ extension AnagramsPresenter: UICollectionViewDelegate, UICollectionViewDataSourc
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-//        if let data =  interactor.words?[indexPath.row] {
-//            if data.locked {
-//                self.view?.showTipView(type: .letter(TipLetterModel(tip: <#T##[String?]#>, answer: <#T##String#>, price: <#T##Int#>)))
-//            }
-//        }
-//        if interactor.words[indexPath.row].locked {
-//  
-//        }
+        if let data =  interactor.words?[indexPath.row] {
+            if !data.guessed {
+                AudioManager.shared.playTouchedSound()
+                self.view?.showTipView(type: .letter(TipLetterModel(tip: data.tip, answer: data.answer, price: 10)))
+            }
+        }
     }
     
     

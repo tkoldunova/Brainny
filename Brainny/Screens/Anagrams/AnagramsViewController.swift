@@ -10,8 +10,12 @@ import SpriteKit
 import GameplayKit
 
 class AnnagramsViewController: BaseViewController<AnagramsPresenterProtocol> {
-
-    @IBOutlet weak var subtitleLabel: UILabel!
+    lazy var tipView = TipView(frame: self.view.bounds)
+    @IBOutlet weak var subtitleLabel: UILabel! {
+        didSet {
+            subtitleLabel.text = NSLocalizedString("anagrams.subtitle", comment: "")
+        }
+    }
     @IBOutlet weak var gameView: SKView! {
         didSet {
            
@@ -24,13 +28,14 @@ class AnnagramsViewController: BaseViewController<AnagramsPresenterProtocol> {
             
         }
     }
+ //   @IBOutlet weak var subtitleLabel: UILabel!
     @IBOutlet weak var timerLabel: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
         
 //        self.setUpNavigationController()
         
-        self.title = "Annagrams"
+        self.title = NSLocalizedString("anagrams.title", comment: "")
         
         
         if let scene = SKScene(fileNamed: "GameScene") {
@@ -47,13 +52,15 @@ class AnnagramsViewController: BaseViewController<AnagramsPresenterProtocol> {
         
         gameView.ignoresSiblingOrder = true
         
-        gameView.showsFPS = true
-        gameView.showsNodeCount = true
+       // gameView.showsFPS = true
+        gameView.backgroundColor = .clear
+        //gameView.showsNodeCount = true
        // gameView.isHidden = true
        
     }
 
     func showTipView(type: TipType) {
+        tipView = TipView(frame: self.view.bounds)
         tipView.configure(type: type)
         tipView.alpha = 0
         tipView.center = self.view.center

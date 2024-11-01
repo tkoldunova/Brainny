@@ -13,9 +13,19 @@ protocol NoAdsDelegate: AnyObject {
 
 class NoAdsCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var iconImageView: UIImageView!
-    @IBOutlet weak var buyButton: UIButton!
+    @IBOutlet weak var buyButton: UIButton! {
+        didSet {
+            buyButton.layer.cornerRadius = 12.0
+            buyButton.layer.borderWidth = 2.0
+            buyButton.layer.borderColor = Colors.borderColor.cgColor
+        }
+    }
     
-    @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet weak var titleLabel: UILabel! {
+        didSet {
+            titleLabel.text =  NSLocalizedString("shop.noAds.title", comment: "")
+        }
+    }
     
     var model: ProductSub?
     weak var delegate: NoAdsDelegate?
@@ -28,7 +38,7 @@ class NoAdsCollectionViewCell: UICollectionViewCell {
         self.layer.borderColor = Colors.borderColor.cgColor
         
         
-        buyButton.setTitle("Buy \(model.price ?? "")", for: .normal)
+        buyButton.setTitle(model.price ?? "", for: .normal)
         setUpRadialGradient()
         
     }
@@ -47,6 +57,7 @@ class NoAdsCollectionViewCell: UICollectionViewCell {
     }
     
     @IBAction func buyButtonTouched(_ sender: Any) {
+        AudioManager.shared.playTouchedSound()
         delegate?.buyButtonPressed(self)
     }
 }

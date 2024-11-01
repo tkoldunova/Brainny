@@ -28,6 +28,15 @@
 "shop.coins.vault" = "Coin Vault";
 "shop.noAds.title" = "No Ads";
 
+// Mark: Win
+"win.title" = "Level Completed!";
+"win.subtitle" = "You earned:";
+
+// Mark: Tip
+"tip.word.title" = "Unlock tip for";
+"tip.word.button" = "Unlock";
+"tip.letter.title" = "Unlcok letter";
+
 // Mark: Related words
 "relatedWords.title" = "Related words";
 "relatedWords.subtitle" = "Below are words or concepts. Enter something in common between them. words";
@@ -516,6 +525,7 @@ chronograph, chronometer, hourglass, metronome";
 // Mark: Annagrams
 "anagrams.title" = "Annagrams";
 "anagrams.subtitle" = "Find the words in this set";
+"anagrams.button" = "Enter";
 
 "anagrams.lv1.world" = "grindas";
 "anagrams.lv2.world" = "fatalist";

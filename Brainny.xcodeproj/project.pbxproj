@@ -22,6 +22,11 @@
 		9F69B2EA2CCFFC6C00F89FDE /* Localize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F69B2E92CCFFC6C00F89FDE /* Localize.swift */; };
 		D1482C552CB5251A005AD918 /* NoAdsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1482C542CB5251A005AD918 /* NoAdsCollectionViewCell.swift */; };
 		D14EFD492CC306AF006BE052 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = D14EFD472CC306AF006BE052 /* Localizable.strings */; };
+		D16104A52CD4D037006F912A /* correct.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = D16104A42CD4D036006F912A /* correct.mp3 */; };
+		D16104A72CD4D087006F912A /* win.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = D16104A62CD4D087006F912A /* win.mp3 */; };
+		D16104A92CD4D110006F912A /* wrong.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = D16104A82CD4D110006F912A /* wrong.mp3 */; };
+		D16104AB2CD4EF70006F912A /* touch.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = D16104AA2CD4EF6F006F912A /* touch.mp3 */; };
+		D16104AD2CD4F01F006F912A /* AudioManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D16104AC2CD4F01F006F912A /* AudioManager.swift */; };
 		D17884E22CAAEFD1005FF692 /* SecretWordsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D17884E12CAAEFD1005FF692 /* SecretWordsViewController.swift */; };
 		D17884E42CAAEFE9005FF692 /* SecretWordsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D17884E32CAAEFE9005FF692 /* SecretWordsPresenter.swift */; };
 		D17884E62CAAEFF5005FF692 /* SecretWordsInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = D17884E52CAAEFF5005FF692 /* SecretWordsInteractor.swift */; };
@@ -85,6 +90,8 @@
 		D1EEF7092CA217FD00848B72 /* OpenSans-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D1EEF7052CA217FD00848B72 /* OpenSans-Bold.ttf */; };
 		D1EEF70A2CA217FD00848B72 /* OpenSans-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D1EEF7062CA217FD00848B72 /* OpenSans-SemiBold.ttf */; };
 		D1EFF5A02CB52B04001ECD85 /* ProductSub.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1EFF59F2CB52B04001ECD85 /* ProductSub.swift */; };
+		D1F72A3C2CD39F7300A0351F /* WinView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D1F72A3B2CD39F7300A0351F /* WinView.xib */; };
+		D1F72A3E2CD3A49500A0351F /* WinView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1F72A3D2CD3A49500A0351F /* WinView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -109,6 +116,11 @@
 		D14EFD482CC306AF006BE052 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		D14EFD4A2CC306B2006BE052 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Localizable.strings; sourceTree = "<group>"; };
 		D14EFD4B2CC306B7006BE052 /* uk */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = uk; path = uk.lproj/Localizable.strings; sourceTree = "<group>"; };
+		D16104A42CD4D036006F912A /* correct.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = correct.mp3; sourceTree = "<group>"; };
+		D16104A62CD4D087006F912A /* win.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = win.mp3; sourceTree = "<group>"; };
+		D16104A82CD4D110006F912A /* wrong.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = wrong.mp3; sourceTree = "<group>"; };
+		D16104AA2CD4EF6F006F912A /* touch.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = touch.mp3; sourceTree = "<group>"; };
+		D16104AC2CD4F01F006F912A /* AudioManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioManager.swift; sourceTree = "<group>"; };
 		D17884E12CAAEFD1005FF692 /* SecretWordsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecretWordsViewController.swift; sourceTree = "<group>"; };
 		D17884E32CAAEFE9005FF692 /* SecretWordsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecretWordsPresenter.swift; sourceTree = "<group>"; };
 		D17884E52CAAEFF5005FF692 /* SecretWordsInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecretWordsInteractor.swift; sourceTree = "<group>"; };
@@ -175,6 +187,8 @@
 		D1EEF7052CA217FD00848B72 /* OpenSans-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-Bold.ttf"; sourceTree = "<group>"; };
 		D1EEF7062CA217FD00848B72 /* OpenSans-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-SemiBold.ttf"; sourceTree = "<group>"; };
 		D1EFF59F2CB52B04001ECD85 /* ProductSub.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductSub.swift; sourceTree = "<group>"; };
+		D1F72A3B2CD39F7300A0351F /* WinView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WinView.xib; sourceTree = "<group>"; };
+		D1F72A3D2CD3A49500A0351F /* WinView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WinView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -255,11 +269,11 @@
 			children = (
 				D190A5F62CAC9B1A002B4625 /* ShopViewController.swift */,
 				D190A6062CACA326002B4625 /* ShopCollectionViewCell.swift */,
+				D1482C542CB5251A005AD918 /* NoAdsCollectionViewCell.swift */,
 				D190A5F82CAC9B28002B4625 /* ShopPresenter.swift */,
 				D190A5FA2CAC9B38002B4625 /* ShopInteractor.swift */,
 				D190A5FC2CAC9B4F002B4625 /* ShopRouter.swift */,
 				D190A5FE2CAC9B56002B4625 /* ShopModel.swift */,
-				D1482C542CB5251A005AD918 /* NoAdsCollectionViewCell.swift */,
 			);
 			path = Shop;
 			sourceTree = "<group>";
@@ -270,6 +284,7 @@
 				D190A6012CACA172002B4625 /* IapManager.swift */,
 				D190A6032CACA17A002B4625 /* CoinsProductSub.swift */,
 				D1EFF59F2CB52B04001ECD85 /* ProductSub.swift */,
+				D16104AC2CD4F01F006F912A /* AudioManager.swift */,
 			);
 			path = Managers;
 			sourceTree = "<group>";
@@ -324,6 +339,17 @@
 				D1ABCA032CA81E21009789DE /* LevelRouter.swift */,
 			);
 			path = Level;
+			sourceTree = "<group>";
+		};
+		D1D8A6932CD3C3F400B9B644 /* Music */ = {
+			isa = PBXGroup;
+			children = (
+				D16104AA2CD4EF6F006F912A /* touch.mp3 */,
+				D16104A82CD4D110006F912A /* wrong.mp3 */,
+				D16104A62CD4D087006F912A /* win.mp3 */,
+				D16104A42CD4D036006F912A /* correct.mp3 */,
+			);
+			name = Music;
 			sourceTree = "<group>";
 		};
 		D1E1C7492CA4A9A400300345 /* TipView */ = {
@@ -386,6 +412,7 @@
 		D1EEF6EB2CA1B9A400848B72 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				D1F72A3A2CD39F5200A0351F /* WinView */,
 				D1E6E4412CB342F9004BB47B /* Header View */,
 				D1E1C7492CA4A9A400300345 /* TipView */,
 				D1EEF6EC2CA1B9DB00848B72 /* BubleView.swift */,
@@ -434,6 +461,7 @@
 		D1EEF7012CA217A500848B72 /* Resourses */ = {
 			isa = PBXGroup;
 			children = (
+				D1D8A6932CD3C3F400B9B644 /* Music */,
 				D1EEF7022CA217B600848B72 /* Fonts */,
 				9F69B2E92CCFFC6C00F89FDE /* Localize.swift */,
 			);
@@ -449,6 +477,15 @@
 				D1EEF7062CA217FD00848B72 /* OpenSans-SemiBold.ttf */,
 			);
 			name = Fonts;
+			sourceTree = "<group>";
+		};
+		D1F72A3A2CD39F5200A0351F /* WinView */ = {
+			isa = PBXGroup;
+			children = (
+				D1F72A3B2CD39F7300A0351F /* WinView.xib */,
+				D1F72A3D2CD3A49500A0351F /* WinView.swift */,
+			);
+			path = WinView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -512,14 +549,19 @@
 			buildActionMask = 2147483647;
 			files = (
 				D1EEF7082CA217FD00848B72 /* OpenSans-Regular.ttf in Resources */,
+				D1F72A3C2CD39F7300A0351F /* WinView.xib in Resources */,
 				D1EEF7072CA217FD00848B72 /* OpenSans-Medium.ttf in Resources */,
 				D1EEF70A2CA217FD00848B72 /* OpenSans-SemiBold.ttf in Resources */,
 				D1EEF7092CA217FD00848B72 /* OpenSans-Bold.ttf in Resources */,
+				D16104A52CD4D037006F912A /* correct.mp3 in Resources */,
 				D14EFD492CC306AF006BE052 /* Localizable.strings in Resources */,
 				D1E1C74B2CA4A9AE00300345 /* TipView.xib in Resources */,
 				9F4D66882CC28A9C00C4E613 /* Actions.sks in Resources */,
 				9F4D66892CC28A9C00C4E613 /* GameScene.sks in Resources */,
+				D16104AB2CD4EF70006F912A /* touch.mp3 in Resources */,
+				D16104A92CD4D110006F912A /* wrong.mp3 in Resources */,
 				D19B744F2CA0DB050008F38E /* Assets.xcassets in Resources */,
+				D16104A72CD4D087006F912A /* win.mp3 in Resources */,
 				D19B74522CA0DB050008F38E /* Base in Resources */,
 				D19B744D2CA0DB000008F38E /* Base in Resources */,
 			);
@@ -535,6 +577,7 @@
 				D19B744A2CA0DB000008F38E /* ViewController.swift in Sources */,
 				D1ABC9F32CA75436009789DE /* UIImage.swift in Sources */,
 				D17884E42CAAEFE9005FF692 /* SecretWordsPresenter.swift in Sources */,
+				D16104AD2CD4F01F006F912A /* AudioManager.swift in Sources */,
 				D1E6E43C2CB194D6004BB47B /* SettingsInteractor.swift in Sources */,
 				D1E6E43A2CB194CB004BB47B /* VolumeTableViewCell.swift in Sources */,
 				D18F4C792CA35CAE00DF7653 /* Constants.swift in Sources */,
@@ -581,6 +624,7 @@
 				D1EEF6FC2CA1C67700848B72 /* RelatedWordsInteractor.swift in Sources */,
 				D1EEF6F12CA1C58C00848B72 /* Games.swift in Sources */,
 				D1ABC9F72CA80B33009789DE /* MenuInteractor.swift in Sources */,
+				D1F72A3E2CD3A49500A0351F /* WinView.swift in Sources */,
 				D1EEF7002CA20E1D00848B72 /* CurvedView.swift in Sources */,
 				D1EEF6F82CA1C65900848B72 /* RelatedWordsViewController.swift in Sources */,
 				D18F4C7D2CA3696900DF7653 /* UIView.swift in Sources */,
@@ -774,6 +818,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -802,6 +847,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

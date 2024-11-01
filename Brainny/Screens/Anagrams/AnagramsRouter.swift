@@ -11,6 +11,7 @@ import UIKit
 
 protocol AnagramsRouterProtocol: AnyObject {
     func present(model: AnagramModel)
+    func dismiss()
 }
 
 
@@ -46,6 +47,8 @@ class AnagramsRouter: AnagramsRouterProtocol {
     
     
     
-    
+    func dismiss() {
+        self.navigationController?.popViewController(animated: true)
+    }
         
 }

@@ -34,6 +34,13 @@ struct RelatedWordModel: Codable {
         tip = Array(repeating: nil, count: answer.count)
     }
     
+    init(answer: String, guessed: Bool) {
+        self.answer = answer
+        self.relatedWords = ""
+        self.guessed = guessed
+        tip = Array(repeating: nil, count: answer.count)
+    }
+    
     mutating func setGuessed(_ guessed: Bool) {
         self.guessed = guessed
     }
@@ -249,7 +256,7 @@ enum RelatedWords: CaseIterable, LevelProtocol {
         case .lv2:
             return [RelatedWordModel(answer: NSLocalizedString("relatedWords.lv2.answer1", comment: "") , relatedWords: NSLocalizedString("relatedWords.lv2.relatedWord1", comment: ""), guessed: false),
                     RelatedWordModel(answer: NSLocalizedString("relatedWords.lv2.answer2", comment: ""), relatedWords: NSLocalizedString("relatedWords.lv2.relatedWord2", comment: ""), guessed: false),
-                    RelatedWordModel(answer: NSLocalizedString("relatedWords.lv2.answer3", comment: ""), relatedWords: NSLocalizedString("relatedWords.lv2.relatedWord4", comment: ""), guessed: false),
+                    RelatedWordModel(answer: NSLocalizedString("relatedWords.lv2.answer3", comment: ""), relatedWords: NSLocalizedString("relatedWords.lv2.relatedWord3", comment: ""), guessed: false),
                     RelatedWordModel(answer: NSLocalizedString("relatedWords.lv2.answer4", comment: ""), relatedWords: NSLocalizedString("relatedWords.lv2.relatedWord4", comment: ""), guessed: false),
                     RelatedWordModel(answer: NSLocalizedString("relatedWords.lv2.answer5", comment: ""), relatedWords: NSLocalizedString("relatedWords.lv2.relatedWord5", comment: ""), guessed: false),]
         case .lv3:

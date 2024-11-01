@@ -9,11 +9,12 @@ import UIKit
 
 
 protocol AnagramsInteractorProtocol: AnyObject {
-    func getWorlds(completion: @escaping([WordsModel]) -> Void)
+    var words: [RelatedWordModel]? { get set }
+    func getWorld() -> String
+    func getWorlds(completion: @escaping([RelatedWordModel]) -> Void)
     func checkIfWorldIsCorrent(word: String) -> Bool
     func checkifWorldidAvailable(world: String) -> Bool
-    var words: [WordsModel]? { get }
-    func getWorld() -> String
+    func moveToTop(word: RelatedWordModel)
 }
 
 
@@ -23,7 +24,7 @@ class AnagramsInteractor: AnagramsInteractorProtocol {
     
     var correctWords = [String]()
     
-    var words: [WordsModel]? {
+    var words: [RelatedWordModel]? {
         didSet {
             guard let words = words else { return }
             anangram.setWords(newValue: words)
@@ -38,13 +39,17 @@ class AnagramsInteractor: AnagramsInteractorProtocol {
     func checkIfWorldIsCorrent(word: String) -> Bool {
         guard words != nil else { return false }
         if isCorrect(word: word) {
-            self.words?.removeAll(where: {$0.title == word})
-            
-            self.words?.insert(WordsModel(title: word, locked: false), at: 0)
+            self.words?.removeAll(where: {$0.answer == word})
+            self.words?.insert(RelatedWordModel(answer: word, guessed: true), at: 0)
             return true
         } else {
             return false
         }
+    }
+    
+    func moveToTop(word: RelatedWordModel) {
+        self.words?.removeAll(where: {$0.answer == word.answer})
+        self.words?.insert(word, at: 0)
     }
     
     func checkifWorldidAvailable(world: String) -> Bool  {
@@ -56,7 +61,7 @@ class AnagramsInteractor: AnagramsInteractorProtocol {
         
     }
     
-    func getWorlds(completion: @escaping([WordsModel]) -> Void) {
+    func getWorlds(completion: @escaping([RelatedWordModel]) -> Void) {
         guard anangram.words.isEmpty else {
             words = anangram.words
             return
@@ -72,7 +77,7 @@ class AnagramsInteractor: AnagramsInteractorProtocol {
                     }
                 })
                 let sorter = arr.sorted(by: {$0.count <= $1.count})
-                self.words = sorter.map({WordsModel(title: $0, locked: true)})
+                self.words = sorter.map({RelatedWordModel(answer: $0, guessed: false)})
                 completion(self.words!)
             }
         }
@@ -242,9 +247,9 @@ enum AnagramModel: CaseIterable, LevelProtocol {
         }
     
     
-    var words: [WordsModel] {
+    var words: [RelatedWordModel] {
           if let data = UserDefaults.standard.data(forKey: wordsKey) {
-              if let model = try? JSONDecoder().decode([WordsModel].self, from: data) {
+              if let model = try? JSONDecoder().decode([RelatedWordModel].self, from: data) {
                   return model
               }
           }
@@ -252,7 +257,7 @@ enum AnagramModel: CaseIterable, LevelProtocol {
          
       }
       
-      func setWords(newValue: [WordsModel]) {
+      func setWords(newValue: [RelatedWordModel]) {
           if let data = try? JSONEncoder().encode(newValue) {
               UserDefaults.standard.set(data, forKey: wordsKey)
           }
