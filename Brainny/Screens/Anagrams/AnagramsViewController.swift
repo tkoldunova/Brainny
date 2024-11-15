@@ -10,6 +10,8 @@ import SpriteKit
 import GameplayKit
 
 class AnnagramsViewController: BaseViewController<AnagramsPresenterProtocol> {
+    lazy var tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(hideKeyboard))
+    lazy var winView = WinView(frame: self.view.bounds)
     lazy var tipView = TipView(frame: self.view.bounds)
     @IBOutlet weak var subtitleLabel: UILabel! {
         didSet {
@@ -18,22 +20,55 @@ class AnnagramsViewController: BaseViewController<AnagramsPresenterProtocol> {
     }
     @IBOutlet weak var gameView: SKView! {
         didSet {
-           
+            
         }
     }
     @IBOutlet weak var collectionView: UICollectionView! {
         didSet {
             collectionView.delegate = presenter
             collectionView.dataSource = presenter
-            
+            let flowLayout = collectionView.collectionViewLayout as? UICollectionViewFlowLayout
+            flowLayout?.scrollDirection = .vertical
+            flowLayout?.minimumInteritemSpacing = 16
+            flowLayout?.sectionInset = UIEdgeInsets(top: 0, left: 8, bottom: 0, right: 8)
+            flowLayout?.estimatedItemSize = UICollectionViewFlowLayout.automaticSize
         }
     }
- //   @IBOutlet weak var subtitleLabel: UILabel!
     @IBOutlet weak var timerLabel: UILabel!
+    
+    lazy var coinsHStackView: UIStackView = {
+        let stackView = UIStackView()
+        stackView.axis = .horizontal
+        stackView.distribution = .fill
+        stackView.alignment = .trailing
+        stackView.spacing = 4
+        stackView.translatesAutoresizingMaskIntoConstraints = false
+        let imgView = UIImageView(image: UIImage(named: "coin"))
+        imgView.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            imgView.widthAnchor.constraint(equalToConstant: 20),
+            imgView.heightAnchor.constraint(equalToConstant: 20)
+        ])
+        stackView.addArrangedSubview(coinsLabel)
+        stackView.addArrangedSubview(imgView)
+        
+        return stackView
+    }()
+    
+    
+    lazy var coinsLabel: UILabel = {
+        let label = UILabel()
+        label.font = UIFont(name: "OpenSans-Medium", size: 20)
+        label.textColor = .white
+        label.text = "0"
+        label.translatesAutoresizingMaskIntoConstraints = false
+        return label
+    }()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-//        self.setUpNavigationController()
+        //        self.setUpNavigationController()
         
         self.title = NSLocalizedString("anagrams.title", comment: "")
         
@@ -52,13 +87,31 @@ class AnnagramsViewController: BaseViewController<AnagramsPresenterProtocol> {
         
         gameView.ignoresSiblingOrder = true
         
-       // gameView.showsFPS = true
+        // gameView.showsFPS = true
         gameView.backgroundColor = .clear
         //gameView.showsNodeCount = true
-       // gameView.isHidden = true
-       
+        // gameView.isHidden = true
+        self.presenter.notifyWhenViewDidLoad()
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(customView: coinsHStackView)
+        self.view.addGestureRecognizer(tapGestureRecognizer)
+        tapGestureRecognizer.delegate = self
     }
-
+    
+    func setUpCoinsLabel(coins: Int) {
+        coinsLabel.text = coins.description
+    }
+    
+    func showWinView() {
+        winView.configure(showDescription: true)
+        winView.alpha = 0
+        winView.center = self.view.center
+        winView.delegate = presenter
+        self.view.addSubview(winView)
+        UIView.animate(withDuration: 0.75) {
+            self.winView.alpha = 1
+        }
+    }
+    
     func showTipView(type: TipType) {
         tipView = TipView(frame: self.view.bounds)
         tipView.configure(type: type)
@@ -78,6 +131,19 @@ class AnnagramsViewController: BaseViewController<AnagramsPresenterProtocol> {
             self.tipView.removeFromSuperview()
         }
     }
+    
+    func setUpPointsLabel(count: Int, maxCount: Int) {
+        self.timerLabel.text = count.description + "/" + maxCount.description
+    }
+    
+    func showAlert() {
+        NotificationManager.showMesssage(theme: .error, title: NSLocalizedString("messages.coins.title", comment: ""), message:  NSLocalizedString("messages.coins.subtitle", comment: ""), actionText: "", duration: .automatic, action: nil)
+    }
+    
+    @objc func hideKeyboard() {
+        self.view.endEditing(true)
+    }
+    
     
 }
 
@@ -103,3 +169,13 @@ extension AnnagramsViewController: GameSceneDelegate {
     
     
 }
+
+extension AnnagramsViewController: UIGestureRecognizerDelegate {
+    func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldReceive touch: UITouch) -> Bool {
+        if touch.view?.isDescendant(of: collectionView) == true {
+            return false
+        }
+        return true
+    }
+}
+

@@ -141,6 +141,7 @@ class BubleView: UIView {
 extension BubleView: CAAnimationDelegate {
     func animationDidStop(_ anim: CAAnimation, finished flag: Bool) {
         if flag {
+            curvedLayer.path = currentPath?.cgPath
             animation(startPath: currentPath)
             
         }

@@ -11,12 +11,14 @@ struct TipWordModel {
     var title: String
     var price: Int
     var word: String
+    var coins: Int
 }
 
 struct TipLetterModel {
-    var tip: [String?]
+    var tip: [String]
     var answer: String
     var price: Int
+    var coins: Int
     
     mutating func changeTip(str: String, ind: Int) {
         self.tip[ind] = str
@@ -56,10 +58,10 @@ enum TipType {
 }
 
 protocol TipViewDelegate {
-    func tipHasChanged(_ tip: [String?], answer: String)
-    func unlockWord(word: String)
-    
-    func openWord(answer: String)
+    func tipHasChanged(_ tip: [String], answer: String, coins: Int)
+    func unlockWord(word: String, coins: Int)
+    func showAlert()
+    func openWord(answer: String, coins: Int)
 }
 
 class TipView: UIView {
@@ -153,7 +155,7 @@ class TipView: UIView {
         case .letter(let tipLetterModel):
             clearLetterStack()
             letterStackView.isHidden = false
-            let empty = tipLetterModel.tip.allSatisfy({$0 == nil})
+            let empty = tipLetterModel.tip.allSatisfy({$0 == ""})
             for i in 0 ..< tipLetterModel.tip.count {
                 
                 let letterView = LetterView(letter: tipLetterModel.tip[i])
@@ -180,8 +182,8 @@ class TipView: UIView {
         }
     }
     
-    func configureLetterViews(tip: [String?]) {
-        let empty = tip.allSatisfy({$0 == nil})
+    func configureLetterViews(tip: [String]) {
+        let empty = tip.allSatisfy({$0 == ""})
         for i in 0 ..< tip.count {
             UIView.animate(withDuration: 0.5) {
                 self.letterView[i].isHidden = (empty && i > 2) ? true : false
@@ -208,33 +210,40 @@ class TipView: UIView {
             AudioManager.shared.playTouchedSound()
             switch type {
             case .word(let tipWordModel):
-                self.delegate?.unlockWord(word: tipWordModel.word)
-                hideTipView()
+                if tipWordModel.coins >= tipWordModel.price {
+                    let newCoins = tipWordModel.coins - tipWordModel.price
+                    self.delegate?.unlockWord(word: tipWordModel.word, coins: newCoins)
+                    hideTipView()
+                }
             case .letter(let tipLetterModel):
-                
-                var tip = tipLetterModel.tip
-                if tip.contains(nil) {
-                    var charInserted = false
-                    while !charInserted {
-                        let randomIndex = Int.random(in: 0..<tipLetterModel.answer.count)
-                        let char = String(tipLetterModel.answer[tipLetterModel.answer.index(tipLetterModel.answer.startIndex, offsetBy: randomIndex)])
-                        if tipLetterModel.tip[randomIndex] == nil {
-                           // tipLetterModel.changeTip(str: char, ind: randomIndex)
-                            tip[randomIndex] = char
-                            charInserted = true
+                if tipLetterModel.coins >= tipLetterModel.price {
+                    let newCoins = tipLetterModel.coins - tipLetterModel.price
+                    var tip = tipLetterModel.tip
+                    if tip.contains("") {
+                        var charInserted = false
+                        while !charInserted {
+                            let randomIndex = Int.random(in: 0..<tipLetterModel.answer.count)
+                            let char = String(tipLetterModel.answer[tipLetterModel.answer.index(tipLetterModel.answer.startIndex, offsetBy: randomIndex)])
+                            if tipLetterModel.tip[randomIndex] == "" {
+                                // tipLetterModel.changeTip(str: char, ind: randomIndex)
+                                tip[randomIndex] = char
+                                charInserted = true
+                            }
                         }
-                    }
-                    configureLetterViews(tip: tip)
-                    delegate?.tipHasChanged(tip, answer: tipLetterModel.answer)
-                    self.type = TipType.letter(TipLetterModel(tip: tip, answer: tipLetterModel.answer, price: tipLetterModel.price))
-                    if !tip.contains(nil) {
-                        delegate?.openWord(answer: tipLetterModel.answer)
+                        configureLetterViews(tip: tip)
+                        delegate?.tipHasChanged(tip, answer: tipLetterModel.answer, coins: newCoins)
+                        self.type = TipType.letter(TipLetterModel(tip: tip, answer: tipLetterModel.answer, price: tipLetterModel.price, coins: newCoins))
+                        if !tip.contains("") {
+                            delegate?.openWord(answer: tipLetterModel.answer, coins: newCoins)
+                            hideTipView()
+                        }
+                        
+                    } else {
+                        delegate?.openWord(answer: tipLetterModel.answer, coins: newCoins)
                         hideTipView()
                     }
-
                 } else {
-                    delegate?.openWord(answer: tipLetterModel.answer)
-                    hideTipView()
+                    delegate?.showAlert()
                 }
             }
         }

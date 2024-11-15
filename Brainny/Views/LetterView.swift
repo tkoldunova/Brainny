@@ -8,12 +8,12 @@
 import UIKit
 
 class LetterView: UIView {
-    var letter: String? {
+    var letter: String {
         didSet {
-            nameLabel.text = letter ?? ""
+            nameLabel.text = letter 
             UIView.animate(withDuration: 0.5, animations: {
-                self.nameLabel.alpha = self.letter == nil ? 0 : 1
-                self.questionMarkImageView.alpha = self.letter != nil ? 0 : 1
+                self.nameLabel.alpha = self.letter == "" ? 0 : 1
+                self.questionMarkImageView.alpha = self.letter != "" ? 0 : 1
             })
 
         }
@@ -22,7 +22,7 @@ class LetterView: UIView {
         let label = UILabel()
         label.font = UIFont(name: "OpenSans-Medium", size: 24)
         label.textColor = .white
-        label.text = letter ?? ""
+        label.text = letter
         label.textAlignment = .center
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
@@ -34,7 +34,7 @@ class LetterView: UIView {
         return imgView
     }()
     
-    init(letter: String?) {
+    init(letter: String) {
         self.letter = letter
         super.init(frame: CGRect(origin: .zero, size: CGSize(width: 50, height: 60)))
         configureSubviews()
@@ -42,7 +42,7 @@ class LetterView: UIView {
     }
     
     required init?(coder: NSCoder) {
-        letter = nil
+        letter = ""
         super.init(coder: coder)
         configureSubviews()
     }
@@ -58,8 +58,8 @@ class LetterView: UIView {
             questionMarkImageView.centerXAnchor.constraint(equalTo: self.centerXAnchor),
             questionMarkImageView.centerYAnchor.constraint(equalTo: self.centerYAnchor),
         ])
-        nameLabel.alpha = letter == nil ? 0 : 1
-        questionMarkImageView.alpha = letter != nil ? 0 : 1
+        nameLabel.alpha = letter == "" ? 0 : 1
+        questionMarkImageView.alpha = letter != "" ? 0 : 1
     }
 
 }

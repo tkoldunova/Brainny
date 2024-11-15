@@ -9,19 +9,20 @@ import Foundation
 import UIKit
 protocol ShopViewProtocol: AnyObject {
     func reloaData()
+    func setUpCoinsLabel(coins: Int)
 }
 
 protocol ShopPresenterProtocol: UICollectionViewDelegateFlowLayout, UICollectionViewDataSource {
     init(view: ShopViewProtocol, interactor: ShopInteractorProtocol, router: ShopRouterProtocol)
     func notifyWhenViewDidLoad()
+    func notifyWhenViewWillApear()
 }
 
 final class ShopPresenter: NSObject, ShopPresenterProtocol {
-    
-    
     weak var view: ShopViewProtocol?
     var interactor: ShopInteractorProtocol
     var router: ShopRouterProtocol
+    lazy var adManager = RewardAdManager(parentVC: nil)
     
     required init(view: ShopViewProtocol, interactor: ShopInteractorProtocol, router: ShopRouterProtocol) {
         self.view = view
@@ -36,21 +37,30 @@ final class ShopPresenter: NSObject, ShopPresenterProtocol {
 
             }
         }
+        self.view?.setUpCoinsLabel(coins: interactor.coins)
+    }
+    
+    func notifyWhenViewWillApear() {
+        self.adManager.prepare { rewardedAd in
+            if let rewardedAd = rewardedAd {
+                self.interactor.count = self.interactor.model.count + 1
+            } else {
+                self.interactor.count = self.interactor.model.count
+            }
+            self.view?.reloaData()
+        }
     }
     
     
 }
 
 extension ShopPresenter: ShopCellDelegate, NoAdsDelegate {
-    
-    
-    
     func numberOfSections(in collectionView: UICollectionView) -> Int {
-        return 2
+        return interactor.subscription.isEmpty ? 1 : 2
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return section == 0 ? interactor.model.count + 1 : interactor.subscription.count
+        return section == 0 ? interactor.count : interactor.subscription.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -77,7 +87,7 @@ extension ShopPresenter: ShopCellDelegate, NoAdsDelegate {
     func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
         if kind == UICollectionView.elementKindSectionHeader {
             let headerView = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: ShopCollectionHeaderView.reuseIdentifier, for: indexPath) as! ShopCollectionHeaderView
-            headerView.label.text = NSLocalizedString("shop.coins.title", comment: "")
+            headerView.label.text =  indexPath.section == 0 ?  NSLocalizedString("shop.coins.title", comment: "") : NSLocalizedString("shop.subscription.title", comment: "")
       //      headerView.label.text = indexPath.section == 0 ? "Get Coins" : "Subscription"
             return headerView
         }
@@ -104,11 +114,16 @@ extension ShopPresenter: ShopCellDelegate, NoAdsDelegate {
     func buyProduct(product: CoinsProductSub) {
         self.interactor.buy(product: product) {
             print("buy succ \(UserDefaultsValues.coins)")
+            self.view?.setUpCoinsLabel(coins: self.interactor.coins)
         }
     }
     
     func watchAdAndGet(model: CoinsModel) {
-        return
+        adManager.show { res in
+            self.interactor.update()
+            self.view?.setUpCoinsLabel(coins: self.interactor.coins)
+            
+        }
     }
     
     func buyButtonPressed(_ cell: NoAdsCollectionViewCell) {

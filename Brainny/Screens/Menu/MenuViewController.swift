@@ -29,6 +29,12 @@ class MenuViewController: BaseViewController<MenuPresenterProtocol>, MenuViewPro
         super.viewDidLoad()
         self.setUpGradient()
         presenter.notifyWhenViewDidLoad()
+        NotificationCenter.default.addObserver(
+                self,
+                selector: #selector(appDidBecomeActive),
+                name: UIApplication.didBecomeActiveNotification,
+                object: nil
+            )
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -67,6 +73,7 @@ class MenuViewController: BaseViewController<MenuPresenterProtocol>, MenuViewPro
             scaleXAnimation.autoreverses = true
             imgView.layer.add(scaleXAnimation, forKey: "scaleXAnimation")
         }
+     
       
     }
     
@@ -75,6 +82,10 @@ class MenuViewController: BaseViewController<MenuPresenterProtocol>, MenuViewPro
         bubleViews.forEach { view in
             view.animation()
         }
+    }
+    
+    deinit {
+        NotificationCenter.default.removeObserver(self, name: UIApplication.didBecomeActiveNotification, object: nil)
     }
     
     
@@ -95,6 +106,25 @@ class MenuViewController: BaseViewController<MenuPresenterProtocol>, MenuViewPro
             
         }
     }
+    
+    @objc func appDidBecomeActive() {
+//         Restart the animation if the view is visible
+        if isViewLoaded && view.window != nil {
+            bubleViews.forEach { view in
+                view.animation()
+            }
+            dynamicQuestionImageViews.forEach { imgView in
+                let scaleXAnimation = CABasicAnimation(keyPath: "transform.scale.x")
+                scaleXAnimation.fromValue = (dynamicQuestionImageViews.firstIndex(of: imgView) ?? 0)%2 == 0 ? -1 : 1
+                scaleXAnimation.toValue = (dynamicQuestionImageViews.firstIndex(of: imgView) ?? 0)%2 == 0 ? 1 : -1
+                scaleXAnimation.duration = 1.0
+                scaleXAnimation.repeatCount = .infinity
+                scaleXAnimation.autoreverses = true
+                imgView.layer.add(scaleXAnimation, forKey: "scaleXAnimation")
+            }
+        }
+    }
+
     
     @IBAction func settingsButtonTouched(_ sender: Any) {
         AudioManager.shared.playTouchedSound()

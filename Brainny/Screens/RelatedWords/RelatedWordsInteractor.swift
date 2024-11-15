@@ -12,26 +12,29 @@ protocol RelatedWordsInteractorProtocol {
     var suggestion:String? {get set}
     var words: [WordsModel] {get set}
     var answers: [RelatedWordModel] {get set}
+    var coins: Int {get set}
 }
 
 final class RelatedWordsInteractor: RelatedWordsInteractorProtocol {
     var model: RelatedWords
     var words: [WordsModel] {
         didSet {
-            self.model.setWords(newValue: words)
+          //  self.model.setWords(newValue: words)
         }
     }
     var answers: [RelatedWordModel] {
         didSet {
-            self.model.setAnswers(newValue: answers)
+          //  self.model.setAnswers(newValue: answers)
         }
     }
+    var coins: Int
     var suggestion:String?
     init(model: RelatedWords) {
         self.model = model
         self.suggestion = nil
         self.words = model.words
         self.answers = model.answer
+        self.coins = UserDefaultsValues.coins
         
     }
 }

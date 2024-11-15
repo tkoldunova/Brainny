@@ -14,6 +14,7 @@ public struct UserDefaultsValues {
         static let vibrationOffKey = "com.vibrationOff.key"
         static let volumeKey = "com.volume.key"
         static let coinsKey = "com.coins.key"
+        static let touchCountKey = "com.touchCount.key"
         
         //  static let noAdsKey = "com.noAds.key"
     }
@@ -52,6 +53,14 @@ public struct UserDefaultsValues {
             return UserDefaults.standard.float(forKey: Keys.volumeKey)
         } set {
             UserDefaults.standard.set(newValue, forKey: Keys.volumeKey)
+        }
+    }
+    
+    static var touchCount: Int {
+        get {
+            return UserDefaults.standard.integer(forKey: Keys.touchCountKey)
+        } set {
+            UserDefaults.standard.set(newValue, forKey: Keys.touchCountKey)
         }
     }
 }

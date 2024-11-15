@@ -139,20 +139,17 @@
               "locale" : "en_US"
             }
           ],
-          "productID" : "com.noAds.product",
+          "productID" : "com.noAds2.product",
           "recurringSubscriptionPeriod" : "P1M",
           "referenceName" : "Mounthly Sub",
           "subscriptionGroupID" : "E073D653",
-          "type" : "RecurringSubscription",
-          "winbackOffers" : [
-
-          ]
+          "type" : "RecurringSubscription"
         }
       ]
     }
   ],
   "version" : {
-    "major" : 4,
+    "major" : 3,
     "minor" : 0
   }
 }
