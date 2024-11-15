@@ -48,6 +48,8 @@ class AudioManager {
         guard let url = Bundle.main.url(forResource: name,
                                         withExtension: "mp3") else { return nil }
         do {
+//            try AVAudioSession.sharedInstance().setCategory(.playback, mode: .default)
+//            try AVAudioSession.sharedInstance().setActive(true)
             var player = try AVAudioPlayer(contentsOf: url, fileTypeHint: AVFileType.mp3.rawValue)
             player.volume = 0.9
             player.numberOfLoops = 0

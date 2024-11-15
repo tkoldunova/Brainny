@@ -4,6 +4,7 @@
 //
 //  Created by Tanya Koldunova on 30.10.2024.
 //
+//  guard !a.isEmpty && !b.isEmpty else {return 1000000000}
 
 import UIKit
 import NaturalLanguage
@@ -50,8 +51,14 @@ extension String {
 
     // Check function to compare user answer with correct answer
     func compareString(word: String) -> Bool {
+        guard self.count > 2, word.count > 2 else {
+                   return self.lowercased() == word.lowercased()
+        }
         let normalizedUserAnswer = normalize(self)
         let normalizedCorrectAnswer = normalize(word)
+        guard normalizedUserAnswer.count > 2, normalizedCorrectAnswer.count > 2 else {
+                   return normalizedUserAnswer == normalizedCorrectAnswer
+        }
         let threshold = 2
         let distance = levenshteinDistance(normalizedUserAnswer, normalizedCorrectAnswer)
         return distance <= threshold

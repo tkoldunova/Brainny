@@ -9,11 +9,14 @@ import UIKit
 
 
 protocol AnagramsInteractorProtocol: AnyObject {
+    var anangram: AnagramModel {get}
     var words: [RelatedWordModel]? { get set }
+    var coins: Int {get set}
     func getWorld() -> String
     func getWorlds(completion: @escaping([RelatedWordModel]) -> Void)
     func checkIfWorldIsCorrent(word: String) -> Bool
-    func checkifWorldidAvailable(world: String) -> Bool
+    func checkWinResult()->Bool 
+  //  func checkifWorldidAvailable(world: String) -> Bool
     func moveToTop(word: RelatedWordModel)
 }
 
@@ -21,18 +24,18 @@ protocol AnagramsInteractorProtocol: AnyObject {
 class AnagramsInteractor: AnagramsInteractorProtocol {
     
     var anangram: AnagramModel
-    
     var correctWords = [String]()
-    
     var words: [RelatedWordModel]? {
         didSet {
             guard let words = words else { return }
             anangram.setWords(newValue: words)
         }
     }
+    var coins: Int
     
     init(anangram: AnagramModel) {
         self.anangram = anangram
+        self.coins = UserDefaultsValues.coins
     }
     
     
@@ -52,18 +55,15 @@ class AnagramsInteractor: AnagramsInteractorProtocol {
         self.words?.insert(word, at: 0)
     }
     
-    func checkifWorldidAvailable(world: String) -> Bool  {
-        
-        let bool = correctWords.contains(world)
-        
-        return bool
-        
-        
+    func checkWinResult()->Bool {
+        let count = self.words?.filter({$0.guessed}).count ?? 0
+        return count > (self.words?.count ?? 0)/2
     }
     
     func getWorlds(completion: @escaping([RelatedWordModel]) -> Void) {
         guard anangram.words.isEmpty else {
             words = anangram.words
+            completion(self.words!)
             return
         }
             DispatchQueue.global().async {

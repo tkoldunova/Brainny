@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="32700.99.1234" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22685"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -19,6 +20,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="WinView" customModule="Brainny" customModuleProvider="target">
             <connections>
                 <outlet property="coinsLabel" destination="4a7-bp-yX0" id="tc5-Pg-efY"/>
+                <outlet property="descriptionLabel" destination="Mex-pK-B78" id="xKy-s9-AgC"/>
                 <outlet property="frameView" destination="nil-AY-mYG" id="Hn6-44-7OL"/>
                 <outlet property="subtitleLabel" destination="XRk-lq-o1e" id="M3A-NQ-kcN"/>
                 <outlet property="titlelLabel" destination="KxJ-Zi-hMi" id="g4w-xq-0by"/>
@@ -30,19 +32,30 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nil-AY-mYG">
-                    <rect key="frame" x="56.666666666666657" y="357.66666666666669" width="280" height="137"/>
+                    <rect key="frame" x="56.666666666666657" y="329" width="280" height="194.33333333333337"/>
                     <subviews>
                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="7Lf-fn-sxw">
-                            <rect key="frame" x="36.666666666666671" y="16" width="206.33333333333331" height="105"/>
+                            <rect key="frame" x="8" y="16" width="264" height="162.33333333333334"/>
                             <subviews>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Level Completed!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KxJ-Zi-hMi">
-                                    <rect key="frame" x="0.0" y="0.0" width="206.33333333333334" height="33"/>
-                                    <fontDescription key="fontDescription" name="OpenSans-Bold" family="OpenSans" pointSize="24"/>
-                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                    <nil key="highlightedColor"/>
-                                </label>
+                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="5ag-XR-E8R">
+                                    <rect key="frame" x="0.0" y="0.0" width="264" height="90.333333333333329"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Level Completed!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KxJ-Zi-hMi">
+                                            <rect key="frame" x="28.666666666666643" y="0.0" width="206.33333333333337" height="33"/>
+                                            <fontDescription key="fontDescription" name="OpenSans-Bold" family="OpenSans" pointSize="24"/>
+                                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="You have reached the required number of points" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mex-pK-B78">
+                                            <rect key="frame" x="0.0" y="41" width="264" height="49.333333333333343"/>
+                                            <fontDescription key="fontDescription" name="OpenSans-Medium" family="OpenSans" pointSize="18"/>
+                                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </stackView>
                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="FNc-DN-Ad6">
-                                    <rect key="frame" x="57.000000000000007" y="45" width="92.666666666666686" height="60"/>
+                                    <rect key="frame" x="85.666666666666657" y="102.33333333333331" width="92.666666666666657" height="60"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="You erned:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XRk-lq-o1e">
                                             <rect key="frame" x="0.0" y="0.0" width="92.666666666666671" height="24.666666666666668"/>
@@ -51,7 +64,7 @@
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="5uM-jb-dme">
-                                            <rect key="frame" x="13.333333333333314" y="32.666666666666629" width="66" height="27.333333333333329"/>
+                                            <rect key="frame" x="13.333333333333314" y="32.666666666666686" width="66" height="27.333333333333329"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="+10" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4a7-bp-yX0">
                                                     <rect key="frame" x="0.0" y="0.0" width="34.333333333333336" height="27.333333333333332"/>
@@ -73,10 +86,12 @@
                     <constraints>
                         <constraint firstItem="7Lf-fn-sxw" firstAttribute="centerX" secondItem="nil-AY-mYG" secondAttribute="centerX" id="0x9-uY-7nO"/>
                         <constraint firstAttribute="bottom" secondItem="7Lf-fn-sxw" secondAttribute="bottom" constant="16" id="Jkz-8e-7Lp"/>
+                        <constraint firstAttribute="trailing" secondItem="7Lf-fn-sxw" secondAttribute="trailing" constant="8" id="TeU-WJ-pOR"/>
                         <constraint firstAttribute="width" constant="280" id="YEt-0J-Rh0"/>
                         <constraint firstItem="7Lf-fn-sxw" firstAttribute="top" secondItem="nil-AY-mYG" secondAttribute="top" constant="16" id="ckl-7i-1gD"/>
                         <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="20" id="dUy-YO-tAi"/>
                         <constraint firstItem="7Lf-fn-sxw" firstAttribute="centerY" secondItem="nil-AY-mYG" secondAttribute="centerY" id="fdW-jB-Fp5"/>
+                        <constraint firstItem="7Lf-fn-sxw" firstAttribute="leading" secondItem="nil-AY-mYG" secondAttribute="leading" constant="8" id="lb2-cH-RmO"/>
                     </constraints>
                 </view>
             </subviews>

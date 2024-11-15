@@ -68,7 +68,6 @@ class IAPManager: NSObject {
 //MARK: -SKProductsRequestDelegate
 extension IAPManager: SKProductsRequestDelegate {
     func productsRequest(_ request: SKProductsRequest, didReceive response: SKProductsResponse) {
-        
         var poducts = [any ProductSubscription]()
         for product in response.products {
             if coinsProductsID.contains(product.productIdentifier) {

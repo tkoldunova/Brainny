@@ -14,11 +14,14 @@ protocol RelatedWordsViewProtocol: AnyObject {
     func reloadWordsData()
     func setTextFieldEmpty()
     func showWinView()
+    func setUpCoinsLabel(coins: Int)
+    func showAlert()
 }
 
 protocol RelatedWordsPresenterProtocol: UICollectionViewDelegate, UICollectionViewDataSource, UITableViewDelegate, UITableViewDataSource, UITextFieldDelegate, TipViewDelegate, WinViewDelegate {
     init(view: RelatedWordsViewProtocol, interactor: RelatedWordsInteractorProtocol, router: RelatedWordsRouterProtocol)
     func checkValue() 
+    func notifyWhenViewDidLoad()
 }
 
 final class RelatedWordsPresenter: NSObject, RelatedWordsPresenterProtocol {
@@ -31,6 +34,10 @@ final class RelatedWordsPresenter: NSObject, RelatedWordsPresenterProtocol {
         self.view = view
         self.interactor = interactor
         self.router = router
+    }
+    
+    func notifyWhenViewDidLoad() {
+        self.view?.setUpCoinsLabel(coins: interactor.coins)
     }
     
     
@@ -71,20 +78,26 @@ final class RelatedWordsPresenter: NSObject, RelatedWordsPresenterProtocol {
         }
     }
     
-    func tipHasChanged(_ tip: [String?], answer: String) {
+    func tipHasChanged(_ tip: [String], answer: String, coins: Int) {
+        interactor.coins = coins
+        self.view?.setUpCoinsLabel(coins: interactor.coins)
         if let ind = self.interactor.answers.firstIndex(where: {$0.answer == answer}) {
             interactor.answers[ind].setTip(tip)
         }
     }
     
-    func unlockWord(word: String) {
+    func unlockWord(word: String, coins: Int) {
+        interactor.coins = coins
+        self.view?.setUpCoinsLabel(coins: interactor.coins)
         if let ind = self.interactor.words.firstIndex(where: {$0.title == word}) {
             interactor.words[ind].setLocked(false)
         }
         self.view?.reloadWordsData()
     }
     
-    func openWord(answer: String) {
+    func openWord(answer: String, coins: Int) {
+        interactor.coins = coins
+        self.view?.setUpCoinsLabel(coins: interactor.coins)
         if let ind = self.interactor.answers.firstIndex(where: {$0.answer == answer}) {
             AudioManager.shared.playCorrectSound()
             interactor.answers[ind].setGuessed(true)
@@ -92,6 +105,10 @@ final class RelatedWordsPresenter: NSObject, RelatedWordsPresenterProtocol {
             guard let cell = view?.getCell(indexPath: IndexPath(row: ind, section: 0)) as? RelatedWordsTableViewCell else {return}
             cell.guessed(model: interactor.answers[ind])
         }
+    }
+    
+    func showAlert() {
+        self.view?.showAlert()
     }
     
     func checkQuessedCount() {
@@ -106,7 +123,9 @@ final class RelatedWordsPresenter: NSObject, RelatedWordsPresenterProtocol {
         }
     }
     
-    func dismiss() {
+    func hideWinView() {
+        interactor.coins = UserDefaultsValues.coins
+        self.view?.setUpCoinsLabel(coins: interactor.coins)
         self.router.dismiss()
     }
     
@@ -126,9 +145,16 @@ extension RelatedWordsPresenter {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         if interactor.words[indexPath.row].locked {
             AudioManager.shared.playTouchedSound()
-            self.view?.showTipView(type: .word(TipWordModel(title: "Unlock word", price: 15, word: interactor.words[indexPath.row].title)))
+            self.view?.showTipView(type: .word(TipWordModel(title: NSLocalizedString("tip.word.title2", comment: ""), price: 15, word: interactor.words[indexPath.row].title, coins: interactor.coins)))
         }
     }
+//    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+//           if kScrollDirectionIsHorizontal {
+//               return CGSize(width: 60, height: CGFloat(Int.random(in: 60..<180)))
+//           } else {
+//               return CGSize(width: CGFloat(Int.random(in: 60..<180)), height: 60)
+//           }
+//       }
     
 }
 
@@ -147,7 +173,7 @@ extension RelatedWordsPresenter {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if !interactor.answers[indexPath.row].guessed {
             AudioManager.shared.playTouchedSound()
-            self.view?.showTipView(type: .letter(TipLetterModel(tip: interactor.answers[indexPath.row].tip, answer: interactor.answers[indexPath.row].answer, price: 10)))
+            self.view?.showTipView(type: .letter(TipLetterModel(tip: interactor.answers[indexPath.row].tip, answer: interactor.answers[indexPath.row].answer, price: 10, coins: interactor.coins)))
         }
     }
     

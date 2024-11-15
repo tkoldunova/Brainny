@@ -33,6 +33,12 @@ class MenuViewController: BaseViewController<MenuPresenterProtocol>, MenuViewPro
         super.viewDidLoad()
         self.setUpGradient()
         presenter.notifyWhenViewDidLoad()
+        NotificationCenter.default.addObserver(
+                self,
+                selector: #selector(appDidBecomeActive),
+                name: UIApplication.didBecomeActiveNotification,
+                object: nil
+            )
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -62,7 +68,7 @@ class MenuViewController: BaseViewController<MenuPresenterProtocol>, MenuViewPro
 //            })
         }
        
-      
+    
 //        dynamicQuestionImageViews.forEach { imgView in
 //            let scaleXAnimation = CABasicAnimation(keyPath: "transform.scale.x")
 //            scaleXAnimation.fromValue = (dynamicQuestionImageViews.firstIndex(of: imgView) ?? 0)%2 == 0 ? -1 : 1
@@ -80,6 +86,10 @@ class MenuViewController: BaseViewController<MenuPresenterProtocol>, MenuViewPro
         bubleViews.forEach { view in
             view.animation()
         }
+    }
+    
+    deinit {
+        NotificationCenter.default.removeObserver(self, name: UIApplication.didBecomeActiveNotification, object: nil)
     }
     
     
@@ -100,6 +110,34 @@ class MenuViewController: BaseViewController<MenuPresenterProtocol>, MenuViewPro
             
         }
     }
+    
+    @objc func appDidBecomeActive() {
+//         Restart the animation if the view is visible
+        if isViewLoaded && view.window != nil {
+            bubleViews.forEach { view in
+                view.animation()
+            }
+            dynamicQuestionImageViews.forEach { imgView in
+                var rotationAndPerspectiveTransform = CATransform3DIdentity
+                rotationAndPerspectiveTransform.m34 = -1.0 / 1000.0
+                rotationAndPerspectiveTransform = CATransform3DRotate(rotationAndPerspectiveTransform, (dynamicQuestionImageViews.firstIndex(of: imgView) ?? 0)%2 == 0 ? Double.pi * 1 : -Double.pi, 0, 1, (dynamicQuestionImageViews.firstIndex(of: imgView) ?? 0)%2 == 0 ? 0.1 : -0.1)
+                var rotationAndPerspectiveTransform2 = CATransform3DIdentity
+                rotationAndPerspectiveTransform2.m34 = 1.0 / 1000.0
+                rotationAndPerspectiveTransform2 = CATransform3DRotate(rotationAndPerspectiveTransform, (dynamicQuestionImageViews.firstIndex(of: imgView) ?? 0)%2 == 0 ? -Double.pi * 1 : Double.pi, 0, 1, (dynamicQuestionImageViews.firstIndex(of: imgView) ?? 0)%2 == 0 ? -0.1 : 0.1)
+                UIView.animateKeyframes(withDuration: 1.0, delay: 0, options: [.repeat, .autoreverse]) {
+                    UIView.addKeyframe(withRelativeStartTime: 0.0, relativeDuration: 0.5, animations: {
+                        imgView.layer.anchorPoint = CGPoint(x: 0.5, y: 0.5)
+                        imgView.layer.transform = rotationAndPerspectiveTransform
+                    })
+                    UIView.addKeyframe(withRelativeStartTime: 0.5, relativeDuration: 1, animations: {
+                        imgView.layer.anchorPoint = CGPoint(x: 0.5, y: 0.5)
+                        imgView.layer.transform = rotationAndPerspectiveTransform2
+                    })
+                }
+            }
+        }
+    }
+
     
     @IBAction func settingsButtonTouched(_ sender: Any) {
         AudioManager.shared.playTouchedSound()

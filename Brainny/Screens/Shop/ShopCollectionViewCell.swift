@@ -36,6 +36,7 @@ class ShopCollectionViewCell: UICollectionViewCell {
        
         setUpRadialGradient()
         self.product = product
+        self.model = nil
         self.titleLabel.text = product.model.title
         self.valueLabel.text = product.model.value.description
         self.coinsImageView.image = product.model.image
@@ -50,6 +51,7 @@ class ShopCollectionViewCell: UICollectionViewCell {
         self.layer.borderColor = Colors.borderColor.cgColor
         setUpRadialGradient()
         self.model = model
+        self.product = nil
         self.titleLabel.text = model.title
         self.valueLabel.text = model.value.description
         self.coinsImageView.image = model.image

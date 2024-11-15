@@ -8,7 +8,7 @@
 import UIKit
 
 protocol WinViewDelegate {
-    func dismiss()
+    func hideWinView()
 }
 
 class WinView: UIView {
@@ -36,13 +36,20 @@ class WinView: UIView {
             titlelLabel.text =  NSLocalizedString("win.title", comment: "")
         }
     }
+    @IBOutlet weak var descriptionLabel: UILabel! {
+        didSet {
+            descriptionLabel.text = NSLocalizedString("win.description", comment: "")
+        }
+    }
     @IBOutlet weak var subtitleLabel: UILabel! {
         didSet {
             subtitleLabel.text =  NSLocalizedString("win.subtitle", comment: "")
         }
     }
+    
     @IBOutlet weak var coinsLabel: UILabel!
     
+
     override init(frame: CGRect) {
         super.init(frame: frame)
         configureView()
@@ -74,11 +81,14 @@ class WinView: UIView {
         self.contentView = view
     }
     
-    func configure() {
+    func configure(showDescription: Bool = false) {
         AudioManager.shared.playWinSound()
+        self.descriptionLabel.isHidden = !showDescription
         self.coins = 0
+        UserDefaultsValues.coins += 25
         animateCoins(totalCoins: 25)
     }
+
     
     func animateCoins(totalCoins: Int) {
         timer = Timer.scheduledTimer(withTimeInterval: 0.1, repeats: true) { timer in
@@ -91,7 +101,7 @@ class WinView: UIView {
     }
     
     @objc func hide() {
-        delegate?.dismiss()
+        delegate?.hideWinView()
     }
     
    

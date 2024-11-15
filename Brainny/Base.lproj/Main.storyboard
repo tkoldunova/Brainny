@@ -151,23 +151,21 @@
                                         <constraints>
                                             <constraint firstAttribute="height" constant="110" id="Gh1-qQ-evK"/>
                                         </constraints>
-                                        <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="8" minimumInteritemSpacing="8" id="Dcd-Pa-CIB">
-                                            <size key="itemSize" width="131" height="44"/>
-                                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
-                                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                                            <inset key="sectionInset" minX="12" minY="0.0" maxX="12" maxY="0.0"/>
-                                        </collectionViewFlowLayout>
+                                        <collectionViewLayout key="collectionViewLayout" id="j23-Hs-bQ0" customClass="CollectionViewCenteredFlowLayout" customModule="Brainny" customModuleProvider="target"/>
                                         <cells>
                                             <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="words" id="xsU-cc-KOS" customClass="RelatedWordsCollectionViewCell" customModule="Brainny" customModuleProvider="target">
-                                                <rect key="frame" x="12" y="0.0" width="131" height="44"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="131" height="44"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="WFb-sa-JB4">
                                                     <rect key="frame" x="0.0" y="0.0" width="131" height="44"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <subviews>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Milk" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0Nd-no-E2H">
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Milk" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="16" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="0Nd-no-E2H">
                                                             <rect key="frame" x="12" y="8" width="107" height="28"/>
-                                                            <fontDescription key="fontDescription" name="OpenSans-Medium" family="OpenSans" pointSize="20"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="width" relation="lessThanOrEqual" constant="120" id="hgN-Hq-iaM"/>
+                                                            </constraints>
+                                                            <fontDescription key="fontDescription" name="OpenSans-Medium" family="OpenSans" pointSize="18"/>
                                                             <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
@@ -222,11 +220,10 @@
                                         </cells>
                                     </collectionView>
                                     <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter your suggestion" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="pgz-wx-15Q">
-                                        <rect key="frame" x="86" y="266.66666666666669" width="221" height="44"/>
+                                        <rect key="frame" x="89.333333333333329" y="266.66666666666669" width="214.66666666666669" height="44"/>
                                         <color key="backgroundColor" red="0.56470588235294117" green="0.4823529411764706" blue="0.81960784313725488" alpha="0.85999999999999999" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="44" id="QbN-BQ-vdl"/>
-                                            <constraint firstAttribute="width" constant="221" id="mjk-z5-sYK"/>
                                         </constraints>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <fontDescription key="fontDescription" name="OpenSans-Medium" family="OpenSans" pointSize="18"/>
@@ -237,7 +234,9 @@
                                 <constraints>
                                     <constraint firstItem="pgz-wx-15Q" firstAttribute="centerX" secondItem="iYe-yO-dAs" secondAttribute="centerX" id="7OX-Mv-RPf"/>
                                     <constraint firstItem="B4Z-gt-gaq" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="iYe-yO-dAs" secondAttribute="leading" constant="32" id="BI7-pw-stz"/>
+                                    <constraint firstItem="pgz-wx-15Q" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="iYe-yO-dAs" secondAttribute="leading" constant="16" id="FFB-Ra-QCR"/>
                                     <constraint firstItem="pgz-wx-15Q" firstAttribute="top" secondItem="djB-b0-gui" secondAttribute="bottom" constant="12" id="JZ2-Yv-XRR"/>
+                                    <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="pgz-wx-15Q" secondAttribute="trailing" constant="16" id="Xfz-ui-BLk"/>
                                     <constraint firstItem="djB-b0-gui" firstAttribute="top" secondItem="B4Z-gt-gaq" secondAttribute="bottom" constant="12" id="ZXo-xl-gdv"/>
                                     <constraint firstAttribute="trailing" secondItem="djB-b0-gui" secondAttribute="trailing" id="ZpM-jV-LNF"/>
                                     <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="B4Z-gt-gaq" secondAttribute="trailing" constant="32" id="baj-8g-FFr"/>
@@ -451,10 +450,9 @@
                                         </prototypes>
                                     </tableView>
                                     <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter your suggestion" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="2LY-iN-MeL">
-                                        <rect key="frame" x="86" y="419.66666666666669" width="221" height="44"/>
+                                        <rect key="frame" x="89.333333333333329" y="419.66666666666669" width="214.66666666666669" height="44"/>
                                         <color key="backgroundColor" red="0.56470588239999997" green="0.4823529412" blue="0.81960784310000001" alpha="0.85999999999999999" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="221" id="AB0-C5-HYl"/>
                                             <constraint firstAttribute="height" constant="44" id="xg7-zB-Mku"/>
                                         </constraints>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -468,6 +466,8 @@
                                     <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="Joq-FP-Gnf" secondAttribute="trailing" constant="32" id="CR3-s8-2PN"/>
                                     <constraint firstAttribute="trailing" secondItem="aov-4e-u2j" secondAttribute="trailing" constant="12" id="H58-7S-xHF"/>
                                     <constraint firstItem="2LY-iN-MeL" firstAttribute="top" secondItem="aov-4e-u2j" secondAttribute="bottom" constant="12" id="M2y-t6-iC5"/>
+                                    <constraint firstItem="2LY-iN-MeL" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="UNh-qE-fbh" secondAttribute="leading" constant="16" id="Vnt-pd-bge"/>
+                                    <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="2LY-iN-MeL" secondAttribute="trailing" constant="16" id="ema-rj-Cra"/>
                                     <constraint firstItem="2LY-iN-MeL" firstAttribute="centerX" secondItem="UNh-qE-fbh" secondAttribute="centerX" id="gNe-p2-jh2"/>
                                     <constraint firstItem="Joq-FP-Gnf" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="UNh-qE-fbh" secondAttribute="leading" constant="32" id="gRf-Ex-gt0"/>
                                     <constraint firstItem="Joq-FP-Gnf" firstAttribute="centerX" secondItem="UNh-qE-fbh" secondAttribute="centerX" id="hCN-WA-rpV"/>
@@ -992,24 +992,19 @@
                                 <color key="textColor" red="1" green="1" blue="1" alpha="0.80000000000000004" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1:00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="onM-qm-5Pt">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1:00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="onM-qm-5Pt">
                                 <rect key="frame" x="172.66666666666666" y="387" width="48" height="33"/>
                                 <fontDescription key="fontDescription" name="OpenSans-SemiBold" family="Open Sans" pointSize="24"/>
-                                <nil key="textColor"/>
+                                <color key="textColor" red="0.29019607843137252" green="0.30588235294117649" blue="0.38039215686274508" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="v0W-Es-B2H">
                                 <rect key="frame" x="0.0" y="434" width="393" height="418"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="8" minimumInteritemSpacing="8" id="9EI-q9-Qr6">
-                                    <size key="itemSize" width="128" height="57"/>
-                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
-                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                                    <inset key="sectionInset" minX="12" minY="4" maxX="12" maxY="0.0"/>
-                                </collectionViewFlowLayout>
+                                <collectionViewLayout key="collectionViewLayout" id="xgO-kd-Cow" customClass="CollectionViewCenteredFlowLayout" customModule="Brainny" customModuleProvider="target"/>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="anagrams_cell" id="pSh-pp-iEz" customClass="AnagramsCollectionViewCell" customModule="Brainny" customModuleProvider="target">
-                                        <rect key="frame" x="12" y="4" width="128" height="57"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="128" height="57"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="1PB-Ze-WCY">
                                             <rect key="frame" x="0.0" y="0.0" width="128" height="57"/>

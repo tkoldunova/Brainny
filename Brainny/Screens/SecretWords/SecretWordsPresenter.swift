@@ -13,6 +13,8 @@ protocol SecretWordsViewProtocol: AnyObject {
     func showTipView(type: TipType)
     func showWinView()
     func reloadWordsData()
+    func setUpCoinsLabel(coins: Int)
+    func showAlert()
 }
 
 protocol SecretWordsPresenterProtocol: UITableViewDelegate, UITableViewDataSource, UITextFieldDelegate, TipViewDelegate, WinViewDelegate {
@@ -23,6 +25,8 @@ protocol SecretWordsPresenterProtocol: UITableViewDelegate, UITableViewDataSourc
 }
 
 final class SecretWordsPresenter: NSObject, SecretWordsPresenterProtocol {
+
+    
     
     weak var view: SecretWordsViewProtocol?
     var interactor: SecretWordsInteractorProtocol
@@ -36,11 +40,12 @@ final class SecretWordsPresenter: NSObject, SecretWordsPresenterProtocol {
     
     func notifyWhenViewDidLoad() {
         self.view?.setAnswerView(answer: interactor.answer)
+        self.view?.setUpCoinsLabel(coins: interactor.coins)
     }
     
     func openTipForAnswer() {
         if !interactor.answer.guessed {
-            self.view?.showTipView(type: .letter(TipLetterModel(tip: interactor.answer.tip, answer: interactor.answer.answer, price: 10)))
+            self.view?.showTipView(type: .letter(TipLetterModel(tip: interactor.answer.tip, answer: interactor.answer.answer, price: 10, coins: interactor.coins)))
         }
     }
     
@@ -70,21 +75,27 @@ final class SecretWordsPresenter: NSObject, SecretWordsPresenterProtocol {
         }
     }
     
-    func tipHasChanged(_ tip: [String?], answer: String) {
+    func tipHasChanged(_ tip: [String], answer: String, coins: Int) {
         if self.interactor.answer.answer == answer {
+            interactor.coins = coins
+            self.view?.setUpCoinsLabel(coins: interactor.coins)
             interactor.answer.setTip(tip)
         }
     }
     
-    func unlockWord(word: String) {
+    func unlockWord(word: String, coins: Int) {
+        interactor.coins = coins
+        self.view?.setUpCoinsLabel(coins: interactor.coins)
         if let ind = self.interactor.words.firstIndex(where: {$0.title == word}) {
             interactor.words[ind].setLocked(false)
         }
         self.view?.reloadWordsData()
     }
     
-    func openWord(answer: String) {
+    func openWord(answer: String, coins: Int) {
         if self.interactor.answer.answer == answer {
+            interactor.coins = coins
+            self.view?.setUpCoinsLabel(coins: interactor.coins)
             AudioManager.shared.playCorrectSound()
             interactor.answer.setGuessed(true)
             self.checkQuessedCount()
@@ -92,18 +103,24 @@ final class SecretWordsPresenter: NSObject, SecretWordsPresenterProtocol {
         }
     }
     
+    func showAlert() {
+        self.view?.showAlert()
+    }
+    
     func checkQuessedCount() {
         if interactor.answer.guessed {
-            self.view?.showWinView()
             var doneLevels = Games.secretWords.doneLevels
             if !doneLevels.contains(where: {$0.areEqual(to: interactor.model)}) {
+                self.view?.showWinView()
                 doneLevels.append(interactor.model)
                 Games.secretWords.setDoneLevels(newValue: doneLevels)
             }
         }
     }
     
-    func dismiss() {
+    func hideWinView() {
+        interactor.coins = UserDefaultsValues.coins
+        self.view?.setUpCoinsLabel(coins: interactor.coins)
         self.router.dismiss()
     }
     
@@ -123,7 +140,7 @@ extension SecretWordsPresenter {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if interactor.words[indexPath.row].locked {
-            self.view?.showTipView(type: .word(TipWordModel(title: "Unlock word", price: 15, word: interactor.words[indexPath.row].title)))
+            self.view?.showTipView(type: .word(TipWordModel(title: NSLocalizedString("tip.word.title3", comment: ""), price: 15, word: interactor.words[indexPath.row].title, coins: interactor.coins)))
         }
     }
 }

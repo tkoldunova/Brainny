@@ -8,6 +8,8 @@
 import UIKit
 
 class SecretWordsViewController: BaseViewController<SecretWordsPresenterProtocol>, SecretWordsViewProtocol {
+    lazy var tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(hideKeyboard))
+
     lazy var winView = WinView(frame: self.view.bounds)
     lazy var tipView = TipView(frame: self.view.bounds)
     lazy var sendButton: UIButton = {
@@ -18,6 +20,35 @@ class SecretWordsViewController: BaseViewController<SecretWordsPresenterProtocol
         button.addTarget(self, action: #selector(sendbuttonTouched(_:)), for: .touchUpInside)
         return button
     }()
+    lazy var coinsHStackView: UIStackView = {
+        let stackView = UIStackView()
+        stackView.axis = .horizontal
+        stackView.distribution = .fill
+        stackView.alignment = .trailing
+        stackView.spacing = 4
+        stackView.translatesAutoresizingMaskIntoConstraints = false
+        let imgView = UIImageView(image: UIImage(named: "coin"))
+        imgView.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            imgView.widthAnchor.constraint(equalToConstant: 20),
+            imgView.heightAnchor.constraint(equalToConstant: 20)
+        ])
+        stackView.addArrangedSubview(coinsLabel)
+        stackView.addArrangedSubview(imgView)
+       
+        return stackView
+    }()
+    
+    
+    lazy var coinsLabel: UILabel = {
+        let label = UILabel()
+        label.font = UIFont(name: "OpenSans-Medium", size: 20)
+        label.textColor = .white
+        label.text = "0"
+        label.translatesAutoresizingMaskIntoConstraints = false
+        return label
+    }()
+    
     @IBOutlet weak var descriptionLabel: UILabel! {
         didSet {
             descriptionLabel.text = NSLocalizedString("secretWord.subtitle", comment: "")
@@ -36,6 +67,7 @@ class SecretWordsViewController: BaseViewController<SecretWordsPresenterProtocol
             textField.layer.masksToBounds = true
             textField.layer.borderWidth = 2.0
             textField.layer.borderColor = Colors.borderColor.cgColor
+            textField.placeholder = NSLocalizedString("secretWord.placeholder", comment: "")
             textField.delegate = presenter
             textField.rightView = sendButton
             textField.rightViewMode = .whileEditing
@@ -56,6 +88,14 @@ class SecretWordsViewController: BaseViewController<SecretWordsPresenterProtocol
         super.viewDidLoad()
         self.presenter.notifyWhenViewDidLoad()
         self.title = NSLocalizedString("secretWord.title", comment: "")
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(customView: coinsHStackView)
+        self.view.addGestureRecognizer(tapGestureRecognizer)
+        tapGestureRecognizer.delegate = self
+
+    }
+    
+    func setUpCoinsLabel(coins: Int) {
+        coinsLabel.text = coins.description
     }
     
     func shakeTextField() {
@@ -122,6 +162,11 @@ class SecretWordsViewController: BaseViewController<SecretWordsPresenterProtocol
         }
     }
     
+    func showAlert() {
+        NotificationManager.showMesssage(theme: .error, title: NSLocalizedString("messages.coins.title", comment: ""), message:  NSLocalizedString("messages.coins.subtitle", comment: ""), actionText: "", duration: .automatic, action: nil)
+    }
+    
+    
     func reloadWordsData() {
         self.tableView.reloadData()
     }
@@ -159,5 +204,20 @@ class SecretWordsViewController: BaseViewController<SecretWordsPresenterProtocol
         
     }
     
+    @objc func hideKeyboard() {
+        self.view.endEditing(true)
+    }
+    
     
 }
+
+extension SecretWordsViewController: UIGestureRecognizerDelegate {
+    func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldReceive touch: UITouch) -> Bool {
+        if touch.view?.isDescendant(of: tableView) == true {
+            return false
+        }
+        return true
+    }
+}
+
+

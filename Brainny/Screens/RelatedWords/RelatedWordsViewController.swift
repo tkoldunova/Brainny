@@ -8,6 +8,8 @@
 import UIKit
 
 class RelatedWordsViewController: BaseViewController<RelatedWordsPresenterProtocol>, RelatedWordsViewProtocol {
+    lazy var tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(hideKeyboard))
+
     lazy var sendButton: UIButton = {
         let button = UIButton(type: .custom)
         button.setImage(UIImage(systemName: "arrow.right.circle.fill"), for: .normal)
@@ -27,6 +29,11 @@ class RelatedWordsViewController: BaseViewController<RelatedWordsPresenterProtoc
         didSet {
             wordsCollectionView.delegate = presenter
             wordsCollectionView.dataSource = presenter
+            let flowLayout = wordsCollectionView.collectionViewLayout as? UICollectionViewFlowLayout
+            flowLayout?.scrollDirection = .vertical
+            flowLayout?.minimumInteritemSpacing = 16
+            flowLayout?.sectionInset = UIEdgeInsets(top: 0, left: 8, bottom: 0, right: 8)
+            flowLayout?.estimatedItemSize = UICollectionViewFlowLayout.automaticSize
         }
     }
     @IBOutlet weak var wordsTableView: UITableView! {
@@ -41,6 +48,7 @@ class RelatedWordsViewController: BaseViewController<RelatedWordsPresenterProtoc
             textField.layer.masksToBounds = true
             textField.layer.borderWidth = 2.0
             textField.layer.borderColor = Colors.borderColor.cgColor
+            textField.placeholder = NSLocalizedString("relatedWords.placeholder", comment: "")
             textField.delegate = presenter
             textField.rightView = sendButton
             textField.rightViewMode = .whileEditing
@@ -48,9 +56,48 @@ class RelatedWordsViewController: BaseViewController<RelatedWordsPresenterProtoc
     }
     @IBOutlet weak var timeLabel: UILabel!
     
+    lazy var coinsHStackView: UIStackView = {
+        let stackView = UIStackView()
+        stackView.axis = .horizontal
+        stackView.distribution = .fill
+        stackView.alignment = .trailing
+        stackView.spacing = 4
+        stackView.translatesAutoresizingMaskIntoConstraints = false
+        let imgView = UIImageView(image: UIImage(named: "coin"))
+        imgView.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            imgView.widthAnchor.constraint(equalToConstant: 20),
+            imgView.heightAnchor.constraint(equalToConstant: 20)
+        ])
+        stackView.addArrangedSubview(coinsLabel)
+        stackView.addArrangedSubview(imgView)
+       
+        return stackView
+    }()
+    
+    
+    lazy var coinsLabel: UILabel = {
+        let label = UILabel()
+        label.font = UIFont(name: "OpenSans-Medium", size: 20)
+        label.textColor = .white
+        label.text = "0"
+        label.translatesAutoresizingMaskIntoConstraints = false
+        return label
+    }()
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title =  NSLocalizedString("relatedWords.title", comment: "")
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(customView: coinsHStackView)
+        presenter.notifyWhenViewDidLoad()
+        self.view.addGestureRecognizer(tapGestureRecognizer)
+        tapGestureRecognizer.delegate = self
+
+    }
+    
+    func setUpCoinsLabel(coins: Int) {
+        coinsLabel.text = coins.description
     }
     
     func setTextFieldEmpty() {
@@ -101,10 +148,34 @@ class RelatedWordsViewController: BaseViewController<RelatedWordsPresenterProtoc
         self.wordsCollectionView.reloadData()
     }
     
+    func showAlert() {
+        NotificationManager.showMesssage(theme: .error, title: NSLocalizedString("messages.coins.title", comment: ""), message:  NSLocalizedString("messages.coins.subtitle", comment: ""), actionText: "", duration: .automatic, action: nil)
+    }
+    
+    
 
     @objc func sendbuttonTouched(_ sender: Any) {
         presenter.checkValue()
         
     }
+    
+    @objc func hideKeyboard() {
+        self.view.endEditing(true)
+    }
 
 }
+
+extension RelatedWordsViewController: UIGestureRecognizerDelegate {
+    func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldReceive touch: UITouch) -> Bool {
+        if touch.view?.isDescendant(of: wordsCollectionView) == true {
+            return false
+        }
+        if touch.view?.isDescendant(of: wordsTableView) == true {
+            return false
+        }
+        return true
+    }
+}
+
+
+

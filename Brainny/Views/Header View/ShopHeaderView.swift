@@ -42,7 +42,7 @@ class ShopCollectionHeaderView: UICollectionReusableView {
         self.addSubview(label)
         NSLayoutConstraint.activate([
             label.centerXAnchor.constraint(equalTo: centerXAnchor),
-            label.centerYAnchor.constraint(equalTo: centerYAnchor),
+            label.centerYAnchor.constraint(equalTo: centerYAnchor, constant: -4),
         ])
     }
     

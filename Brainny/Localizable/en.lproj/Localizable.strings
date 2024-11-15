@@ -27,19 +27,28 @@
 "shop.coins.bundles" = "Coin Bundles";
 "shop.coins.vault" = "Coin Vault";
 "shop.noAds.title" = "No Ads";
+"shop.subscription.title" = "Subscription";
 
 // Mark: Win
 "win.title" = "Level Completed!";
 "win.subtitle" = "You earned:";
+"win.description" = "You have reached the required number of points";
 
 // Mark: Tip
 "tip.word.title" = "Unlock tip for";
 "tip.word.button" = "Unlock";
 "tip.letter.title" = "Unlcok letter";
+"tip.word.title2" = "Unlock word";
+"tip.word.title3" = "Unlock tip";
+
+// MARK: Messages
+"messages.coins.title" = "Not enough coins";
+"messages.coins.subtitle" = "You can earn them by completing levels, making purchases in the store, or watching advertisements.";
 
 // Mark: Related words
 "relatedWords.title" = "Related words";
 "relatedWords.subtitle" = "Below are words or concepts. Enter something in common between them. words";
+"relatedWords.placeholder" = "Enter your suggestion";
 
 // lv1
 "relatedWords.lv1.word1" = "Pencil";
@@ -48,49 +57,50 @@
 "relatedWords.lv1.word4" = "Gallery";
 "relatedWords.lv1.word5" = "Fashion";
 "relatedWords.lv1.answer1" = "Drawing";
-"relatedWords.lv1.relatedWord1" = "sketch, illustration, image, draft, painting, landscape, fine art, depiction, graphics, picture, composition, mural";
+"relatedWords.lv1.relatedWord1" = "drawing, draw, depict, sketch, illustration, image, draft, painting, landscape, fine art, depiction, graphics, picture, composition, mural, paint, color";
 "relatedWords.lv1.answer2" = "Artist";
-"relatedWords.lv1.relatedWord2" = "painter, artist, landscape artist, creator, avant-gardist, modernist, graphic artist, abstractionist, illustrator, dauber";
+"relatedWords.lv1.relatedWord2" = "painter, artist, pictor, landscape artist, landscapist, creator, avant-gardist, modernist, iconographer, icon painter, graphic artist, abstractionist, illustrator, dauber, master, art worker";
 "relatedWords.lv1.answer3" = "Art";
-"relatedWords.lv1.relatedWord3" = "art, craftsmanship, artistry, profession, craft, mastery";
+"relatedWords.lv1.relatedWord3" = "art, craftsmanship, artistry, creativity, culture, profession, craft, mastery, artwork, work of art, art history, expression, creativity, expressiveness";
 "relatedWords.lv1.answer4" = "Exhibition";
-"relatedWords.lv1.relatedWord4" = "exhibition, display, vernissage, presentation, exhibit, performance";
+"relatedWords.lv1.relatedWord4" = "exhibition, display, show, vernissage, presentation, exhibit, performance, installation, art object, art exhibition, demonstration, art object";
 "relatedWords.lv1.answer5" = "Design";
-"relatedWords.lv1.relatedWord4" = "design, interior decorator, architecture";
+"relatedWords.lv1.relatedWord4" = "design, interior decorator, architecture, style, art designer, architect, decor, interior";
 
 // lv2
-"relatedWords.lv2.word1" = "Alcohol";
-"relatedWords.lv2.word2" = "Grapes";
-"relatedWords.lv2.word3" = "Chardonnay";
-"relatedWords.lv2.word4" = "Tasting";
-"relatedWords.lv2.word5" = "Hot drink";
-"relatedWords.lv2.answer1" = "Wine";
-"relatedWords.lv2.relatedWord1" = "wine";
-"relatedWords.lv2.answer2" = "Winery";
-"relatedWords.lv2.relatedWord2" = "winery, wine factory, winemaker, wine cellar";
-"relatedWords.lv2.answer3" = "Variety";
-"relatedWords.lv2.relatedWord3" = "variety, assortment, variation, collection";
-"relatedWords.lv2.answer4" = "Sommelier";
-"relatedWords.lv2.relatedWord4" = "sommelier";
-"relatedWords.lv2.answer5" = "Mulled Wine";
-"relatedWords.lv2.relatedWord5" = "mulled wine";
+
+"relatedWords.lv2.word1" = "Waves";
+"relatedWords.lv2.word2" = "Sand";
+"relatedWords.lv2.word3" = "Sun";
+"relatedWords.lv2.word4" = "Palm";
+"relatedWords.lv2.word5" = "Relaxation";
+"relatedWords.lv2.answer1" = "Vacation";
+"relatedWords.lv2.relatedWord1" = "vacation, holiday, time off, parental leave, maternity leave, decree, travel, leave of absence, trip, day off, break, resort, layoff, recess, respite, rest, tour, cruise, pastime, adventure, romance, holiday romance, spending time";
+"relatedWords.lv2.answer2" = "Beach";
+"relatedWords.lv2.relatedWord2" = "beach, shore, coastline, shore, seaside, coast, waterfront, seaboard, seashore, seacoast";
+"relatedWords.lv2.answer3" = "Summer";
+"relatedWords.lv2.relatedWord3" = "summer, season, summertime";
+"relatedWords.lv2.answer4" = "Island";
+"relatedWords.lv2.relatedWord4" = "island, isle, islet, reef, oasis, atoll, islander, lagoon, laguna, azure, paradise, tropics, exoticism";
+"relatedWords.lv2.answer5" = "Surf";
+"relatedWords.lv2.relatedWord5" = "surf, swell, pier, tide, ebb, sea breeze, backwash, breakers, wash, surge,";
 
 // lv3
-"relatedWords.lv3.word1" = "Waves";
-"relatedWords.lv3.word2" = "Sand";
-"relatedWords.lv3.word3" = "Sun";
-"relatedWords.lv3.word4" = "Palm";
-"relatedWords.lv3.word5" = "Relaxation";
-"relatedWords.lv3.answer1" = "Vacation";
-"relatedWords.lv3.relatedWord1" = "vacation, holiday, time off, parental leave, trip, day off, break, resort, layoff, recess, respite, rest";
-"relatedWords.lv3.answer2" = "Beach";
-"relatedWords.lv3.relatedWord2" = "beach, shore, coastline, coast, waterfront";
-"relatedWords.lv3.answer3" = "Summer";
-"relatedWords.lv3.relatedWord3" = "summer";
-"relatedWords.lv3.answer4" = "Island";
-"relatedWords.lv3.relatedWord4" = "island, isle, islet, reef";
-"relatedWords.lv3.answer5" = "Surf";
-"relatedWords.lv3.relatedWord5" = "surf, swell";
+"relatedWords.lv3.word1" = "Alps";
+"relatedWords.lv3.word2" = "Lift";
+"relatedWords.lv3.word3" = "Equipment";
+"relatedWords.lv3.word4" = "Snow";
+"relatedWords.lv3.word5" = "Cabin";
+"relatedWords.lv3.answer1" = "Winter";
+"relatedWords.lv3.relatedWord1" = "winter, cold, season";
+"relatedWords.lv3.answer2" = "Ski Resort";
+"relatedWords.lv3.relatedWord2" = "resort, mountains, ski resort, glamping";
+"relatedWords.lv3.answer3" = "Mountain Sports";
+"relatedWords.lv3.relatedWord3" = "mountain sports, skiing, snowboarding, sledding, biathlon, sports, figure skating, curling, hockey, bobsleigh, ski cross, tubing, slalom" ;
+"relatedWords.lv3.answer4" = "Avalanche";
+"relatedWords.lv3.relatedWord4" = "avalanche, snow slide, blizzard, snowstorm, storm, snow squall, whiteout";
+"relatedWords.lv3.answer5" = "Snow Igloo";
+"relatedWords.lv3.relatedWord5" = "snow igloo, igloo, chalet, mountain house, snow house, cottage, bungalow, eco-house";
 
 // lv4
 "relatedWords.lv4.word1" = "Warmth";
@@ -99,22 +109,22 @@
 "relatedWords.lv4.word4" = "Traditions";
 "relatedWords.lv4.word5" = "Care";
 "relatedWords.lv4.answer1" = "Cozy";
-"relatedWords.lv4.relatedWord1" = "hospitality, coziness, cushy, snug";
+"relatedWords.lv4.relatedWord1" = "cozy, peace, harmony, solitude, comfort, hearth, coziness, cushy, snug";
 "relatedWords.lv4.answer2" = "Home";
-"relatedWords.lv4.relatedWord2" = "home, building, dwelling, habitation, abode, apartment, villa, residence";
-"relatedWords.lv4.answer3" = "Holidays";
-"relatedWords.lv4.relatedWord3" = "holidays, traditions, party, celebration, festivity, feast, reception, anniversary";
-"relatedWords.lv4.answer4" = "Family";
-"relatedWords.lv4.relatedWord4" = "family, kin, relatives, loved ones, household";
-"relatedWords.lv4.answer5" = "Keeper of the Hearth";
-"relatedWords.lv4.relatedWord5" = "keeper of the hearth, homemaker, housekeeper, host, caretaker, housewife";
+"relatedWords.lv4.relatedWord2" = "home, building, housing, dwelling, abode, habitation, abode, apartment, villa, residence, interior, place, yard, cottage, estate, hut, property, household, casa, house";
+"relatedWords.lv4.answer3" = "Family";
+"relatedWords.lv4.relatedWord3" = "family, kin, relatives, loved ones, close ones, heritage, spouses, lineage, the keeper of the hearth, householder, housewife, hostess, mistress, housekeeping, spirit of the home, couple, caretaker, housekeeper";
+"relatedWords.lv4.answer4" = "Holidays";
+"relatedWords.lv4.relatedWord4" = "holidays, traditions, party, celebration, festivity, feast, event, promenade, festivals, ";
+"relatedWords.lv4.answer5" = "Hospitality";
+"relatedWords.lv4.relatedWord5" = "hospitality, gatherings, get-together, meeting, tea party, interview, banquet, assembly, dinner, dinner party, ceremony, congregation ";
 
 // lv5
-"relatedWords.lv5.word1" = "Scales";
+"relatedWords.lv5.word1" = "Libra";
 "relatedWords.lv5.word2" = "Ascendant";
 "relatedWords.lv5.word3" = "Predictions";
 "relatedWords.lv5.word4" = "Houses";
-"relatedWords.lv5.word5" = "Spread";
+"relatedWords.lv5.word5" = "Layout";
 "relatedWords.lv5.answer1" = "Astrology";
 "relatedWords.lv5.relatedWord1" = "astrology";
 "relatedWords.lv5.answer2" = "Horoscope";
@@ -133,15 +143,15 @@
 "relatedWords.lv6.word4" = "Cup";
 "relatedWords.lv6.word5" = "Olympic Games";
 "relatedWords.lv6.answer1" = "Sport";
-"relatedWords.lv6.relatedWord1" = "sport, physical culture, soccer, rowing, swimming, shooting, hockey, acrobatics, skiing, running, tennis, hockey, physical education, basketball, volleyball, baseball, rugby, snowboarding, cricket, water polo, figure skating, fitness";
+"relatedWords.lv6.relatedWord1" = "sport, physical culture, physical education, soccer, football, rowing, swimming, shooting, hockey, acrobatics, skiing, running, tennis, hockey, physical education, basketball, volleyball, baseball, rugby, snowboarding, cricket, water polo, figure skating, fitness, training, ";
 "relatedWords.lv6.answer2" = "Tournament";
-"relatedWords.lv6.relatedWord2" = "tournament, olympiad, competition, contest, championship, international games, match";
+"relatedWords.lv6.relatedWord2" = "tournament, olympiad, olympics, competition, contest, championship, international games, match";
 "relatedWords.lv6.answer3" = "Record";
-"relatedWords.lv6.relatedWord3" = "record, result, achievement, milestone, benchmark";
+"relatedWords.lv6.relatedWord3" = "record, result, achievement, milestone, benchmark, medal, final, victory, round, tour, ranking, award, success, trophy, triumph";
 "relatedWords.lv6.answer4" = "League";
-"relatedWords.lv6.relatedWord4" = "league, organization, association, union, society";
-"relatedWords.lv6.answer5" = "Willpower";
-"relatedWords.lv6.relatedWord5" = "willpower, determination, character, courage, endurance, steadfastness, self-control, self-discipline, strength of spirit, fortitude, resilience, perseverance";
+"relatedWords.lv6.relatedWord4" = "league, organization, association, union, society, leader, coalition, alliance, division, entity";
+"relatedWords.lv6.answer5" = "Fortitude";
+"relatedWords.lv6.relatedWord5" = "fortitude, strength of spirit, willpower, determination, character, courage, endurance, steadfastness, self-control, self-discipline, strength of spirit, fortitude, resilience, perseverance, resilience, discipline, bravery, stamina, persistence, perseverance, commitment";
 
 //lv7
 "relatedWords.lv7.word1" = "Popularity";
@@ -152,28 +162,28 @@
 "relatedWords.lv7.answer1" = "Hollywood";
 "relatedWords.lv7.relatedWord1" = "hollywood";
 "relatedWords.lv7.answer2" = "Cinematography";
-"relatedWords.lv7.relatedWord2" = "cinematography, cinema, film art, filmmaking, film industry, film production, film distribution, film craft, film technique, cinematics, cinematic arts";
+"relatedWords.lv7.relatedWord2" = "cinematography, cinema, film art, cinema art, art of cinema, filmmaking, film industry, film production, film distribution, film craft, film technique, cinematics, cinematic arts, blockbuster, world cinema, film festival, filmography";
 "relatedWords.lv7.answer3" = "Show Business";
-"relatedWords.lv7.relatedWord3" = "show business, showbiz, entertainment industry, performing arts, film industry, ";
+"relatedWords.lv7.relatedWord3" = "show business, showbiz, entertainment industry, performing arts, film industry, bandstand, estrada, creativity, variety stage";
 "relatedWords.lv7.answer4" = "Reality Show";
 "relatedWords.lv7.relatedWord4" = "reality show, reality program, TV project, TV show, talk show, television industry, reality television, lifestyle show, reality";
 "relatedWords.lv7.answer5" = "Award";
-"relatedWords.lv7.relatedWord5" = "award, prize, grant, certificate, trophy, accolade";
+"relatedWords.lv7.relatedWord5" = "award, prize, grant, certificate, accolade, ceremony, laureate, distinction, reward, bounty, premium";
 
 //lv8
 "relatedWords.lv8.word1" = "Ingredients";
 "relatedWords.lv8.word2" = "Utensils";
-"relatedWords.lv8.word3" = "Gourmet";
+"relatedWords.lv8.word3" = "Delicacy";
 "relatedWords.lv8.word4" = "Michelin Star";
 "relatedWords.lv8.word5" = "Gastronomy";
 "relatedWords.lv8.answer1" = "Restaurant";
-"relatedWords.lv8.relatedWord1" = "restaurant, dining establishment, dining room";
+"relatedWords.lv8.relatedWord1" = "restaurant, dining establishment, dining room, eatery, resto, joint, place";
 "relatedWords.lv8.answer2" = "Chef";
-"relatedWords.lv8.relatedWord2" = "chef, cook, master chef, cuisinier, head cook, baker";
+"relatedWords.lv8.relatedWord2" = "chef, cook, master chef, cuisinier, head cook, baker, master, head chef, head, sous chef, ";
 "relatedWords.lv8.answer3" = "Cuisine";
-"relatedWords.lv8.relatedWord3" = "cuisine, cooking, kitchen, gastronomy";
+"relatedWords.lv8.relatedWord3" = "cuisine, cooking, kitchen, gastronomy, cookery, kitchenette, galley, food stylist, food stylist";
 "relatedWords.lv8.answer4" = "Critic";
-"relatedWords.lv8.relatedWord4" = "critic, inspector, expert, gourmet, expert, reviewer";
+"relatedWords.lv8.relatedWord4" = "critic, inspector, expert, connoisseur, expert, reviewer, auditor, skeptic, gourmet, foodie";
 "relatedWords.lv8.answer5" = "Molecular Cuisine";
 "relatedWords.lv8.relatedWord5" = "molecular cuisine, haute cuisine";
 
@@ -184,15 +194,15 @@
 "relatedWords.lv9.word4" = "Social Media";
 "relatedWords.lv9.word5" = "Self-expression";
 "relatedWords.lv9.answer1" = "Subculture";
-"relatedWords.lv9.relatedWord1" = "subculture, counterculture, informal movement, youth movement, coterie, moiety, band, association";
+"relatedWords.lv9.relatedWord1" = "subculture, nonconformist, informal, pacifist, counterculture, informal movement, youth movement, coterie, moiety, band, association, trans-culture, microculture, group, community, ideology, movement";
 "relatedWords.lv9.answer2" = "Influencer";
-"relatedWords.lv9.relatedWord2" = "influencer, trendsetter, leader, blogger, bellwether";
+"relatedWords.lv9.relatedWord2" = "influencer, trendsetter, leader, blogger, bellwether, speaker, creator, content, trend";
 "relatedWords.lv9.answer3" = "Slang";
-"relatedWords.lv9.relatedWord3" = "slang, jargon, lingo, colloquial language, argot, patois, vernacular";
-"relatedWords.lv9.answer4" = "Generation Z";
-"relatedWords.lv9.relatedWord4" = "generation z, digital generation, post-millennials, centennials, internet generation, smartphone generation";
-"relatedWords.lv9.answer5" = "Pride";
-"relatedWords.lv9.relatedWord5" = "pride, activism, parade, movement, advocacy";
+"relatedWords.lv9.relatedWord3" = "slang, jargon, lingo, dialect, colloquial language, argot, patois, vernacular, communication, language, terminology,";
+"relatedWords.lv9.answer4" = "Generation";
+"relatedWords.lv9.relatedWord4" = "generation z, generation, digital generation, post-millennials, centennials, internet generation, smartphone generation, internet generation";
+"relatedWords.lv9.answer5" = "Flashmob";
+"relatedWords.lv9.relatedWord5" = "flashmob, pride, activism, parade, movement, advocacy, movement, proactivity, interactive, improvisation, protest";
 
 //lv10
 "relatedWords.lv10.word1" = "Bag";
@@ -201,15 +211,15 @@
 "relatedWords.lv10.word4" = "Tag";
 "relatedWords.lv10.word5" = "Logo";
 "relatedWords.lv10.answer1" = "Clothing";
-"relatedWords.lv10.relatedWord1" = "clothing, uniform, outfit, costume, clothes, wear, ";
+"relatedWords.lv10.relatedWord1" = "clothing, cloth, suit, uniform, costume, clothes, wear, wardrobe, attire, apparel, outfit, robe, garment, dress";
 "relatedWords.lv10.answer2" = "Leather";
-"relatedWords.lv10.relatedWord2" = "leather, hide, skin";
+"relatedWords.lv10.relatedWord2" = "leather, hide, skin, flesh";
 "relatedWords.lv10.answer3" = "Store";
-"relatedWords.lv10.relatedWord3" = "store, boutique, outlet, shop, stock";
+"relatedWords.lv10.relatedWord3" = "store, boutique, outlet, shop, stock, shopping center, shopping, mall, retailer";
 "relatedWords.lv10.answer4" = "Fashion";
-"relatedWords.lv10.relatedWord4" = "fashion, trend, style, couture, fad, look";
+"relatedWords.lv10.relatedWord4" = "fashion, trend, style, couture, fad, look, tendency, popularity, hit, design, delicate taste.";
 "relatedWords.lv10.answer5" = "Brand";
-"relatedWords.lv10.relatedWord5" = "brand, label, status symbol";
+"relatedWords.lv10.relatedWord5" = "brand, label, status symbol, status, collection, reputation, label, firm, image";
 
 //lv11
 "relatedWords.lv11.word1" = "Station";
@@ -221,13 +231,13 @@
 "relatedWords.lv11.relatedWord1" = "public transport, municipal transport, city transport, public transit, bus, tram, subway, minibus, trolleybus, city transit, public conveyance, commuter transport, mass transit, urban transit, transit system, public transportation";
 "relatedWords.lv11.answer2" = "Travel";
 "relatedWords.lv11.relatedWord2" = "travel, trip, tourism, excursion, expedition, adventure, tour, sightseeing, movement, 
-trek";
-"relatedWords.lv11.answer3" = "Route";
-"relatedWords.lv11.relatedWord3" = "route, path, course, direction, journey, way, trail, itinerary";
-"relatedWords.lv11.answer4" = "Fare Dodger";
+trek, journey, route, path, transport, course, direction, way, trail, itinerary";
+"relatedWords.lv11.answer3" = "Terminal";
+"relatedWords.lv11.relatedWord3" = "terminal, airport, train station, hub, port, platform, point, arrival, departure, destination";
+"relatedWords.lv11.answer4" = "Stowaway";
 "relatedWords.lv11.relatedWord4" = "fare dodger, stowaway, freeloader, ticket evader, fare evader, free rider, icketless, gatecrasher, Stowaway";
 "relatedWords.lv11.answer5" = "Conductor";
-"relatedWords.lv11.relatedWord5" = "conductor, stewardess, attendant, ticket inspector, operator, guide, coordinator";
+"relatedWords.lv11.relatedWord5" = "conductor, stewardess, steward, attendant, ticket inspector, operator, guide, coordinator, accompanying, attendant";
 
 //lv12
 "relatedWords.lv12.word1" = "Desert";
@@ -250,69 +260,69 @@ trek";
 "relatedWords.lv13.word1" = "Dollar";
 "relatedWords.lv13.word2" = "Finance";
 "relatedWords.lv13.word3" = "Interest";
-"relatedWords.lv13.word4" = "Authority";
+"relatedWords.lv13.word4" = "Portfolio";
 "relatedWords.lv13.word5" = "Default";
 "relatedWords.lv13.answer1" = "Economics";
 "relatedWords.lv13.relatedWord1" = "economics, finance, business";
 "relatedWords.lv13.answer2" = "Currency";
-"relatedWords.lv13.relatedWord2" = "currency, money, funds, cash, bills, coins";
+"relatedWords.lv13.relatedWord2" = "currency, money, funds, cash, bills, coins, capital, income, resources, budget, bonds, assets, savings, issuance, emission";
 "relatedWords.lv13.answer3" = "Inflation";
-"relatedWords.lv13.relatedWord3" = "inflation, currency devaluation, price increase, cost escalation, rising prices";
+"relatedWords.lv13.relatedWord3" = "inflation, currency devaluation, price increase, cost escalation, rising prices, deficit";
 "relatedWords.lv13.answer4" = "Credit";
-"relatedWords.lv13.relatedWord4" = "credit, loan, overdraft, mortgage, lending, debit";
+"relatedWords.lv13.relatedWord4" = "credit, loan, overdraft, mortgage, lending, debit, debt, guarantee, contract";
 "relatedWords.lv13.answer5" = "Stock";
-"relatedWords.lv13.relatedWord5" = "shares, stock, special offer, discount, equities, holdings, shareholder, excise, assets, ownership";
+"relatedWords.lv13.relatedWord5" = "shares, stock, special offer, discount, equities, holdings, shareholder, excise, assets, ownership, shareholder, speculation, securities, rate";
 
 //lv14
 "relatedWords.lv14.word1" = "Authority";
 "relatedWords.lv14.word2" = "Law";
 "relatedWords.lv14.word3" = "Politics";
-"relatedWords.lv14.word4" = "Powers";
+"relatedWords.lv14.word4" = "Documents";
 "relatedWords.lv14.word5" = "Bribes";
 "relatedWords.lv14.answer1" = "President";
-"relatedWords.lv14.relatedWord1" = "president, ruler, leader, head, chief, sovereign, emperor, presidency, government, chairperson, commander, executive, premier";
+"relatedWords.lv14.relatedWord1" = "president, ruler, leader, head, chief, emperor, presidency, government, chairperson, commander, executive, premier, prince, duke, head of government, political leader, government, leadership, prime minister, sheikh, sultan, emir, duke, tsar, chancellor, parliament";
 "relatedWords.lv14.answer2" = "Constitution";
-"relatedWords.lv14.relatedWord2" = "constitution, charter, legal system, governance, law, statute";
+"relatedWords.lv14.relatedWord2" = "constitution, charter, legal system, governance, law, statute, lawmaking, reform, court, regulation, legislation, rights";
 "relatedWords.lv14.answer3" = "State";
 "relatedWords.lv14.relatedWord3" = "state, country, republic, principality, kingdom, empire, nation, sovereign state";
-"relatedWords.lv14.answer4" = "Mandate";
-"relatedWords.lv14.relatedWord4" = "mandate, representative rights, legitimacy";
+"relatedWords.lv14.answer4" = "Bureaucracy";
+"relatedWords.lv14.relatedWord4" = "bureaucracy, management, norms, system, institutions, official, formalism";
 "relatedWords.lv14.answer5" = "Corruption";
-"relatedWords.lv14.relatedWord5" = "corruption, bribery, dishonesty, graft, corrupt practices, fraud, corruptness, ";
+"relatedWords.lv14.relatedWord5" = "corruption, venality, bribery, dishonesty, graft, corrupt practices, fraud, corruptness, inducement";
 
 //lv15
 "relatedWords.lv15.word1" = "Graphics";
 "relatedWords.lv15.word2" = "Level";
 "relatedWords.lv15.word3" = "Competition";
-"relatedWords.lv15.word4" = "Multiplayer";
+"relatedWords.lv15.word4" = "Online";
 "relatedWords.lv15.word5" = "Joystick";
 "relatedWords.lv15.answer1" = "Video Games";
 "relatedWords.lv15.relatedWord1" = "video games, game, gaming, computer games, digital games, electronic games, e-games, online games, electronic games, interactive games, digital games";
-"relatedWords.lv15.answer2" = "Gameplay";
-"relatedWords.lv15.relatedWord2" = "gameplay, mechanics, interface, game control, game mechanics, game dynamics, play experience, game flow";
+"relatedWords.lv15.answer2" = "Multiplayer";
+"relatedWords.lv15.relatedWord2" = "multiplayer, PvP, PvE, Co-op, cooperative gameplay, friend list, patch, cooperative, guild, multiplayer mode";
 "relatedWords.lv15.answer3" = "Esports";
-"relatedWords.lv15.relatedWord3" = "esports, e-sports, electronic sports, digital sports, esports player, pro gaming, digital sports, competitive gaming, cyber sports";
+"relatedWords.lv15.relatedWord3" = "esports, e-sports, electronic sports, digital sports, esports player, pro gaming, digital sports, competitive gaming, cyber sports, match, leaderboard";
 "relatedWords.lv15.answer4" = "Virtual Reality";
-"relatedWords.lv15.relatedWord4" = "virtual reality, artificial reality, simulation, virtual world, digital space, vr, synthetic reality, digital reality, virtual environment";
+"relatedWords.lv15.relatedWord4" = "virtual reality, artificial reality, simulation, virtual world, virtual space, digital space, digital word, vr, synthetic reality, digital reality, virtual environment";
 "relatedWords.lv15.answer5" = "Gamer";
-"relatedWords.lv15.relatedWord5" = "gamer, player, game enthusiast, video gamer, game lover, player, game master";
+"relatedWords.lv15.relatedWord5" = "gamer, player, game enthusiast, video gamer, game lover, player, game master, game lover, game fanatic";
 
 //lv16
 "relatedWords.lv16.word1" = "Computer";
 "relatedWords.lv16.word2" = "System";
 "relatedWords.lv16.word3" = "Network";
 "relatedWords.lv16.word4" = "Code";
-"relatedWords.lv16.word5" = "Trojan Horse";
+"relatedWords.lv16.word5" = "Security";
 "relatedWords.lv16.answer1" = "Operating System";
-"relatedWords.lv16.relatedWord1" = "operating system, software, platform, soft, app, os, system software, software environment, operating environment, kernel,";
+"relatedWords.lv16.relatedWord1" = "operating system, software, platform, soft, app, os, system software, software environment, operating environment, kernel, driver, processor, architecture, management system";
 "relatedWords.lv16.answer2" = "Programming";
-"relatedWords.lv16.relatedWord2" = "programming, coding, programmer, development, coding, writing code, developer";
+"relatedWords.lv16.relatedWord2" = "programming, coding, programmer, development, coding, writing code, developer, code, compilation";
 "relatedWords.lv16.answer3" = "Server";
 "relatedWords.lv16.relatedWord3" = "server, cloud, router, host, provider";
 "relatedWords.lv16.answer4" = "Internet";
 "relatedWords.lv16.relatedWord4" = "internet, Net, digital space, information space, net, cyberspace";
-"relatedWords.lv16.answer5" = "Antivirus";
-"relatedWords.lv16.relatedWord5" = "antivirus, protection, security, security software, protective software, security program, anti-spyware, antimalware";
+"relatedWords.lv16.answer5" = "Cybersecurity";
+"relatedWords.lv16.relatedWord5" = "cybersecurity, cybernetics, antivirus, protection, security, security software, protective software, security program, anti-spyware, antimalware, firewall";
 
 //lv17
 "relatedWords.lv17.word1" = "Time";
@@ -343,22 +353,27 @@ trek";
 "relatedWords.lv18.relatedWord2" = "mathematics, algebra, geometry, arithmetic, higher mathematics, trigonometry, quantum mathematics, plane geometry, solid geometry, discrete mathematics, numerical methods";
 "relatedWords.lv18.answer3" = "Function";
 "relatedWords.lv18.relatedWord3" = "function, equation, math problem, formula, equality, equivalence";
-"relatedWords.lv18.answer4" = "Plane";
-"relatedWords.lv18.relatedWord4" = "plane, surface, bisector";
+"relatedWords.lv18.answer4" = "Analysis";
+"relatedWords.lv18.relatedWord4" = "analysis, modeling, system, model, algorithm, diagnostics, audit";
 "relatedWords.lv18.answer5" = "Diagram";
-"relatedWords.lv18.relatedWord5" = "diagram, graph, histogram, graph, sine wave, chart, figure";
+"relatedWords.lv18.relatedWord5" = "diagram, graph, histogram, graph, sine wave, chart, parabola";
 
 //lv19
-"relatedWords.lv19.word1" = "Time";
-"relatedWords.lv19.word2" = "Technologies";
-"relatedWords.lv19.word3" = "Development";
-"relatedWords.lv19.word4" = "Robot";
-"relatedWords.lv19.word5" = "Projection";
-"relatedWords.lv19.answer1" = "Artificial Intelligence";
-"relatedWords.lv19.answer2" = "Innovations";
-"relatedWords.lv19.answer3" = "Future";
-"relatedWords.lv19.answer4" = "Cyborg";
-"relatedWords.lv19.answer5" = "Hologram";
+"relatedWords.lv19.word1" = "Atmosphere";
+"relatedWords.lv19.word2" = "Heat";
+"relatedWords.lv19.word3" = "Environment";
+"relatedWords.lv19.word4" = "Precipitation";
+"relatedWords.lv19.word5" = "Summer";
+"relatedWords.lv19.answer1" = "Ecosystem";
+"relatedWords.lv19.relatedWord1" = "etcosystem, ecology, troposphere";
+"relatedWords.lv19.answer2" = "Climate";
+"relatedWords.lv19.relatedWord2" = "climate, weather, forecast, acclimatization, weather forecast";
+"relatedWords.lv19.answer3" = "Season";
+"relatedWords.lv19.relatedWord3" = "season, time of year, seasonality, period, stage of the year, phase";
+"relatedWords.lv19.answer4" = "Cataclysms";
+"relatedWords.lv19.relatedWord4" = "cataclysms, disaster, calamity, earthquakes, floods, avalanches, thunderstorms, landslides, storm, tornado, karst phenomena, hurricane, cyclone, tsunami, misfortunes, natural disasters, tragedies";
+"relatedWords.lv19.answer5" = "Global warming";
+"relatedWords.lv19.relatedWord5" = "global warming, anomaly, greenhouse effect, drought, temperature fluctuations, warming, glacial anomalies, arctic warming";
 
 //lv20
 "relatedWords.lv20.word1" = "Basket";
@@ -380,6 +395,7 @@ trek";
 // Mark: Secret word
 "secretWord.title" = "Secret word";
 "secretWord.subtitle" = "Guess the word based on the following statements";
+"secretWord.placeholder" = "Enter your suggestion";
 
 // lv1
 "secretWord.lv1.secret1" = "It’s not a painting, but you can see yourself in it.";
@@ -558,4 +574,6 @@ chronograph, chronometer, hourglass, metronome";
 "anagrams.lv28.world" = "banings";
 "anagrams.lv29.world" = "obvious";
 "anagrams.lv30.world" = "quickly";
+
+
 

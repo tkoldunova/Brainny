@@ -11,16 +11,18 @@ protocol ShopInteractorProtocol {
     var model: [CoinsProductSub] {get}
     var subscription: [ProductSub] { get }
     var coins: Int {get set}
+    var count: Int {get set}
     func requestProducts(completion:@escaping()->Void)
     func buy(product: CoinsProductSub, completion:@escaping()->Void)
     func buySubscription(product: ProductSub)
+    func update()
 }
 
 final class ShopInteractor: ShopInteractorProtocol {
     var model: [CoinsProductSub]
     var subscription: [ProductSub]
     var purchaseManager = IAPManager()
-
+    var count: Int = 0
     var coins: Int {
         didSet {
             UserDefaultsValues.coins = coins
@@ -31,6 +33,10 @@ final class ShopInteractor: ShopInteractorProtocol {
         self.model = [CoinsProductSub]()
         self.subscription = [ProductSub]()
         
+    }
+    
+    func update() {
+        self.coins = UserDefaultsValues.coins
     }
     
     func requestProducts(completion:@escaping()->Void) {
