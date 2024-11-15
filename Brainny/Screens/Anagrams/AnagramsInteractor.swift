@@ -115,7 +115,7 @@ class AnagramsInteractor: AnagramsInteractorProtocol {
     private func isCorrect(word: String) -> Bool {
         let checker = UITextChecker()
         let range = NSRange(location: 0, length: word.utf16.count)
-        let misspelledRange = checker.rangeOfMisspelledWord(in: word, range: range, startingAt: 0, wrap: false, language: "ru")
+        let misspelledRange = checker.rangeOfMisspelledWord(in: word, range: range, startingAt: 0, wrap: false, language: NSLocalizedString("anagrams.languageCode", comment: ""))
         return misspelledRange.location == NSNotFound
     }
     

@@ -526,6 +526,7 @@ chronograph, chronometer, hourglass, metronome";
 "anagrams.title" = "Annagrams";
 "anagrams.subtitle" = "Find the words in this set";
 "anagrams.button" = "Enter";
+"anagrams.languageCode" = "en";
 
 "anagrams.lv1.world" = "grindas";
 "anagrams.lv2.world" = "fatalist";

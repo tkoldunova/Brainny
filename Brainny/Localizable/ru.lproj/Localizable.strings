@@ -527,6 +527,7 @@
 "anagrams.title" = "Анаграммы";
 "anagrams.subtitle" = "Найдите слова в этом наборе";
 "anagrams.button" = "Готово";
+"anagrams.languageCode" = "ru";
 
 "anagrams.lv1.world" = "картон";
 "anagrams.lv2.world" = "гармония";
