@@ -33,9 +33,9 @@ class WorldNode: SKSpriteNode {
         return node
     }()
     
-    init() {
+    init(size: CGSize) {
         let texture = SKTexture(imageNamed: "worldNode")
-        super.init(texture: texture, color: .clear, size: CGSize(width: 45, height: 45))
+        super.init(texture: texture, color: .clear, size: size)
         
         zPosition = 7
         name = "word_node"

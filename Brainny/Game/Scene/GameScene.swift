@@ -46,13 +46,13 @@ class GameScene: SKScene {
     func spawbEmptyNode() {
         let count = world.count
         
-        let width: CGFloat = (45 * CGFloat(count - 1)) + (8 * CGFloat(count - 1))
+        let width: CGFloat = (( count > 8 ? 33 : count > 6 ? 37 : 45) * CGFloat(count - 1)) + ((count > 8 ? 3 : count > 6 ? 6 : 8) * CGFloat(count - 1))
         
         
         
         
         for i in 0 ... count - 1 {
-            let emptyNode = EmptyNode()
+            let emptyNode = EmptyNode(size: CGSize(width:  count > 8 ? 33 : count > 6 ? 37 : 45, height:  count > 8 ? 33 : count > 6 ? 37 : 45))
             let startY: CGFloat
             if let neededPoint = gameSceneDelegate?.getSubtitlePos() {
                 if let convertedPos = view?.convert(neededPoint, to: self) {
@@ -63,7 +63,7 @@ class GameScene: SKScene {
             } else {
                 startY = size.height/3.5
             }
-            emptyNode.position = CGPoint(x: -width/2 + (emptyNode.size.width + 8) * CGFloat(i), y: startY)
+            emptyNode.position = CGPoint(x: -width/2 + (emptyNode.size.width + (count > 8 ? 3 : count > 6 ? 6 : 8)) * CGFloat(i), y: startY)
             
             addChild(emptyNode)
             
@@ -77,12 +77,12 @@ class GameScene: SKScene {
         let shuffledWorld = world.shuffled()
         self.world = String(shuffledWorld)
         let count = world.count
-        let width: CGFloat = (45 * CGFloat(count - 1)) + (8 * CGFloat(count - 1))
+        let width: CGFloat = ((count > 8 ? 33 : count > 6 ? 37 : 45) * CGFloat(count - 1)) + ((count > 8 ? 3 : count > 6 ? 6 : 8) * CGFloat(count - 1))
         
         for i in 0 ... count - 1 {
             let world = shuffledWorld[i]
-            let worldNode = WorldNode()
-            worldNode.position = CGPoint(x: -width/2 + (emptyNode.size.width + 8) * CGFloat(i), y: emptyNode.position.y - worldNode.size.width - 12)
+            let worldNode = WorldNode(size: CGSize(width: count > 8 ? 33 : count > 6 ? 37 : 45, height: count > 8 ? 33 : count > 6 ? 37 : 45))
+            worldNode.position = CGPoint(x: -width/2 + (emptyNode.size.width + (count > 8 ? 3 : count > 6 ? 6 : 8)) * CGFloat(i), y: emptyNode.position.y - worldNode.size.width - 12)
             worldNode.delegate = self
             worldNode.char = String(world)
             addChild(worldNode)

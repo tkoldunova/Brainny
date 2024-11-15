@@ -542,6 +542,7 @@
 "anagrams.title" = "Анаграмми";
 "anagrams.subtitle" = "Знайдіть слова в цьому наборі";
 "anagrams.button" = "Готово";
+"anagrams.languageCode" = "uk";
 
 "anagrams.lv1.world" = "заповідник";
 "anagrams.lv2.world" = "парадність";
