@@ -57,7 +57,7 @@ final class ShopInteractor: ShopInteractorProtocol {
     func buy(product: CoinsProductSub, completion:@escaping()->Void) {
         purchaseManager.buyProduct(product.product) { success, productId in
             if success {
-                UserDefaultsValues.coins += self.model.count
+                UserDefaultsValues.coins += product.model.value
                 completion()
             }
         }

@@ -8,18 +8,18 @@
 import UIKit
 
 enum CoinsModel: String, CaseIterable {
-    case hap = "com.hap.product"
-    case bundles = "com.bundles.product"
-    case vault = "com.vault.product"
+    case start = "com.start.product"
+    case middle = "com.middle.product"
+    case grand = "com.grand.product"
     
     var title: String {
         switch self {
-        case .hap:
-            return NSLocalizedString("shop.coins.hap", comment: "")
-        case .bundles:
-            return NSLocalizedString("shop.coins.bundles", comment: "")
-        case .vault:
-            return NSLocalizedString("shop.coins.vault", comment: "")
+        case .start:
+            return NSLocalizedString("shop.coins.startPack", comment: "")
+        case .middle:
+            return NSLocalizedString("shop.coins.middlePack", comment: "")
+        case .grand:
+            return NSLocalizedString("shop.coins.grandPack", comment: "")
         }
     }
     
@@ -29,11 +29,11 @@ enum CoinsModel: String, CaseIterable {
     
     var value: Int {
         switch self {
-        case .hap:
+        case .start:
             return 50
-        case .bundles:
-            return 150
-        case .vault:
+        case .middle:
+            return 250
+        case .grand:
             return 500
         }
     }

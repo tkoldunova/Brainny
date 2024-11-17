@@ -70,7 +70,7 @@ extension ShopPresenter: ShopCellDelegate, NoAdsDelegate {
                 
                 cell.configure(product: interactor.model[indexPath.row])
             } else {
-                cell.configure(model: .hap)
+                cell.configure(model: .start)
             }
             cell.delegate = self
             return cell
@@ -114,6 +114,7 @@ extension ShopPresenter: ShopCellDelegate, NoAdsDelegate {
     func buyProduct(product: CoinsProductSub) {
         self.interactor.buy(product: product) {
             print("buy succ \(UserDefaultsValues.coins)")
+            self.interactor.update()
             self.view?.setUpCoinsLabel(coins: self.interactor.coins)
         }
     }

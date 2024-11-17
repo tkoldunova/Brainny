@@ -23,9 +23,9 @@
 // Mark: Shop
 "shop.title" = "Shop";
 "shop.coins.title" = "GET COINS";
-"shop.coins.hap" = "Hap of coins";
-"shop.coins.bundles" = "Coin Bundles";
-"shop.coins.vault" = "Coin Vault";
+"shop.coins.startPack" = "Starter Pack";
+"shop.coins.middlePack" = "Boost Bundle";
+"shop.coins.grandPack" = "Premium Bundle";
 "shop.noAds.title" = "No Ads";
 "shop.subscription.title" = "Subscription";
 

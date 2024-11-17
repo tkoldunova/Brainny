@@ -39,12 +39,12 @@ enum SettingsModel: CaseIterable {
         case .sound:
             UserDefaultsValues.soundOff = !newValue
             if !UserDefaultsValues.soundOff {
-             //   AudioManager.shared.playPressedSound()
+                AudioManager.shared.playTouchedSound()
             }
         case .haptics:
             UserDefaultsValues.hapticOff = !newValue
             if !UserDefaultsValues.hapticOff {
-            //    playPopVibration()
+                playPopVibration()
             }
         }
     }
@@ -79,7 +79,7 @@ enum VolumeModel: CaseIterable {
         switch self {
         case .music:
             UserDefaultsValues.volume = volume
-         //   AudioManager.shared.changeMusicVolume()
+            AudioManager.shared.changeMusicVolume()
         }
     }
 

@@ -21,7 +21,7 @@ class AudioManager {
     }
     
     func prepare() {
-        //  player = prepareMusic(name: <#T##String#>)
+          player = prepareMusic(name: "bg")
         touchedPlayer = prepareSound(name: "touch")
         correctPlayer = prepareSound(name: "correct")
         wrongPlayer = prepareSound(name: "wrong")
@@ -76,6 +76,9 @@ class AudioManager {
     func playTouchedSound() {
         if !UserDefaultsValues.soundOff {
             touchedPlayer?.play()
+        }
+        if !UserDefaultsValues.hapticOff {
+            playPopVibration()
         }
     }
     

@@ -106,9 +106,17 @@ class BubleView: UIView {
         }
         let path =  createRandomPath()
         animation.toValue = path.cgPath
+        animation.fillMode = .forwards
+        animation.isRemovedOnCompletion = false 
         self.currentPath = path
         animation.delegate = self
         curvedLayer.add(animation, forKey: "wavyAnimation")
+        
+//        DispatchQueue.main.asyncAfter(deadline: .now() + 1, execute: {
+//            let path = self.createRandomPath()
+//            self.curvedLayer.path = path.cgPath
+//            self.animation()
+//        })
     }
     
     func createRandomPath() -> UIBezierPath {

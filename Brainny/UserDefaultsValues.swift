@@ -21,7 +21,7 @@ public struct UserDefaultsValues {
     
     
     static func setdefaultData() {
-        UserDefaults.standard.register(defaults: [Keys.volumeKey:1.0])
+        UserDefaults.standard.register(defaults: [Keys.volumeKey:0.07])
     }
     
     static var coins: Int {

@@ -70,6 +70,8 @@
 		D1C552522CE6983C009B04ED /* CollectionViewCenteredFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1C552512CE6983C009B04ED /* CollectionViewCenteredFlowLayout.swift */; };
 		D1C552602CE76E90009B04ED /* SwiftMessageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1C5525F2CE76E90009B04ED /* SwiftMessageView.swift */; };
 		D1C552622CE76ED9009B04ED /* NotificationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1C552612CE76ED9009B04ED /* NotificationManager.swift */; };
+		D1C552642CE8C17D009B04ED /* bg.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = D1C552632CE8C17D009B04ED /* bg.mp3 */; };
+		D1C552662CE8C9A1009B04ED /* VibrationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1C552652CE8C9A1009B04ED /* VibrationManager.swift */; };
 		D1E1C74B2CA4A9AE00300345 /* TipView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D1E1C74A2CA4A9AE00300345 /* TipView.xib */; };
 		D1E1C74D2CA4AEFF00300345 /* TipView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1E1C74C2CA4AEFF00300345 /* TipView.swift */; };
 		D1E1C74F2CA4BE6600300345 /* LetterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1E1C74E2CA4BE6600300345 /* LetterView.swift */; };
@@ -171,6 +173,8 @@
 		D1C552512CE6983C009B04ED /* CollectionViewCenteredFlowLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewCenteredFlowLayout.swift; sourceTree = "<group>"; };
 		D1C5525F2CE76E90009B04ED /* SwiftMessageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftMessageView.swift; sourceTree = "<group>"; };
 		D1C552612CE76ED9009B04ED /* NotificationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationManager.swift; sourceTree = "<group>"; };
+		D1C552632CE8C17D009B04ED /* bg.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = bg.mp3; sourceTree = "<group>"; };
+		D1C552652CE8C9A1009B04ED /* VibrationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VibrationManager.swift; sourceTree = "<group>"; };
 		D1E1C74A2CA4A9AE00300345 /* TipView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TipView.xib; sourceTree = "<group>"; };
 		D1E1C74C2CA4AEFF00300345 /* TipView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TipView.swift; sourceTree = "<group>"; };
 		D1E1C74E2CA4BE6600300345 /* LetterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LetterView.swift; sourceTree = "<group>"; };
@@ -297,6 +301,7 @@
 				D16104AC2CD4F01F006F912A /* AudioManager.swift */,
 				D16104CE2CD586C0006F912A /* AdManager.swift */,
 				D1C552612CE76ED9009B04ED /* NotificationManager.swift */,
+				D1C552652CE8C9A1009B04ED /* VibrationManager.swift */,
 			);
 			path = Managers;
 			sourceTree = "<group>";
@@ -356,6 +361,7 @@
 		D1D8A6932CD3C3F400B9B644 /* Music */ = {
 			isa = PBXGroup;
 			children = (
+				D1C552632CE8C17D009B04ED /* bg.mp3 */,
 				D16104AA2CD4EF6F006F912A /* touch.mp3 */,
 				D16104A82CD4D110006F912A /* wrong.mp3 */,
 				D16104A62CD4D087006F912A /* win.mp3 */,
@@ -582,6 +588,7 @@
 				D16104A92CD4D110006F912A /* wrong.mp3 in Resources */,
 				D19B744F2CA0DB050008F38E /* Assets.xcassets in Resources */,
 				D16104A72CD4D087006F912A /* win.mp3 in Resources */,
+				D1C552642CE8C17D009B04ED /* bg.mp3 in Resources */,
 				D19B74522CA0DB050008F38E /* Base in Resources */,
 				D19B744D2CA0DB000008F38E /* Base in Resources */,
 			);
@@ -636,6 +643,7 @@
 				9F4D66792CC28A3A00C4E613 /* AnagramsCollectionViewCell.swift in Sources */,
 				9F4D667A2CC28A3A00C4E613 /* AnagramsInteractor.swift in Sources */,
 				D190A6092CACA672002B4625 /* UserDefaultsValues.swift in Sources */,
+				D1C552662CE8C9A1009B04ED /* VibrationManager.swift in Sources */,
 				D1EEF6FA2CA1C66B00848B72 /* RelatedWordsPresenter.swift in Sources */,
 				D1E6E4382CB194C2004BB47B /* SettingsTableViewCell.swift in Sources */,
 				D1EEF6FE2CA1C68000848B72 /* RelatedWordsRouter.swift in Sources */,

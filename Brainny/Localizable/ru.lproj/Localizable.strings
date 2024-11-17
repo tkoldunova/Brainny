@@ -23,9 +23,9 @@
 // Mark: Shop
 "shop.title" = "Магазин";
 "shop.coins.title" = "ПОЛУЧИТЬ МОНЕТЫ";
-"shop.coins.hap" = "Куча монет";
-"shop.coins.bundles" = "Пачки монет";
-"shop.coins.vault" = "Хранилище монет";
+"shop.coins.startPack" = "Стартовый набор";
+"shop.coins.middlePack" = "Ускоренный набор";
+"shop.coins.grandPack" = "Премиум набор";
 "shop.noAds.title" = "Без Рекламы";
 "shop.subscription.title" = "Подписки";
 

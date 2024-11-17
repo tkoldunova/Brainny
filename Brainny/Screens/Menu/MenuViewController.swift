@@ -145,6 +145,7 @@ class MenuViewController: BaseViewController<MenuPresenterProtocol>, MenuViewPro
     }
     @IBAction func shopButtonTouched(_ sender: Any) {
         AudioManager.shared.playTouchedSound()
+ 
         self.presenter.goToShop()
         
     }

@@ -28,7 +28,7 @@ public struct CoinsProductSub: Hashable, ProductSubscription {
         self.product = product
         self.title = product.localizedTitle
         self.locale = product.priceLocale
-        self.model = CoinsModel(rawValue: product.productIdentifier) ?? .hap
+        self.model = CoinsModel(rawValue: product.productIdentifier) ?? .start
         self.price = formatter.string(from: product.price)
        
     }
