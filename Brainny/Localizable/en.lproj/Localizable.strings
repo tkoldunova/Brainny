@@ -83,7 +83,7 @@
 "relatedWords.lv2.answer4" = "Island";
 "relatedWords.lv2.relatedWord4" = "island, isle, islet, reef, oasis, atoll, islander, lagoon, laguna, azure, paradise, tropics, exoticism";
 "relatedWords.lv2.answer5" = "Surf";
-"relatedWords.lv2.relatedWord5" = "surf, swell, pier, tide, ebb, sea breeze, backwash, breakers, wash, surge,";
+"relatedWords.lv2.relatedWord5" = "surf, swell, pier, tide, ebb, sea breeze, backwash, breakers, wash, surge";
 
 // lv3
 "relatedWords.lv3.word1" = "Alps";
@@ -115,9 +115,9 @@
 "relatedWords.lv4.answer3" = "Family";
 "relatedWords.lv4.relatedWord3" = "family, kin, relatives, loved ones, close ones, heritage, spouses, lineage, the keeper of the hearth, householder, housewife, hostess, mistress, housekeeping, spirit of the home, couple, caretaker, housekeeper";
 "relatedWords.lv4.answer4" = "Holidays";
-"relatedWords.lv4.relatedWord4" = "holidays, traditions, party, celebration, festivity, feast, event, promenade, festivals, ";
+"relatedWords.lv4.relatedWord4" = "holidays, traditions, party, celebration, festivity, feast, event, promenade, festivals";
 "relatedWords.lv4.answer5" = "Hospitality";
-"relatedWords.lv4.relatedWord5" = "hospitality, gatherings, get-together, meeting, tea party, interview, banquet, assembly, dinner, dinner party, ceremony, congregation ";
+"relatedWords.lv4.relatedWord5" = "hospitality, gatherings, get-together, meeting, tea party, interview, banquet, assembly, dinner, dinner party, ceremony, congregation";
 
 // lv5
 "relatedWords.lv5.word1" = "Libra";

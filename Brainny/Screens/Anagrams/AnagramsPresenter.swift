@@ -56,7 +56,7 @@ class AnagramsPresenter: NSObject, AnagramsPresenterProtocol {
     
     func checkIfWorldIsCorrect(word: String) -> Bool {
         let bool = interactor.checkIfWorldIsCorrent(word: word)
-        view?.reload()
+      
         if let words = interactor.words {
             let guessesWords = words.filter({$0.guessed})
             self.view?.setUpPointsLabel(count: guessesWords.count, maxCount: words.count)
@@ -76,6 +76,7 @@ class AnagramsPresenter: NSObject, AnagramsPresenterProtocol {
             }
 
         }
+        view?.reload()
         return bool
     }
     

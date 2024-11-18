@@ -69,6 +69,7 @@ struct RelatedWordModel: Codable {
         self.relatedWords = ""
         self.guessedKey =  "com."+answer+"guessed.key"
         self.tipKey = "com."+answer+"tip.key"
+        UserDefaults.standard.set(guessed, forKey:  "com."+answer+"guessed.key")
         self.guessed = UserDefaults.standard.bool(forKey: "com."+answer+"guessed.key")//guessed
         self.tip = UserDefaults.standard.array(forKey: "com."+answer+"tip.key") as? [String] ?? Array(repeating: "", count: answer.count)
      //   self.guessed = guessed

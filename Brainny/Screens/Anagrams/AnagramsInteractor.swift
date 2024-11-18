@@ -42,9 +42,16 @@ class AnagramsInteractor: AnagramsInteractorProtocol {
     func checkIfWorldIsCorrent(word: String) -> Bool {
         guard words != nil else { return false }
         if isCorrect(word: word) {
-            self.words?.removeAll(where: {$0.answer == word})
-            self.words?.insert(RelatedWordModel(answer: word, guessed: true), at: 0)
-            return true
+            
+            let worldModel = words!.first(where: {$0.answer == word})!
+            if !worldModel.guessed {
+//                self.words?.removeAll(where: {$0 == worldModel})
+                self.words?.removeAll(where: {$0.answer == word})
+                self.words?.insert(RelatedWordModel(answer: word, guessed: true), at: 0)
+                return true
+            } else {
+                return false
+            }
         } else {
             return false
         }

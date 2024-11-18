@@ -82,7 +82,7 @@
 "relatedWords.lv2.answer4" = "Остров";
 "relatedWords.lv2.relatedWord4" = "остров, оаза, атолл, островок, островитянин, островик, лагуна, лазурь, лазурный берег, рай, тропики, экзотика";
 "relatedWords.lv2.answer5" = "Прибой";
-"relatedWords.lv2.relatedWord5" = "прибой, пирс, прилив, отлив, морской бриз ";
+"relatedWords.lv2.relatedWord5" = "прибой, пирс, прилив, отлив, морской бриз";
 
 //lv3
 "relatedWords.lv3.word1" = "Альпы";
@@ -93,7 +93,7 @@
 "relatedWords.lv3.answer1" = "Зима";
 "relatedWords.lv3.relatedWord1" = "зима, холод, сезон";
 "relatedWords.lv3.answer2" = "Горнолыжный курорт";
-"relatedWords.lv3.relatedWord2" = "курорт, горы, горнолыжный курорт, глэмпинг ";
+"relatedWords.lv3.relatedWord2" = "курорт, горы, горнолыжный курорт, глэмпинг";
 "relatedWords.lv3.answer3" = "Горный спорт";
 "relatedWords.lv3.relatedWord3" = "горный спорт, лыжи, сноуборд, санки, биатлон, спорт, фигурное катание, керлинг, хоккей, бобслей, скикросс, тюбинг, слалом" ;
 "relatedWords.lv3.answer4" = "Лавина";
@@ -435,7 +435,7 @@
 "secretWord.lv6.secret2" = "Ты видишь его ступени, но они исчезают и снова появляются .";
 "secretWord.lv6.secret3" = "Это всегда рядом в торговых центрах.";
 "secretWord.lv6.answer" = "Экалатор";
-"secretWord.lv6.relatedWord" = "экалатор, траволатор, подъемник";
+"secretWord.lv6.relatedWord" = "эcкалатор, траволатор, подъемник";
 
 // lv7
 "secretWord.lv7.secret1" = "Вы можете это хранить, но не увидить.";

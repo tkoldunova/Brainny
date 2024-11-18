@@ -34,36 +34,6 @@
             endingLineNumber = "38"
             landmarkName = "requestProducts(completion:)"
             landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "57FF508D-F43D-4500-B1D0-A9D577AC2C86 - ec2ebca1eb60f202"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (Swift.Optional&lt;Swift.Array&lt;Brainny.ProductSubscription&gt;&gt;) -&gt; () in Brainny.ShopInteractor.requestProducts(completion: () -&gt; ()) -&gt; ()"
-                  moduleName = "Brainny.debug.dylib"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/anastasiakoldunova/Developer/Brainny/Brainny/Screens/Shop/ShopInteractor.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "38"
-                  endingLineNumber = "38">
-               </Location>
-               <Location
-                  uuid = "57FF508D-F43D-4500-B1D0-A9D577AC2C86 - c7dc9f9c12f7c6e3"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (Brainny.ProductSubscription) -&gt; Swift.Bool in closure #1 (Swift.Optional&lt;Swift.Array&lt;Brainny.ProductSubscription&gt;&gt;) -&gt; () in Brainny.ShopInteractor.requestProducts(completion: () -&gt; ()) -&gt; ()"
-                  moduleName = "Brainny.debug.dylib"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/anastasiakoldunova/Developer/Brainny/Brainny/Screens/Shop/ShopInteractor.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "38"
-                  endingLineNumber = "38">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -80,36 +50,6 @@
             endingLineNumber = "34"
             landmarkName = "notifyWhenViewDidLoad()"
             landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "A2D6319D-87EE-46A3-AAFE-236A7E83FF01 - 394d91b97c0714"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 () -&gt; () in Brainny.ShopPresenter.notifyWhenViewDidLoad() -&gt; ()"
-                  moduleName = "Brainny.debug.dylib"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/anastasiakoldunova/Developer/Brainny/Brainny/Screens/Shop/ShopPresenter.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "34"
-                  endingLineNumber = "34">
-               </Location>
-               <Location
-                  uuid = "A2D6319D-87EE-46A3-AAFE-236A7E83FF01 - a4da4a6bc3f067a2"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 @Swift.MainActor () -&gt; () in closure #1 () -&gt; () in Brainny.ShopPresenter.notifyWhenViewDidLoad() -&gt; ()"
-                  moduleName = "Brainny.debug.dylib"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/anastasiakoldunova/Developer/Brainny/Brainny/Screens/Shop/ShopPresenter.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "35"
-                  endingLineNumber = "35">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -148,15 +88,63 @@
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "0C9D6CF4-2D77-428E-80AB-D3A72E303B35"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Brainny/Screens/Anagrams/AnagramsInteractor.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "125"
+            endingLineNumber = "125"
+            landmarkName = "isCorrect(word:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "980AB563-E1ED-4DC3-BD9C-5FE063078349"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Brainny/Infrastracture/Extensions/String.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "54"
+            endingLineNumber = "54"
+            landmarkName = "compareString(word:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "41D99B11-DB13-469C-9DA1-11C270C99258"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Brainny/Screens/Anagrams/AnagramsPresenter.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "60"
+            endingLineNumber = "60"
+            landmarkName = "checkIfWorldIsCorrect(word:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "BFB42253-87EB-4C3B-8CAD-217514DCCCBE"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Brainny/Screens/Anagrams/AnagramsInteractor.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "118"
-            endingLineNumber = "118"
-            landmarkName = "isCorrect(word:)"
+            startingLineNumber = "44"
+            endingLineNumber = "44"
+            landmarkName = "checkIfWorldIsCorrent(word:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

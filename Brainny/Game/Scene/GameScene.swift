@@ -117,8 +117,10 @@ extension GameScene: WorldNodeDelegate, EnterButtonDelegate {
         for emptyWorldNode in emptyWorldNodes {
             world.append(emptyWorldNode.worldNode!.char!)
             let node = emptyWorldNode.worldNode!
-            node.moveTo(node.lastPos!, duaration: 0.25) {
-                node.lastPos = nil
+            if let lastPos = node.lastPos {
+                node.moveTo(lastPos, duaration: 0.25) {
+                    node.lastPos = nil
+                }
             }
             
             emptyWorldNode.worldNode = nil
