@@ -184,6 +184,7 @@ class SecretWordsViewController: BaseViewController<SecretWordsPresenterProtocol
             let touchLocation = touch.location(in: self.view)
             if answerView.frame.contains(touchLocation) {
                 AudioManager.shared.playTouchedSound()
+                self.presenter.openTipForAnswer()
 //                UIView.animate(withDuration: 0.5, animations: {
 //
 //                })
@@ -198,7 +199,6 @@ class SecretWordsViewController: BaseViewController<SecretWordsPresenterProtocol
             // Get the location of the touch in the main view's coordinate system
             let touchLocation = touch.location(in: self.view)
             if answerView.frame.contains(touchLocation) {
-                self.presenter.openTipForAnswer()
             }
         }
         

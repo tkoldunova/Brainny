@@ -26,7 +26,11 @@ final class SecretWordsInteractor: SecretWordsInteractorProtocol {
           //  self.model.setAnswers(newValue: answer)
         }
     }
-    var coins: Int
+    var coins: Int {
+        didSet {
+            UserDefaultsValues.coins = coins
+        }
+    }
     var suggestion:String?
     init(model: SecretWords) {
         self.model = model

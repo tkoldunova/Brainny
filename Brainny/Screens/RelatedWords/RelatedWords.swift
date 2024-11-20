@@ -54,29 +54,43 @@ struct RelatedWordModel: Codable {
     var tip: [String]
     private var guessedKey: String
     private var tipKey: String
+    private var saveInDefaults: Bool
     
-    init(answer: String, relatedWords: String, guessed: Bool) {
+    init(answer: String, relatedWords: String, guessed: Bool, saveInDefaults: Bool) {
+        self.saveInDefaults = saveInDefaults
         self.answer = answer
         self.relatedWords = relatedWords
         self.guessedKey =  "com."+answer+"guessed.key"
         self.tipKey = "com."+answer+"tip.key"
-        self.guessed = UserDefaults.standard.bool(forKey: "com."+answer+"guessed.key")//guessed
-        self.tip = UserDefaults.standard.array(forKey: "com."+answer+"tip.key") as? [String] ?? Array(repeating: "", count: answer.count)// Array(repeating: nil, count: answer.count)
+        if !saveInDefaults {
+            self.guessed = guessed
+            self.tip = Array(repeating: "", count: answer.count)
+        } else {
+            UserDefaults.standard.set(guessed, forKey:  "com."+answer+"guessed.key")
+            self.guessed = UserDefaults.standard.bool(forKey: "com."+answer+"guessed.key")//guessed
+            self.tip = UserDefaults.standard.array(forKey: "com."+answer+"tip.key") as? [String] ?? Array(repeating: "", count: answer.count)
+        }
     }
     
-    init(answer: String, guessed: Bool) {
+    init(answer: String, guessed: Bool, saveInDefaults: Bool) {
+        self.saveInDefaults = saveInDefaults
         self.answer = answer
         self.relatedWords = ""
         self.guessedKey =  "com."+answer+"guessed.key"
         self.tipKey = "com."+answer+"tip.key"
-        UserDefaults.standard.set(guessed, forKey:  "com."+answer+"guessed.key")
-        self.guessed = UserDefaults.standard.bool(forKey: "com."+answer+"guessed.key")//guessed
-        self.tip = UserDefaults.standard.array(forKey: "com."+answer+"tip.key") as? [String] ?? Array(repeating: "", count: answer.count)
-     //   self.guessed = guessed
-      //  tip = Array(repeating: nil, count: answer.count)
+        if saveInDefaults {
+            UserDefaults.standard.set(guessed, forKey:  "com."+answer+"guessed.key")
+            self.guessed = UserDefaults.standard.bool(forKey: "com."+answer+"guessed.key")//guessed
+            self.tip = UserDefaults.standard.array(forKey: "com."+answer+"tip.key") as? [String] ?? Array(repeating: "", count: answer.count)
+        } else {
+            self.guessed = guessed
+            self.tip = Array(repeating: "", count: answer.count)
+
+        }
     }
     
     init(answerKey: String, relatedWordsKey: String) {
+        self.saveInDefaults = true
         self.answer = NSLocalizedString(answerKey, comment: "")
         self.relatedWords = NSLocalizedString(relatedWordsKey, comment: "")
         self.guessedKey =  "com."+answerKey+"answer.key"
@@ -87,13 +101,17 @@ struct RelatedWordModel: Codable {
     
     mutating func setGuessed(_ guessed: Bool) {
         self.guessed = guessed
-        UserDefaults.standard.setValue(guessed, forKey: guessedKey)
+        if saveInDefaults {
+            UserDefaults.standard.setValue(guessed, forKey: guessedKey)
+        }
        
     }
     
     mutating func setTip(_ tip: [String]) {
         self.tip = tip
-        UserDefaults.standard.setValue(tip, forKey: tipKey)
+        if saveInDefaults {
+            UserDefaults.standard.setValue(tip, forKey: tipKey)
+        }
         
     }
 }

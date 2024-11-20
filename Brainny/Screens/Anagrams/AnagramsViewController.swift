@@ -151,6 +151,7 @@ extension AnnagramsViewController: AnagramsView {
     func reload() {
         DispatchQueue.main.async {
             self.collectionView.reloadData()
+            self.collectionView.performBatchUpdates(nil, completion: nil)
         }
     }
     

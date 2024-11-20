@@ -31,7 +31,11 @@ class AnagramsInteractor: AnagramsInteractorProtocol {
             anangram.setWords(newValue: words)
         }
     }
-    var coins: Int
+    var coins: Int {
+        didSet {
+            UserDefaultsValues.coins = coins
+        }
+    }
     
     init(anangram: AnagramModel) {
         self.anangram = anangram
@@ -47,7 +51,7 @@ class AnagramsInteractor: AnagramsInteractorProtocol {
             if !worldModel.guessed {
 //                self.words?.removeAll(where: {$0 == worldModel})
                 self.words?.removeAll(where: {$0.answer == word})
-                self.words?.insert(RelatedWordModel(answer: word, guessed: true), at: 0)
+                self.words?.insert(RelatedWordModel(answer: word, guessed: true, saveInDefaults: false), at: 0)
                 return true
             } else {
                 return false
@@ -64,7 +68,19 @@ class AnagramsInteractor: AnagramsInteractorProtocol {
     
     func checkWinResult()->Bool {
         let count = self.words?.filter({$0.guessed}).count ?? 0
-        return count > (self.words?.count ?? 0)/2
+        return count > (self.words?.count ?? 0)/getDiv()
+    }
+    
+    func getDiv()->Int {
+        let count = self.words?.count ?? 0
+        if count > 100 {
+            return 3
+        } else if count > 50 {
+            return 2
+        } else {
+            return 1
+        }
+        
     }
     
     func getWorlds(completion: @escaping([RelatedWordModel]) -> Void) {
@@ -84,7 +100,7 @@ class AnagramsInteractor: AnagramsInteractorProtocol {
                     }
                 })
                 let sorter = arr.sorted(by: {$0.count <= $1.count})
-                self.words = sorter.map({RelatedWordModel(answer: $0, guessed: false)})
+                self.words = sorter.map({RelatedWordModel(answer: $0, guessed: false, saveInDefaults: false)})
                 completion(self.words!)
             }
         }

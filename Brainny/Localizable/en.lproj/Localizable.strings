@@ -55,15 +55,15 @@
 "relatedWords.lv1.word2" = "Brush";
 "relatedWords.lv1.word3" = "Canvas";
 "relatedWords.lv1.word4" = "Gallery";
-"relatedWords.lv1.word5" = "Fashion";
+"relatedWords.lv1.word5" = "Graphics";
 "relatedWords.lv1.answer1" = "Drawing";
 "relatedWords.lv1.relatedWord1" = "drawing, draw, depict, sketch, illustration, image, draft, painting, landscape, fine art, depiction, graphics, picture, composition, mural, paint, color";
 "relatedWords.lv1.answer2" = "Artist";
 "relatedWords.lv1.relatedWord2" = "painter, artist, pictor, landscape artist, landscapist, creator, avant-gardist, modernist, iconographer, icon painter, graphic artist, abstractionist, illustrator, dauber, master, art worker";
 "relatedWords.lv1.answer3" = "Art";
-"relatedWords.lv1.relatedWord3" = "art, craftsmanship, artistry, creativity, culture, profession, craft, mastery, artwork, work of art, art history, expression, creativity, expressiveness";
+"relatedWords.lv1.relatedWord3" = "art, craftsmanship, artistry, creativity, culture, profession, craft, mastery, artwork, work of art, art history, expression, creativity, expressiveness, аesthetics";
 "relatedWords.lv1.answer4" = "Exhibition";
-"relatedWords.lv1.relatedWord4" = "exhibition, display, show, vernissage, presentation, exhibit, performance, installation, art object, art exhibition, demonstration, art object";
+"relatedWords.lv1.relatedWord4" = "exhibition, display, show, vernissage, presentation, exhibit, performance, installation, art object, art exhibition, demonstration, art object, museum";
 "relatedWords.lv1.answer5" = "Design";
 "relatedWords.lv1.relatedWord4" = "design, interior decorator, architecture, style, art designer, architect, decor, interior";
 
@@ -74,33 +74,33 @@
 "relatedWords.lv2.word3" = "Sun";
 "relatedWords.lv2.word4" = "Palm";
 "relatedWords.lv2.word5" = "Relaxation";
-"relatedWords.lv2.answer1" = "Vacation";
-"relatedWords.lv2.relatedWord1" = "vacation, holiday, time off, parental leave, maternity leave, decree, travel, leave of absence, trip, day off, break, resort, layoff, recess, respite, rest, tour, cruise, pastime, adventure, romance, holiday romance, spending time";
+"relatedWords.lv2.answer1" = "Sea";
+"relatedWords.lv2.relatedWord1" = "sea, surf, swell, pier, tide, ebb, sea breeze, backwash, breakers, wash, surge, gulf, bay, ocean";
 "relatedWords.lv2.answer2" = "Beach";
 "relatedWords.lv2.relatedWord2" = "beach, shore, coastline, shore, seaside, coast, waterfront, seaboard, seashore, seacoast";
 "relatedWords.lv2.answer3" = "Summer";
 "relatedWords.lv2.relatedWord3" = "summer, season, summertime";
 "relatedWords.lv2.answer4" = "Island";
 "relatedWords.lv2.relatedWord4" = "island, isle, islet, reef, oasis, atoll, islander, lagoon, laguna, azure, paradise, tropics, exoticism";
-"relatedWords.lv2.answer5" = "Surf";
-"relatedWords.lv2.relatedWord5" = "surf, swell, pier, tide, ebb, sea breeze, backwash, breakers, wash, surge";
+"relatedWords.lv2.answer5" = "Vacation";
+"relatedWords.lv2.relatedWord5" = "vacation, holiday, time off, parental leave, maternity leave, decree, travel, leave of absence, trip, day off, break, resort, layoff, recess, respite, rest, tour, cruise, pastime, adventure, romance, holiday romance, spending time";
 
 // lv3
-"relatedWords.lv3.word1" = "Alps";
-"relatedWords.lv3.word2" = "Lift";
-"relatedWords.lv3.word3" = "Equipment";
-"relatedWords.lv3.word4" = "Snow";
-"relatedWords.lv3.word5" = "Cabin";
+"relatedWords.lv3.word1" = "Snow";
+"relatedWords.lv3.word2" = "Mountains";
+"relatedWords.lv3.word3" = "Lump";
+"relatedWords.lv3.word4" = "Lift";
+"relatedWords.lv3.word5" = "Slope";
 "relatedWords.lv3.answer1" = "Winter";
 "relatedWords.lv3.relatedWord1" = "winter, cold, season";
-"relatedWords.lv3.answer2" = "Ski Resort";
-"relatedWords.lv3.relatedWord2" = "resort, mountains, ski resort, glamping";
-"relatedWords.lv3.answer3" = "Mountain Sports";
-"relatedWords.lv3.relatedWord3" = "mountain sports, skiing, snowboarding, sledding, biathlon, sports, figure skating, curling, hockey, bobsleigh, ski cross, tubing, slalom" ;
-"relatedWords.lv3.answer4" = "Avalanche";
-"relatedWords.lv3.relatedWord4" = "avalanche, snow slide, blizzard, snowstorm, storm, snow squall, whiteout";
-"relatedWords.lv3.answer5" = "Snow Igloo";
-"relatedWords.lv3.relatedWord5" = "snow igloo, igloo, chalet, mountain house, snow house, cottage, bungalow, eco-house";
+"relatedWords.lv3.answer2" = "Snowstorm";
+"relatedWords.lv3.relatedWord2" = "snowstorm, storm, snow squall, whiteout, blizzard";
+"relatedWords.lv3.answer3" = "Ski Resort";
+"relatedWords.lv3.relatedWord3" = "resort, ski resort, glamping, camping, hike";
+"relatedWords.lv3.answer4" = "Mountain Sports";
+"relatedWords.lv3.relatedWord4" = "mountain sports, skiing, snowboarding, sledding, biathlon, sports, figure skating, curling, hockey, bobsleigh, ski cross, tubing, slalom";
+"relatedWords.lv3.answer5" = "Avalanche";
+"relatedWords.lv3.relatedWord5" = "avalanche, snow slide";
 
 // lv4
 "relatedWords.lv4.word1" = "Warmth";
@@ -156,17 +156,17 @@
 //lv7
 "relatedWords.lv7.word1" = "Popularity";
 "relatedWords.lv7.word2" = "Script";
-"relatedWords.lv7.word3" = "Awards";
-"relatedWords.lv7.word4" = "Show";
+"relatedWords.lv7.word3" = "Oscar";
+"relatedWords.lv7.word4" = "Walk of Fame";
 "relatedWords.lv7.word5" = "Paparazzi";
-"relatedWords.lv7.answer1" = "Hollywood";
-"relatedWords.lv7.relatedWord1" = "hollywood";
+"relatedWords.lv7.answer1" = "Celebrity";
+"relatedWords.lv7.relatedWord1" = "celebrity, star, idol, authority, fame, famous, glory";
 "relatedWords.lv7.answer2" = "Cinematography";
 "relatedWords.lv7.relatedWord2" = "cinematography, cinema, film art, cinema art, art of cinema, filmmaking, film industry, film production, film distribution, film craft, film technique, cinematics, cinematic arts, blockbuster, world cinema, film festival, filmography";
 "relatedWords.lv7.answer3" = "Show Business";
 "relatedWords.lv7.relatedWord3" = "show business, showbiz, entertainment industry, performing arts, film industry, bandstand, estrada, creativity, variety stage";
-"relatedWords.lv7.answer4" = "Reality Show";
-"relatedWords.lv7.relatedWord4" = "reality show, reality program, TV project, TV show, talk show, television industry, reality television, lifestyle show, reality";
+"relatedWords.lv7.answer4" = "Hollywood";
+"relatedWords.lv7.relatedWord4" = "hollywood";
 "relatedWords.lv7.answer5" = "Award";
 "relatedWords.lv7.relatedWord5" = "award, prize, grant, certificate, accolade, ceremony, laureate, distinction, reward, bounty, premium";
 
@@ -184,31 +184,31 @@
 "relatedWords.lv8.relatedWord3" = "cuisine, cooking, kitchen, gastronomy, cookery, kitchenette, galley, food stylist, food stylist";
 "relatedWords.lv8.answer4" = "Critic";
 "relatedWords.lv8.relatedWord4" = "critic, inspector, expert, connoisseur, expert, reviewer, auditor, skeptic, gourmet, foodie";
-"relatedWords.lv8.answer5" = "Molecular Cuisine";
-"relatedWords.lv8.relatedWord5" = "molecular cuisine, haute cuisine";
+"relatedWords.lv8.answer5" = "Gastronomy";
+"relatedWords.lv8.relatedWord5" = "molecular cuisine, haute cuisine, refined cuisine, gourmet cuisine, gastronomy, fine dining";
 
 //lv9
-"relatedWords.lv9.word1" = "Trend";
-"relatedWords.lv9.word2" = "Youth";
-"relatedWords.lv9.word3" = "Society";
-"relatedWords.lv9.word4" = "Social Media";
-"relatedWords.lv9.word5" = "Self-expression";
-"relatedWords.lv9.answer1" = "Subculture";
-"relatedWords.lv9.relatedWord1" = "subculture, nonconformist, informal, pacifist, counterculture, informal movement, youth movement, coterie, moiety, band, association, trans-culture, microculture, group, community, ideology, movement";
+"relatedWords.lv9.word1" = "Feed";
+"relatedWords.lv9.word2" = "Subscribers";
+"relatedWords.lv9.word3" = "Reaction";
+"relatedWords.lv9.word4" = "Publication";
+"relatedWords.lv9.word5" = "Popularity";
+"relatedWords.lv9.answer1" = "Social Media";
+"relatedWords.lv9.relatedWord1" = "social media, social networks, facebook, instagram, twitter, tikTok, youTube, snapchat, linkedIn, pinterest, reddit, vkontakte, telegram, whatsapp, wechat, tumblr, discord, clubhouse, quora, flickr, twitch";
 "relatedWords.lv9.answer2" = "Influencer";
-"relatedWords.lv9.relatedWord2" = "influencer, trendsetter, leader, blogger, bellwether, speaker, creator, content, trend";
-"relatedWords.lv9.answer3" = "Slang";
-"relatedWords.lv9.relatedWord3" = "slang, jargon, lingo, dialect, colloquial language, argot, patois, vernacular, communication, language, terminology,";
-"relatedWords.lv9.answer4" = "Generation";
-"relatedWords.lv9.relatedWord4" = "generation z, generation, digital generation, post-millennials, centennials, internet generation, smartphone generation, internet generation";
-"relatedWords.lv9.answer5" = "Flashmob";
-"relatedWords.lv9.relatedWord5" = "flashmob, pride, activism, parade, movement, advocacy, movement, proactivity, interactive, improvisation, protest";
+"relatedWords.lv9.relatedWord2" = "influencer, trendsetter, leader, blogger, bellwether, speaker, creator";
+"relatedWords.lv9.answer3" = "Content";
+"relatedWords.lv9.relatedWord3" = "сontent, blog, post, articles, stories, information";
+"relatedWords.lv9.answer4" = "Like";
+"relatedWords.lv9.relatedWord4" = "like, rating, repost, rating, comment, evaluation";
+"relatedWords.lv9.answer5" = "Trend";
+"relatedWords.lv9.relatedWord5" = "trend, hype, mainstream, tendency";
 
 //lv10
 "relatedWords.lv10.word1" = "Bag";
 "relatedWords.lv10.word2" = "Boots";
 "relatedWords.lv10.word3" = "Jacket";
-"relatedWords.lv10.word4" = "Tag";
+"relatedWords.lv10.word4" = "Сouture";
 "relatedWords.lv10.word5" = "Logo";
 "relatedWords.lv10.answer1" = "Clothing";
 "relatedWords.lv10.relatedWord1" = "clothing, cloth, suit, uniform, costume, clothes, wear, wardrobe, attire, apparel, outfit, robe, garment, dress";
@@ -240,21 +240,21 @@ trek, journey, route, path, transport, course, direction, way, trail, itinerary"
 "relatedWords.lv11.relatedWord5" = "conductor, stewardess, steward, attendant, ticket inspector, operator, guide, coordinator, accompanying, attendant";
 
 //lv12
-"relatedWords.lv12.word1" = "Desert";
-"relatedWords.lv12.word2" = "Sands";
-"relatedWords.lv12.word3" = "Africa";
+"relatedWords.lv12.word1" = "Sand";
+"relatedWords.lv12.word2" = "Heat";
+"relatedWords.lv12.word3" = "Nefertiti";
 "relatedWords.lv12.word4" = "Tomb";
-"relatedWords.lv12.word5" = "Sarcophagus";
+"relatedWords.lv12.word5" = "sarcophagus";
 "relatedWords.lv12.answer1" = "Egypt";
 "relatedWords.lv12.relatedWord1" = "Egypt";
-"relatedWords.lv12.answer2" = "Pyramid";
-"relatedWords.lv12.relatedWord2" = "pyramid";
-"relatedWords.lv12.answer3" = "Mummy";
-"relatedWords.lv12.relatedWord3" = "mummy";
-"relatedWords.lv12.answer4" = "Sphinx";
-"relatedWords.lv12.relatedWord4" = "sphinx";
-"relatedWords.lv12.answer5" = "Sahara";
-"relatedWords.lv12.relatedWord5" = "Sahara";
+"relatedWords.lv12.answer2" = "Desert";
+"relatedWords.lv12.relatedWord2" = "desert, wilderness, wasteland";
+"relatedWords.lv12.answer3" = "Pyramid";
+"relatedWords.lv12.relatedWord3" = "pyramid, temple";
+"relatedWords.lv12.answer4" = "Pharaoh";
+"relatedWords.lv12.relatedWord4" = "pharaoh";
+"relatedWords.lv12.answer5" = "Mummy";
+"relatedWords.lv12.relatedWord5" = "mummy";
 
 //lv13
 "relatedWords.lv13.word1" = "Dollar";
@@ -405,7 +405,7 @@ trek, journey, route, path, transport, course, direction, way, trail, itinerary"
 "secretWord.lv1.relatedWord" = "mirror, reflection, small mirror, speculum, reflector";
 
 // lv2
-"secretWord.lv2.secret1" = "It’s something that comes but never goes.";
+"secretWord.lv2.secret1" = "It’s something that goes but never leaves.";
 "secretWord.lv2.secret2" = "It’s constantly being looked at.";
 "secretWord.lv2.secret3" = "It’s related to time.";
 "secretWord.lv2.answer" = "Clock";

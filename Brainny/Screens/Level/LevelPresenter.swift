@@ -57,6 +57,7 @@ extension LevelPresenter {
                     guard res else {return}
                 }
             }
+            UserDefaultsValues.touchCount += 1
             AudioManager.shared.playTouchedSound()
             if let m = m as? RelatedWords {
                 self.router.goToRelatedWords(model: m)

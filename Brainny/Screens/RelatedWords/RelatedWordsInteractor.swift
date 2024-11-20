@@ -27,7 +27,11 @@ final class RelatedWordsInteractor: RelatedWordsInteractorProtocol {
           //  self.model.setAnswers(newValue: answers)
         }
     }
-    var coins: Int
+    var coins: Int {
+        didSet {
+            UserDefaultsValues.coins = coins
+        }
+    }
     var suggestion:String?
     init(model: RelatedWords) {
         self.model = model

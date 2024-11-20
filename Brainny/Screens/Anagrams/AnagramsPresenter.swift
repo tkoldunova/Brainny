@@ -44,10 +44,15 @@ class AnagramsPresenter: NSObject, AnagramsPresenterProtocol {
     
     func notifyWhenViewDidLoad() {
         interactor.getWorlds { str in
-            self.view?.reload()
+            DispatchQueue.main.async {
+                self.view?.reload()
+            }
+         
             if let words = self.interactor.words {
                 let guessesWords = words.filter({$0.guessed})
-                self.view?.setUpPointsLabel(count: guessesWords.count, maxCount: words.count)
+                DispatchQueue.main.async {
+                    self.view?.setUpPointsLabel(count: guessesWords.count, maxCount: words.count)
+                }
             }
         }
         self.view?.setUpCoinsLabel(coins: interactor.coins)
@@ -100,12 +105,9 @@ class AnagramsPresenter: NSObject, AnagramsPresenterProtocol {
     func openWord(answer: String, coins: Int) {
         self.interactor.coins = coins
         self.view?.setUpCoinsLabel(coins: interactor.coins)
-        if let ind = self.interactor.words?.firstIndex(where: {$0.answer == answer}) {
+        let bool = interactor.checkIfWorldIsCorrent(word: answer)
+        if bool {
             AudioManager.shared.playCorrectSound()
-            self.interactor.words?[ind].setGuessed(true)
-            if let m = interactor.words?[ind] {
-                self.interactor.moveToTop(word: m)
-            }
             if let words = interactor.words {
                 let guessesWords = words.filter({$0.guessed})
                 self.view?.setUpPointsLabel(count: guessesWords.count, maxCount: words.count)

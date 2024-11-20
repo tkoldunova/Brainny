@@ -55,15 +55,15 @@
 "relatedWords.lv1.word2" = "Кисточка";
 "relatedWords.lv1.word3" = "Холст";
 "relatedWords.lv1.word4" = "Галлерея";
-"relatedWords.lv1.word5" = "Мода";
+"relatedWords.lv1.word5" = "Графика";
 "relatedWords.lv1.answer1" = "Рисование";
 "relatedWords.lv1.relatedWord1" = "рисование, рисунок, иллюстрация, изображение, черновик, картина, пейзаж, живопись, изобразительное искусство, графика, иллюстрация, вырисовывать, зарисовывать, рисовать, красить, окрашивать, эскиз";
 "relatedWords.lv1.answer2" = "Художник";
 "relatedWords.lv1.relatedWord2" = "живописец, художник, пейзажист, творец, авангардист, модернист, изограф, абстракционист, иконописец, иллюстратор, мастер, артист, маляр, деятель искусства";
 "relatedWords.lv1.answer3" = "Искусство";
-"relatedWords.lv1.relatedWord3" = "искусство, мастерство, художество, творчество, арт, культура, произведение искусства, произведение, искусствоведение, выражение, креативность, изобразительность";
+"relatedWords.lv1.relatedWord3" = "искусство, мастерство, художество, творчество, арт, культура, произведение искусства, произведение, искусствоведение, выражение, креативность, изобразительность, эстетика";
 "relatedWords.lv1.answer4" = "Выставка";
-"relatedWords.lv1.relatedWord4" = "выставка, показ, вернисаж, инсталяция, экспозиция, инсталляция, презентация, демонстрация, арт-выставка, представление, арт-объект";
+"relatedWords.lv1.relatedWord4" = "выставка, показ, вернисаж, инсталяция, экспозиция, инсталляция, презентация, демонстрация, арт-выставка, представление, арт-объект, музей";
 "relatedWords.lv1.answer5" = "Дизайн";
 "relatedWords.lv1.relatedWord5" = "дизайн, арт-дизайнер, архитектор, архитеткура, декор, интерьер, архитектура, стиль";
 
@@ -72,34 +72,34 @@
 "relatedWords.lv2.word2" = "Песок";
 "relatedWords.lv2.word3" = "Солнце";
 "relatedWords.lv2.word4" = "Пальма";
-"relatedWords.lv2.word5" = "Отдых";
-"relatedWords.lv2.answer1" = "Отпуск";
-"relatedWords.lv2.relatedWord1" = "отпуск, каникулы, выходной, декрет, путишествие, отгул, перерыв, курорт, тур, круиз, времяпрепровождение, приключение, роман, курортный роман, релаксация, релакс";
+"relatedWords.lv2.word5" = "Расслабление";
+"relatedWords.lv2.answer1" = "Море";
+"relatedWords.lv2.relatedWord1" = "море, прибой, пирс, прилив, отлив, морской бриз, океан, залив, бухта";
 "relatedWords.lv2.answer2" = "Пляж";
 "relatedWords.lv2.relatedWord2" = "пляж, берег, побережье, прибрежная зона";
 "relatedWords.lv2.answer3" = "Лето";
 "relatedWords.lv2.relatedWord3" = "лето, сезон";
 "relatedWords.lv2.answer4" = "Остров";
 "relatedWords.lv2.relatedWord4" = "остров, оаза, атолл, островок, островитянин, островик, лагуна, лазурь, лазурный берег, рай, тропики, экзотика";
-"relatedWords.lv2.answer5" = "Прибой";
-"relatedWords.lv2.relatedWord5" = "прибой, пирс, прилив, отлив, морской бриз";
+"relatedWords.lv2.answer5" = "Отпуск";
+"relatedWords.lv2.relatedWord5" = "отпуск,  каникулы, выходной, декрет, путишествие, отгул, перерыв, курорт, тур, круиз, времяпрепровождение, приключение, роман, курортный роман";
 
 //lv3
-"relatedWords.lv3.word1" = "Альпы";
-"relatedWords.lv3.word2" = "Подьемник";
-"relatedWords.lv3.word3" = "Снаряжение";
-"relatedWords.lv3.word4" = "Снег";
-"relatedWords.lv3.word5" = "Хижина";
+"relatedWords.lv3.word1" = "Снег";
+"relatedWords.lv3.word2" = "Горы";
+"relatedWords.lv3.word3" = "Глыба";
+"relatedWords.lv3.word4" = "Подьемник";
+"relatedWords.lv3.word5" = "Трасса";
 "relatedWords.lv3.answer1" = "Зима";
 "relatedWords.lv3.relatedWord1" = "зима, холод, сезон";
-"relatedWords.lv3.answer2" = "Горнолыжный курорт";
-"relatedWords.lv3.relatedWord2" = "курорт, горы, горнолыжный курорт, глэмпинг";
-"relatedWords.lv3.answer3" = "Горный спорт";
-"relatedWords.lv3.relatedWord3" = "горный спорт, лыжи, сноуборд, санки, биатлон, спорт, фигурное катание, керлинг, хоккей, бобслей, скикросс, тюбинг, слалом" ;
-"relatedWords.lv3.answer4" = "Лавина";
-"relatedWords.lv3.relatedWord4" = "лавина, снежный обвал, вьюга, метель, пурга";
-"relatedWords.lv3.answer5" = "Снежная игла";
-"relatedWords.lv3.relatedWord5" = "снежная игла, игла, шале, горный дом, снежный дом, коттедж, бунгало, эко-дом";
+"relatedWords.lv3.answer2" = "Метель";
+"relatedWords.lv3.relatedWord2" = "метель, пурга, вьюга";
+"relatedWords.lv3.answer3" = "Горнолыжный курорт";
+"relatedWords.lv3.relatedWord3" = "курорт, горнолыжный курорт, глэмпинг, кампинг, поход";
+"relatedWords.lv3.answer4" = "Горный спорт";
+"relatedWords.lv3.relatedWord4" = "горный спорт, лыжи, сноуборд, санки, биатлон, спорт, фигурное катание, керлинг, хоккей, бобслей, скикросс, тюбинг, слалом";
+"relatedWords.lv3.answer5" = "Лавина";
+"relatedWords.lv3.relatedWord5" = "лавина, снежный обвал";
 
 //lv4
 "relatedWords.lv4.word1" = "Тепло";
@@ -156,16 +156,16 @@
 "relatedWords.lv7.word1" = "Популярность";
 "relatedWords.lv7.word2" = "Сценарий";
 "relatedWords.lv7.word3" = "Оскар";
-"relatedWords.lv7.word4" = "Шоу";
+"relatedWords.lv7.word4" = "Аллея славы";
 "relatedWords.lv7.word5" = "Папарации";
-"relatedWords.lv7.answer1" = "Голливуд";
-"relatedWords.lv7.relatedWord1" = "голливуд";
+"relatedWords.lv7.answer1" = "Звезда";
+"relatedWords.lv7.relatedWord1" = "звезда, знаменитость, кумир, авторитет, известность, известный, слава";
 "relatedWords.lv7.answer2" = "Кинематограф";
-"relatedWords.lv7.relatedWord2" = "кинематограф, кино, искусство кино, киноискусство, синематограф, киноиндустрия, кинопроизводство, фильмопроизводство, кинопрокат, фильмография, блокбастер, мировое кино, кинофестиваль";
+"relatedWords.lv7.relatedWord2" = "кинематограф, кино, искусство кино, киноискусство, синематограф, киноиндустрия, кинопроизводство, фильмопроизводство, кинопрокат, фильмография, блокбастер, мировое кино, кинофестиваль, актер";
 "relatedWords.lv7.answer3" = "Шоубизнес";
 "relatedWords.lv7.relatedWord3" = "шоубизнес, шоубиз, шоу-индустрия, эстрада, шоу, творчество, индустрия развлечений";
-"relatedWords.lv7.answer4" = "Реалити шоу";
-"relatedWords.lv7.relatedWord4" = "реалити-программа, реалити шоу, телепроект, телепередача, ток-шоу, тедевидение, тв, шоу о стиле жизни, тв шоу";
+"relatedWords.lv7.answer4" = "Голливуд";
+"relatedWords.lv7.relatedWord4" = "голливуд";
 "relatedWords.lv7.answer5" = "Премия";
 "relatedWords.lv7.relatedWord5" = "Премия, награда, грант, грамота, церемония, лауреат, отличие";
 
@@ -183,38 +183,38 @@
 "relatedWords.lv8.relatedWord3" = "кухня, кулинария, кухонная, готовка, жаровня, приготовление, кулинарное искусство, фудстилист, кухарство";
 "relatedWords.lv8.answer4" = "Критик";
 "relatedWords.lv8.relatedWord4" = "критик, инспектор, эксперт, ценитель, ревизор, ценитель, скептик, гурман";
-"relatedWords.lv8.answer5" = "Молекулярная кухня";
-"relatedWords.lv8.relatedWord5" = "молекулярная кухня, изысканная кухня";
+"relatedWords.lv8.answer5" = "Гастрономия";
+"relatedWords.lv8.relatedWord5" = "молекулярная кухня, изысканная кухня, высокая кухня, гастрономия";
 
 //lv9
-"relatedWords.lv9.word1" = "Тренд";
-"relatedWords.lv9.word2" = "Молодежь";
-"relatedWords.lv9.word3" = "Общество";
-"relatedWords.lv9.word4" = "Социальные сети";
-"relatedWords.lv9.word5" = "Самовыражения";
-"relatedWords.lv9.answer1" = "Субкультура";
-"relatedWords.lv9.relatedWord1" = "субкультура, подкультура, неформал, пацифист, контркультура, транс-культура, микрокультура, молодежное движение, движение, идеология, сообщество, группа, контркультура, банда, ассоциация, ";
+"relatedWords.lv9.word1" = "Лента";
+"relatedWords.lv9.word2" = "Подписчики";
+"relatedWords.lv9.word3" = "Реакции";
+"relatedWords.lv9.word4" = "Публикация";
+"relatedWords.lv9.word5" = "Популярность";
+"relatedWords.lv9.answer1" = "Социальные сети";
+"relatedWords.lv9.relatedWord1" = "социальные сети, инстаграм, фейсбук, твиттер, тик ток, ютуб, снапчат, линкдин, пинтерест, реддит, вконтакте, телеграм, вотсап, вичат, тамблер, дискорд, клабхаус, квора, фликр, твич, интернет, платформы";
 "relatedWords.lv9.answer2" = "Инфлюенсер";
-"relatedWords.lv9.relatedWord2" = "инфлюенсер, трендсеттер, лидер, блогер, спикер, творец, креатор, контент, тренд";
-"relatedWords.lv9.answer3" = "Слэнг";
-"relatedWords.lv9.relatedWord3" = "слэнг, жаргон, говор, разговорник, диалект, общение, язык, терминология, суржик, арго";
-"relatedWords.lv9.answer4" = "Поколение";
-"relatedWords.lv9.relatedWord4" = "поколение z, поколение, цифровое поколение, постмиллениалы, поколение Z-эра, центенниалы, поколение интернета, поколение смартфонов, поколение интернет";
-"relatedWords.lv9.answer5" = "Флешмоб";
-"relatedWords.lv9.relatedWord5" = "флешмоб, прайд, активизм, парад, движение, проактивность, организация, интерактив, импровизация, протест";
+"relatedWords.lv9.relatedWord2" = "инфлюенсер, трендсеттер, лидер, блогер, спикер, творец";
+"relatedWords.lv9.answer3" = "Контент";
+"relatedWords.lv9.relatedWord3" = "контент, содержание, блог, пост, статьи, сторис, информация";
+"relatedWords.lv9.answer4" = "Лайки";
+"relatedWords.lv9.relatedWord4" = "лайк, оценка, репост, рейтинг, комментарий, нравится";
+"relatedWords.lv9.answer5" = "Тренд";
+"relatedWords.lv9.relatedWord5" = "тренд, хайп, мейнстрим, тенденция";
 
 //lv10
 "relatedWords.lv10.word1" = "Сумка";
 "relatedWords.lv10.word2" = "Ботинки";
 "relatedWords.lv10.word3" = "Куртка";
-"relatedWords.lv10.word4" = "Бирка";
+"relatedWords.lv10.word4" = "Кутюр";
 "relatedWords.lv10.word5" = "Логотип";
 "relatedWords.lv10.answer1" = "Одежда";
 "relatedWords.lv10.relatedWord1" = "одежда, униформа, костюм, гардероб, убранство, одеяние, наряд";
-"relatedWords.lv10.answer2" = "Кожа";
-"relatedWords.lv10.relatedWord2" = "кожа, шкура, кожура";
-"relatedWords.lv10.answer3" = "Магазин";
-"relatedWords.lv10.relatedWord3" = "магазин, бутик, аутлет, шоп, рынок, торговый центр, шоппинг";
+"relatedWords.lv10.answer2" = "Магазин";
+"relatedWords.lv10.relatedWord2" = "магазин, бутик, аутлет, шоп, рынок, торговый центр, шоппинг";
+"relatedWords.lv10.answer3" = "Кожа";
+"relatedWords.lv10.relatedWord3" = "кожа, шкура, кожура";
 "relatedWords.lv10.answer4" = "Мода";
 "relatedWords.lv10.relatedWord4" = "мода, тренд, стиль, фэшн, кутюр, тенденция, популярность, хит, дизайн, утонченный вкус, внешний вид, облик";
 "relatedWords.lv10.answer5" = "Бренд";
@@ -238,21 +238,21 @@
 "relatedWords.lv10.relatedWord3" = "проводник, стюартдеса, стюард, сопровождающий, кондуктор, путеводитель, гид, сопроводительный";
 
 //lv12
-"relatedWords.lv12.word1" = "Пустыня";
-"relatedWords.lv12.word2" = "Пески";
-"relatedWords.lv12.word3" = "Африка";
-"relatedWords.lv12.word4" = "Грабница";
+"relatedWords.lv12.word1" = "Песок";
+"relatedWords.lv12.word2" = "Жара";
+"relatedWords.lv12.word3" = "Нефертити";
+"relatedWords.lv12.word4" = "Гробница";
 "relatedWords.lv12.word5" = "Саркофаг";
 "relatedWords.lv12.answer1" = "Египет";
 "relatedWords.lv12.relatedWord1" = "египет";
-"relatedWords.lv12.answer2" = "Пирамида";
-"relatedWords.lv12.relatedWord2" = "пирамида";
-"relatedWords.lv12.answer3" = "Мумия";
-"relatedWords.lv12.relatedWord3" = "мумия";
-"relatedWords.lv12.answer4" = "Сфинкс";
-"relatedWords.lv12.relatedWord4" = "сфинкс";
-"relatedWords.lv12.answer5" = "Сахара";
-"relatedWords.lv12.relatedWord5" = "сахара";
+"relatedWords.lv12.answer2" = "Пустыня";
+"relatedWords.lv12.relatedWord2" = "пустыня, песчаная степь, пустошь";
+"relatedWords.lv12.answer3" = "Пирамида";
+"relatedWords.lv12.relatedWord3" = "пирамида, храм";
+"relatedWords.lv12.answer4" = "Фараон";
+"relatedWords.lv12.relatedWord4" = "фараон";
+"relatedWords.lv12.answer5" = "Мумия";
+"relatedWords.lv12.relatedWord5" = "мумия";
 
 //lv13
 "relatedWords.lv13.word1" = "Доллар";
