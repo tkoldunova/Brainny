@@ -8,20 +8,22 @@
 import UIKit
 
 protocol ShopInteractorProtocol {
-    var model: [CoinsProductSub] {get}
-    var subscription: [ProductSub] { get }
+    var model: [ProductModel] {get}
+    var subscription: [ProductModel] { get }
     var coins: Int {get set}
     var count: Int {get set}
-    func requestProducts(completion:@escaping()->Void)
-    func buy(product: CoinsProductSub, completion:@escaping()->Void)
-    func buySubscription(product: ProductSub)
+    func requestProducts(completion:@escaping(Bool)->Void)
+    func buy(product: ProductModel, completion:@escaping(Bool)->Void)
+    func hasUnlockPro()->Bool
+    func getCount() -> Int
     func update()
+    func restore(completion:@escaping()->Void) 
 }
 
 final class ShopInteractor: ShopInteractorProtocol {
-    var model: [CoinsProductSub]
-    var subscription: [ProductSub]
-    var purchaseManager = IAPManager()
+    var model: [ProductModel]
+    var subscription: [ProductModel]
+    var purchaseManager = PurchaseManager.shared
     var count: Int = 0
     var coins: Int {
         didSet {
@@ -30,8 +32,8 @@ final class ShopInteractor: ShopInteractorProtocol {
     }
     init() {
         coins = UserDefaultsValues.coins
-        self.model = [CoinsProductSub]()
-        self.subscription = [ProductSub]()
+        self.model = [ProductModel]()
+        self.subscription = [ProductModel]()
         
     }
     
@@ -39,27 +41,63 @@ final class ShopInteractor: ShopInteractorProtocol {
         self.coins = UserDefaultsValues.coins
     }
     
-    func requestProducts(completion:@escaping()->Void) {
-        purchaseManager.requestProducts { products in
-            self.model = products?.filter({$0 is CoinsProductSub}) as! [CoinsProductSub]
-            self.model = self.model.sorted(by: {$0.model.index < $1.model.index})
-            self.subscription = products?.filter({$0 is ProductSub}) as! [ProductSub]
-            completion()
-        }
+    func getCount() -> Int {
+        return count + subscription.count
     }
     
-    func buySubscription(product: ProductSub) {
-        purchaseManager.buySubcription(product.product) { success, productId in
-            
-        }
+    func hasUnlockPro()->Bool {
+        return purchaseManager.hasUnlockedPro
     }
     
-    func buy(product: CoinsProductSub, completion:@escaping()->Void) {
-        purchaseManager.buyProduct(product.product) { success, productId in
-            if success {
-                UserDefaultsValues.coins += product.model.value
-                completion()
+    func requestProducts(completion:@escaping(Bool)->Void) {
+        //        purchaseManager.requestProducts { products in
+        //            self.model = products?.filter({$0 is CoinsProductSub}) as! [CoinsProductSub]
+        //            self.model = self.model.sorted(by: {$0.model.index < $1.model.index})
+        //            self.subscription = products?.filter({$0 is ProductSub}) as! [ProductSub]
+        //
+        //            completion()
+        //        }
+        purchaseManager.loadProducts { [weak self] result in
+            switch result {
+            case .success(let allModels):
+                guard let self = self else {return}
+                self.model = allModels.filter({$0.model != nil})
+                self.model = self.model.sorted(by: {$0.model?.index ?? 0 < $1.model?.index ?? 0})
+                self.subscription = allModels.filter({$0.model == nil})
+                completion(true)
+            case .failure(let failure):
+                completion(false)
             }
         }
+    }
+    
+    
+    
+    func buy(product: ProductModel, completion:@escaping(Bool)->Void) {
+        
+        
+        purchaseManager.purchase(product.product) { result in
+            switch result {
+            case .success(let success):
+                if let model = product.model {
+                    UserDefaultsValues.coins += model.value
+                } else {
+                    
+                }
+                print(self.purchaseManager.hasUnlockedPro ? "Подписка есть" : "Подписки нет")
+                completion(true)
+            case .failure(let failure):
+                completion(false)
+            }
+        }
+    }
+    
+    
+    func restore(completion:@escaping()->Void) {
+        Task {
+            await PurchaseManager.shared.updatePurchasedProducts()
+            completion()
+        }
+        
     }
 }

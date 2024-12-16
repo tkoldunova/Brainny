@@ -48,4 +48,42 @@ extension UIView {
             bottomAnchor.constraint(equalTo: superview.bottomAnchor)
         ])
     }
+    
+    enum ViewSide {
+        case Left, Right, Top, Bottom
+    }
+    
+    func addBorder(toSide sides: [ViewSide], withColor color: CGColor, andThickness thickness: CGFloat) {
+        for item in self.layer.sublayers ?? [] where item.name == "borderLeft" ||  item.name == "borderRight" || item.name == "borderTop" || item.name == "borderBottom" {
+            item.removeFromSuperlayer()
+        }
+        //  layer.sublayers?.removeLast()
+        for side in sides {
+            let border = CALayer()
+            border.backgroundColor = color
+            switch side {
+            case .Left:
+                border.name = "borderLeft"
+                border.frame = CGRect(x: 0, y: 0, width: thickness, height: frame.height);
+                layer.addSublayer(border)
+            case .Right:
+                border.name = "borderRight"
+                border.frame = CGRect(x: frame.width-thickness, y: 0, width: thickness, height: frame.height);
+                layer.addSublayer(border)
+            case .Top:
+                border.name = "borderTop"
+                border.frame = CGRect(x: 0, y: 0, width: frame.width, height: thickness);
+                //border.autoresizingMask = [.flexibleWidth, .flexibleBottomMargin]
+                layer.addSublayer(border)
+            case .Bottom:
+                border.name = "borderBottom"
+                border.frame = CGRect(x: 0, y: frame.height + thickness + 2, width: frame.width, height: thickness);
+                //border.autoresizingMask = [.flexibleWidth, .flexibleTopMargin]
+                layer.addSublayer(border)
+            }
+            
+            
+        }
+        
+    }
 }

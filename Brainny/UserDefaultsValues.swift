@@ -15,6 +15,7 @@ public struct UserDefaultsValues {
         static let volumeKey = "com.volume.key"
         static let coinsKey = "com.coins.key"
         static let touchCountKey = "com.touchCount.key"
+        static let languagetKey = "com.language.key"
         
         //  static let noAdsKey = "com.noAds.key"
     }
@@ -62,6 +63,21 @@ public struct UserDefaultsValues {
             return UserDefaults.standard.integer(forKey: Keys.touchCountKey)
         } set {
             UserDefaults.standard.set(newValue, forKey: Keys.touchCountKey)
+        }
+    }
+    
+    static var language: Language {
+        get {
+            if let data = UserDefaults.standard.data(forKey: Keys.languagetKey) {
+                if let model = try? JSONDecoder().decode(Language.self, from: data) {
+                    return model
+                }
+            }
+            return Language(rawValue: Locale.current.languageCode ?? "en") ?? .en
+        } set {
+            if let data = try? JSONEncoder().encode(newValue) {
+                UserDefaults.standard.set(data, forKey: Keys.languagetKey)
+            }
         }
     }
 }

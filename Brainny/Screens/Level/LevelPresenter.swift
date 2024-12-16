@@ -52,9 +52,11 @@ extension LevelPresenter {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let m = interactor.model.model[indexPath.row]
         if interactor.model.availableLevels.contains(where: {$0.areEqual(to: m)}) {
-            if UserDefaultsValues.touchCount%3 == 0 {
-                self.adManager.show { res in
-                    guard res else {return}
+            if !PurchaseManager.shared.hasUnlockedPro {
+                if UserDefaultsValues.touchCount%3 == 0 {
+                    self.adManager.show { res in
+                        guard res else {return}
+                    }
                 }
             }
             UserDefaultsValues.touchCount += 1

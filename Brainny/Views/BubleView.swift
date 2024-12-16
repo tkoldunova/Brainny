@@ -96,21 +96,21 @@ class BubleView: UIView {
     
     
     
-    func animation(startPath: UIBezierPath? = nil) {
-        let animation = CABasicAnimation(keyPath: "path")
-        animation.duration = 1.5
-        if let startPath = startPath {
-            animation.fromValue = startPath.cgPath
-        } else {
-            animation.fromValue = curvedLayer.path
-        }
-        let path =  createRandomPath()
-        animation.toValue = path.cgPath
-        animation.fillMode = .forwards
-        animation.isRemovedOnCompletion = false 
-        self.currentPath = path
-        animation.delegate = self
-        curvedLayer.add(animation, forKey: "wavyAnimation")
+    func animation() {
+            let animation = CABasicAnimation(keyPath: "path")
+            animation.duration = 1.5
+            if let startPath = currentPath {
+                animation.fromValue = startPath.cgPath
+            } else {
+                animation.fromValue = curvedLayer.path
+            }
+            let path =  createRandomPath()
+            animation.toValue = path.cgPath
+            animation.fillMode = .forwards
+            animation.isRemovedOnCompletion = false
+            self.currentPath = path
+            animation.delegate = self
+            curvedLayer.add(animation, forKey: "wavyAnimation")
         
 //        DispatchQueue.main.asyncAfter(deadline: .now() + 1, execute: {
 //            let path = self.createRandomPath()
@@ -150,7 +150,7 @@ extension BubleView: CAAnimationDelegate {
     func animationDidStop(_ anim: CAAnimation, finished flag: Bool) {
         if flag {
             curvedLayer.path = currentPath?.cgPath
-            animation(startPath: currentPath)
+            animation()
             
         }
     }

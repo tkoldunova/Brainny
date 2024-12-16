@@ -8,8 +8,8 @@
 
 // Mark: Menu
 "menu.games.relatedWords" = "Related Words";
-"menu.games.annagrams" = "Annagrams";
-"menu.games.secretWords" = "Secret Words";
+"menu.games.annagrams" = "Anagrams";
+"menu.games.secretWords" = "Secret Word";
 
 // Mark: Settings
 "settings.title" = "Settings";
@@ -22,11 +22,14 @@
 
 // Mark: Shop
 "shop.title" = "Shop";
+"shop.restore" = "Restore";
+"shop.purchased" = "Purchased";
 "shop.coins.title" = "GET COINS";
 "shop.coins.startPack" = "Starter Pack";
 "shop.coins.middlePack" = "Boost Bundle";
 "shop.coins.grandPack" = "Premium Bundle";
 "shop.noAds.title" = "No Ads";
+"shop.noAds.subtitle" = "1 month";
 "shop.subscription.title" = "Subscription";
 
 // Mark: Win
@@ -37,17 +40,31 @@
 // Mark: Tip
 "tip.word.title" = "Unlock tip for";
 "tip.word.button" = "Unlock";
-"tip.letter.title" = "Unlcok letter";
+"tip.letter.title" = "Unlock letter";
 "tip.word.title2" = "Unlock word";
 "tip.word.title3" = "Unlock tip";
 
 // MARK: Messages
 "messages.coins.title" = "Not enough coins";
 "messages.coins.subtitle" = "You can earn them by completing levels, making purchases in the store, or watching advertisements.";
+"messages.success.payment" = "Successfully purchased";
+"messages.error.payment" = "Failed to complete purchase";
+"messages.error.payment.subtitle" = "Try again later";
+"messages.success.ad.title" = "Thanks for viewing";
+"messages.success.ad.subtitle" = "You earned +";
+"messages.error.title" = "An error occurred";
+"messages.error.subtitle" = "Try again later";
+"messages.info.restore" = "Purchases have been restored";
+
+// MARK: Language
+"language.title" = "Choose language";
+"language.language.en" = "English";
+"language.language.ru" = "Russian";
+"language.language.uk" = "Ukrainian";
 
 // Mark: Related words
 "relatedWords.title" = "Related words";
-"relatedWords.subtitle" = "Below are words or concepts. Enter something in common between them. words";
+"relatedWords.subtitle" = "Below are words or concepts. Enter something in common between them.";
 "relatedWords.placeholder" = "Enter your suggestion";
 
 // lv1
@@ -65,7 +82,7 @@
 "relatedWords.lv1.answer4" = "Exhibition";
 "relatedWords.lv1.relatedWord4" = "exhibition, display, show, vernissage, presentation, exhibit, performance, installation, art object, art exhibition, demonstration, art object, museum";
 "relatedWords.lv1.answer5" = "Design";
-"relatedWords.lv1.relatedWord4" = "design, interior decorator, architecture, style, art designer, architect, decor, interior";
+"relatedWords.lv1.relatedWord5" = "design, interior decorator, architecture, style, art designer, architect, decor, interior";
 
 // lv2
 
@@ -539,41 +556,71 @@ chronograph, chronometer, hourglass, metronome";
 "secretWord.lv20.relatedWord" = "salary, wage, payment, earnings, income, fee, stipend, revenue, paycheck, remuneration, payroll, pay, compensation";
 
 // Mark: Annagrams
-"anagrams.title" = "Annagrams";
+"anagrams.title" = "Anagrams";
 "anagrams.subtitle" = "Find the words in this set";
 "anagrams.button" = "Enter";
 "anagrams.languageCode" = "en";
 
-"anagrams.lv1.world" = "grindas";
+"anagrams.lv1.world" = "teacher";
+"anagrams.lv1.answers" = "cheater, hectare, recheat, reteach, teacher, etcher, rachet, thecae, cerate, cetera, create, ecarte, aether, heater, hereat, reheat, chare, chart, cheat, cheer, chert, ratch, reach, retch, tache, teach, theca, caret, carte, cater, crate, erect, react, recta, terce, trace, ache, arch, char, chat, each, eche, echt, etch, tach, tech, acer, acre, care, cart, cate, cere, cete, race, tace, eath, cha, hac, tch, ace, act, arc, car, cat, cee, rec, eth, hae, hat, her, het, rah, the, are, art, hate";
 "anagrams.lv2.world" = "fatalist";
+"anagrams.lv2.answers" = "fatalist, tafias, statal, alfas, alifs, fails, fatal, flats, flits, lifts, fiats, tafia, alias, alist, atilt, atlas, litas, salat, stilt, taals, tails, talas, tilts, alfa, alif, fail, fila, fils, flat, flit, lift, fait, fast, fats, fiat, fist, fits, sift, aals, ails, alai, alas, alia, alit, alts, ital, lait, last, lati, lats, lias, list, lits, sail, salt, sial, silt, slat, slit, taal, tail, tala, tali, tals, tils, tilt, aits, sati, stat, tata, tats, tits, fil, aft, fas, fat, fit, ifs, aal, ail, ala, als, alt, las, lat, lis, lit, sal, tal, til, aas, ais, ait, ats, att, ist, its, sai, sat, sit, tai, tas, tat, tis, tit";
 "anagrams.lv3.world" = "saltish";
-"anagrams.lv4.world" = "lodyrite";
-"anagrams.lv5.world" = "saggier";
+"anagrams.lv3.answers" = "saltish, tahsils, lathis, latish, tahsil, thalis, hails, halts, hilts, laith, lathi, laths, shalt, slash, thali, hists, saith, shist, shits, stash, alist, lassi, lasts, lists, litas, sails, salts, sials, silts, sisal, slats, slits, tails, satis, hail, halt, hilt, lash, lath, hast, hats, hiss, hist, hits, sash, shat, shit, sith, tash, thai, this, ails, ahi, ahs, ash, has, hat, his, hit, sha, shi, ail, als, alt, las, lat, lis, lit, sal, tal";
+"anagrams.lv4.world" = "elytroid";
+"anagrams.lv4.answers" = "toiled, dotier, editor, loiter, rioted, toiler, triode, doily, drily, odyle, redly, yield, ylide, yodel, yodle, deity, dirty, dorty, riley, roily, toyed, tyred, idler, oiled, older, oldie, riled, tilde, tiled, toled, toyer, doter, droit, lirot, liter, litre, oiler, oriel, relit, reoil, teloi, tiler, tired, toile, tried, triol, trode, idly, idyl, odyl, oldy, yeld, ylid, dory, doty, drey, dyer, lory, lyre, oily, rely, tidy, tody, yird, deil, deli, delt, diel, diol, dirl, dole, dolt, eyot, idle, idol, lido, lied, lode, loid, lord, olde, olid, oyer, ryot, toey, told, tory, trey, troy, tyer, tyre, tyro, yeti, yore, diet, dire, dirt, dite, doer, doit, dore, dote, edit, ired, lier, lire, lite, lore, loti, oeil, orle, redo, relo, ride, riel, rile, rode, roid, roil, role, rotl, tide, tied, tile, tirl, toed, toil, tole, trod, iter, riot, rite, rote, roti, tier, tire, tiro, tore, tori, trio, dey, dry, dye, ley, lye, yod, del, dol, eld, led, lid, old, rye, toy, try, tye, yer, yet, der, die, dit, doe, dor, dot, ide, itd, lei, let, lie, lit, lot, ode, oil, ole, red, rid, rod, ted, tel, til, tod, ire, oer, ore, ort, reo, ret, roe, rot, tie, toe, tor";
+"anagrams.lv5.world" = "raggies";
+"anagrams.lv5.answers" = "raggies, saggier, aggers, aggies, eggars, gagers, sagger, seggar, sagier, agger, aggie, eggar, gager, gages, gigas, grigs, raggs, aegis, agers, gears, grise, rages, ragis, regia, sager, sarge, arise, raise, serai, seria, eggs, gage, gags, giga, gigs, grig, iggs, ragg, ager, ages, areg, egis, ergs, gaes, gars, gear, geas, gies, gras, rage, ragi, rags, regs, rigs, sage, sega, airs, ares, arse, ears, eras, ires, rais, rase, reis, rias, rise, sari, sear, sera, sire, egg, gag, gig, igg, age, erg, gae, gar, gas, gie, gis, rag, reg, rig, sag, aes, air, ais, are, ars, ear, era, ers, ire, rai, ras, rea, res, ria, sae, sai, sea, sei, ser, sir, sri";
 "anagrams.lv6.world" = "frizzles";
+"anagrams.lv6.answers" = "rizzles, fizzles, frizzle, fizzers, frizzes, sizzler, fizzle, fizzer, fizzes, sizzle, frizes, filers, fliers, lifers, rifles, frizz, sizer, filer, files, flier, flies, lifer, rifle, fires, fries, frise, reifs, serif, liers, riels, riles, slier, fizz, friz, size, file, fils, lief, life, self, erfs, feis, fire, firs, refs, reif, rife, rifs, seif, serf, isle, leis, lier, lies, lire, riel, rile, ires, reis, rise, sire, fez, fiz, sez, zes, elf, fil, efs, erf, fer, fie, fir, ifs, ref, rif, els, lei, lie, lis, sel, ers, ire, res, sei, ser, sir, sri";
 "anagrams.lv7.world" = "scolion";
+"anagrams.lv7.answers" = "colins, coloni, colons, consol, nicols, solion, colin, colon, nicol, cions, coils, coins, cools, icons, locos, scion, sonic, linos, lions, loins, loons, noils, nolos, snool, solon, olios, clon, cion, coil, coin, coli, cols, coni, cons, cool, icon, loci, loco, coos, lino, lins, lion, loin, loon, nils, noil, noli, nolo, ions, loos, oils, olio, onos, silo, soil, soli, solo, sool, soon, col, con, cis, coo, cos, sic, soc, lin, nil, ins, ion, lis, loo, noo, nos, oil, ono, ons, sin, sol, son, oos";
 "anagrams.lv8.world" = "beneath";
+"anagrams.lv8.answers" = "beneath, beaten, ethane, bathe, thebe, neath, thane, eaten, enate, banh, baht, bath, beth, hebe, bane, bean, been, bene, bent, nabe, abet, bate, beat, beet, beta, bete, haen, hant, hent, than, then, eath, haet, hate, heat, thae, thee, ante, etna, neat, neta, teen, bah, ban, ben, nab, neb, bae, bat, bee, bet, hen, nah, nth, tab, eth, hae, hat, het, the, ane, ant, nae, nee, net, tan, ten, ate, eat, eta, tae, tea, tee";
 "anagrams.lv9.world" = "letter";
+"anagrams.lv9.answers" = "letter, relet, leer, leet, reel, teel, tele, etre, rete, tete, tree, tret, eel, lee, let, tel, ere, ree, ret, tee, tet";
 "anagrams.lv10.world" = "kitchen";
+"anagrams.lv10.answers" = "kitchen, thicken, ethnic, chink, kench, ketch, thick, think, chine, kithe, niche, tench, ethic, thein, thine, heck, hick, neck, nick, tick, chin, hike, inch, khet, kith, chit, echt, etch, itch, kent, kine, knit, tech, tich, cent, cine, kite, nice, tike, cite, etic, hent, hint, then, thin, nite, tein, tine, ice, nth, tic, eth, het, hie, hit, the, net, nit, ten, tin, tie";
 "anagrams.lv11.world" = "regular";
+"anagrams.lv11.answers" = "regular, arguer, larger, gluer, gruel, gular, luger, rugal, argle, argue, auger, glare, lager, large, regal, rugae, urger, alure, lurer, rager, ruler, rural, ureal, urare, glue, luge, ague, egal, gale, gaur, grrl, grue, guar, ragu, ruga, urge, ager, areg, gear, lure, rage, rule, earl, lear, rale, real, ruer, urea, arre, rare, rear, gul, lug, gal, gel, gua, gur, lag, leg, rug, age, erg, gae, gar, leu, lur, rag, reg, ale, eau, lar, lea, rue, are, ear, era, err, rea";
 "anagrams.lv12.world" = "holiday";
+"anagrams.lv12.answers" = "holiday, hyaloid, hyoidal, haloid, hyoid, ahold, daily, doily, haldi, halid, holy, hyla, yodh, ahoy, dahl, dhal, dhol, hiya, hold, hoya, idly, idyl, lady, odyl, oldy, yald, ylid, dahi, diya, hail, halo, hila, odah, oily, dial, diol, idol, laid, lido, load, loid, ohia, olid, hay, hoy, yah, dah, day, doh, had, hid, hod, lah, lay, yod, ahi, dal, dol, hai, hao, hoi, lad, lid, old, ado, aid, ail, dai, loa, oda, oil";
 "anagrams.lv13.world" = "imagine";
+"anagrams.lv13.answers" = "imagine, aiming, enigma, gamine, gamin, mange, minge, image, amine, anime, animi, imine, manie, minae, genii, game, mage, magi, mega, amen, amin, main, mane, mean, mein, mien, mina, mine, mini, name, nema, agin, amie, gaen, gain, gane, gean, gena, gien, eina, inia, gam, gem, mag, meg, mig, man, men, nam, nem, nim, aim, ami, eng, gan, gen, gin, mae, mai, mea, nag, age, gae, gie, ain, ane, ani, nae, nai";
 "anagrams.lv14.world" = "endless";
+"anagrams.lv14.answers" = "endless, lensed, lenses, lessen, sensed, lends, deles, denes, dense, lenes, lense, needs, sends, sleds, sneds, seeds, seels, senes, sense, lend, dele, dels, dene, dens, elds, ends, lede, lens, neds, need, send, sled, sned, dees, eels, else, esne, lees, less, ness, seed, seel, seen, sels, sene, eses, esse, sees, del, den, eld, end, led, lsd, ned, dee, eel, els, ens, lee, nee, sel, sen, ese, ess, see, ses";
 "anagrams.lv15.world" = "algeos";
+"anagrams.lv15.answers" = "gales, gaols, goals, loges, ogles, aloes, algo, egal, gale, gals, gaol, gels, goal, lags, legs, loge, logs, ogle, slag, slog, ages, egos, gaes, geas, geos, goas, goes, sage, sago, sega, sego, ales, aloe, also, lase, leas, leso, loas, lose, olea, oles, sale, seal, sloe, sola, sole, gal, gel, lag, leg, log, age, ago, ego, gae, gas, geo, goa, sag, ale, als, els, las, lea, loa, ole, sal, sel, sol, aes, oes, ose, sae, sea";
 "anagrams.lv16.world" = "knitted";
+"anagrams.lv16.answers" = "knitted, kitted, kitten, tinted, deink, inked, kited, ident, teind, tined, dink, kind, dike, kent, kine, knit, kite, tike, deni, dent, dine, dint, nide, tend, diet, dite, edit, nett, nite, tein, tent, tide, tied, tine, tint, ink, ked, ken, kid, kin, nek, kit, den, din, end, ned, die, dit, ide, net, nit, ted, ten, tin, tet, tie, tit";
 "anagrams.lv17.world" = "minkes";
+"anagrams.lv17.answers" = "minkes, minke, minks, mikes, kines, skein, miens, mines, mink, mike, skim, inks, kens, kine, kins, neks, sink, skin, mein, mens, mien, mine, nims, sike, mise, semi, sine, ink, ken, kin, nek, kes, men, nem, nim, ski, ems, ism, mis, sim, ens, ins, sen, sin, sei";
 "anagrams.lv18.world" = "lekvar";
+"anagrams.lv18.answers" = "lekvar, laker, laver, ravel, velar, kale, lake, lark, lave, leak, leva, vale, veal, vela, aver, rake, rave, vera, earl, lear, rale, real, elk, lav, lek, lev, ark, ave, erk, kae, kea, rav, rev, var, ale, lar, lea, are, ear, era, rea";
 "anagrams.lv19.world" = "jorney";
+"anagrams.lv19.answers" = "journey, enjoy, your, youre, rouen, jury, joey, jeon, jour, jure, oyer, rune, yore, euro, nero, oner, rone, roue, joy, jun, jeu, joe, ryu, yen, yon, you, run, rye, urn, yer, eon, ern, nor, one, our, rue, oer, ore, reo, roe";
 "anagrams.lv20.world" = "denying";
+"anagrams.lv20.answers" = "denying, dingey, dyeing, dynein, ending, ginned, dingy, dying, ginny, eying, deign, dinge, inened, edgy, deny, ding, dyne, inny, gied, gien, deni, dine, nide, nine, gey, dey, dig, dye, eng, ged, gen, gid, gin, yen, yin, den, din, end, gie, inn, ned, die, ide";
 "anagrams.lv21.world" = "belied";
+"anagrams.lv21.answers" = "belied, edible, bedel, bield, bleed, beedi, belie, edile, elide, bled, bide, bile, deil, dele, deli, diel, idle, lede, lied, eide, idee, bed, bel, bid, deb, dib, lib, bee, del, eld, led, lid, dee, die, eel, ide, lee, lei, lie";
 "anagrams.lv22.world" = "ragman";
-"anagrams.lv23.world" = "fuzztone";
+"anagrams.lv22.answers" = "ragman, magna, manga, garam, grama, marga, argan, grana, nagar, ranga, agma, gama, gram, maga, marg, mana, naam, anga, gnar, gran, maar, mara, naga, rang, agar, raga, gam, mag, man, nam, ama, arm, gan, maa, mar, nag, ram, aga, gar, rag, ana, ran";
+"anagrams.lv23.world" = "fortune";
+"anagrams.lv23.answers" = "fortune, tenor, fount, futon, freon, front, often, fetor, forte, ofter, rouen, tuner, noter, outer, outre, route, tenor, toner, trone, utero, fern, fone, font, four, nerf, tofu, turf, fore, fort, fret, froe, orfe, reft, tref, rune, runt, tune, turn, unto, euro, nero, note, oner, rent, rone, roue, rout, tern, tone, torn, tour, true, rote, tore, fun, fen, feu, fon, fou, fur, nef, eft, erf, fer, fet, foe, for, fro, oft, orf, ref, nut, run, tun, urn, eon, ern, net, nor, not, one, our, out, rue, rut, ten, ton, tur, ute, oer, ore, ort, reo, ret, roe, rot, toe, tor";
 "anagrams.lv24.world" = "hylozoic";
-"anagrams.lv25.world" = "squized";
+"anagrams.lv24.answers" = "hylozoic, cozily, oozily, zilch, choil, choli, hooly, cozy, zoic, oozy, cloy, coly, lich, loch, choi, coho, holy, coil, coli, cool, loci, loco, holo, oily, yolo, olio, coz, yiz, zho, zol, zoo, chi, coy, hic, hoc, ich, icy, och";
+"anagrams.lv25.world" = "courage";
+"anagrams.lv25.answers" = "courage, cougar, aerugo, guaco, cager, cargo, grace, argue, auger, erugo, goura, ocrea, rogue, rouge, rugae, cage, crag, cure, ecru, acer, acre, ague, arco, care, cero, core, gaur, grue, guar, orca, race, ragu, ruga, urge, ager, areg, ergo, gear, goer, gora, gore, ogre, rage, euro, roue, urea, aero, cog, cru, cue, cur, ecu, ace, arc, car, cor, eco, gua, gur, oca, orc, rec, roc, rug, age, ago, ego, erg, gae, gar, geo, goa, gor, rag, reg, eau, our, rue, are, ear, era, oar, oer, ora, ore, rea, reo, roe";
 "anagrams.lv26.world" = "achieve";
+"anagrams.lv26.answers" = "achieve, chive, cavie, heave, hevea, chav, cave, vice, have, hive, ache, chai, chia, each, eche, eave, vac, ach, cha, chi, hac, hic, ich, ave, eve, vee, via, vie, ace, cee, ice, ahi, hae, hai, hie";
 "anagrams.lv27.world" = "grimmer";
+"anagrams.lv27.answers" = "grimmer, gimmer, megrim, rimmer, gimme, mimer, grime, rimer, rerig, mime, germ, grim, emir, mire, riem, rime, mem, mim, gem, meg, mig, mer, mir, rem, rim, erg, gie, reg, rig, err, ire";
 "anagrams.lv28.world" = "banings";
+"anagrams.lv28.answers" = "baning, basing, saning, bangs, bings, banns, basin, nabis, sabin, gains, bags, biga, bigs, gabs, gibs, bani, bans, bins, nabs, nibs, snib, agin, bais, bias, gain, gins, isba, nags, bag, big, gab, gib, ban, bin, nab, nib, abs, bas, bis, gan, gin, nag, sab, sib, gas, gis, inn, nan, ain, ani, nai";
 "anagrams.lv29.world" = "obvious";
+"anagrams.lv29.answers" = "obvious, ovibos, obvs, bios, bois, boos, obis, bus, ovo, sub, vis, bio, bis, boo, bos, obi, sib, sob, ous, sou, sui";
 "anagrams.lv30.world" = "quickly";
+"anagrams.lv30.answers" = "quickly, cliquy, quick, lucky, yuck, icky, luck, lick, qui, ick, kyu, yuk, icy, ilk";
 
 
 

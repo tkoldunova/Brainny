@@ -8,11 +8,15 @@
 import UIKit
 
 class MainViewController:UIViewController {
-  
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = ""
         setUpNavigationBar()
+        Task {
+            await PurchaseManager.shared.updatePurchasedProducts()
+        }
+        
     }
     
     func setUpNavigationBar() {
@@ -25,7 +29,7 @@ class MainViewController:UIViewController {
         standardAppearance.backgroundColor = .clear
         standardAppearance.shadowColor = .clear
         standardAppearance.shadowImage = UIImage()
-             standardAppearance.titleTextAttributes = [
+        standardAppearance.titleTextAttributes = [
             NSAttributedString.Key.foregroundColor: UIColor.white,
             NSAttributedString.Key.font: UIFont(name: "OpenSans-SemiBold", size: 24)!,
         ]
@@ -42,7 +46,7 @@ class MainViewController:UIViewController {
         }
         navigationController.navigationBar.tintColor = UIColor.white
     }
-   
+    
     
     
 }

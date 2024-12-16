@@ -47,16 +47,13 @@ class GameScene: SKScene {
         let count = world.count
         
         let width: CGFloat = (( count > 8 ? 33 : count > 6 ? 37 : 45) * CGFloat(count - 1)) + ((count > 8 ? 3 : count > 6 ? 6 : 8) * CGFloat(count - 1))
-        
-        
-        
-        
         for i in 0 ... count - 1 {
             let emptyNode = EmptyNode(size: CGSize(width:  count > 8 ? 33 : count > 6 ? 37 : 45, height:  count > 8 ? 33 : count > 6 ? 37 : 45))
             let startY: CGFloat
             if let neededPoint = gameSceneDelegate?.getSubtitlePos() {
                 if let convertedPos = view?.convert(neededPoint, to: self) {
-                    startY = convertedPos.y - 85
+                    let space: CGFloat = UIScreen.main.bounds.height > 690 ? 68 : 120
+                    startY = convertedPos.y - space
                 } else {
                     startY = size.height/3.5
                 }
@@ -118,6 +115,7 @@ extension GameScene: WorldNodeDelegate, EnterButtonDelegate {
             world.append(emptyWorldNode.worldNode!.char!)
             let node = emptyWorldNode.worldNode!
             if let lastPos = node.lastPos {
+                
                 node.moveTo(lastPos, duaration: 0.25) {
                     node.lastPos = nil
                 }
@@ -130,7 +128,7 @@ extension GameScene: WorldNodeDelegate, EnterButtonDelegate {
         let newWorld = world.joined()
         
         print(newWorld)
-        
+        AudioManager.shared.playTouchedSound()
         if let correct = gameSceneDelegate?.checkIfWordIsCorrect(world: newWorld) {
             if correct {
                 
@@ -152,7 +150,7 @@ extension GameScene: WorldNodeDelegate, EnterButtonDelegate {
         
         
         if let lastPos = node.lastPos {
-            
+            AudioManager.shared.playTouchedSound()
             
             for i  in 0 ... worldNodes.count - 1 {
                 let emptyNode = worldNodes.first(where: {$0.worldNode == node})
@@ -180,7 +178,7 @@ extension GameScene: WorldNodeDelegate, EnterButtonDelegate {
             
         } else {
             guard !emptyWorldNodes.isEmpty else { return }
-
+            AudioManager.shared.playTouchedSound()
             let currPos = node.position
             let neededEmptyNode = emptyWorldNodes.first!
             neededEmptyNode.worldNode = node

@@ -9,7 +9,7 @@ import UIKit
 
 class RelatedWordsViewController: BaseViewController<RelatedWordsPresenterProtocol>, RelatedWordsViewProtocol {
     lazy var tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(hideKeyboard))
-
+    
     lazy var sendButton: UIButton = {
         let button = UIButton(type: .custom)
         button.setImage(UIImage(systemName: "arrow.right.circle.fill"), for: .normal)
@@ -20,6 +20,7 @@ class RelatedWordsViewController: BaseViewController<RelatedWordsPresenterProtoc
     }()
     lazy var tipView = TipView(frame: self.view.bounds)
     lazy var winView = WinView(frame: self.view.bounds)
+   
     @IBOutlet weak var descriptionLabel: UILabel! {
         didSet {
             descriptionLabel.text =  NSLocalizedString("relatedWords.subtitle", comment: "")
@@ -114,12 +115,15 @@ class RelatedWordsViewController: BaseViewController<RelatedWordsPresenterProtoc
     }
     
     func showTipView(type: TipType) {
+        hideKeyboard()
         tipView = TipView(frame: self.view.bounds)
         tipView.configure(type: type)
         tipView.alpha = 0
         tipView.center = self.view.center
         tipView.delegate = presenter
-        self.view.addSubview(tipView)
+        if tipView.superview == nil {
+            self.view.addSubview(tipView)
+        }
         UIView.animate(withDuration: 0.75) {
             self.tipView.alpha = 1
         }
@@ -134,11 +138,15 @@ class RelatedWordsViewController: BaseViewController<RelatedWordsPresenterProtoc
     }
     
     func showWinView() {
+        hideKeyboard()
         winView.configure()
         winView.alpha = 0
         winView.center = self.view.center
         winView.delegate = presenter
-        self.view.addSubview(winView)
+        if winView.superview == nil {
+            self.view.addSubview(winView)
+        }
+       
         UIView.animate(withDuration: 0.75) {
             self.winView.alpha = 1
         }

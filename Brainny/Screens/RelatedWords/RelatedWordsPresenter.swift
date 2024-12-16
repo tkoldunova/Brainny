@@ -61,6 +61,7 @@ final class RelatedWordsPresenter: NSObject, RelatedWordsPresenterProtocol {
                 if !relatedWordsArray.isEmpty {
                     interactor.answers[i].setGuessed(true) //= interactor.answers[i].s answer
                     findedInd = i
+                    break
                 }
             }
             if let findedInd = findedInd {

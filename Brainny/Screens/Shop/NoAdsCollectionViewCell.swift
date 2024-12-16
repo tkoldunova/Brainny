@@ -9,6 +9,7 @@ import UIKit
 
 protocol NoAdsDelegate: AnyObject {
     func buyButtonPressed(_ cell: NoAdsCollectionViewCell)
+    func restoreButtonPressed(_ cell: NoAdsCollectionViewCell)
 }
 
 class NoAdsCollectionViewCell: UICollectionViewCell {
@@ -21,16 +22,31 @@ class NoAdsCollectionViewCell: UICollectionViewCell {
         }
     }
     
+    @IBOutlet weak var restoreButton: UIButton! {
+        didSet {
+            restoreButton.setTitle(NSLocalizedString("shop.restore", comment: ""), for: .normal)
+            restoreButton.layer.cornerRadius = 12.0
+            restoreButton.layer.borderWidth = 2.0
+            restoreButton.layer.borderColor = Colors.borderColor.cgColor
+            restoreButton.titleLabel?.adjustsFontSizeToFitWidth = true
+            restoreButton.titleLabel?.minimumScaleFactor = 0.8
+        }
+    }
     @IBOutlet weak var titleLabel: UILabel! {
         didSet {
             titleLabel.text =  NSLocalizedString("shop.noAds.title", comment: "")
         }
     }
     
-    var model: ProductSub?
+    @IBOutlet weak var durationLabel: UILabel! {   
+        didSet {
+            durationLabel.text = NSLocalizedString("shop.noAds.subtitle", comment: "")
+        }
+    }
+    var model: ProductModel?
     weak var delegate: NoAdsDelegate?
     
-    func configure(model: ProductSub) {
+    func configure(model: ProductModel, purchased: Bool) {
         //        titleLabel.text = "no ads"
         self.model = model
         self.layer.cornerRadius = 12.0
@@ -38,7 +54,7 @@ class NoAdsCollectionViewCell: UICollectionViewCell {
         self.layer.borderColor = Colors.borderColor.cgColor
         
         
-        buyButton.setTitle(model.price ?? "", for: .normal)
+        buyButton.setTitle(purchased ? NSLocalizedString("shop.purchased", comment: "") : model.product.displayPrice, for: .normal)
         setUpRadialGradient()
         
     }
@@ -59,5 +75,10 @@ class NoAdsCollectionViewCell: UICollectionViewCell {
     @IBAction func buyButtonTouched(_ sender: Any) {
         AudioManager.shared.playTouchedSound()
         delegate?.buyButtonPressed(self)
+    }
+    @IBAction func restoreButtonTouched(_ sender: Any) {
+        AudioManager.shared.playTouchedSound()
+        delegate?.restoreButtonPressed(self)
+
     }
 }

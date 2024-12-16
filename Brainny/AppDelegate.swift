@@ -16,6 +16,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         
         GADMobileAds.sharedInstance().start(completionHandler: nil)
+        Task {
+                  await PurchaseManager.shared.updatePurchasedProducts()
+        }
+        Bundle.setLanguage(UserDefaultsValues.language.rawValue)
+        print(Locale.current.languageCode)
         
         return true
     }

@@ -14,6 +14,13 @@ class MenuViewController: BaseViewController<MenuPresenterProtocol>, MenuViewPro
             //dynamicQuestionImageViews[1].transform = CGAffineTransform(scaleX: -1, y: 1)
         }
     }
+    @IBOutlet weak var languageButton: UIButton! {
+        didSet {
+            languageButton.layer.cornerRadius = 12.0
+            languageButton.layer.borderColor = Colors.borderColor.cgColor
+            languageButton.layer.borderWidth = 2.0
+        }
+    }
     
     @IBOutlet weak var buttonStackView: UIStackView!
     @IBOutlet weak var shopButton: UIButton! {
@@ -39,6 +46,9 @@ class MenuViewController: BaseViewController<MenuPresenterProtocol>, MenuViewPro
                 name: UIApplication.didBecomeActiveNotification,
                 object: nil
             )
+        
+        languageButton.setTitle(UserDefaultsValues.language.abbr + " " + FlagUtils.getflagByName(country: UserDefaultsValues.language.abbr), for: .normal)
+       
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -92,8 +102,17 @@ class MenuViewController: BaseViewController<MenuPresenterProtocol>, MenuViewPro
         NotificationCenter.default.removeObserver(self, name: UIApplication.didBecomeActiveNotification, object: nil)
     }
     
+    func updateView() {
+        languageButton.setTitle(UserDefaultsValues.language.abbr + " " + FlagUtils.getflagByName(country: UserDefaultsValues.language.abbr), for: .normal)
+
+    }
     
     func configureBubleView(model: [Games]) {
+        bubleViews.forEach { view in
+            view.removeFromSuperview()
+            buttonStackView.removeArrangedSubview(view)
+        }
+        bubleViews.removeAll()
         for m in model {
             let bubleView = BubleView()
             bubleView.titleLabel.text = m.title
@@ -109,6 +128,19 @@ class MenuViewController: BaseViewController<MenuPresenterProtocol>, MenuViewPro
             bubleViews.append(bubleView)
             
         }
+    }
+    
+    func reloadApp() {
+        guard let scene = UIApplication.shared.connectedScenes.first as? UIWindowScene,
+              let delegate = scene.delegate as? SceneDelegate,
+              let window = delegate.window else { return }
+        let rootNavVC = UINavigationController()
+        let router = MenuRouter(navigationController: rootNavVC)// MenuRouter(navigationController: rootNavVC)
+        router.present()
+        UIView.transition(with: window, duration: 0.5, options: [.transitionCrossDissolve], animations: {
+            window.rootViewController = rootNavVC
+            window.makeKeyAndVisible()
+        }, completion: nil)
     }
     
     @objc func appDidBecomeActive() {
@@ -138,6 +170,10 @@ class MenuViewController: BaseViewController<MenuPresenterProtocol>, MenuViewPro
         }
     }
 
+    @IBAction func languageButtonTouched(_ sender: Any) {
+        AudioManager.shared.playTouchedSound()
+        self.presenter.goToLanguage()
+    }
     
     @IBAction func settingsButtonTouched(_ sender: Any) {
         AudioManager.shared.playTouchedSound()

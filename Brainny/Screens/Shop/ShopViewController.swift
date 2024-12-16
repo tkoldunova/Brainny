@@ -9,15 +9,20 @@ import UIKit
 
 class ShopViewController: BaseViewController<ShopPresenterProtocol>, ShopViewProtocol {
     
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
+    @IBOutlet weak var emptyLabel: UILabel!
     @IBOutlet weak var collectionView: UICollectionView! {
         didSet {
             collectionView.delegate = presenter
             collectionView.dataSource = presenter
             collectionView.register(ShopCollectionHeaderView.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: ShopCollectionHeaderView.reuseIdentifier)
+            let flowLayout = collectionView.collectionViewLayout as? UICollectionViewFlowLayout
+            flowLayout?.scrollDirection = .vertical
+            flowLayout?.minimumInteritemSpacing = 16
+            flowLayout?.sectionInset = UIEdgeInsets(top: 0, left: 8, bottom: 8, right: 8)
             
         }
     }
-    
     lazy var coinsHStackView: UIStackView = {
         let stackView = UIStackView()
         stackView.axis = .horizontal
@@ -68,5 +73,16 @@ class ShopViewController: BaseViewController<ShopPresenterProtocol>, ShopViewPro
         coinsLabel.text = coins.description
     }
     
-
+    func setUpEmptyLabel(hidden: Bool) {
+        self.emptyLabel.isHidden = hidden
+    }
+    
+    func startAnimating() {
+        self.activityIndicator.startAnimating()
+    }
+    
+    func stopAnimating() {
+        self.activityIndicator.stopAnimating()
+    }
+    
 }

@@ -8,7 +8,7 @@ import UIKit
 
 protocol MenuViewProtocol: AnyObject {
     func configureBubleView(model: [Games])
-    
+    func reloadApp()
 }
 
 protocol MenuPresenterProtocol: AnyObject {
@@ -16,7 +16,8 @@ protocol MenuPresenterProtocol: AnyObject {
     func notifyWhenViewDidLoad()
     func goToLevel(game: Games)
     func goToSettings()
-    func goToShop() 
+    func goToShop()
+    func goToLanguage()
 }
 
 final class MenuPresenter: NSObject, MenuPresenterProtocol {
@@ -33,6 +34,7 @@ final class MenuPresenter: NSObject, MenuPresenterProtocol {
     
     func notifyWhenViewDidLoad() {
         self.view?.configureBubleView(model: interactor.model)
+        
     }
     
     func goToLevel(game: Games) {
@@ -46,7 +48,17 @@ final class MenuPresenter: NSObject, MenuPresenterProtocol {
     func goToShop() {
         self.router.goToShop()
     }
+    
+    func goToLanguage() {
+        self.router.goToLanguage(delegate: self)
+    }
  
+}
+
+extension MenuPresenter: LanguageDelegate {
+    func changedLanguage(language: Language) {
+        self.view?.reloadApp()
+    }
 }
 
 

@@ -8,13 +8,13 @@
 import UIKit
 
 protocol ShopCellDelegate {
-    func buyProduct(product: CoinsProductSub)
+    func buyProduct(product: ProductModel)
     func watchAdAndGet(model: CoinsModel)
 }
 
 class ShopCollectionViewCell: UICollectionViewCell {
     var delegate: ShopCellDelegate?
-    var product: CoinsProductSub?
+    var product: ProductModel?
     var model: CoinsModel?
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var valueLabel: UILabel!
@@ -29,7 +29,7 @@ class ShopCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var adsImageView: UIImageView!
     
     
-    func configure(product: CoinsProductSub) {
+    func configure(product: ProductModel) {
         self.layer.cornerRadius = 12.0
         self.layer.borderWidth = 2.0
         self.layer.borderColor = Colors.borderColor.cgColor
@@ -37,10 +37,10 @@ class ShopCollectionViewCell: UICollectionViewCell {
         setUpRadialGradient()
         self.product = product
         self.model = nil
-        self.titleLabel.text = product.model.title
-        self.valueLabel.text = product.model.value.description
-        self.coinsImageView.image = product.model.image
-        self.priceButton.setTitle(product.price, for: .normal)
+        self.titleLabel.text = product.model?.title ?? ""
+        self.valueLabel.text = product.model?.value.description ?? ""
+        self.coinsImageView.image = product.model?.image
+        self.priceButton.setTitle(product.product.displayPrice, for: .normal)
         self.adsImageView.isHidden = true
     }
     

@@ -20,12 +20,17 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         for game in Games.allCases {
             game.setDefaultData()
         }
+    
         let rootNavVC = UINavigationController()
-        let router = MenuRouter(navigationController: rootNavVC)// MenuRouter(navigationController: rootNavVC)
+        let router = LoaderRouter(navigationController: rootNavVC)// MenuRouter(navigationController: rootNavVC)
         router.present()
+        
         window?.rootViewController = rootNavVC
         window?.makeKeyAndVisible()
+        
+        
     }
+    
 
     func sceneDidDisconnect(_ scene: UIScene) {
         // Called as the scene is being released by the system.

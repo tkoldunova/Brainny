@@ -132,12 +132,15 @@ class SecretWordsViewController: BaseViewController<SecretWordsPresenterProtocol
     }
     
     func showTipView(type: TipType) {
+        hideKeyboard()
         tipView = TipView(frame: self.view.bounds)
         tipView.configure(type: type)
         tipView.alpha = 0
         tipView.center = self.view.center
         tipView.delegate = presenter
-        self.view.addSubview(tipView)
+        if tipView.superview == nil {
+            self.view.addSubview(tipView)
+        }
         UIView.animate(withDuration: 0.75) {
             self.tipView.alpha = 1
         }
@@ -152,11 +155,14 @@ class SecretWordsViewController: BaseViewController<SecretWordsPresenterProtocol
     }
     
     func showWinView() {
+        hideKeyboard()
         winView.configure()
         winView.alpha = 0
         winView.center = self.view.center
         winView.delegate = presenter
-        self.view.addSubview(winView)
+        if winView.superview == nil {
+            self.view.addSubview(winView)
+        }
         UIView.animate(withDuration: 0.75) {
             self.winView.alpha = 1
         }
@@ -171,6 +177,10 @@ class SecretWordsViewController: BaseViewController<SecretWordsPresenterProtocol
         self.tableView.reloadData()
     }
     
+    func setTextFieldEmpty() {
+        self.textField.text = nil
+    }
+    
     
     @objc func sendbuttonTouched(_ sender: Any) {
         presenter.checkValue()
@@ -182,7 +192,7 @@ class SecretWordsViewController: BaseViewController<SecretWordsPresenterProtocol
         if let touch = touches.first {
             // Get the location of the touch in the main view's coordinate system
             let touchLocation = touch.location(in: self.view)
-            if answerView.frame.contains(touchLocation) {
+            if answerView.frame.contains(touchLocation) && tipView.superview == nil && winView.superview == nil {
                 AudioManager.shared.playTouchedSound()
                 self.presenter.openTipForAnswer()
 //                UIView.animate(withDuration: 0.5, animations: {

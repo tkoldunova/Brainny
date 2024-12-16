@@ -77,8 +77,8 @@ class InterstitialAdManager: NSObject, GADFullScreenContentDelegate {
 }
 
 class RewardAdManager: NSObject, GADFullScreenContentDelegate {
-    private var rewardedAd: GADRewardedInterstitialAd?
-    var rewardedAdCompletion: ((_ sucess: Bool)->Void)?
+    var rewardedAd: GADRewardedInterstitialAd?
+    var rewardedAdCompletion: ((_ sucess: Int?)->Void)?
     var testUnit = "ca-app-pub-3940256099942544/6978759866"
     var unitId = "ca-app-pub-9561374795177219/3951685505" //UserDefaultsValues.rewardedId
     weak var parentVC: UIViewController?
@@ -100,19 +100,19 @@ class RewardAdManager: NSObject, GADFullScreenContentDelegate {
         
     }
     
-    func show(completion: @escaping(Bool)->Void) {
+    func show(completion: @escaping(Int?)->Void) {
         self.rewardedAdCompletion = completion
       //  guard let parentVC = parentVC else {return}
-        guard let rewardedAd = rewardedAd else {completion(false);return}
+        guard let rewardedAd = rewardedAd else {completion(nil);return}
         rewardedAd.present(fromRootViewController: parentVC) {
             UserDefaultsValues.coins += Int(rewardedAd.adReward.amount)
-            completion(true)
+            completion(Int(rewardedAd.adReward.amount))
             self.prepare()
         }
     }
     
     func ad(_ ad: GADFullScreenPresentingAd, didFailToPresentFullScreenContentWithError error: Error) {
-        self.rewardedAdCompletion?(false)
+        self.rewardedAdCompletion?(nil)
     }
     
     func adWillPresentFullScreenContent(_ ad: GADFullScreenPresentingAd) {

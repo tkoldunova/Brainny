@@ -15,6 +15,7 @@ protocol SecretWordsViewProtocol: AnyObject {
     func reloadWordsData()
     func setUpCoinsLabel(coins: Int)
     func showAlert()
+    func setTextFieldEmpty()
 }
 
 protocol SecretWordsPresenterProtocol: UITableViewDelegate, UITableViewDataSource, UITextFieldDelegate, TipViewDelegate, WinViewDelegate {
@@ -73,6 +74,9 @@ final class SecretWordsPresenter: NSObject, SecretWordsPresenterProtocol {
                 self.view?.shakeTextField()
             }
         }
+        self.view?.setTextFieldEmpty()
+        self.interactor.suggestion = nil
+
     }
     
     func tipHasChanged(_ tip: [String], answer: String, coins: Int) {

@@ -10,10 +10,10 @@ import UIKit
 
 protocol AnagramsInteractorProtocol: AnyObject {
     var anangram: AnagramModel {get}
-    var words: [RelatedWordModel]? { get set }
+    var words: [RelatedWordModel] { get set }
     var coins: Int {get set}
     func getWorld() -> String
-    func getWorlds(completion: @escaping([RelatedWordModel]) -> Void)
+    func getDiv()->Int
     func checkIfWorldIsCorrent(word: String) -> Bool
     func checkWinResult()->Bool 
   //  func checkifWorldidAvailable(world: String) -> Bool
@@ -22,13 +22,11 @@ protocol AnagramsInteractorProtocol: AnyObject {
 
 
 class AnagramsInteractor: AnagramsInteractorProtocol {
-    
+   
     var anangram: AnagramModel
     var correctWords = [String]()
-    var words: [RelatedWordModel]? {
+    var words: [RelatedWordModel] {
         didSet {
-            guard let words = words else { return }
-            anangram.setWords(newValue: words)
         }
     }
     var coins: Int {
@@ -40,18 +38,18 @@ class AnagramsInteractor: AnagramsInteractorProtocol {
     init(anangram: AnagramModel) {
         self.anangram = anangram
         self.coins = UserDefaultsValues.coins
+        self.words = anangram.words
+        self.words.sort(by: {$0.guessDate ?? Date.distantPast > $1.guessDate ?? Date.distantPast})
     }
     
     
     func checkIfWorldIsCorrent(word: String) -> Bool {
-        guard words != nil else { return false }
-        if isCorrect(word: word) {
-            
-            let worldModel = words!.first(where: {$0.answer == word})!
+        if  let worldModel = words.first(where: {$0.answer == word}) {
             if !worldModel.guessed {
-//                self.words?.removeAll(where: {$0 == worldModel})
-                self.words?.removeAll(where: {$0.answer == word})
-                self.words?.insert(RelatedWordModel(answer: word, guessed: true, saveInDefaults: false), at: 0)
+                if let ind = self.words.firstIndex(where: {$0.answer == word}) {
+                    self.words[ind].setGuessed(true)
+                }
+                words.sort(by: {$0.guessDate ?? Date.distantPast > $1.guessDate ?? Date.distantPast})
                 return true
             } else {
                 return false
@@ -59,60 +57,41 @@ class AnagramsInteractor: AnagramsInteractorProtocol {
         } else {
             return false
         }
-    }
-    
-    func moveToTop(word: RelatedWordModel) {
-        self.words?.removeAll(where: {$0.answer == word.answer})
-        self.words?.insert(word, at: 0)
-    }
-    
-    func checkWinResult()->Bool {
-        let count = self.words?.filter({$0.guessed}).count ?? 0
-        return count > (self.words?.count ?? 0)/getDiv()
-    }
-    
-    func getDiv()->Int {
-        let count = self.words?.count ?? 0
-        if count > 100 {
-            return 3
-        } else if count > 50 {
-            return 2
-        } else {
-            return 1
-        }
         
     }
     
-    func getWorlds(completion: @escaping([RelatedWordModel]) -> Void) {
-        guard anangram.words.isEmpty else {
-            words = anangram.words
-            completion(self.words!)
-            return
+    func moveToTop(word: RelatedWordModel) {
+        self.words.removeAll(where: {$0.answer == word.answer})
+        self.words.insert(word, at: 0)
+    }
+    
+    func checkWinResult()->Bool {
+        let count = self.words.filter({$0.guessed}).count
+        return count >= getDiv()
+    }
+    
+    func getDiv()->Int {
+        let count = self.words.count
+        if count > 140 {
+            return 60
+        } else if count > 100 {
+            return 50
+        } else if count > 70 {
+            return 40
+        } else if count > 40 {
+            return 30
+        } else {
+            return count
         }
-            DispatchQueue.global().async {
-                                
-                let allPermutations = self.getAllStrings(characters: Array(self.anangram.world))
-                
-                var arr = [String]()
-                allPermutations.forEach({ permutation in
-                    if self.isCorrect(word: permutation) {
-                        arr.append(permutation)
-                    }
-                })
-                let sorter = arr.sorted(by: {$0.count <= $1.count})
-                self.words = sorter.map({RelatedWordModel(answer: $0, guessed: false, saveInDefaults: false)})
-                completion(self.words!)
-            }
-        }
+        
+    }
+
     
     
     func generatePermutations(_ characters: [Character], current: String, results: inout Set<String>) {
-           // Add the current string if it meets the length requirements
            if current.count >= 3 {
                results.insert(current)
            }
-
-           // Generate permutations by adding each character
            for i in 0..<characters.count {
                var newChars = characters
                let char = newChars.remove(at: i)
@@ -122,11 +101,7 @@ class AnagramsInteractor: AnagramsInteractorProtocol {
 
        func getAllStrings(characters: [Character]) -> Set<String> {
            var results = Set<String>()
-
-           // Generate permutations for all lengths from 3 to 6
            generatePermutations(characters, current: "", results: &results)
-           
-           // Filter results to only include strings with a maximum length of 6
            return results.filter { $0.count <= 6 }
        }
 
@@ -261,14 +236,76 @@ enum AnagramModel: CaseIterable, LevelProtocol {
         }
     }
     
+    
+    var wordsKey: String {
+        switch self {
+        case .lv1:
+            return "anagrams.lv1.answers"
+        case .lv2:
+            return "anagrams.lv2.answers"
+        case .lv3:
+            return "anagrams.lv3.answers"
+        case .lv4:
+            return "anagrams.lv4.answers"
+        case .lv5:
+            return "anagrams.lv5.answers"
+        case .lv6:
+            return "anagrams.lv6.answers"
+        case .lv7:
+            return "anagrams.lv7.answers"
+        case .lv8:
+            return "anagrams.lv8.answers"
+        case .lv9:
+            return "anagrams.lv9.answers"
+        case .lv10:
+            return "anagrams.lv10.answers"
+        case .lv11:
+            return "anagrams.lv11.answers"
+        case .lv12:
+            return "anagrams.lv12.answers"
+        case .lv13:
+            return "anagrams.lv13.answers"
+        case .lv14:
+            return "anagrams.lv14.answers"
+        case .lv15:
+            return "anagrams.lv15.answers"
+        case .lv16:
+            return "anagrams.lv16.answers"
+        case .lv17:
+            return "anagrams.lv17.answers"
+        case .lv18:
+            return "anagrams.lv18.answers"
+        case .lv19:
+            return "anagrams.lv19.answers"
+        case .lv20:
+            return "anagrams.lv20.answers"
+        case .lv21:
+            return "anagrams.lv21.answers"
+        case .lv22:
+            return "anagrams.lv22.answers"
+        case .lv23:
+            return "anagrams.lv23.answers"
+        case .lv24:
+            return "anagrams.lv24.answers"
+        case .lv25:
+            return "anagrams.lv25.answers"
+        case .lv26:
+            return "anagrams.lv26.answers"
+        case .lv27:
+            return "anagrams.lv27.answers"
+        case .lv28:
+            return "anagrams.lv28.answers"
+        case .lv29:
+            return "anagrams.lv29.answers"
+        case .lv30:
+            return "anagrams.lv30.answers"
+        }
+    }
+    
     var index: Int {
             return (AnagramModel.allCases.firstIndex(of: self) ?? 0)
         }
-    
-    var wordsKey: String {
-            return "com.anagrams"+String(describing: self)+".key"
-        }
-    
+
     
     var words: [RelatedWordModel] {
           if let data = UserDefaults.standard.data(forKey: wordsKey) {
@@ -276,7 +313,9 @@ enum AnagramModel: CaseIterable, LevelProtocol {
                   return model
               }
           }
-          return []
+        let array = NSLocalizedString(wordsKey, comment: "").components(separatedBy: ", ")
+  //      return array.map({RelatedWordModel(answer: $0, guessed: false, saveInDefaults: false)})
+        return array.map({RelatedWordModel(answer: $0)})
          
       }
       
@@ -285,6 +324,9 @@ enum AnagramModel: CaseIterable, LevelProtocol {
               UserDefaults.standard.set(data, forKey: wordsKey)
           }
       }
+    
+    
+    
 
     
 }

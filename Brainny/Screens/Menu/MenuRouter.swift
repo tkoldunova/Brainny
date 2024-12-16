@@ -13,6 +13,7 @@ protocol MenuRouterProtocol {
     func goToLevel(game: Games)
     func goToSettings()
     func goToShop()
+    func goToLanguage(delegate: LanguageDelegate)
 }
 
 final class MenuRouter: MenuRouterProtocol {
@@ -50,6 +51,14 @@ final class MenuRouter: MenuRouterProtocol {
             guard let navigationController = navigationController else {return}
             let vc = SettingsRouter(navigationController: navigationController)
             vc.present()
+            return
+     
+    }
+    
+    func goToLanguage(delegate: LanguageDelegate) {
+            guard let navigationController = navigationController else {return}
+        let vc = LanguageRouter(navigationController: navigationController)
+        vc.present(delegate: delegate)
             return
      
     }

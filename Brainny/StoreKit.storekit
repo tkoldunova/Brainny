@@ -131,7 +131,12 @@
           "familyShareable" : false,
           "groupNumber" : 1,
           "internalID" : "D6AD34C2",
-          "introductoryOffer" : null,
+          "introductoryOffer" : {
+            "displayPrice" : "0.99",
+            "internalID" : "B7DBED96",
+            "paymentMode" : "free",
+            "subscriptionPeriod" : "P1M"
+          },
           "localizations" : [
             {
               "description" : "",
@@ -139,17 +144,20 @@
               "locale" : "en_US"
             }
           ],
-          "productID" : "com.noAds2.product",
+          "productID" : "com.noAds.product",
           "recurringSubscriptionPeriod" : "P1M",
           "referenceName" : "Mounthly Sub",
           "subscriptionGroupID" : "E073D653",
-          "type" : "RecurringSubscription"
+          "type" : "RecurringSubscription",
+          "winbackOffers" : [
+
+          ]
         }
       ]
     }
   ],
   "version" : {
-    "major" : 3,
+    "major" : 4,
     "minor" : 0
   }
 }

@@ -10,6 +10,9 @@ import UIKit
 protocol ShopViewProtocol: AnyObject {
     func reloaData()
     func setUpCoinsLabel(coins: Int)
+    func setUpEmptyLabel(hidden: Bool)
+    func startAnimating() 
+    func stopAnimating()
 }
 
 protocol ShopPresenterProtocol: UICollectionViewDelegateFlowLayout, UICollectionViewDataSource {
@@ -31,10 +34,18 @@ final class ShopPresenter: NSObject, ShopPresenterProtocol {
     }
     
     func notifyWhenViewDidLoad() {
-        self.interactor.requestProducts {
+        self.view?.setUpEmptyLabel(hidden: true)
+        self.view?.startAnimating()
+        self.interactor.requestProducts { _ in
             DispatchQueue.main.async {
+                if let rewardedAd = self.adManager.rewardedAd {
+                    self.interactor.count = self.interactor.model.count + 1
+                } else {
+                    self.interactor.count = self.interactor.model.count
+                }
                 self.view?.reloaData()
-
+                self.view?.setUpEmptyLabel(hidden: self.interactor.getCount() > 0)
+                self.view?.stopAnimating()
             }
         }
         self.view?.setUpCoinsLabel(coins: interactor.coins)
@@ -47,7 +58,10 @@ final class ShopPresenter: NSObject, ShopPresenterProtocol {
             } else {
                 self.interactor.count = self.interactor.model.count
             }
-            self.view?.reloaData()
+            DispatchQueue.main.async {
+                self.view?.setUpEmptyLabel(hidden:  self.interactor.getCount() > 0)
+                self.view?.reloaData()
+            }
         }
     }
     
@@ -55,6 +69,8 @@ final class ShopPresenter: NSObject, ShopPresenterProtocol {
 }
 
 extension ShopPresenter: ShopCellDelegate, NoAdsDelegate {
+    
+  
     func numberOfSections(in collectionView: UICollectionView) -> Int {
         return interactor.subscription.isEmpty ? 1 : 2
     }
@@ -78,7 +94,7 @@ extension ShopPresenter: ShopCellDelegate, NoAdsDelegate {
             guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "no ads", for: indexPath) as? NoAdsCollectionViewCell else {return UICollectionViewCell()}
             let data = interactor.subscription[indexPath.row]
             cell.delegate = self
-            cell.configure(model: data)
+            cell.configure(model: data, purchased: interactor.hasUnlockPro())
             return cell
         }
         
@@ -104,32 +120,64 @@ extension ShopPresenter: ShopCellDelegate, NoAdsDelegate {
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         if indexPath.section == 1 {
-            return CGSize(width: 349, height: 80)
+            return CGSize(width: collectionView.frame.width*0.86, height: 86)
         } else {
             return CGSize(width: 180, height: 255)
         }
     }
 
     
-    func buyProduct(product: CoinsProductSub) {
-        self.interactor.buy(product: product) {
-            print("buy succ \(UserDefaultsValues.coins)")
-            self.interactor.update()
-            self.view?.setUpCoinsLabel(coins: self.interactor.coins)
+    func buyProduct(product: ProductModel) {
+        self.interactor.buy(product: product) { succ in
+            DispatchQueue.main.async {
+                if succ {
+                    print("buy succ \(UserDefaultsValues.coins)")
+                    self.interactor.update()
+                    self.view?.setUpCoinsLabel(coins: self.interactor.coins)
+                    NotificationManager.showMesssage(theme: .success, title: NSLocalizedString("messages.success.payment", comment: ""), message: "", actionText: "", duration: .automatic, action: nil)
+                } else {
+                    NotificationManager.showMesssage(theme: .error, title: NSLocalizedString("messages.error.payment", comment: ""), message: NSLocalizedString("messages.error.payment.subtitle", comment: ""), actionText: "", duration: .automatic, action: nil)
+                }
+                self.view?.reloaData()
+
+            }
         }
     }
     
     func watchAdAndGet(model: CoinsModel) {
         adManager.show { res in
-            self.interactor.update()
-            self.view?.setUpCoinsLabel(coins: self.interactor.coins)
-            
+        
+            if let res = res {
+                self.interactor.update()
+                DispatchQueue.main.async {
+                    self.view?.setUpCoinsLabel(coins: self.interactor.coins)
+                    NotificationManager.showMesssage(theme: .success, title: NSLocalizedString("messages.success.ad.title", comment: ""), message: NSLocalizedString("messages.success.ad.subtitle", comment: "") + res.description, actionText: "", duration: .automatic, action: nil)
+                }
+            } else {
+                DispatchQueue.main.async {
+                    
+                    NotificationManager.showMesssage(theme: .error, title: NSLocalizedString("messages.error.title", comment: ""), message: NSLocalizedString("messages.error.subtitle", comment: ""), actionText: "", duration: .automatic, action: nil)
+                }
+            }
         }
     }
     
     func buyButtonPressed(_ cell: NoAdsCollectionViewCell) {
         guard let product = cell.model else { return }
-        interactor.buySubscription(product: product)
+        buyProduct(product: product)
+        
+    }
+    
+    func restoreButtonPressed(_ cell: NoAdsCollectionViewCell) {
+        self.interactor.restore {
+            DispatchQueue.main.async {
+                self.view?.reloaData()
+                NotificationManager.showMesssage(theme: .info, title: NSLocalizedString("messages.info.restore", comment: ""), message: "", actionText: "", duration: .automatic, action: nil)
+
+            }
+           
+        }
+
     }
     
 }

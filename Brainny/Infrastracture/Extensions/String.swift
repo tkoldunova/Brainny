@@ -61,6 +61,73 @@ extension String {
         }
         let threshold = 2
         let distance = levenshteinDistance(normalizedUserAnswer, normalizedCorrectAnswer)
-        return distance <= threshold
+        if let cognates = areWordsCognates(self, word) {
+            
+            return  distance <= threshold && cognates
+        } else {
+            return distance <= 1
+        }
+        
     }
+    
+    
+    func wordExistsWithNLLanguageRecognizer() -> Bool {
+        let tagger = NLTagger(tagSchemes: [.lemma])
+        tagger.string = self
+       // let range = self.startIndex..<self.endIndex
+        let tag = tagger.tag(at: self.startIndex, unit: .word, scheme: .lemma)
+        return tag != nil  // If the tag is not nil, the word likely exists
+    }
+    
+   
+  
+
 }
+
+func areWordsCognates(_ word1: String, _ word2: String) -> Bool? {
+    guard let embedding = NLEmbedding.wordEmbedding(for: .english) else {
+        print("Word embeddings are not available for the specified language.")
+        return false
+    }
+
+    // Step 1: Normalize words using lemmatization
+    let lemma1 = normalizeWord(word1)
+    let lemma2 = normalizeWord(word2)
+
+    // If lemmatized forms are equal, the words are cognates
+    if lemma1 == lemma2 {
+        return true
+    }
+
+    // Step 2: Compute embeddings-based similarity
+    guard
+        let vector1 = embedding.vector(for: word1),
+        let vector2 = embedding.vector(for: word2)
+    else {
+        print("One or both words are not in the embedding vocabulary.")
+        return nil
+    }
+
+    let similarity = cosineSimilarity(vector1: vector1, vector2: vector2)
+
+    // Adjust the threshold based on requirements
+    return similarity > 0.7
+}
+
+func cosineSimilarity(vector1: [Double], vector2: [Double]) -> Double {
+    let dotProduct = zip(vector1, vector2).map(*).reduce(0, +)
+    let magnitude1 = sqrt(vector1.map { $0 * $0 }.reduce(0, +))
+    let magnitude2 = sqrt(vector2.map { $0 * $0 }.reduce(0, +))
+    return dotProduct / (magnitude1 * magnitude2)
+}
+
+func normalizeWord(_ word: String) -> String {
+    let w = word.lowercased().trimmingCharacters(in: .whitespacesAndNewlines)
+    let tagger = NLTagger(tagSchemes: [.lemma])
+    tagger.string = w//
+    let range = w.startIndex..<w.endIndex
+    return tagger.tag(at: w.startIndex, unit: .word, scheme: .lemma).0?.rawValue ?? w
+   // return tagger.tag(at: word.startIndex, unit: .word, scheme: .lemma, tokenRange: nil).rawValue ?? word
+}
+
+

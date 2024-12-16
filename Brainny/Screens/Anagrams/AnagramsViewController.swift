@@ -106,7 +106,9 @@ class AnnagramsViewController: BaseViewController<AnagramsPresenterProtocol> {
         winView.alpha = 0
         winView.center = self.view.center
         winView.delegate = presenter
-        self.view.addSubview(winView)
+        if winView.superview == nil {
+            self.view.addSubview(winView)
+        }
         UIView.animate(withDuration: 0.75) {
             self.winView.alpha = 1
         }
@@ -118,7 +120,9 @@ class AnnagramsViewController: BaseViewController<AnagramsPresenterProtocol> {
         tipView.alpha = 0
         tipView.center = self.view.center
         tipView.delegate = presenter
-        self.view.addSubview(tipView)
+        if tipView.superview == nil {
+            self.view.addSubview(tipView)
+        }
         UIView.animate(withDuration: 0.75) {
             self.tipView.alpha = 1
         }
@@ -165,7 +169,7 @@ extension AnnagramsViewController: GameSceneDelegate {
     }
     
     func getSubtitlePos() -> CGPoint {
-        return subtitleLabel.center
+        return CGPoint(x: subtitleLabel.frame.midX, y: subtitleLabel.frame.maxY) 
     }
     
     

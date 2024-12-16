@@ -214,6 +214,8 @@ class TipView: UIView {
                     let newCoins = tipWordModel.coins - tipWordModel.price
                     self.delegate?.unlockWord(word: tipWordModel.word, coins: newCoins)
                     hideTipView()
+                } else {
+                    delegate?.showAlert()
                 }
             case .letter(let tipLetterModel):
                 if tipLetterModel.coins >= tipLetterModel.price {
