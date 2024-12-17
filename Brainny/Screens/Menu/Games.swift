@@ -96,9 +96,10 @@ enum Games: Int, CaseIterable {
                     return model
                 }
             case .annagrams:
-                if let model = try? JSONDecoder().decode([AnagramModel].self, from: data) {
-                    return model
-                }
+//                if let model = try? JSONDecoder().decode([AnagramModel].self, from: data) {
+//                    return model
+//                }
+                return AnagramModel.allCases
             case .secretWords:
                 if let model = try? JSONDecoder().decode([SecretWords].self, from: data) {
                     return model

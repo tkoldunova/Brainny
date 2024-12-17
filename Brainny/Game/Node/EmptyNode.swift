@@ -21,7 +21,7 @@ class EmptyNode: SKSpriteNode {
         super.init(texture: texture, color: .clear, size: size)
         name = "empty_node"
          zPosition = 5
-         alpha = 0.6
+         alpha = 0.5
     }
     
     required init?(coder aDecoder: NSCoder) {

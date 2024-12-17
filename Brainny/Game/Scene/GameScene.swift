@@ -50,16 +50,18 @@ class GameScene: SKScene {
         for i in 0 ... count - 1 {
             let emptyNode = EmptyNode(size: CGSize(width:  count > 8 ? 33 : count > 6 ? 37 : 45, height:  count > 8 ? 33 : count > 6 ? 37 : 45))
             let startY: CGFloat
-            if let neededPoint = gameSceneDelegate?.getSubtitlePos() {
-                if let convertedPos = view?.convert(neededPoint, to: self) {
-                    let space: CGFloat = UIScreen.main.bounds.height > 690 ? 68 : 120
-                    startY = convertedPos.y - space
-                } else {
-                    startY = size.height/3.5
-                }
-            } else {
-                startY = size.height/3.5
-            }
+//            if let neededPoint = gameSceneDelegate?.getSubtitlePos() {
+//                if let convertedPos = view?.convert(neededPoint, to: self) {
+//                    let space: CGFloat = UIScreen.main.bounds.height > 690 ? 68 : 120
+//                    startY = convertedPos.y - space
+//                } else {
+//                    startY = size.height/3.5
+//                }
+//            } else {
+//                startY = size.height/3.5
+//            }
+            
+            startY = -size.height/4.25 /*size.height/2 - (size.height * 0.67) + emptyNode.size.height + 16*/
             emptyNode.position = CGPoint(x: -width/2 + (emptyNode.size.width + (count > 8 ? 3 : count > 6 ? 6 : 8)) * CGFloat(i), y: startY)
             
             addChild(emptyNode)
