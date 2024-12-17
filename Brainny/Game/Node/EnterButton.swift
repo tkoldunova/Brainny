@@ -15,7 +15,7 @@ class EnterButton: SKSpriteNode {
     
     lazy var rectangle : SKShapeNode = {
         let node = SKShapeNode(rectOf: self.size, cornerRadius: 16)
-        node.fillColor = UIColor(red: 144/255, green: 123/255, blue: 209/255, alpha: 0.86)
+        node.fillColor = UIColor(red: 116/255, green: 70/255, blue: 255/255, alpha: 1)
         node.strokeColor = UIColor(red: 28/255, green: 201/255, blue: 159/255, alpha: 1)
         node.lineWidth = 3
         return node
