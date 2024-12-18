@@ -184,8 +184,9 @@ extension GameScene: WorldNodeDelegate, EnterButtonDelegate {
             let currPos = node.position
             let neededEmptyNode = emptyWorldNodes.first!
             neededEmptyNode.worldNode = node
+            node.lastPos = currPos
             node.moveTo(neededEmptyNode.position, duaration: 0.25) {
-                node.lastPos = currPos
+              
             }
         }
     }
