@@ -15,7 +15,8 @@
 "settings.title" = "Settings";
 "settings.model.music" = "Music";
 "settings.model.sound" = "Sound";
-"settings.model.haptic" = "haptic";
+"settings.model.haptic" = "Haptic";
+"settings.model.rate" = "Rate the app";
 
 // Mark: Level
 "level.title" = "Levels";

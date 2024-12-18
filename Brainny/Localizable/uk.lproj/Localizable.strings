@@ -16,6 +16,7 @@
 "settings.model.music" = "Музика";
 "settings.model.sound" = "Звуки";
 "settings.model.haptic" = "Вібрація";
+"settings.model.rate" = "Оцінити додаток";
 
 // Mark: Level
 "level.title" = "Рівні";

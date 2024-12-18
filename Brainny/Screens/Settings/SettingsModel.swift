@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import StoreKit
 
 enum SettingsModel: CaseIterable {
     case sound
@@ -82,5 +83,31 @@ enum VolumeModel: CaseIterable {
             AudioManager.shared.changeMusicVolume()
         }
     }
+    
+}
 
+enum DetailSettingsModel: CaseIterable {
+    case rate
+    
+    var title: String {
+        switch self {
+        case .rate:
+            return NSLocalizedString("settings.model.rate", comment: "")
+        }
+    }
+    var image: UIImage {
+        switch self {
+        case .rate:
+            return UIImage(named: "rate")!
+        }
+    }
+    
+    func action() {
+        switch self {
+        case .rate:
+            if let scene = UIApplication.shared.connectedScenes.first(where: { $0.activationState == .foregroundActive }) as? UIWindowScene {
+                SKStoreReviewController.requestReview(in: scene)
+            }
+    }
+}
 }

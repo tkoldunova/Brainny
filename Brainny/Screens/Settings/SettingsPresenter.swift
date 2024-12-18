@@ -49,13 +49,24 @@ extension SettingsPresenter: UITableViewDelegate, UITableViewDataSource {
             cell.configure(model: interactor.volumeModel[indexPath.row])
             cell.selectionStyle = .none
             return cell
-        }  else {
+        }  else if indexPath.row < interactor.volumeModel.count + interactor.swichableModel.count {
             guard let cell = tableView.dequeueReusableCell(withIdentifier: "settings", for: indexPath) as? SettingsTableViewCell else {return UITableViewCell()}
             cell.configure(model: interactor.swichableModel[indexPath.row - interactor.volumeModel.count])
             cell.selectionStyle = .none
             return cell
+        } else {
+            guard let cell = tableView.dequeueReusableCell(withIdentifier: "rate", for: indexPath) as? RateTableViewCell else {return UITableViewCell()}
+            cell.configure(model: interactor.detailModel[indexPath.row - interactor.volumeModel.count - interactor.swichableModel.count])
+            cell.selectionStyle = .none
+            return cell
         }
       
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if let cell = tableView.cellForRow(at: indexPath) as? RateTableViewCell, let model = cell.model {
+            model.action()
+        }
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
