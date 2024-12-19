@@ -60,12 +60,12 @@ class WorldNode: SKSpriteNode {
     }
     
     override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
-        self.run(SKAction.group([SKAction.scale(to: 0.9, duration: 0.1), SKAction.fadeAlpha(to: 0.9, duration: 0.1)]))
+        self.run(SKAction.group([SKAction.scale(to: 1, duration: 0.1), SKAction.fadeAlpha(to: 1, duration: 0.1)]))
        
     }
     
     override func touchesCancelled(_ touches: Set<UITouch>, with event: UIEvent?) {
-        self.run(SKAction.group([SKAction.scale(to: 0.9, duration: 0.1), SKAction.fadeAlpha(to: 0.9, duration: 0.1)]))
+        self.run(SKAction.group([SKAction.scale(to: 1, duration: 0.1), SKAction.fadeAlpha(to: 1, duration: 0.1)]))
     }
     
 }
