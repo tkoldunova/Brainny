@@ -18,7 +18,6 @@ protocol GameSceneDelegate: AnyObject {
 class GameScene: SKScene {
     
     weak var gameSceneDelegate: GameSceneDelegate?
-    
     var world: String!
     
     lazy var enterButton : EnterButton = {
@@ -28,6 +27,9 @@ class GameScene: SKScene {
         return enterButton
     }()
  
+   
+    
+    
     
     override func didMove(to view: SKView) {
         self.backgroundColor = .clear
@@ -99,7 +101,7 @@ class GameScene: SKScene {
 
     
     override func update(_ currentTime: TimeInterval) {
-        // Called before each frame is rendered
+       
     }
 }
 
