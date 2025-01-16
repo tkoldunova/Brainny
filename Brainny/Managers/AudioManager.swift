@@ -15,7 +15,7 @@ class AudioManager {
     var correctPlayer: AVAudioPlayer?
     var wrongPlayer: AVAudioPlayer?
     var winPlayer: AVAudioPlayer?
-    
+    var footstepsPlayer:  AVAudioPlayer?
     init() {
         prepare()
     }
@@ -26,6 +26,7 @@ class AudioManager {
         correctPlayer = prepareSound(name: "correct")
         wrongPlayer = prepareSound(name: "wrong")
         winPlayer = prepareSound(name: "win")
+        footstepsPlayer = prepareFootsteps(name: "run")
     }
     
     private func prepareMusic(name: String) -> AVAudioPlayer? {
@@ -53,6 +54,22 @@ class AudioManager {
             var player = try AVAudioPlayer(contentsOf: url, fileTypeHint: AVFileType.mp3.rawValue)
             player.volume = 0.9
             player.numberOfLoops = 0
+            return player
+        } catch let error {
+            print(error.localizedDescription)
+            return nil
+        }
+    }
+    
+    private func prepareFootsteps(name:String) -> AVAudioPlayer? {
+        guard let url = Bundle.main.url(forResource: name,
+                                        withExtension: "mp3") else { return nil }
+        do {
+//            try AVAudioSession.sharedInstance().setCategory(.playback, mode: .default)
+//            try AVAudioSession.sharedInstance().setActive(true)
+            var player = try AVAudioPlayer(contentsOf: url, fileTypeHint: AVFileType.mp3.rawValue)
+            player.volume = 0.5
+            player.numberOfLoops = -1
             return player
         } catch let error {
             print(error.localizedDescription)
