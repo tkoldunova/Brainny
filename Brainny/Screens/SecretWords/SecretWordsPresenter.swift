@@ -144,6 +144,7 @@ extension SecretWordsPresenter {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if interactor.words[indexPath.row].locked {
+            AudioManager.shared.playTouchedSound()
             self.view?.showTipView(type: .word(TipWordModel(title: NSLocalizedString("tip.word.title3", comment: ""), price: 15, word: interactor.words[indexPath.row].title, coins: interactor.coins)))
         }
     }

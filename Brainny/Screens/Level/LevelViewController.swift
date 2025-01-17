@@ -46,8 +46,10 @@ class LevelViewController: BaseViewController<LevelPresenterProtocol>, LevelView
    
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.presenter.notifyWhenViewDidLoad()
         self.title = NSLocalizedString("level.title", comment: "")
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(customView: coinsHStackView)
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {

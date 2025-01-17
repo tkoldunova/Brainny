@@ -10,15 +10,16 @@ import UIKit
 import NaturalLanguage
 
 extension String {
-    private func normalize(_ text: String) -> String {
+    private func normalize() -> String {
         let tagger = NLTagger(tagSchemes: [.lemma])
-        tagger.string = text.lowercased().trimmingCharacters(in: .whitespacesAndNewlines)
+        let str = self.lowercased().trimmingCharacters(in: .whitespacesAndNewlines)
+        tagger.string = str
         var lemma = ""
-        tagger.enumerateTags(in: text.startIndex..<text.endIndex, unit: .word, scheme: .lemma) { tag, tokenRange in
+        tagger.enumerateTags(in: str.startIndex..<str.endIndex, unit: .word, scheme: .lemma) { tag, tokenRange in
             if let lemmaTag = tag?.rawValue {
                 lemma += lemmaTag
             } else {
-                lemma += text[tokenRange] // Fallback if no lemma found
+                lemma += str[tokenRange] // Fallback if no lemma found
             }
             return true
         }
@@ -54,8 +55,8 @@ extension String {
         guard self.count > 2, word.count > 2 else {
                    return self.lowercased() == word.lowercased()
         }
-        let normalizedUserAnswer = normalize(self)
-        let normalizedCorrectAnswer = normalize(word)
+        let normalizedUserAnswer = self.normalize()
+        let normalizedCorrectAnswer = word.normalize()
         guard normalizedUserAnswer.count > 2, normalizedCorrectAnswer.count > 2 else {
                    return normalizedUserAnswer == normalizedCorrectAnswer
         }

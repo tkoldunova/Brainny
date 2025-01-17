@@ -13,6 +13,7 @@ func reloadData()
 
 protocol LevelPresenterProtocol: UICollectionViewDelegate, UICollectionViewDataSource {
     init(view: LevelViewProtocol, interactor: LevelInteractorProtocol, router: LevelRouterProtocol)
+    func notifyWhenViewDidLoad()
     func notifyWhenViewWillApear()
 }
 
@@ -29,9 +30,12 @@ final class LevelPresenter: NSObject, LevelPresenterProtocol {
         self.router = router
     }
     
+    func notifyWhenViewDidLoad() {
+        self.adManager.prepare()
+    }
+    
     func notifyWhenViewWillApear() {
         self.view?.setUpCoinsLabel(coins: UserDefaultsValues.coins)
-        self.adManager.prepare()
     }
     
    
@@ -54,9 +58,9 @@ extension LevelPresenter {
         if interactor.model.availableLevels.contains(where: {$0.areEqual(to: m)}) {
             if !PurchaseManager.shared.hasUnlockedPro {
                 if UserDefaultsValues.touchCount%3 == 0 {
-                    self.adManager.show { res in
-                        guard res else {return}
-                    }
+//                    self.adManager.show { res in
+//                        guard res else {return}
+//                    }
                 }
             }
             UserDefaultsValues.touchCount += 1

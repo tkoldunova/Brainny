@@ -64,15 +64,17 @@ class InterstitialAdManager: NSObject, GADFullScreenContentDelegate {
     
     func ad(_ ad: GADFullScreenPresentingAd, didFailToPresentFullScreenContentWithError error: Error) {
         self.interstitialCompletion?(false)
+        prepare()
         
     }
     
     func adWillPresentFullScreenContent(_ ad: GADFullScreenPresentingAd) {
         self.interstitialCompletion?(true)
+        prepare()
     }
     
     func adDidDismissFullScreenContent(_ ad: GADFullScreenPresentingAd) {
-        prepare()
+       
     }
 }
 
